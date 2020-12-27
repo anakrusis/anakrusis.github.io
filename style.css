@@ -1,3 +1,18 @@
 body{
+	font-family: sans-serif;
 	color: purple;
+	/*background: white url("harry.jpg") repeat fixed center;*/
+	background: hotpink;
+}
+
+div{
+	background-color: white;
+	border: dotted green;
+	padding: 25px;
+	margin:  25px;
+	width: 500px;
+}
+
+.post{
+	/*background-color: green;*/
 }
