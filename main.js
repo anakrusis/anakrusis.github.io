@@ -5,7 +5,7 @@ links = [ "https://soundcloud.com/amimifafa", "https://github.com/anakrusis", "h
 
 linktexts = [ "🎧 sound cloud", "🖥️ git hub", "🐤 twitter", "🎬youtube", "🏆 battle of bit" ];
 
-innercode+="<div class=\"titlebar\"><a href=\"\"><img class=\"headerimg\" src=\"pog land.png\"></a></div>"
+innercode+="<div class=\"titlebar\"><a href=\"\"><img class=\"headerimg\" src=\"/pog land.png\"></a></div>"
 innercode+="<table><tr>"
 
 for (i = 0; i < 5; i++) {
