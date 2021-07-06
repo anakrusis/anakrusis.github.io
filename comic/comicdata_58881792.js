@@ -140,6 +140,11 @@ captions[25] = [
 "Mr. Binton: Oh, my, have I been talking too long? (It feels like hours have passed.) The bell must have already rung! Class is dismissed, everyone! Go home and study hard, everyone! The Test is in four days!!<br><br>(You are free to go home now, but you are still carrying Boxhead's head fragment. Is there something you want to do with that first?)"
 ]
 
+captions[26] = [
+"After inspecting it briefly. you attempt to chew on Boxhead's head fragment. At first you taste an extremely potent woody and herbal flavor. Then, suddenly, a blistering sensation of pain scorches the inside of your mouth.<br><br>It is much too dry and concentrated to be chewed or eaten yet. You spit it out almost immediately.",
+"You are out walking in the halls as this passes. Other students are too busy being normal to help you with your painful episode. You continue holding the fragment as you walk along.<br><br>You may want to wash the fragment down with some sort of beverage before attempting to chew it again. There are a few choices: the water fountain and restrooms are close by, and there is a vending machine which sells soda pop near the school entrance."
+]
+
 var commands = [ 
 "begin",
 "name: Honda accord",
@@ -165,7 +170,8 @@ var commands = [
 "pet the dog.",
 "Sneakily tear off a piece of Boxhead and use it as your Cheese",
 "participate in the class just as if it were a regular day of class...because it is",
-"\"Teacher, can we review the 'DEES' theorem?\""
+"\"Teacher, can we review the 'DEES' theorem?\"",
+"Attempt to put the head fragment in your mouth and chew."
 ];
 
 class Panel {
