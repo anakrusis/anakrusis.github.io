@@ -6,7 +6,7 @@ var singletouchtimer = 0;
 var cursorAbsX; var cursorAbsY;
 var bypassGameClick = false; // gui boolean for when a gui element is clicked, not to trigger anything in game world
 
-var pathPredictEnabled = true;
+var pathPredictEnabled = true; var buildingDrawEnabled = true;
 var trajPredictor = new Entity(0,0,0); 
     trajPredictor.boostForce = new ForceVector(0,0);
 var trajectory = [[],[]];
@@ -22,7 +22,7 @@ MAX_ZOOM  = 100;
 
 MIN_CITY_TEXT_ZOOM = 0.04; // anything smaller than this will not render city label names
 
-MAX_INTERPLANETARY_ZOOM = 0.333; // anything larger than this will only render a single planet (the planet the player is nearest to/in the gravity radius of)
+MAX_INTERPLANETARY_ZOOM = 0.5; // anything larger than this will only render a single planet (the planet the player is nearest to/in the gravity radius of)
 MAX_INTERSTELLAR_ZOOM   = 0.001; // anything larger than this will render a whole star system and its planets but no buildings/small details(TODO)
 // anything smaller than this will only render stars (no planets)
 
@@ -51,6 +51,7 @@ function setup(){
 	
 	createCanvas(windowWidth, windowHeight);
 	frameRate(60);
+	textFont("Courier");
 	
 	server = new Server();
 	server.init(); server.world.init();
@@ -97,6 +98,8 @@ function draw(){
 		vertex( tra_rot_x( cx, cy + CHUNK_DIM ), tra_rot_y( cx, cy + CHUNK_DIM ) );
 		vertex( tra_rot_x( cx, cy ), tra_rot_y( cx, cy ) );
 		endShape();
+		
+		var bodies = 0;
 
 		for ( var i = 0; i < 6; i++ ){
 					
@@ -112,10 +115,12 @@ function draw(){
 		
 			for ( var uuid in chunk.bodies ){
 				var b = chunk.bodies[uuid];
-				//if (b.isOnScreen() && b.renderPriority == i){
-				if (b.renderPriority == i){
+				if (b.isOnScreen() && b.renderPriority == i){
+				//if (b.renderPriority == i){
 					
 					b.render();
+					
+					bodies++;
 				}
 			}
 		}
@@ -142,117 +147,22 @@ function draw(){
 	
 	stroke(255); fill(255);
 	textSize(16 * GUI_SCALE);
-	textFont("Courier");
 	text("FPS: " + Math.round(frameRate()), width - ( 75 * GUI_SCALE ), 16 * GUI_SCALE);
+	text("br: " + bodies, width - ( 75 * GUI_SCALE ), 32 * GUI_SCALE);
 	textSize(16);
 	
 	//text(Math.round(tra_rot_x(cursorAbsX, cursorAbsY)) + " " + Math.round(tra_rot_y(cursorAbsX, cursorAbsY)), width - 225, 32);
 }
 
-var drawPointsTrailFromEntity = function(e, points){
-		// This renders the trail in front of the player predicting where it will be in the next 500 ticks
-	if (!e.isDead()){
-		var fx = e.x; var fy = e.y;
-		var futurePointsX = points[0]; var futurePointsY = points[1];
-		
-		noFill();
-		beginShape();
-		for (var i = 0; i < futurePointsX.length; i+=1){
-			
-			fx = futurePointsX[i]; fy = futurePointsY[i];
-			
-			vertex(tra_rot_x(fx,fy),tra_rot_y(fx,fy));
-			
-		}
-		endShape();
-	}
-}
-
-var doTrajectoryStep = function(e, player){
-	
-	e.boostForce.dir = e.dir;
-	
-	e.update();
-
-	e.boostForce = player.boostForce; 
-	e.forceVectors.push(e.boostForce);
-	
-	//futurePointsX.push(e.x); futurePointsY.push(e.y);
-	
-/* 	e.boostForce = player.boostForce; e.boostForce.dir = e.dir;
-	e.forceVectors.push(e.boostForce);
-	
-	e.update();
-	
-	if (e.isDead() || e.grounded){ 
-		return;
-	} */
-	
-	trajectory[0].push(e.x); trajectory[1].push(e.y); dir_history.push(e.dir);
-}
-
-var updateTrajectory = function(player){
-	
-	if (!pathPredictEnabled){ 
-		trajectory = [[],[]]; return; 
-	}
-	
-	if ( framecount % 600 == 0 ){
-		trajectory = [[],[]];
-	}
-	
-	var lastx = trajectory[0][ trajectory[0].length - 1 ];
-	var lasty = trajectory[1][ trajectory[1].length - 1 ];
-	var lastdir = dir_history[ dir_history.length - 1 ]
-	
-	if (!lastx){
-		traj_pointer = 0;
-		
-		lastx = player.x;
-		lasty = player.y;
-		lastdir = player.dir;
-	}
-	
-	trajPredictor.x = lastx; trajPredictor.y = lasty; trajPredictor.dir = lastdir;
-	
-	//trajPredictor.boostForce = player.boostForce; trajPredictor.boostForce.dir = trajPredictor.dir;
-	//trajPredictor.forceVectors.push(trajPredictor.boostForce);
-	
-	//var e = new Entity(lastx, lasty, lastdir );
-	
-	if (trajectory[0].length < 1000){
-		
-		for (var i = 0; i < 5; i++){
-			doTrajectoryStep(trajPredictor, player);
-			traj_pointer++;
-		}
-		
-	}else{
-		doTrajectoryStep(trajPredictor, player);
-	}
-	
-	trajectory[0].shift(); trajectory[1].shift(); dir_history.shift();
-	
-/* 	if (trajectory[0].length < 500){
-		//
-		
-	}else{
-		//trajectory[0].splice(125); trajectory[1].splice(125); dir_history.splice(125);
-		//trajectory[0].length = 500; trajectory[1].length = 500; dir_history.length = 500;
-		
-		trajectory[0].shift(); trajectory[1].shift(); dir_history.shift();
-	} */
-}
-
 var predictDerivativePoints = function(player){
 	if (!pathPredictEnabled){ return [[],[]]; }
 	
-	var nearbody = player.getNearestBody();
+/* 	var nearbody = player.getNearestBody(); */
 	
 	var futurePointsX = [];
 	var futurePointsY = [];
 	
-	var angacc = player.angacc;
+/* 	var angacc = player.angacc;
 	var angvel = player.angvel;
 	var vel = player.velocity;
 	var x   = player.x; var y = player.y;
@@ -271,7 +181,7 @@ var predictDerivativePoints = function(player){
 		y += vel * Math.sin( dir );
 		
 		futurePointsX.push(x); futurePointsY.push(y);
-	}
+	} */
 	return [futurePointsX, futurePointsY];
 }
 
@@ -332,8 +242,9 @@ function keyPressed() {
 			pathPredictEnabled = !pathPredictEnabled;
 		}else if (keyCode === 32){
 			PLANET_CAM = !PLANET_CAM;
+		}else if (keyCode === 66){
+			buildingDrawEnabled = !buildingDrawEnabled;	
 		}
-	
 	}
 }
 

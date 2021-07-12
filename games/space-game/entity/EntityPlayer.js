@@ -1,3 +1,5 @@
+var pts;
+
 class EntityPlayer extends EntityShip {
 	constructor(x, y, dir){
 		super(x,y,dir);
@@ -8,6 +10,7 @@ class EntityPlayer extends EntityShip {
 		this.renderPriority = 5;
 		this.inventory = new Inventory(9);
 		this.money = 0;
+		this.history = new History();
 		
 		// Physical properties
 		this.boostForce = new ForceVector("Boost",0,0); // this is a buffer which pushes onto the forces array a boost value per tick
@@ -16,12 +19,15 @@ class EntityPlayer extends EntityShip {
 	}
 	
 	render(){
-		
-		updateTrajectory(this);
 
 		stroke(this.color[0] / 2, this.color[1] / 2, this.color[2] / 2);
+		//this.drawPointsTrailFromEntity(predictFuturePoints(this));
 		
-		drawPointsTrailFromEntity(this, predictFuturePoints(this));
+		//stroke(255);
+		if (!this.grounded){
+			pts = this.predictPoints2();
+			this.drawPointsTrailFromEntity(pts);
+		}
 		
 		if (touches.length == 1){
 		
@@ -35,8 +41,8 @@ class EntityPlayer extends EntityShip {
 					angle -= cam_rot;
 				}
 				 
-				var rotx = rot_x( angle + client.world.player.dir, 300, 300 ) + width/2;
-				var roty = rot_y( angle + client.world.player.dir, 300, 300 ) + height/2;
+				var rotx = rot_x( angle + client.world.getPlayer().dir, 300, 300 ) + width/2;
+				var roty = rot_y( angle + client.world.getPlayer().dir, 300, 300 ) + height/2;
 				
 				line( width/2, height/2, rotx, roty );
 				
@@ -76,6 +82,8 @@ class EntityPlayer extends EntityShip {
 		this.lastxacc = this.xacc; this.lastyacc = this.yacc; */
 		//this.forceVectors.push(this.boostForce);
 		this.getBoostForce().dir = this.dir;
+		//pts = this.predictPoints2();
+		
 		super.update();
 		
 		this.angvel = this.dir - this.lastdir;
