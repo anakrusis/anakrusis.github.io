@@ -209,6 +209,8 @@ GLYPHS = {
 	"thumbsdown": {
 		"use": "bad"
 	},
+	"white_check_mark": {
+	},
 	"100": {
 		"use": "a positive intensifier, e.g. 'swag', 'cool'..."
 	},
@@ -228,6 +230,8 @@ GLYPHS = {
 	"1234": {
 		"use": "amount, number"
 	},
+	"ab": {
+	},
 	"abcd": {
 	},
 	"symbols": {
@@ -241,6 +245,8 @@ GLYPHS = {
 	},
 	"airplane": {
 	},
+	"airplane_departure": {
+	},
 	"arrow_up":{
 	},
 	"arrow_down":{
@@ -253,10 +259,15 @@ GLYPHS = {
 	},
 	"arrow_heading_down":{
 	},
+	"arrow_upper_right":{
+	},
 	"left_right_arrow": {
 	},
+	"art": {
+		"use": "color, names of colors"
+	},
 	"bird": {
-		"use": "archaic uniliteral /dʒ/"
+		"use": "archaic uniliteral /dʒ/, twitter"
 	},
 	"book": {
 	},
@@ -266,6 +277,8 @@ GLYPHS = {
 		"use": "people/roles with suffix '-er'"
 	},
 	"camera": {
+	},
+	"chair": {
 	},
 	"checkered_flag": {
 		"use": "end, finish, done"
@@ -330,6 +343,8 @@ GLYPHS = {
 	},
 	"person_running": {
 	},
+	"person_sitting_in_lotus_position": {
+	},
 	"person_walking": {
 	},
 	"pinching_hand": {
@@ -345,12 +360,16 @@ GLYPHS = {
 	"raised_hands": {
 		"use": "excitement"
 	},
+	"recycle": {
+		"use": "re-"
+	},
 	"robot": {
 		"use": "machines with suffix '-er', e.g. 'printer', 'dishwasher', 'assembler'"
 	},
 	"rocket": {
 	},
 	"round_pushpin": {
+		"use": "location, place, at"
 	},
 	"scales": {
 	},
@@ -400,10 +419,15 @@ GLYPHS = {
 	"writing_hand": {
 	},
 	
+	"astonished": {
+		"aliases": ["surprised, wow"],
+	},
 	"confounded": {
 	},
 	"relaxed": {
 		"use": "calm"
+	},
+	"thinking": {
 	},
 	
 	"NO_EMOJI": {}
