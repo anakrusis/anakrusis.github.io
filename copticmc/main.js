@@ -1,3 +1,12 @@
+var ETYM_COLORS = {
+	"egy": "#fff6db",
+	"grk": "#deeaff",
+	"mod": "#ffdfdf",
+	"prs": "#d9fbff",
+	"sem": "#dfffe4",
+	"unk": "#ffffff"
+}
+
 var MAINDIV = document.getElementById("maindiv");
 
 for (key in ENTRIES) {
@@ -7,6 +16,7 @@ for (key in ENTRIES) {
 
 function addDictEntry(key, ce){
 	var outerdiv 	= document.createElement("div");
+	outerdiv.setAttribute("class", "outerdiv");
 	
 	var headerdiv	= document.createElement("div");
 	
@@ -30,8 +40,26 @@ function addDictEntry(key, ce){
 	outerdiv.appendChild( headerdiv );
 	
 	// ENTRY ETYMOLOGY
+	// these will be colored later by tags so keep them in higher scope
+	var etymcells = [];
 	if (ce.etym.length > 0) {
 		var etymdiv		= document.createElement("div");
+		etymdiv.setAttribute("class","etymdiv");
+		etymdiv.innerHTML = "<b>Etymology:</b><br>"		
+		
+		var etymtable	= document.createElement("table");
+		etymdiv.appendChild( etymtable );
+		
+		var row = etymtable.insertRow();
+		
+		// each item in the etymology gets its own cell
+		for (var i = 0; i < ce.etym.length; i++){
+			var cc = row.insertCell(); // current cell
+			//cc.setAttribute("style","background-color:#000000;")
+			cc.innerHTML = ce.etym[i]
+			etymcells[i] = cc;
+		}
+		
 		outerdiv.appendChild( etymdiv );
 	}
 	
@@ -44,12 +72,31 @@ function addDictEntry(key, ce){
 	}
 	
 	// ENTRY TAGS
+	// while iterating thru tags, if an etym tag is found, the corresponding etym cell is colored in all in one pass
+	var curretymcell = 0;
+	// redundant tags are not removed but they arent displayed
+	var seentags = {};
+	
 	var tagsdiv		= document.createElement("div");
 	tagsdiv.setAttribute("class","tagsdiv");
 	var tagsstring = "<b>Tags: </b>"
 	if (ce.tags.length > 0){
 		for (var i = 0; i < ce.tags.length; i++){
-			tagsstring += ce.tags[i] + ", "
+			// current tag
+			var ctag = ce.tags[i]
+			if (!seentags[ctag]){
+				tagsstring += ce.tags[i] + ", "
+				seentags[ctag] = true
+			}
+			// etymology tags color the respective cells in the etymology section
+			if (ctag.substring(0, 5) == "etym-"){
+				var etymoriginstr = ctag.substring(5);
+				var color = ETYM_COLORS[etymoriginstr];
+				if (etymcells[ curretymcell ]){
+					etymcells[ curretymcell ].style.background = color;
+					curretymcell++;
+				}
+			}
 		}
 		// remove the last comma after the last entry
 		tagsstring = tagsstring.substring( 0, tagsstring.length - 2 );
