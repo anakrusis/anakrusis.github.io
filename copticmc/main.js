@@ -7,6 +7,35 @@ var ETYM_COLORS = {
 	"unk": "#ffffff"
 }
 
+var SOURCE_LINKS = {
+	// Johnson, Janet H. (2001) The Demotic Dictionary of the Institute for the Study of Ancient Cultures of the University of Chicago
+	"cdd_m": 	"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/CDD_M.pdf#page=",
+	// Coptic Dictionary Online, ed. by the Koptische/Coptic Electronic Language and Literature International Alliance (KELLIA)
+	"cdo":		"https://coptic-dictionary.org/entry.cgi?tla=",
+	// Černý, Jaroslav (1976) Coptic Etymological Dictionary, Cambridge: Cambridge University Press
+	"cerny":	"",
+	"vycichl": "",
+}
+var SOURCE_NAMES = {
+	"cdd_m":	"<i>CDD</i> M",
+	"cdo":		"<i>CDO</i>",
+	"cerny":	"<i>ČED</i>",
+	"vycichl":	"<i>DELC</i>"
+}
+
+// when citing a page number , but linking to the document the page number is different
+var SOURCE_PAGE_OFFSETS = {
+	/* "cerny":	21 */
+}
+
+// abbreviations in case I forget how to spell their names
+SOURCE_LINKS["ce"] 			= SOURCE_LINKS["cerny"]
+SOURCE_LINKS["vy"] 			= SOURCE_LINKS["vycichl"]
+SOURCE_NAMES["ce"] 			= SOURCE_NAMES["cerny"]
+SOURCE_NAMES["vy"] 			= SOURCE_NAMES["vycichl"]
+SOURCE_PAGE_OFFSETS["ce"] 	= SOURCE_PAGE_OFFSETS["cerny"]
+SOURCE_PAGE_OFFSETS["vy"]	= SOURCE_PAGE_OFFSETS["vycichl"]
+
 var MAINDIV = document.getElementById("maindiv");
 
 for (key in ENTRIES) {
@@ -55,8 +84,10 @@ function addDictEntry(key, ce){
 		// each item in the etymology gets its own cell
 		for (var i = 0; i < ce.etym.length; i++){
 			var cc = row.insertCell(); // current cell
-			//cc.setAttribute("style","background-color:#000000;")
-			cc.innerHTML = ce.etym[i]
+			// each cell is given the same width
+			cc.style.width = (100 / ce.etym.length) + "%"
+			var cetymstring = doMarkup( ce.etym[i] );
+			cc.innerHTML = cetymstring;
 			etymcells[i] = cc;
 		}
 		
@@ -67,7 +98,8 @@ function addDictEntry(key, ce){
 	if (ce.notes){
 		var notesdiv	= document.createElement("div");
 		notesdiv.setAttribute("class","notesdiv");
-		notesdiv.innerHTML = ce.notes;
+		var notesstring = doMarkup( ce.notes );
+		notesdiv.innerHTML = notesstring;
 		outerdiv.appendChild( notesdiv );
 	}
 	
@@ -109,4 +141,60 @@ function addDictEntry(key, ce){
 	outerdiv.appendChild( tagsdiv );
 	
 	MAINDIV.appendChild( outerdiv );
+}
+
+function doMarkup( instring ){
+	var outstring = "";
+	
+	var i = 0;
+	while (i < instring.length) {
+		var substring3 = instring.substring( i, i+3 )
+		// [c][/c] TAG: citation
+		if (substring3 == "[c]"){
+			var tagcloseindex = instring.indexOf("[/c]", i);
+			if (tagcloseindex > -1){
+				
+				var innertext = instring.substring(i+3, tagcloseindex);
+				// every citation has a hyphen
+				// before hyphen: name of work cited
+				// after hyphen: page number
+				var hyphenindex = innertext.indexOf("-")
+				if (hyphenindex > -1){
+					var citationname = innertext.substring(0, hyphenindex);
+					var citationpage = innertext.substring(hyphenindex + 1);
+					
+					var pstring = "";
+					pstring = pstring + "(" + SOURCE_NAMES[citationname] + " " + citationpage + ")"
+					
+					// generates a link and sets it to the right page if it can
+					if (SOURCE_LINKS[citationname]){
+						/* var offset = SOURCE_PAGE_OFFSETS[citationname] ? SOURCE_PAGE_OFFSETS[citationname] : 0; */
+						
+						outstring = outstring + "<a href=\""
+						outstring = outstring + SOURCE_LINKS[citationname]
+						outstring = outstring + citationpage
+						outstring = outstring + "\" target=\"_blank\" rel=\"noopener noreferrer\">"
+						outstring = outstring + pstring
+						outstring = outstring + "</a>"
+					}else{
+						outstring = outstring + pstring
+					}
+					
+				}else{
+					console.log("Error: no hyphen in citation")
+				}
+				
+				// the [/c] closer is 4 chars long, minus one so when it increments itll be on the right char
+				i = tagcloseindex + 3;
+			}else{
+				console.log("Error: [c] tag not closed")
+			}
+		// only put characters one by one if there is no tag to deal with
+		}else{
+			outstring = outstring + instring.substring(i, i+1);
+		}
+		i++;
+	}
+	
+	return outstring;
 }

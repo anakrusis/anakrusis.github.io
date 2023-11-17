@@ -67,3 +67,18 @@ img{
 	padding: 14px;
 }
 
+@font-face {
+  font-family: 'dpdp';
+  src: url("font/dpdp.ttf") format("ttf");
+}
+
+.demotic {
+  font-size: 1.25em;
+  line-height: 1.75em;
+  font-family: 'dpdp', sans-serif;
+  text-align: justify;
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  font-feature-settings: 'ss13' 1;
+}
+

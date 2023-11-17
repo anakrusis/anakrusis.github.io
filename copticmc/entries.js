@@ -17,14 +17,21 @@ ENTRIES = {
 		"coptic": "ⲗⲉⲩⲕⲏ",
 		"english": "White Poplar (\"Birch\")",
 		"etym": ["< Greek <i>λεύκη</i> \"white poplar\""],
-		"notes": "CDO C9617.<br><br>Plant names are among the most varied translations in the game, and substitutions are common. As I could not find a word for the birch tree attested in Coptic, I substituted a different kind of tree. The white poplar (<i>Populus alba</i>) has very similar white bark with black markings, and its wood is similarly \"white... with a slightly yellowish color\".<br>This word appears in Hosea 4:13 in the same sentence as ⲥⲉⲓ - Oak. It also appears in Isaiah 41:19.",
+		"notes": "[c]cdo-C9617[/c].<br><br>Plant names are among the most varied translations in the game, and substitutions are common. As I could not find a word for the birch tree attested in Coptic, I substituted a different kind of tree. The white poplar (<i>Populus alba</i>) has very similar white bark with black markings, and its wood is similarly \"white... with a slightly yellowish color\".<br><br>This word appears in Hosea 4:13 in the same sentence as ⲥⲉⲓ - Oak. It also appears in Isaiah 41:19.",
 		"tags": [ "etym-grk", "generic-material", "tree", "vanilla" ]
 	},
 	"tile.flower2.allium.name": {
 		"coptic": "ⲙ̄ϫⲱⲗ ϩⲟⲟⲩⲧ",
 		"english": "Allium",
-		"etym": ["", ""],
-		"notes": "Plant names are among the most varied translations in the game, and substitutions are common. Examples: <table><tr><td>Arabic:</td><td>خولنجان</td><td>\"galangal\" (<i>Alpinia officinarum</i> and similar plants in the ginger family <i>Zingiberaceae</i>, not in <i>Allium</i>)</td></tr><tr><td>Armenian:</td><td>սոխ</td><td>\"onion\"</td></tr><tr><td>Asturian:</td><td>Ayu bravu</td><td>\"wild garlic\"</td></tr><tr><td>Chinese:</td><td>绒球花</td><td>literally \"pom-pom flower\"</td></tr><tr><td>Hebrew:</td><td>שום</td><td>\"garlic\"</td></tr></table>",
+		"etym": ["< Demotic　<span class=\"demotic\">𓅓𓍑𓄿4𓃭𓏤𓆰𓏪</span> <i>mḏl</i> \"onion\", from a Semitic language [c]ce-101[/c][c]vy-132[/c]", "p"],
+		"notes": "Plant names are among the most varied translations in the game, and substitutions are common. Examples: <table><tr><td>Arabic:</td><td>خولنجان</td><td>\"galangal\" (<i>Alpinia officinarum</i> and similar plants in the ginger family <i>Zingiberaceae</i>, not in <i>Allium</i>)</td></tr><tr><td>Armenian:</td><td>սոխ</td><td>\"onion\"</td></tr><tr><td>Asturian:</td><td>Ayu bravu</td><td>\"wild garlic\"</td></tr><tr><td>Chinese:</td><td>绒球花</td><td>literally \"pompom flower\". searching it up returns various unrelated species of flowers who all share a similar shape</td></tr><tr><td>Georgian:</td><td>ხახვი</td><td>\"onion, allium\"</td></tr><tr><td>Greek:</td><td>Άλλιο</td><td>\"allium\" (unadapted borrowing)</td></tr><tr><td>Hebrew:</td><td>שום</td><td>\"garlic\"</td></tr><tr><td>Latin:</td><td>Allium</td><td>\"garlic\" (this is the origin of the <i>Allium</i> genus name)</td></tr></table><br>I think that this translation ⲙ̄ϫⲱⲗ ϩⲟⲟⲩⲧ, which is literally \"wild onion\", fits in with the rest. It is attested in Demotic as <i>mḏwl hwṱ</i> [c]cdd_m-308[/c] and in Coptic, where it can also be seen with the spelling ⲉⲙϫⲱⲗ ϩⲉⲩⲧ. [c]ce-101[/c]",
 		"tags": [ "etym-sem", "etym-egy", "flower", "vanilla" ]
+	},
+	"itemGroup.misc": {
+		"coptic": "ⲛ̄ⲁⲧⲉⲥⲙⲟⲧ",
+		"english": "Miscellaneous",
+		"etym": ["",""],
+		"notes": "One of the categories in the Creative menu.<br><br>Literally \"The (things) of various sorts\"",
+		"tags": [ "ui", "vanilla" ]
 	}
 }
