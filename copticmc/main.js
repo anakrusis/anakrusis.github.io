@@ -10,16 +10,20 @@ var ETYM_COLORS = {
 var SOURCE_LINKS = {
 	// Johnson, Janet H. (2001) The Demotic Dictionary of the Institute for the Study of Ancient Cultures of the University of Chicago
 	"cdd_m": 	"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/CDD_M.pdf#page=",
+	"cdd_q":	"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/CDD_Q.pdf#page=",
 	// Coptic Dictionary Online, ed. by the Koptische/Coptic Electronic Language and Literature International Alliance (KELLIA)
 	"cdo":		"https://coptic-dictionary.org/entry.cgi?tla=",
 	// Černý, Jaroslav (1976) Coptic Etymological Dictionary, Cambridge: Cambridge University Press
 	"cerny":	"",
-	"vycichl": "",
+	"lambdin":	"",
+	"vycichl": 	"",
 }
 var SOURCE_NAMES = {
 	"cdd_m":	"<i>CDD</i> M",
+	"cdd_q":	"<i>CDD</i> Q",
 	"cdo":		"<i>CDO</i>",
 	"cerny":	"<i>ČED</i>",
+	"lambdin":	"Lambdin",
 	"vycichl":	"<i>DELC</i>"
 }
 
@@ -49,9 +53,16 @@ function addDictEntry(key, ce){
 	
 	var headerdiv	= document.createElement("div");
 	
+	// ENTRY IMAGE
 	var imgdiv		= document.createElement("div");
+	// the image defaults to the same name as the entry key
+	// but can be otherwise specified with the "img" attribute
+	var imgsrc = key;
+	if (ce.img) {
+		imgsrc = ce.img;
+	}
 	imgdiv.setAttribute("class","imgdiv");
-	imgdiv.innerHTML = "<img src='img/" + key + ".png'>"
+	imgdiv.innerHTML = "<img src='img/" + imgsrc + ".png'>"
 	headerdiv.appendChild( imgdiv );
 	
 	// ENTRY TITLE
