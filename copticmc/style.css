@@ -13,6 +13,8 @@ table {
 	margin: auto;
 	width: 100%;
 	font-size: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 th, td {
 	border: 1px solid #c0c0c0;
@@ -35,7 +37,7 @@ img{
 }
 
 .outerdiv {
-	margin-top: 10px;
+	margin-top: 36px;
 }
 
 .imgdiv {
@@ -69,7 +71,18 @@ img{
 
 @font-face {
   font-family: 'dpdp';
-  src: url("font/dpdp.ttf") format("ttf");
+  src: 	url("font/dpdp.woff2")	format("woff2"), 
+		url("font/dpdp.woff")	format("woff"),
+		url("font/dpdp.ttf") 	format("truetype"),
+		
+}
+
+@font-face {
+  font-family:'EgyptianHiero';
+  src:	url("font/EgyptianHiero.woff2")		format("woff2"), 
+		url("font/EgyptianHiero4.03.woff") 	format('woff'),
+		url("font/EgyptianHiero4.03.ttf") 	format('truetype'),
+		unicode-range:U+13000-1342F
 }
 
 .demotic {
@@ -80,5 +93,11 @@ img{
   direction: rtl;
   unicode-bidi: bidi-override;
   font-feature-settings: 'ss13' 1;
+}
+
+.hiero {
+  font-family:'EgyptianHiero';
+  font-size:2em;
+  font-variant-ligatures:normal;
 }
 

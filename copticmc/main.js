@@ -10,19 +10,23 @@ var ETYM_COLORS = {
 var SOURCE_LINKS = {
 	// Johnson, Janet H. (2001) The Demotic Dictionary of the Institute for the Study of Ancient Cultures of the University of Chicago
 	"cdd_m": 	"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/CDD_M.pdf#page=",
+	"cdd_s":	"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/CDD_S.pdf#page=",
 	"cdd_q":	"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/CDD_Q.pdf#page=",
 	// Coptic Dictionary Online, ed. by the Koptische/Coptic Electronic Language and Literature International Alliance (KELLIA)
 	"cdo":		"https://coptic-dictionary.org/entry.cgi?tla=",
 	// Černý, Jaroslav (1976) Coptic Etymological Dictionary, Cambridge: Cambridge University Press
 	"cerny":	"",
+	"crum":		"https://coptot.manuscriptroom.com/crum-coptic-dictionary/?docID=800000&pageID=",
 	"lambdin":	"",
 	"vycichl": 	"",
 }
 var SOURCE_NAMES = {
-	"cdd_m":	"<i>CDD</i> M",
-	"cdd_q":	"<i>CDD</i> Q",
+	"cdd_m":	"<i>CDD</i> M",
+	"cdd_s":	"<i>CDD</i> S",
+	"cdd_q":	"<i>CDD</i> Q",
 	"cdo":		"<i>CDO</i>",
 	"cerny":	"<i>ČED</i>",
+	"crum":		"<i>CD</i>",
 	"lambdin":	"Lambdin",
 	"vycichl":	"<i>DELC</i>"
 }
@@ -35,8 +39,10 @@ var SOURCE_PAGE_OFFSETS = {
 // abbreviations in case I forget how to spell their names
 SOURCE_LINKS["ce"] 			= SOURCE_LINKS["cerny"]
 SOURCE_LINKS["vy"] 			= SOURCE_LINKS["vycichl"]
+SOURCE_LINKS["cd"] 			= SOURCE_LINKS["crum"]
 SOURCE_NAMES["ce"] 			= SOURCE_NAMES["cerny"]
 SOURCE_NAMES["vy"] 			= SOURCE_NAMES["vycichl"]
+SOURCE_NAMES["cd"] 			= SOURCE_NAMES["crum"]
 SOURCE_PAGE_OFFSETS["ce"] 	= SOURCE_PAGE_OFFSETS["cerny"]
 SOURCE_PAGE_OFFSETS["vy"]	= SOURCE_PAGE_OFFSETS["vycichl"]
 
@@ -91,6 +97,8 @@ function addDictEntry(key, ce){
 		etymdiv.appendChild( etymtable );
 		
 		var row = etymtable.insertRow();
+		// so that there is not so much empty space beneath the table (its already padded by the outer etymdiv)
+		etymtable.style.marginBottom = "0px";
 		
 		// each item in the etymology gets its own cell
 		for (var i = 0; i < ce.etym.length; i++){
@@ -160,7 +168,7 @@ function doMarkup( instring ){
 	var i = 0;
 	while (i < instring.length) {
 		var substring3 = instring.substring( i, i+3 )
-		// [c][/c] TAG: citation
+		// [c][/c] TAG: CITATION
 		if (substring3 == "[c]"){
 			var tagcloseindex = instring.indexOf("[/c]", i);
 			if (tagcloseindex > -1){
@@ -200,6 +208,37 @@ function doMarkup( instring ){
 			}else{
 				console.log("Error: [c] tag not closed")
 			}
+			
+		// [d][/d] TAG: DEMOTIC TEXT
+		}else if (substring3 == "[d]"){
+			var tagcloseindex = instring.indexOf("[/d]", i);
+			if (tagcloseindex == -1){
+				console.log("Error: [d] tag not closed")
+				i++;
+				continue;
+			}
+			var innertext = instring.substring(i+3, tagcloseindex);
+			outstring = outstring + "<span class=\"demotic\">";
+			outstring = outstring + innertext
+			outstring = outstring + "</span>"
+			
+			i = tagcloseindex + 3;
+			
+		// [h][/h] TAG: HIEROGLYPHIC TEXT
+		}else if (substring3 == "[h]"){
+			var tagcloseindex = instring.indexOf("[/h]", i);
+			if (tagcloseindex == -1){
+				console.log("Error: [h] tag not closed")
+				i++;
+				continue;
+			}
+			var innertext = instring.substring(i+3, tagcloseindex);
+			outstring = outstring + "<span class=\"hiero\">";
+			outstring = outstring + innertext
+			outstring = outstring + "</span>"
+			
+			i = tagcloseindex + 3;
+			
 		// only put characters one by one if there is no tag to deal with
 		}else{
 			outstring = outstring + instring.substring(i, i+1);
