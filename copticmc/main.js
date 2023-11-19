@@ -46,10 +46,84 @@ SOURCE_NAMES["cd"] 			= SOURCE_NAMES["crum"]
 SOURCE_PAGE_OFFSETS["ce"] 	= SOURCE_PAGE_OFFSETS["cerny"]
 SOURCE_PAGE_OFFSETS["vy"]	= SOURCE_PAGE_OFFSETS["vycichl"]
 
+// the page can be specially titled if certain tags are put in
+var PAGETOPTITLES = {
+	"all":					"All words",
+	"block":				"Blocks",
+	"etym-egy": 			"Words of Egyptian origin",
+	"etym-grk": 			"Words of Greek origin",
+	"etym-mod": 			"Words of modern origin",
+	"etym-prs": 			"Words of Persian origin",
+	"etym-sem": 			"Words of Semitic origin",
+	"etym-unk": 			"Words of unknown origin",
+	"item":					"Items",
+	"mob":					"Mobs",
+	"thermalfoundation":	"Thermal Foundation",
+	"vanilla":				"Vanilla Minecraft"
+}
+var PAGETOPDESC		= {
+	"all":			"",
+	"vanilla":		""
+}
+
 var MAINDIV = document.getElementById("maindiv");
 
+const QUERYSTRING = window.location.search;
+const URLPARAMS = new URLSearchParams(QUERYSTRING);
+const TAGSSTRING = URLPARAMS.get('tags')
+CURRENTTAGS = parseTagString( TAGSSTRING )
+
+CURRENTENTRIES = [];
+
+// for every entry, we will see if it matches all the tags being searched
 for (key in ENTRIES) {
 	var ce = ENTRIES[key] // current entry
+	var tagismissing = false;
+	for (var i = 0; i < CURRENTTAGS.length; i++){
+		var ct = CURRENTTAGS[i] // current tag
+		if (ce.tags.indexOf(ct) == -1){
+			tagismissing = true;
+		}
+	}
+	// skip this entry if any of the tags are not present
+	if (tagismissing){
+		continue;
+	}
+	CURRENTENTRIES.push(key);
+}
+
+// add the header at the top of the page
+//var pagetopdiv 	= document.createElement("div");
+//pagetopdiv.setAttribute("class", "titlediv");
+//MAINDIV.appendChild( pagetopdiv );
+
+var pagetopstring = TAGSSTRING;
+if (!TAGSSTRING){
+	pagetopstring = PAGETOPTITLES["all"];
+}
+if (PAGETOPTITLES[ TAGSSTRING ]){
+	pagetopstring = PAGETOPTITLES[ TAGSSTRING ];
+}
+//pagetopdiv.innerHTML = "<h2>Category:　" + pagetopstring + "</h2>";
+
+var pagetopnotes = document.createElement("div");
+pagetopnotes.setAttribute("class", "notesdiv");
+MAINDIV.appendChild( pagetopnotes );
+var pagetopnotesstring = "";
+if (!TAGSSTRING){
+	pagetopnotesstring = PAGETOPDESC["all"];
+}
+if (PAGETOPDESC[ TAGSSTRING ]){
+	pagetopnotesstring += "<br><br>"
+	pagetopnotesstring += PAGETOPDESC[ TAGSSTRING ];
+}
+pagetopnotes.innerHTML = "<b>" + pagetopstring + ": " + CURRENTENTRIES.length + " out of " + Object.keys(ENTRIES).length +  " entries" + pagetopnotesstring
+
+pagetopnotes.innerHTML += "<br><br><b><a href=\"entry.html\"><-- Clear all tags</a></b>"
+
+for (var i = 0; i < CURRENTENTRIES.length; i++){
+	var key = CURRENTENTRIES[i];
+	var ce = ENTRIES[key]
 	addDictEntry(key, ce);
 }
 
@@ -80,7 +154,8 @@ function addDictEntry(key, ce){
 	if (ce.tags.indexOf("unattested") != -1){
 		titlestring += " *";
 	}
-	titlestring += " - " + ce.english + "</h2>";
+	titlestring += " — " + ce.english + "</h2>";
+	titlestring = doMarkup( titlestring );
 	titlediv.innerHTML = titlestring;
 	headerdiv.appendChild( titlediv );
 	
@@ -137,7 +212,8 @@ function addDictEntry(key, ce){
 			// current tag
 			var ctag = ce.tags[i]
 			if (!seentags[ctag]){
-				tagsstring += ce.tags[i] + ", "
+				tagsstring += "<a href=\"?tags=" + ce.tags[i] + "\">"
+				tagsstring += ce.tags[i] + "</a>, "
 				seentags[ctag] = true
 			}
 			// etymology tags color the respective cells in the etymology section
@@ -218,10 +294,11 @@ function doMarkup( instring ){
 				i++;
 				continue;
 			}
+			// also adds em spaces because its too close to the normal text otherwise
 			var innertext = instring.substring(i+3, tagcloseindex);
-			outstring = outstring + "<span class=\"demotic\">";
+			outstring = outstring + " <span class=\"demotic\">";
 			outstring = outstring + innertext
-			outstring = outstring + "</span>"
+			outstring = outstring + "</span> "
 			
 			i = tagcloseindex + 3;
 			
@@ -234,9 +311,25 @@ function doMarkup( instring ){
 				continue;
 			}
 			var innertext = instring.substring(i+3, tagcloseindex);
-			outstring = outstring + "<span class=\"hiero\">";
+			outstring = outstring + " <span class=\"hiero\">";
 			outstring = outstring + innertext
-			outstring = outstring + "</span>"
+			outstring = outstring + "</span> "
+			
+			i = tagcloseindex + 3;
+			
+		// [i][/i] TAG: ITALIC TEXT
+		// (used for bracketed non-bold italic sections in headers)
+		}else if (substring3 == "[i]"){
+			var tagcloseindex = instring.indexOf("[/i]", i);
+			if (tagcloseindex == -1){
+				console.log("Error: [i] tag not closed")
+				i++;
+				continue;
+			}
+			var innertext = instring.substring(i+3, tagcloseindex);
+			outstring = outstring + "<span class=\"notbold\">[<i>";
+			outstring = outstring + innertext
+			outstring = outstring + "</i>]</span>"
 			
 			i = tagcloseindex + 3;
 			
@@ -248,4 +341,22 @@ function doMarkup( instring ){
 	}
 	
 	return outstring;
+}
+
+// simple csv
+function parseTagString(instring){
+	var outtable = [];
+	if (!instring){ return outtable; }
+	var lastcommaindex = 0;
+	for (var i = 0; i < instring.length; i++){
+		var cc = instring.substring(i, i+1);
+		if (cc == ","){
+			outtable.push( instring.substring( lastcommaindex, i ) );
+			// skip the comma itself by adding 1
+			lastcommaindex = i + 1;
+		}
+	}
+	// whatever is remaining after the final comma gets pushed too
+	outtable.push( instring.substring(lastcommaindex) )
+	return outtable;
 }

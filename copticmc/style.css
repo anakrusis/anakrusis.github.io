@@ -82,9 +82,8 @@ img{
 
 @font-face {
   font-family:'EgyptianHiero';
-  src: 
-		url("font/EgyptianHiero4.03.woff") 	format('woff'),
-		url("font/EgyptianHiero4.03.ttf") 	format('truetype'),
+  src: 	url("font/egyptianhiero3.03.woff2") 	format('woff2'),
+		url("font/egyptianhiero3.03.woff") 		format('woff'),
 		unicode-range:U+13000-1342F
 }
 
@@ -113,4 +112,9 @@ img{
   font-size:2em;
   font-variant-ligatures:normal;
 }
+
+.notbold{
+    font-weight:normal;
+	color: #7f7f7f;
+}​
 
