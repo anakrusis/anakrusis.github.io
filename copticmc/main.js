@@ -56,6 +56,7 @@ for (key in ENTRIES) {
 function addDictEntry(key, ce){
 	var outerdiv 	= document.createElement("div");
 	outerdiv.setAttribute("class", "outerdiv");
+	outerdiv.setAttribute("id", key);
 	
 	var headerdiv	= document.createElement("div");
 	

@@ -71,15 +71,18 @@ img{
 
 @font-face {
   font-family: 'dpdp';
-  src: 	url("font/dpdp.woff2")	format("woff2"), 
-		url("font/dpdp.woff")	format("woff"),
+  src:	url("font/dpdp.woff")	format("woff"),
 		url("font/dpdp.ttf") 	format("truetype"),
-		
 }
+@font-face {
+	font-family: "dpdpHiero";
+	src: url("font/dpdp.woff") format("woff");
+	unicode-range: U+13000-1342F, U+143B7, U+14362, U+A723, U+02BE, U+1EC9, U+1EC8, U+A725, U+1018C; //ꜣ ʾ ỉ Ỉ  ꜥ s-etous
+	}
 
 @font-face {
   font-family:'EgyptianHiero';
-  src:	url("font/EgyptianHiero.woff2")		format("woff2"), 
+  src: 
 		url("font/EgyptianHiero4.03.woff") 	format('woff'),
 		url("font/EgyptianHiero4.03.ttf") 	format('truetype'),
 		unicode-range:U+13000-1342F
@@ -93,6 +96,16 @@ img{
   direction: rtl;
   unicode-bidi: bidi-override;
   font-feature-settings: 'ss13' 1;
+}
+.hieroglyphs,
+.hieroglyphs span,
+.hieroglyphs text{
+	display: inline-block;
+	font-family: dpdp, sans-serif;
+	font-feature-settings: 'ss02' 1;
+	direction: rtl;
+	unicode-bidi: bidi-override;
+	letter-spacing: 0;
 }
 
 .hiero {
