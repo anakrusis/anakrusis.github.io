@@ -18,6 +18,7 @@ var SOURCE_LINKS = {
 	"cerny":	"",
 	"crum":		"https://coptot.manuscriptroom.com/crum-coptic-dictionary/?docID=800000&pageID=",
 	"lambdin":	"",
+	"tla":		"https://thesaurus-linguae-aegyptiae.de/lemma/",
 	"vycichl": 	"",
 }
 var SOURCE_NAMES = {
@@ -28,6 +29,7 @@ var SOURCE_NAMES = {
 	"cerny":	"<i>ČED</i>",
 	"crum":		"<i>CD</i>",
 	"lambdin":	"Lambdin",
+	"tla":		"<i>TLA</i>",
 	"vycichl":	"<i>DELC</i>"
 }
 
@@ -63,7 +65,10 @@ var PAGETOPTITLES = {
 }
 var PAGETOPDESC		= {
 	"all":			"",
-	"vanilla":		""
+	"etym-grk":		"This category is for Greek loanwords which were introduced and attested during the productive period of Coptic (and Demotic). For new Greek loanwords, and situations where Greek is one of various modern languages that share a similar word, see the section <a href=\"?tags=etym-mod\">Words of modern origin</a>.",
+	"thermalfoundation":	"Words used in the mod <a href=\"https://teamcofh.com/docs/1.12/thermal-foundation/\">Thermal Foundation</a>.",
+	"not-to-be-translated": "These are words which are on the \"Not to be translated\" list of the <a href=\"https://docs.google.com/spreadsheets/d/1xxDvR2MrPUaxXwNfn-oJX-fBerEsZkfo\">Minecraft Official Glossary</a>.",
+	"vanilla":				"Words used in the base game without mods."
 }
 
 var MAINDIV = document.getElementById("maindiv");
@@ -117,7 +122,7 @@ if (PAGETOPDESC[ TAGSSTRING ]){
 	pagetopnotesstring += "<br><br>"
 	pagetopnotesstring += PAGETOPDESC[ TAGSSTRING ];
 }
-pagetopnotes.innerHTML = "<b>" + pagetopstring + ": " + CURRENTENTRIES.length + " out of " + Object.keys(ENTRIES).length +  " entries" + pagetopnotesstring
+pagetopnotes.innerHTML = "<b>" + pagetopstring + ": " + CURRENTENTRIES.length + " out of " + Object.keys(ENTRIES).length +  " entries" + "</b>" + pagetopnotesstring
 
 pagetopnotes.innerHTML += "<br><br><b><a href=\"entry.html\"><-- Clear all tags</a></b>"
 

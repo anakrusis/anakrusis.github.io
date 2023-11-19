@@ -2,8 +2,8 @@ ENTRIES = {
 	"item.thermalfoundation.material.crystalCrudeOil.name":{
 		"coptic": "ⲁⲙⲣⲏϩⲉ",
 		"english": "Bitumen",
-		"etym": ["< Demotic[d]𓅓𓃭𓄑:𓏛𓇋𓏲𓏌[/d]<i>mrḥe</i> \"asphalt\", < Egyptian [h]𓌻𓂋𓎛𓈒𓏥[/h] <i>mrḥ</i> \"asphalt\" [c]ce-7[/c]"],
-		"notes": "The word ⲁⲙⲣⲏϩⲉ means both “bitumen” and “asphalt” [c]cd-9a[/c][c]lambdin-211[/c]",
+		"etym": ["< Demotic[d]𓅓𓃭𓄑:𓏛𓇋𓏲𓏌[/d]<i>mrḥe</i> \"asphalt\", < Egyptian[h]𓌻𓂋𓎛𓈒𓏥[/h]<i>mrḥ</i> \"asphalt\" [c]ce-7[/c]"],
+		"notes": "The word ⲁⲙⲣⲏϩⲉ means both \"bitumen\" and \"asphalt\" [c]cd-9a[/c][c]lambdin-211[/c]",
 		"tags": [ "etym-egy", "item", "thermalfoundation" ]
 	},
 	"itemGroup.misc": {
@@ -35,6 +35,13 @@ ENTRIES = {
 		"notes": "Černý writes that ⲑⲏⲛ is a Bohairic word, but it appears many times in Sahidic too [c]cd-69a[/c][c]lambdin-291[/c].",
 		"tags": [ "etym-grk", "item", "thermalfoundation" ]
 	},
+	"tile.cactus.name":{
+        "coptic": "ⲕⲁⲕⲧⲟⲥ",
+        "english": "Cactus",
+        "etym": [ "< various languages, all ultimately from Greek κάκτος \"a kind of thistle, cardoon\" (Beekes 620)" ],
+        "notes": "The word κάκτος did not originally refer to cactus as we understand it today (cacti are from the Americas), so this usage of the word is a modern invention. But I think it is still less contrived and more understandable than calquing or coining an unrelated word.<br><br>Compare Armenian կակտուս, Hebrew קקטוס, Latin <i>cactus</i>, Persian کاکتوس, etc.",
+        "tags": [ "block", "etym-mod", "unattested", "vanilla" ]
+    },
 	"entity.Creeper.name": {
 		"coptic":	"ⲕⲣⲓⲡⲉⲣ",
 		"english":	"Creeper",
@@ -52,7 +59,7 @@ ENTRIES = {
 	"tile.flower2.allium.name": {
 		"coptic": "ⲙ̄ϫⲱⲗ ϩⲟⲟⲩⲧ",
 		"english": "Allium",
-		"etym": ["< Demotic[d]𓅓𓍑𓄿4𓃭𓏤𓆰𓏪[/d]<i>mḏl</i> \"onion\", from a Semitic language [c]ce-101[/c][c]vy-132[/c]", "< Demotic[d]𓂺𓍘𓇋2[/d]<i>ḥwṱ</i> \"male\", from Egyptian [h]𓂛𓏲𓏏𓏭[/h]<i>ꜥḥꜣwtj</i> \"fighter\" [c]ce-305[/c][c]vy-319[/c]"],
+		"etym": ["< Demotic[d]𓅓𓍑𓄿4𓃭𓏤𓆰𓏪[/d]<i>mḏl</i> \"onion\", from a Semitic language [c]ce-101[/c][c]vy-132[/c]", "< Demotic[d]𓂺𓍘𓇋2[/d]<i>ḥwṱ</i> \"male\", from Egyptian[h]𓂛𓄿𓅱 ‌𓏏𓏭𓀜[/h]<i>ꜥḥꜣwtj</i> \"fighter\" [c]ce-305[/c][c]vy-319[/c]"],
 		"notes": "Plant names are among the most varied translations in the game, and substitutions are common. Examples: <table><tr><td>Arabic:</td><td>خولنجان</td><td>\"galangal\" (<i>Alpinia officinarum</i> and similar plants in the ginger family <i>Zingiberaceae</i>, not in <i>Allium</i>)</td></tr><tr><td>Armenian:</td><td>սոխ</td><td>\"onion\"</td></tr><tr><td>Asturian:</td><td>Ayu bravu</td><td>\"wild garlic\"</td></tr><tr><td>Chinese:</td><td>绒球花</td><td>literally \"pompom flower\". searching it up returns various unrelated species of flowers that all share a similar shape</td></tr><tr><td>Georgian:</td><td>ხახვი</td><td>\"onion\"</td></tr><tr><td>Greek:</td><td>Άλλιο</td><td>\"allium\" (unadapted borrowing)</td></tr><tr><td>Hebrew:</td><td>שום</td><td>\"garlic\"</td></tr><tr><td>Latin:</td><td>Allium</td><td>\"garlic\" (this is the origin of the <i>Allium</i> genus name)</td></tr></table>I think that this translation ⲙ̄ϫⲱⲗ ϩⲟⲟⲩⲧ, which is literally \"wild onion\", fits in with the rest. It is attested in Demotic as <i>mḏwl hwṱ</i> [c]cdd_m-308[/c] and in Coptic, where it can also be seen with the spelling ⲉⲙϫⲱⲗ ϩⲉⲩⲧ. [c]ce-101[/c]",
 		"tags": [ "block", "etym-sem", "etym-egy", "flower", "vanilla" ]
 	},
@@ -83,5 +90,19 @@ ENTRIES = {
 		"etym": ["< Demotic[d]𓈎𓃭𓎡:𓉔1*𓏏1𓐠𓏤𓏰:𓏛1𓈒:𓏥[/d]<i>qrkhts</i> \"copper ore\", < Greek χαλκῖτις \"containing copper, copper ore\" [c]cdd_q-67[/c]"],
 		"notes": "Also spelled ⲭⲁⲗⲕⲓⲧⲉⲱⲥ, ⲭⲁⲕⲓⲧⲉⲟⲥ, ⲭⲁⲣⲕⲓⲧⲉⲟⲥ [c]cdo-C10928[/c]",
 		"tags": [ "block", "etym-grk", "ore", "thermalfoundation" ]
-	}
+	},
+	"tile.snow.name":{
+        "coptic": "ⲭⲓⲱⲛ",
+        "english": "Snow",
+        "etym": [ "< Greek χιών \"snow\" [c][/c]" ],
+        "notes": "[c]cdo-C10963[/c][c]lambdin-363[/c].<br><br>The older Egyptian word for \"snow\" was[h]𓐠𓏤𓂋𓏤𓈎𓅱𓇲𓏥[/h]<i>srq</i> [c]tla-139820[/c], which was borrowed from a Semitic language. ⲭⲓⲱⲛ appears to have completely replaced it.",
+        "tags": [ "block", "etym-grk", "vanilla" ]
+    },
+	"tile.stone.stone.name":{
+		"coptic": "ⲱⲛⲉ",
+		"english": "Stone",
+		"etym": [ "< Demotic[d]𓇋2𓆛:𓈖𓇋𓇋𓏲𓊌1[/d]<i>ỉny</i> \"stone\", < Egyptian[h]𓇋‌𓈖𓂋‌𓊌[/h]<i></i> \"stone\" [c]ce-228[/c]" ],
+		"notes": "",
+		"tags": [ "block", "etym-egy", "vanilla" ]
+	},
 }
