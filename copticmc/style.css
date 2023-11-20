@@ -43,10 +43,11 @@ img{
 .imgdiv {
 	display: block;
 	width: 128px;
-	height: 128px;
+	height: 100px;
 	text-align: center;
 	float: left;
 	overflow: hidden;
+	padding: 14px 0;
 }
 
 .titlediv {

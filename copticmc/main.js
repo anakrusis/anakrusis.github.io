@@ -8,6 +8,7 @@ var ETYM_COLORS = {
 }
 
 var SOURCE_LINKS = {
+	"aeka": "https://journals.uio.no/actaorientalia/article/view/5256/4598/",
 	// Johnson, Janet H. (2001) The Demotic Dictionary of the Institute for the Study of Ancient Cultures of the University of Chicago
 	"cdd_m": 	"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/CDD_M.pdf#page=",
 	"cdd_s":	"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/CDD_S.pdf#page=",
@@ -17,25 +18,33 @@ var SOURCE_LINKS = {
 	// Černý, Jaroslav (1976) Coptic Etymological Dictionary, Cambridge: Cambridge University Press
 	"cerny":	"",
 	"crum":		"https://coptot.manuscriptroom.com/crum-coptic-dictionary/?docID=800000&pageID=",
+	"dpdp":		"http://129.206.5.162/beta/palaeography/palaeography.html?q=tla:",
 	"lambdin":	"",
+	"sawy":		"https://d-nb.info/1274430623/34#page=",
 	"tla":		"https://thesaurus-linguae-aegyptiae.de/lemma/",
+	"two":		"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/saoc45.pdf#page=",
 	"vycichl": 	"",
 }
 var SOURCE_NAMES = {
+	"aeka":		"Erichsen",
 	"cdd_m":	"<i>CDD</i> M",
 	"cdd_s":	"<i>CDD</i> S",
 	"cdd_q":	"<i>CDD</i> Q",
 	"cdo":		"<i>CDO</i>",
 	"cerny":	"<i>ČED</i>",
 	"crum":		"<i>CD</i>",
+	"dpdp":		"<i>DPDP</i>",
 	"lambdin":	"Lambdin",
+	"sawy":		"Sawy",
 	"tla":		"<i>TLA</i>",
+	"two":		"<i>TWO</i>",
 	"vycichl":	"<i>DELC</i>"
 }
 
 // when citing a page number , but linking to the document the page number is different
 var SOURCE_PAGE_OFFSETS = {
-	/* "cerny":	21 */
+	"sawy": 3,
+	"two":	6
 }
 
 // abbreviations in case I forget how to spell their names
@@ -65,9 +74,10 @@ var PAGETOPTITLES = {
 }
 var PAGETOPDESC		= {
 	"all":			"",
+	"etym-egy":		"This category is for words whose predecessors are certainly attested in earlier stages of the Egyptian language. Only a Demotic predecessor attested is not enough to assert a word's origin, as there are lots of Semitic loanwords and even some Greek loanwords, and foreign words are not as distinctly marked as with the earlier group writing.",
 	"etym-grk":		"This category is for Greek loanwords which were introduced and attested during the productive period of Coptic (and Demotic). For new Greek loanwords, and situations where Greek is one of various modern languages that share a similar word, see the section <a href=\"?tags=etym-mod\">Words of modern origin</a>.",
 	"thermalfoundation":	"Words used in the mod <a href=\"https://teamcofh.com/docs/1.12/thermal-foundation/\">Thermal Foundation</a>.",
-	"not-to-be-translated": "These are words which are on the \"Not to be translated\" list of the <a href=\"https://docs.google.com/spreadsheets/d/1xxDvR2MrPUaxXwNfn-oJX-fBerEsZkfo\">Minecraft Official Glossary</a>.",
+	"not-to-be-translated": "Words which are on fully or partially on the \"Not to be translated\" list of the <a href=\"https://docs.google.com/spreadsheets/d/1xxDvR2MrPUaxXwNfn-oJX-fBerEsZkfo\">Minecraft Official Glossary</a>.",
 	"vanilla":				"Words used in the base game without mods."
 }
 
@@ -154,14 +164,8 @@ function addDictEntry(key, ce){
 	// ENTRY TITLE
 	var titlediv	= document.createElement("div");
 	titlediv.setAttribute("class","titlediv");
-	var titlestring = "<h2>" + ce.coptic;
-	// if the word is unattested then put an asterisk beside the name
-	if (ce.tags.indexOf("unattested") != -1){
-		titlestring += " *";
-	}
-	titlestring += " — " + ce.english + "</h2>";
-	titlestring = doMarkup( titlestring );
-	titlediv.innerHTML = titlestring;
+	var titlestring = getEntryTitle( ce )
+	titlediv.innerHTML = "<h2>" + titlestring + "</h2>";
 	headerdiv.appendChild( titlediv );
 	
 	outerdiv.appendChild( headerdiv );
@@ -269,7 +273,11 @@ function doMarkup( instring ){
 					
 					// generates a link and sets it to the right page if it can
 					if (SOURCE_LINKS[citationname]){
-						/* var offset = SOURCE_PAGE_OFFSETS[citationname] ? SOURCE_PAGE_OFFSETS[citationname] : 0; */
+						// add an offset onto the page number only if the page number is a number and an offset exists
+						if (typeof(parseInt(citationpage)) == "number" && SOURCE_PAGE_OFFSETS[citationname]){
+							var num = parseInt(citationpage)
+							citationpage = num + SOURCE_PAGE_OFFSETS[citationname];
+						}
 						
 						outstring = outstring + "<a href=\""
 						outstring = outstring + SOURCE_LINKS[citationname]
@@ -301,9 +309,9 @@ function doMarkup( instring ){
 			}
 			// also adds em spaces because its too close to the normal text otherwise
 			var innertext = instring.substring(i+3, tagcloseindex);
-			outstring = outstring + " <span class=\"demotic\">";
-			outstring = outstring + innertext
-			outstring = outstring + "</span> "
+			outstring += " <span class=\"demotic\">";
+			outstring += innertext
+			outstring += "</span> "
 			
 			i = tagcloseindex + 3;
 			
@@ -316,9 +324,9 @@ function doMarkup( instring ){
 				continue;
 			}
 			var innertext = instring.substring(i+3, tagcloseindex);
-			outstring = outstring + " <span class=\"hiero\">";
-			outstring = outstring + innertext
-			outstring = outstring + "</span> "
+			outstring += " <span class=\"hiero\">";
+			outstring += innertext
+			outstring += "</span> "
 			
 			i = tagcloseindex + 3;
 			
@@ -332,10 +340,32 @@ function doMarkup( instring ){
 				continue;
 			}
 			var innertext = instring.substring(i+3, tagcloseindex);
-			outstring = outstring + "<span class=\"notbold\">[<i>";
-			outstring = outstring + innertext
-			outstring = outstring + "</i>]</span>"
+			outstring += "<span class=\"notbold\">[<i>";
+			outstring += innertext
+			outstring += "</i>]</span>"
 			
+			i = tagcloseindex + 3;
+			
+		// [r][/r] TAG: REFERENCE TO ANOTHER ENTRY
+		// inner text should be a valid key 
+		}else if (substring3 == "[r]"){
+			var tagcloseindex = instring.indexOf("[/r]", i);
+			if (tagcloseindex == -1){
+				console.log("Error: [r] tag not closed")
+				i++;
+				continue;
+			}
+			var innertext = instring.substring(i+3, tagcloseindex);
+			if (!ENTRIES[ innertext ]){
+				console.log("Error: invalid reference to entry")
+				i++;
+				continue;
+			}
+			if (CURRENTENTRIES.indexOf( innertext ) > -1){
+				outstring += "<b><a href=\"#" + innertext + "\">"
+				outstring += getEntryTitle( ENTRIES[innertext] )
+				outstring += "</a></b>"
+			}
 			i = tagcloseindex + 3;
 			
 		// only put characters one by one if there is no tag to deal with
@@ -364,4 +394,15 @@ function parseTagString(instring){
 	// whatever is remaining after the final comma gets pushed too
 	outtable.push( instring.substring(lastcommaindex) )
 	return outtable;
+}
+
+function getEntryTitle( ce ){
+	var titlestring =  ce.coptic;
+	// if the word is unattested then put an asterisk beside the name
+	if (ce.tags.indexOf("unattested") != -1){
+		titlestring += " *";
+	}
+	titlestring += " — " + ce.english;
+	titlestring = doMarkup( titlestring );
+	return titlestring;
 }

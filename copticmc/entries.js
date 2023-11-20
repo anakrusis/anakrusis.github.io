@@ -3,7 +3,7 @@ ENTRIES = {
 		"coptic": "ⲁⲙⲣⲏϩⲉ",
 		"english": "Bitumen",
 		"etym": ["< Demotic[d]𓅓𓃭𓄑:𓏛𓇋𓏲𓏌[/d]<i>mrḥe</i> \"asphalt\", < Egyptian[h]𓌻𓂋𓎛𓈒𓏥[/h]<i>mrḥ</i> \"asphalt\" [c]ce-7[/c]"],
-		"notes": "The word ⲁⲙⲣⲏϩⲉ means both \"bitumen\" and \"asphalt\" [c]cd-9a[/c][c]lambdin-211[/c]",
+		"notes": "The word ⲁⲙⲣⲏϩⲉ means both \"bitumen\" and \"asphalt\" [c]cd-9a[/c][c]lambdin-211[/c].<br><br>There is also a Greek loanword ⲁⲥⲫⲁⲗⲧⲟⲛ of the same meaning [c]cdo-C8519[/c]. It appears in medical texts such as P. Sarga 20 [c]sawy-144[/c] and Ch 118 [c]sawy-162[/c].",
 		"tags": [ "etym-egy", "item", "thermalfoundation" ]
 	},
 	"itemGroup.misc": {
@@ -40,13 +40,13 @@ ENTRIES = {
         "english": "Cactus",
         "etym": [ "< various languages, all ultimately from Greek κάκτος \"a kind of thistle, cardoon\" (Beekes 620)" ],
         "notes": "The word κάκτος did not originally refer to cactus as we understand it today (cacti are from the Americas), so this usage of the word is a modern invention. But I think it is still less contrived and more understandable than calquing or coining an unrelated word.<br><br>Compare Armenian կակտուս, Hebrew קקטוס, Latin <i>cactus</i>, Persian کاکتوس, etc.",
-        "tags": [ "block", "etym-mod", "unattested", "vanilla" ]
+        "tags": [ "block", "etym-mod", "plant", "unattested", "vanilla" ]
     },
 	"entity.Creeper.name": {
 		"coptic":	"ⲕⲣⲓⲡⲉⲣ",
 		"english":	"Creeper",
 		"etym":	["< proper name <i>Creeper</i>"],
-		"notes": "On the “Not to be translated” list of the Minecraft Official Glossary.<br><br>If this name existed in Coptic during its productive period, it would probably be spelled with all sorts of variations like ⲕⲣⲉⲓⲡⲉⲣ, ⲕⲣⲓⲡⲣ̄, etc.",
+		"notes": "On the “Not to be translated” list of the Minecraft Official Glossary.",
 		"tags": [ "etym-mod", "mob", "not-to-be-translated", "unattested", "vanilla" ]
 	},
 	"generic.Birch.name": {
@@ -54,15 +54,29 @@ ENTRIES = {
 		"english": "White Poplar (\"Birch\")",
 		"etym": ["< Greek λεύκη \"white poplar\""],
 		"notes": "[c]cdo-C9617[/c].<br><br>Plant names are among the most varied translations in the game, and substitutions are common. As I could not find a word for the birch tree attested in Coptic, I substituted a different kind of tree. The white poplar (<i>Populus alba</i>) has very similar white bark with black markings, and its wood is similarly \"white... with a slightly yellowish color\".<br><br>This word appears in Hosea 4:13 in the same sentence as ⲥⲉⲓ - Oak. It also appears in Isaiah 41:19.",
-		"tags": [ "etym-grk", "generic-material", "tree", "vanilla" ]
+		"tags": [ "etym-grk", "generic-material", "plant", "tree", "vanilla" ]
 	},
 	"tile.flower2.allium.name": {
 		"coptic": "ⲙ̄ϫⲱⲗ ϩⲟⲟⲩⲧ",
 		"english": "Allium",
-		"etym": ["< Demotic[d]𓅓𓍑𓄿4𓃭𓏤𓆰𓏪[/d]<i>mḏl</i> \"onion\", from a Semitic language [c]ce-101[/c][c]vy-132[/c]", "< Demotic[d]𓂺𓍘𓇋2[/d]<i>ḥwṱ</i> \"male\", from Egyptian[h]𓂛𓄿𓅱 ‌𓏏𓏭𓀜[/h]<i>ꜥḥꜣwtj</i> \"fighter\" [c]ce-305[/c][c]vy-319[/c]"],
+		"etym": ["< Demotic[d]𓅓𓍑𓄿4𓃭𓏤𓆰𓏪[/d]<i>mḏl</i> \"onion\", from a Semitic language [c]ce-101[/c][c]vy-132[/c]", "< Demotic[d]𓂺𓍘𓇋2[/d]<i>ḥwṱ</i> \"male\", from Egyptian[h]𓂛𓄿𓅱‌𓏏𓏭𓀜[/h]<i>ꜥḥꜣwtj</i> \"fighter\" [c]ce-305[/c][c]vy-319[/c]"],
 		"notes": "Plant names are among the most varied translations in the game, and substitutions are common. Examples: <table><tr><td>Arabic:</td><td>خولنجان</td><td>\"galangal\" (<i>Alpinia officinarum</i> and similar plants in the ginger family <i>Zingiberaceae</i>, not in <i>Allium</i>)</td></tr><tr><td>Armenian:</td><td>սոխ</td><td>\"onion\"</td></tr><tr><td>Asturian:</td><td>Ayu bravu</td><td>\"wild garlic\"</td></tr><tr><td>Chinese:</td><td>绒球花</td><td>literally \"pompom flower\". searching it up returns various unrelated species of flowers that all share a similar shape</td></tr><tr><td>Georgian:</td><td>ხახვი</td><td>\"onion\"</td></tr><tr><td>Greek:</td><td>Άλλιο</td><td>\"allium\" (unadapted borrowing)</td></tr><tr><td>Hebrew:</td><td>שום</td><td>\"garlic\"</td></tr><tr><td>Latin:</td><td>Allium</td><td>\"garlic\" (this is the origin of the <i>Allium</i> genus name)</td></tr></table>I think that this translation ⲙ̄ϫⲱⲗ ϩⲟⲟⲩⲧ, which is literally \"wild onion\", fits in with the rest. It is attested in Demotic as <i>mḏwl hwṱ</i> [c]cdd_m-308[/c] and in Coptic, where it can also be seen with the spelling ⲉⲙϫⲱⲗ ϩⲉⲩⲧ. [c]ce-101[/c]",
-		"tags": [ "block", "etym-sem", "etym-egy", "flower", "vanilla" ]
+		"tags": [ "block", "etym-sem", "etym-egy", "flower", "plant", "vanilla" ]
 	},
+	"entity.Villager.name": {
+		"coptic":	"ⲣⲙ̄ⲛ̄ϯⲙⲉ",
+		"english":	"Villager",
+		"etym":	["< Demotic[d]𓂋:𓍿𓀀𓏪𓈖2:𓂧𓏇2𓏤𓏰:𓊖[/d]<i>rmṯ n tmy</i> \"local (man)\" [c]two-10[/c], which is:<table><tr><td>[d]𓂋:𓍿𓀀𓏪[/d]<i>rmṯ</i> \"human\" < Egyptian[h]𓂋𓍿𓀀[/h]<i>rmṯ</i> \"human\" [c]ce-136[/c]</td><td>[d]𓂧𓏇2𓏤𓏰:𓊖[/d]<i>tmy</i> \"town, village\" < Egyptian[h]𓂧𓏇𓇋𓈅𓏤[/h]<i>dmj</i> \"locality\" [c]ce-187[/c]</td></tr></table>"],
+		"notes": "Lambdin lists this word as ⲣⲙ̄ϯⲙⲉ [c]lambdin-283[/c] but ⲣⲙ̄ⲛ̄ϯⲙⲉ is the more common spelling as far as I have seen.",
+		"tags": [ "etym-egy", "mob", "vanilla" ]
+	},
+	"tile.tallgrass.name":{
+        "coptic": "ⲥⲓⲙ",
+        "english": "Grass",
+        "etym": [ "< Demotic[d]𓋴𓅓𓄧𓆰𓏪[/d]<i>sm</i> \"herbs\", < Egyptian[h]𓋴𓇐𓅓𓆰𓏥[/h]<i>smw</i> \"herbs\" [c]ce-152[/c]" ],
+        "notes": "",
+        "tags": [ "block", "etym-egy", "plant", "vanilla" ]
+    },
 	"tile.cloth.name":{
 		"coptic": "ⲥⲟⲣⲧ",
 		"english": "Wool",
@@ -94,7 +108,7 @@ ENTRIES = {
 	"tile.snow.name":{
         "coptic": "ⲭⲓⲱⲛ",
         "english": "Snow",
-        "etym": [ "< Greek χιών \"snow\" [c][/c]" ],
+        "etym": [ "< Greek χιών \"snow\"" ],
         "notes": "[c]cdo-C10963[/c][c]lambdin-363[/c].<br><br>The older Egyptian word for \"snow\" was[h]𓐠𓏤𓂋𓏤𓈎𓅱𓇲𓏥[/h]<i>srq</i> [c]tla-139820[/c], which was borrowed from a Semitic language. ⲭⲓⲱⲛ appears to have completely replaced it.",
         "tags": [ "block", "etym-grk", "vanilla" ]
     },
@@ -105,4 +119,25 @@ ENTRIES = {
 		"notes": "",
 		"tags": [ "block", "etym-egy", "vanilla" ]
 	},
+	"tile.stoneMoss.name":{
+		"coptic": "ⲱⲛⲉ ⲛ̄ⲗⲏⲭⲏ",
+		"english": "Moss Stone",
+		"etym": [ "See [r]tile.stone.stone.name[/r]", "< Greek λειχήν \"tree-moss, lichen\"" ],
+		"notes": "The word ⲗⲏⲭⲏ means \"lichen\" or \"tree-moss\". [c]cdo-C9626[/c]. It is used in the medical text P. Carlsberg 500, where ⲗⲏⲭⲏ ⲙ̄ⲡⲏⲥⲓⲥⲏⲣⲁⲥ is an ingredient in a remedy for psora / itch. The second word, in some way describing the lichen / moss, is interesting. When Erichsen published the text in \"Aus einem koptischen Arzneibuch\", <i>Acta Orientalia</i> vol. 27 (1962), the translation was given as <i>Pech(artige) Flechte</i> \"Pitch(-like) lichen\" and connected to Greek πέσσειν [c]aeka-33[/c]. Sawy instead reads it as \"Cooked lichen\" [c]sawy-324[/c].",
+		"tags": [ "block", "etym-egy", "etym-grk", "vanilla" ]
+	},
+	"generic.Acacia.name": {
+		"coptic": "ϣⲟⲛⲧⲉ",
+		"english": "Acacia",
+		"etym": [ "< Demotic[d]𓍴𓈖:𓈖:𓏏*𓏰𓏏:°𓆰𓏪𓏏[/d]<i>šnt.t</i> \"thorn tree (<i>Acacia nilotica</i>)\", < Egyptian[h]𓍲𓈖𓆓𓏏𓆭[/h]<i>šnḏt</i> (same meaning) [c]ce-247[/c][c]dpdp-d6087[/c][c]tla-156510[/c]"],
+		"notes": "",
+		"tags": [ "etym-egy", "generic-material", "plant", "vanilla" ]
+	},
+	"item.apple.name": {
+		"coptic": "ϫⲉⲙⲡⲉϩ",
+		"english": "Apple",
+		"etym": [ "< Demotic[d]𓍑𓄿4𓅓𓊪1𓄑:𓏛@𓆰𓏪[/d]<i>ḏmpḥ</i>,[d]𓍑𓄿4𓊪1𓐍:𓏭𓆰𓏪[/d]<i>ḏpḫ</i> \"apple\", < Late Egyptian[h]𓆓𓊪𓎛𓏲𓆰[/h]<i>ḏpḥ</i> \"apple\", from a Semitic language [c]ce-314[/c][c]tla-183730[/c]"],
+		"notes": "",
+		"tags": [ "etym-sem", "food", "item", "vanilla" ]
+	}
 }
