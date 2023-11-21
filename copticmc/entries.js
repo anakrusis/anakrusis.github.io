@@ -1,4 +1,26 @@
 ENTRIES = {
+	"tile.oreIron.name":{
+		"coptic": "?",
+		"english": "Iron Ore",
+		"etym": [],
+		"notes": "There are several different types of iron ores with distinct names:<br><br><b>Hematite: </b> It is attested in numerous Coptic medical texts with spelling variations such as ϣⲉϯⲛⲉϩ [c]sawy-46, 55, 106[/c][c]richter-519[/c], ϣⲁⲧⲁⲛϩ [c]sawy-108[/c], ⲁϣϣⲉⲧⲓⲛⲁϩ [c]richter-520[/c], etc. ( < Arabic الشادنه ) <br><br><b>Magnetite: </b>It is attested in Demotic with spelling variations such as[d]𓅓𓉻:𓂝*𓏛𓎡:𓈖:𓏌*𓏲𓇋𓏲𓐠𓏤𓏰:𓏛𓈒[/d]<i>mꜥknes</i>,[d]𓅓𓉻:𓂝*𓏛𓎡𓈖:𓏌*𓏲𓇋𓏲𓐠𓏤𓏰:𓏛𓇋𓇋𓏲𓉻:𓂝*𓏛𓈒[/d]<i>mꜥknesyꜥ</i>,[d]𓅓𓉻:𓂝*𓏛𓈖:𓏌*𓏲𓇋𓏲𓐠𓏤𓏰:𓏛𓈒[/d]<i>mꜥnes</i> ( < Greek μάγνης, μαγνησία, μαγνῆτις λίθος ) [c]cdd_m-62[/c].",
+		"tags": [ "block", "ore", "untranslated", "vanilla" ]
+	},
+	"death.attack.generic":{
+		"coptic": "ⲁ[i]player[/i] ⲙⲟⲩ",
+		"english": "[i]player[/i] died",
+		"etym": [ "< Demotic[d]𓅓:𓏏𓀐[/d]<i>mwt</i> \"die\", < Egyptian[h]𓅓‌𓏏‌𓀐[/h]<i>m(w)t</i> \"die\" [c]ce-79[/c]" ],
+		"img": "none",
+		"tags": [ "death-message", "etym-egy", "ui", "vanilla" ]
+	},
+	"death.attack.starve":{
+		"coptic": "ⲁ[i]player[/i] ⲙⲟⲩ ϩⲙ̄ⲡⲉϩⲕⲟ",
+		"english": "[i]player[/i] starved to death",
+		"etym": [ "See [r]death.attack.generic[/r]", "See [r]effect.hunger[/r]" ],
+		"img": "none",
+		"notes": "Compare: ⲛⲉⲩϣⲏⲣⲉ ⲙⲛ̄ⲛⲉⲩϣⲉⲉⲣⲉ ⲥⲉⲛⲁⲙⲟⲩ ϩⲙ̄ⲡⲉϩⲕⲟ \"Their sons and daughters will die of starvation\" (Jeremiah 11:22).",
+		"tags": [ "death-message", "etym-egy", "etym-egy", "ui", "vanilla" ]
+	},
 	"item.thermalfoundation.material.crystalCrudeOil.name":{
 		"coptic": "ⲁⲙⲣⲏϩⲉ",
 		"english": "Bitumen",
@@ -39,7 +61,7 @@ ENTRIES = {
         "coptic": "ⲕⲁⲕⲧⲟⲥ",
         "english": "Cactus",
         "etym": [ "< various languages, all ultimately from Greek κάκτος \"a kind of thistle, cardoon\" (Beekes 620)" ],
-        "notes": "The word κάκτος did not originally refer to cactus as we understand it today (cacti are from the Americas), so this usage of the word is a modern invention. But I think it is still less contrived and more understandable than calquing or coining an unrelated word.<br><br>Compare Armenian կակտուս, Hebrew קקטוס, Latin <i>cactus</i>, Persian کاکتوس, etc.",
+        "notes": "The word κάκτος did not originally refer to cactus as we understand it today (cacti are from the Americas), so this usage of the word is a modern invention.<br><br>Compare Armenian կակտուս, Hebrew קקטוס, Latin <i>cactus</i>, Persian کاکتوس, etc. One notable exception is Arabic صبار, which is derived from صبر \"aloe\" (whence also Coptic ⲥⲁⲡⲣ̄ \"aloe juice\", attested several times in P. Louvre AF 12530 [c]sawy-98, 129, 130[/c])",
         "tags": [ "block", "etym-mod", "plant", "unattested", "vanilla" ]
     },
 	"entity.Creeper.name": {
@@ -67,7 +89,7 @@ ENTRIES = {
 		"coptic":	"ⲣⲙ̄ⲛ̄ϯⲙⲉ",
 		"english":	"Villager",
 		"etym":	["< Demotic[d]𓂋:𓍿𓀀𓏪𓈖2:𓂧𓏇2𓏤𓏰:𓊖[/d]<i>rmṯ n tmy</i> \"local (man)\" [c]two-10[/c], which is:<table><tr><td>[d]𓂋:𓍿𓀀𓏪[/d]<i>rmṯ</i> \"human\" < Egyptian[h]𓂋𓍿𓀀[/h]<i>rmṯ</i> \"human\" [c]ce-136[/c]</td><td>[d]𓂧𓏇2𓏤𓏰:𓊖[/d]<i>tmy</i> \"town, village\" < Egyptian[h]𓂧𓏇𓇋𓈅𓏤[/h]<i>dmj</i> \"locality\" [c]ce-187[/c]</td></tr></table>"],
-		"notes": "Lambdin lists this word as ⲣⲙ̄ϯⲙⲉ [c]lambdin-283[/c] but ⲣⲙ̄ⲛ̄ϯⲙⲉ is the more common spelling as far as I have seen.",
+		"notes": "Lambdin lists this word as ⲣⲙ̄ϯⲙⲉ [c]lambdin-283[/c] but ⲣⲙ̄ⲛ̄ϯⲙⲉ is the more common and usual spelling.",
 		"tags": [ "etym-egy", "mob", "vanilla" ]
 	},
 	"tile.tallgrass.name":{
@@ -105,6 +127,14 @@ ENTRIES = {
 		"notes": "Also spelled ⲭⲁⲗⲕⲓⲧⲉⲱⲥ, ⲭⲁⲕⲓⲧⲉⲟⲥ, ⲭⲁⲣⲕⲓⲧⲉⲟⲥ [c]cdo-C10928[/c]",
 		"tags": [ "block", "etym-grk", "ore", "thermalfoundation" ]
 	},
+	"itemGroup.brewing":{
+        "coptic": "ⲫⲁⲣⲙⲁⲕⲓⲁ",
+        "english": "Brewing",
+        "etym": [ "< Greek φαρμακεία \"use of drugs (esp. of purgatives); witchcraft\"" ],
+		"img": "item.minecraft.potion",
+        "notes": "One of the tabs in the Creative menu in 1.12.<br><br>\"Potion-brewing, witchery\" [c]cdo-C10839[/c].",
+        "tags": [ "etym-grk", "ui", "vanilla" ]
+    },
 	"tile.snow.name":{
         "coptic": "ⲭⲓⲱⲛ",
         "english": "Snow",
@@ -123,7 +153,7 @@ ENTRIES = {
 		"coptic": "ⲱⲛⲉ ⲛ̄ⲗⲏⲭⲏ",
 		"english": "Moss Stone",
 		"etym": [ "See [r]tile.stone.stone.name[/r]", "< Greek λειχήν \"tree-moss, lichen\"" ],
-		"notes": "The word ⲗⲏⲭⲏ means \"lichen\" or \"tree-moss\". [c]cdo-C9626[/c]. It is used in the medical text P. Carlsberg 500, where ⲗⲏⲭⲏ ⲙ̄ⲡⲏⲥⲓⲥⲏⲣⲁⲥ is an ingredient in a remedy for psora / itch. The second word, in some way describing the lichen / moss, is interesting. When Erichsen published the text in \"Aus einem koptischen Arzneibuch\", <i>Acta Orientalia</i> vol. 27 (1962), the translation was given as <i>Pech(artige) Flechte</i> \"Pitch(-like) lichen\" and connected to Greek πέσσειν [c]aeka-33[/c]. Sawy instead reads it as \"Cooked lichen\" [c]sawy-324[/c].",
+		"notes": "The word ⲗⲏⲭⲏ means \"lichen\" or \"tree-moss\". [c]cdo-C9626[/c]. It is used in the medical text P. Carlsberg 500, where ⲗⲏⲭⲏ ⲙ̄ⲡⲏⲥⲓⲥⲏⲣⲁⲥ is an ingredient in a remedy for psora / itch. The second word, in some way describing the lichen / moss, is interesting. Erichsen in \"Aus einem koptischen Arzneibuch\", <i>Acta Orientalia</i> vol. 27 (1962) gave the translation <i>Pech(artige) Flechte</i> \"Pitch(-like) lichen\" and connected it to Greek πέσσειν [c]aeka-33[/c]. Sawy instead translates it as \"Cooked lichen\" [c]sawy-324[/c].",
 		"tags": [ "block", "etym-egy", "etym-grk", "vanilla" ]
 	},
 	"generic.Acacia.name": {
@@ -132,6 +162,13 @@ ENTRIES = {
 		"etym": [ "< Demotic[d]𓍴𓈖:𓈖:𓏏*𓏰𓏏:°𓆰𓏪𓏏[/d]<i>šnt.t</i> \"thorn tree (<i>Acacia nilotica</i>)\", < Egyptian[h]𓍲𓈖𓆓𓏏𓆭[/h]<i>šnḏt</i> (same meaning) [c]ce-247[/c][c]dpdp-d6087[/c][c]tla-156510[/c]"],
 		"notes": "",
 		"tags": [ "etym-egy", "generic-material", "plant", "vanilla" ]
+	},
+	"effect.hunger": {
+		"coptic": "ϩⲕⲟ",
+		"english": "Hunger",
+		"etym": [ "< Demotic[d]𓎛𓈎𓃭𓈒:𓏥𓀐[/d]<i>ḥqr</i> \"hunger\", < Egyptian[h]𓎛𓈎𓂋𓀁[/h]<i>ḥqr</i> \"hunger, famine\" [c]ce-277[/c]" ],
+		"notes": "",
+		"tags": [ "etym-egy", "status-effect", "vanilla" ]
 	},
 	"item.apple.name": {
 		"coptic": "ϫⲉⲙⲡⲉϩ",

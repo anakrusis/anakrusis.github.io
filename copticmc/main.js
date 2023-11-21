@@ -20,6 +20,7 @@ var SOURCE_LINKS = {
 	"crum":		"https://coptot.manuscriptroom.com/crum-coptic-dictionary/?docID=800000&pageID=",
 	"dpdp":		"http://129.206.5.162/beta/palaeography/palaeography.html?q=tla:",
 	"lambdin":	"",
+	"richter":  "https://archiv.ub.uni-heidelberg.de/propylaeumdok/4629/1/Richter_Borrowing_into_Coptic_2017.pdf#page=",
 	"sawy":		"https://d-nb.info/1274430623/34#page=",
 	"tla":		"https://thesaurus-linguae-aegyptiae.de/lemma/",
 	"two":		"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/saoc45.pdf#page=",
@@ -35,6 +36,7 @@ var SOURCE_NAMES = {
 	"crum":		"<i>CD</i>",
 	"dpdp":		"<i>DPDP</i>",
 	"lambdin":	"Lambdin",
+	"richter":	"Richter",
 	"sawy":		"Sawy",
 	"tla":		"<i>TLA</i>",
 	"two":		"<i>TWO</i>",
@@ -43,6 +45,7 @@ var SOURCE_NAMES = {
 
 // when citing a page number , but linking to the document the page number is different
 var SOURCE_PAGE_OFFSETS = {
+	"richter": -512,
 	"sawy": 3,
 	"two":	6
 }
@@ -61,6 +64,7 @@ SOURCE_PAGE_OFFSETS["vy"]	= SOURCE_PAGE_OFFSETS["vycichl"]
 var PAGETOPTITLES = {
 	"all":					"All words",
 	"block":				"Blocks",
+	"death-message":		"Death messages",
 	"etym-egy": 			"Words of Egyptian origin",
 	"etym-grk": 			"Words of Greek origin",
 	"etym-mod": 			"Words of modern origin",
@@ -82,6 +86,10 @@ var PAGETOPDESC		= {
 }
 
 var MAINDIV = document.getElementById("maindiv");
+// the outermost div is usually 75% width, but it looks better on a phone in portrait mode at 95% width, so this simply detects
+if (window.innerWidth < window.innerHeight){
+	MAINDIV.style.width = "95%";
+}
 
 const QUERYSTRING = window.location.search;
 const URLPARAMS = new URLSearchParams(QUERYSTRING);
@@ -153,13 +161,16 @@ function addDictEntry(key, ce){
 	var imgdiv		= document.createElement("div");
 	// the image defaults to the same name as the entry key
 	// but can be otherwise specified with the "img" attribute
+	// no image can be specified with the string "none"
 	var imgsrc = key;
 	if (ce.img) {
 		imgsrc = ce.img;
 	}
-	imgdiv.setAttribute("class","imgdiv");
-	imgdiv.innerHTML = "<img src='img/" + imgsrc + ".png'>"
-	headerdiv.appendChild( imgdiv );
+	if (imgsrc != "none"){
+		imgdiv.setAttribute("class","imgdiv");
+		imgdiv.innerHTML = "<img src='img/" + imgsrc + ".png'>"
+		headerdiv.appendChild( imgdiv );
+	}
 	
 	// ENTRY TITLE
 	var titlediv	= document.createElement("div");
@@ -173,7 +184,7 @@ function addDictEntry(key, ce){
 	// ENTRY ETYMOLOGY
 	// these will be colored later by tags so keep them in higher scope
 	var etymcells = [];
-	if (ce.etym.length > 0) {
+	if (ce.etym && ce.etym.length > 0) {
 		var etymdiv		= document.createElement("div");
 		etymdiv.setAttribute("class","etymdiv");
 		etymdiv.innerHTML = "<b>Etymology:</b><br>"		
@@ -365,6 +376,10 @@ function doMarkup( instring ){
 				outstring += "<b><a href=\"#" + innertext + "\">"
 				outstring += getEntryTitle( ENTRIES[innertext] )
 				outstring += "</a></b>"
+			}else{
+				outstring += "<b>"
+				outstring += getEntryTitle( ENTRIES[innertext] )
+				outstring += "</b>"
 			}
 			i = tagcloseindex + 3;
 			
