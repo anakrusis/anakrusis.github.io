@@ -1,9 +1,16 @@
 ENTRIES = {
+	"tile.stone.granite.name":{
+		"coptic": "?",
+		"english": "Granite",
+		"etym": [],
+		"notes": "It is attested in earlier Egyptian as[h]𓌳𓍿𓎶[/h]<i>mꜣṯ</i> \"granite\" [c]tla-67580[/c], also the phrase[h]𓇋𓈖𓂋𓊌𓈖𓌳𓄿𓏏𓎶[/h]<i>jnr n mꜣṯ</i> \"granite stone\" [c]tla-650034[/c]. To my knowledge this word does not survive into Demotic nor Coptic.<br><br>In the Demotic dream handbook Papyrus Berlin P. 8769 (Trismegistos 55958) there is the phrase <i>ỉny km n Yb</i> \"black stone (i.e., granite) of Elephantine\" [c]cdd_i-164[/c]. The first part survives as Coptic ⲁⲛⲓⲕⲁⲙ but has other non-granite-related meanings \"copper sulfate, copper vitriol\" [c]cdd_i-163[/c][c]ce-9[/c].<br><br>The Rosetta Stone is made of granodiorite, which is between granite and diorite in composition, and is referred to itself in the text as simply [d]𓇋𓆛:𓈖𓇋𓇋𓏲𓊌1 𓍑𓃭𓇋𓇋𓏲𓏴:𓂡1[/d]<i>ỉny ḏry</i> \"hard stone\" [c]cdd_i-164[/c].",
+		"tags": [ "block", "no-descendant", "untranslated", "vanilla" ]
+	},
 	"tile.oreIron.name":{
 		"coptic": "?",
 		"english": "Iron Ore",
 		"etym": [],
-		"notes": "There are several different types of iron ores with distinct names:<br><br><b>Hematite: </b> It is attested in numerous Coptic medical texts with spelling variations such as ϣⲉϯⲛⲉϩ [c]sawy-46, 55, 106[/c][c]richter-519[/c], ϣⲁⲧⲁⲛϩ [c]sawy-108[/c], ⲁϣϣⲉⲧⲓⲛⲁϩ [c]richter-520[/c], etc. ( < Arabic الشادنه ) <br><br><b>Magnetite: </b>It is attested in Demotic with spelling variations such as[d]𓅓𓉻:𓂝*𓏛𓎡:𓈖:𓏌*𓏲𓇋𓏲𓐠𓏤𓏰:𓏛𓈒[/d]<i>mꜥknes</i>,[d]𓅓𓉻:𓂝*𓏛𓎡𓈖:𓏌*𓏲𓇋𓏲𓐠𓏤𓏰:𓏛𓇋𓇋𓏲𓉻:𓂝*𓏛𓈒[/d]<i>mꜥknesyꜥ</i>,[d]𓅓𓉻:𓂝*𓏛𓈖:𓏌*𓏲𓇋𓏲𓐠𓏤𓏰:𓏛𓈒[/d]<i>mꜥnes</i> ( < Greek μάγνης, μαγνησία, μαγνῆτις λίθος ) [c]cdd_m-62[/c].",
+		"notes": "There are several different types of iron ores with distinct names:<br><br><b>Hematite: </b> It is attested in numerous Coptic medical texts with spelling variations such as ϣⲉϯⲛⲉϩ [c]sawy-46, 55, 106[/c][c]richter-519[/c], ϣⲁⲧⲁⲛϩ [c]sawy-108[/c], ⲁϣϣⲉⲧⲓⲛⲁϩ [c]richter-520[/c], etc. ( < Arabic الشادنه ) <br><br><b>Magnetite: </b>It is attested in Demotic with spelling variations such as[d]𓅓𓉻:𓂝*𓏛𓎡:𓈖:𓏌*𓏲𓇋𓏲𓐠𓏤𓏰:𓏛𓊌1[/d]<i>mꜥknes</i>,[d]𓅓𓉻:𓂝*𓏛𓎡𓈖:𓏌*𓏲𓇋𓏲𓐠𓏤𓏰:𓏛𓇋𓇋𓏲𓉻:𓂝*𓏛𓊌1[/d]<i>mꜥknesyꜥ</i>,[d]𓅓𓉻:𓂝*𓏛𓈖:𓏌*𓏲𓇋𓏲𓐠𓏤𓏰:𓏛𓊌1[/d]<i>mꜥnes</i> ( < Greek μάγνης, μαγνησία, μαγνῆτις λίθος ) [c]cdd_m-62[/c].",
 		"tags": [ "block", "ore", "untranslated", "vanilla" ]
 	},
 	"death.attack.generic":{
@@ -18,7 +25,7 @@ ENTRIES = {
 		"english": "[i]player[/i] starved to death",
 		"etym": [ "See [r]death.attack.generic[/r]", "See [r]effect.hunger[/r]" ],
 		"img": "none",
-		"notes": "Compare: ⲛⲉⲩϣⲏⲣⲉ ⲙⲛ̄ⲛⲉⲩϣⲉⲉⲣⲉ ⲥⲉⲛⲁⲙⲟⲩ ϩⲙ̄ⲡⲉϩⲕⲟ \"Their sons and daughters will die of starvation\" (Jeremiah 11:22).",
+		"notes": "Example: ⲛⲉⲩϣⲏⲣⲉ ⲙⲛ̄ⲛⲉⲩϣⲉⲉⲣⲉ ⲥⲉⲛⲁⲙⲟⲩ ϩⲙ̄ⲡⲉϩⲕⲟ \"Their sons and daughters will die of starvation\" (Jeremiah 11:22).",
 		"tags": [ "death-message", "etym-egy", "etym-egy", "ui", "vanilla" ]
 	},
 	"item.thermalfoundation.material.crystalCrudeOil.name":{
@@ -35,6 +42,13 @@ ENTRIES = {
 		"img": "item.bucketLava.name",
 		"notes": "One of the tabs in the Creative menu in 1.12.<br><br>Literally \"Of various sorts/forms\" [c]lambdin-213[/c], which I think is in line with the translations in other languages:<table><tr><td>Arabic:</td><td>متنوعات</td><td>\"diverse, varied, miscellaneous, assorted\"</td></tr><tr><td>Hebrew:</td><td>שונות</td><td>\"various, different\"</td></tr><tr><td>Spanish:</td><td>Varios<br>Objetos varios</td><td>\"various\"<br>\"various objects\"</td></tr></table>But I am a little worried that the attested uses of this word are not places where I would ever use \"miscellaneous\":<table><tr><td>(Wisdom of Solomon 7:22)</td><td>ⲟⲩⲛ̄ⲟⲩⲡⲛ︦ⲁ ⲅⲁⲣ ⲛ̄ϩⲏⲧⲥ̄ ⲉϥⲟⲩⲁⲁⲃ ⲛ̄ⲣⲉϥⲛⲟⲓ ⲛ̄ⲟⲩⲥⲙⲟⲧ ⲛ̄ⲟⲩⲱⲧ <b>ⲛ̄ⲁⲧⲉⲥⲙⲟⲧ</b>...</td><td>\"For in her (i.e. wisdom) is an understanding spirit holy, one only, <b>manifold</b>...\"</td></tr><tr><td>(Ephesians 3:10)</td><td>ϫⲉⲉⲩⲉⲟⲩⲱⲛϩ ⲧⲉⲛⲟⲩ ⲉⲃⲟⲗ ⲛ̄ⲛ̄ⲁⲣⲭⲏ. ⲙⲛ̄ⲛ̄ⲉⲝⲟⲩⲥⲓⲁ ϩⲛ̄ⲙⲡⲏⲩⲉ. ⲉⲃⲟⲗ ϩⲓⲧⲛ̄ⲧⲉⲕⲕⲗⲏⲥⲓⲁ ⲧⲥⲟⲫⲓⲁ <b>ⲛ̄ⲁⲧⲉⲥⲙⲟⲧ</b> ⲛ̄ⲧⲉⲡⲛⲟⲩⲧⲉ</td><td>\"To the intent that now unto the principalities and powers in heavenly places might be known by the church the <b>manifold</b> wisdom of God,\"</td></tr></table>",
 		"tags": [ "etym-unk", "etym-unk", "ui", "vanilla" ]
+	},
+	"generic.Iron.name":{
+		"coptic": "ⲃⲉⲛⲓⲡⲉ",
+		"english": "Iron",
+		"etym": [ "< Demotic[d]𓅡◳𓏤:𓈖1𓊪1𓇋𓇋𓏲𓈔[/d]<i>bnpy</i> \"iron\", < Egyptian[h]𓃀𓇋𓄿𓄑𓈖𓇯𓈒𓏥[/h]<i>bjꜣ n pt</i> \"iron\" (literally \"metal of the heaven\") [c]ce-24[/c][c]tla-54450[/c]" ],
+		"notes": "",
+		"tags": [ "etym-egy", "generic-material", "vanilla" ]
 	},
 	"tile.anvil.name":{
 		"coptic": "ⲉⲙⲏϣ",
@@ -120,13 +134,6 @@ ENTRIES = {
         "notes": "Thank you to Maciej Ⲙⲁⲣⲉⲕ and ℝandy for suggesting this translation: literally \"[i]mob[/i] begetter egg\" or \"[i]mob[/i] maker egg\". Analogous to ⲙⲁⲣⲓⲁ ⲧⲣⲉϥϫⲡⲉⲡⲛⲟⲩⲧⲉ. The verb ϫⲡⲟ feels well aligned to the various concepts of \"spawning\": begetting, producing, acquiring, offspring... [c]lambdin-345[/c]<br><br>This longer translation is from the newer versions of the game. In 1.12 spawn eggs are simply labelled \"Spawn [i]mob[/i]\", which is translated ϫⲡⲉ[i]mob[/i].",
         "tags": [ "etym-egy", "etym-egy", "item", "vanilla" ]
     },
-	"tile.thermalfoundation.ore.copper.name": {
-		"coptic": "ⲭⲁⲗⲕⲓⲧⲉⲟⲥ",
-		"english": "Copper Ore",
-		"etym": ["< Demotic[d]𓈎𓃭𓎡:𓉔1*𓏏1𓐠𓏤𓏰:𓏛1𓈒:𓏥[/d]<i>qrkhts</i> \"copper ore\", < Greek χαλκῖτις \"containing copper, copper ore\" [c]cdd_q-67[/c]"],
-		"notes": "Also spelled ⲭⲁⲗⲕⲓⲧⲉⲱⲥ, ⲭⲁⲕⲓⲧⲉⲟⲥ, ⲭⲁⲣⲕⲓⲧⲉⲟⲥ [c]cdo-C10928[/c]",
-		"tags": [ "block", "etym-grk", "ore", "thermalfoundation" ]
-	},
 	"itemGroup.brewing":{
         "coptic": "ⲫⲁⲣⲙⲁⲕⲓⲁ",
         "english": "Brewing",
@@ -135,6 +142,13 @@ ENTRIES = {
         "notes": "One of the tabs in the Creative menu in 1.12.<br><br>\"Potion-brewing, witchery\" [c]cdo-C10839[/c].",
         "tags": [ "etym-grk", "ui", "vanilla" ]
     },
+	"tile.thermalfoundation.ore.copper.name": {
+		"coptic": "ⲭⲁⲗⲕⲓⲧⲉⲟⲥ",
+		"english": "Copper Ore",
+		"etym": ["< Demotic[d]𓈎𓃭𓎡:𓉔1*𓏏1𓐠𓏤𓏰:𓏛1𓈒:𓏥[/d]<i>qrkhts</i> \"copper ore\", < Greek χαλκῖτις \"containing copper, copper ore\" [c]cdd_q-67[/c]"],
+		"notes": "Also spelled ⲭⲁⲗⲕⲓⲧⲉⲱⲥ, ⲭⲁⲕⲓⲧⲉⲟⲥ, ⲭⲁⲣⲕⲓⲧⲉⲟⲥ [c]cdo-C10928[/c]",
+		"tags": [ "block", "etym-grk", "ore", "thermalfoundation" ]
+	},
 	"tile.snow.name":{
         "coptic": "ⲭⲓⲱⲛ",
         "english": "Snow",
@@ -169,6 +183,13 @@ ENTRIES = {
 		"etym": [ "< Demotic[d]𓎛𓈎𓃭𓈒:𓏥𓀐[/d]<i>ḥqr</i> \"hunger\", < Egyptian[h]𓎛𓈎𓂋𓀁[/h]<i>ḥqr</i> \"hunger, famine\" [c]ce-277[/c]" ],
 		"notes": "",
 		"tags": [ "etym-egy", "status-effect", "vanilla" ]
+	},
+	"container.crafting": {
+		"coptic": "ϩⲱⲃ ⲛ̄ϭⲓϫ",
+		"english": "Crafting",
+		"etym": [ "< Demotic[d]𓉔𓃀𓏲1[/d]<i>hb</i> \"letter, dispatch, thing\", < Egyptian[h]𓉔𓄿𓃀𓂻[/h]<i>hb</i> \"sending, errand\" [c]ce-274[/c]", "< Demotic[d]𓎼:𓇋𓇋𓏲𓍑𓄿4𓄹:𓏭[/d]<i>gyḏ</i> \"hand\", < Egyptian[h]𓈎𓄿𓍑𓄿‌𓏏𓄹[/h]<i>qḏt</i> \"hand\" [c]ce-340[/c]" ],
+		"notes": "Literally \"handiwork\" or \"handicraft\" [c]lambdin-335[/c].",
+		"tags": [ "etym-egy", "etym-egy", "ui", "vanilla" ]
 	},
 	"item.apple.name": {
 		"coptic": "ϫⲉⲙⲡⲉϩ",

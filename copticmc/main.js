@@ -10,6 +10,7 @@ var ETYM_COLORS = {
 var SOURCE_LINKS = {
 	"aeka": "https://journals.uio.no/actaorientalia/article/view/5256/4598/",
 	// Johnson, Janet H. (2001) The Demotic Dictionary of the Institute for the Study of Ancient Cultures of the University of Chicago
+	"cdd_i":	"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/CDD_'I.pdf#page=",
 	"cdd_m": 	"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/CDD_M.pdf#page=",
 	"cdd_s":	"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/CDD_S.pdf#page=",
 	"cdd_q":	"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/CDD_Q.pdf#page=",
@@ -28,6 +29,7 @@ var SOURCE_LINKS = {
 }
 var SOURCE_NAMES = {
 	"aeka":		"Erichsen",
+	"cdd_i":	"<i>CDD</i> Ỉ",
 	"cdd_m":	"<i>CDD</i> M",
 	"cdd_s":	"<i>CDD</i> S",
 	"cdd_q":	"<i>CDD</i> Q",
@@ -71,6 +73,7 @@ var PAGETOPTITLES = {
 	"etym-prs": 			"Words of Persian origin",
 	"etym-sem": 			"Words of Semitic origin",
 	"etym-unk": 			"Words of unknown origin",
+	"generic-material":		"Generic materials",
 	"item":					"Items",
 	"mob":					"Mobs",
 	"thermalfoundation":	"Thermal Foundation",
@@ -78,10 +81,12 @@ var PAGETOPTITLES = {
 }
 var PAGETOPDESC		= {
 	"all":			"",
-	"etym-egy":		"This category is for words whose predecessors are certainly attested in earlier stages of the Egyptian language. Only a Demotic predecessor attested is not enough to assert a word's origin, as there are lots of Semitic loanwords and even some Greek loanwords, and foreign words are not as distinctly marked as with the earlier group writing.",
+	"etym-egy":		"This category is for words whose predecessors are certainly attested in earlier stages of the Egyptian language. If a word is only attested in Demotic and Coptic, and not earlier Egyptian, then I usually do not include it in this category.",
 	"etym-grk":		"This category is for Greek loanwords which were introduced and attested during the productive period of Coptic (and Demotic). For new Greek loanwords, and situations where Greek is one of various modern languages that share a similar word, see the section <a href=\"?tags=etym-mod\">Words of modern origin</a>.",
+	"generic-material":		"Words which do not refer to a specific block or item, but instead are used in a whole family of blocks/items made out of this material.",
 	"thermalfoundation":	"Words used in the mod <a href=\"https://teamcofh.com/docs/1.12/thermal-foundation/\">Thermal Foundation</a>.",
 	"not-to-be-translated": "Words which are on fully or partially on the \"Not to be translated\" list of the <a href=\"https://docs.google.com/spreadsheets/d/1xxDvR2MrPUaxXwNfn-oJX-fBerEsZkfo\">Minecraft Official Glossary</a>.",
+	"untranslated":			"Words for which a suitable translation has not been decided upon yet.",
 	"vanilla":				"Words used in the base game without mods."
 }
 
@@ -89,6 +94,7 @@ var MAINDIV = document.getElementById("maindiv");
 // the outermost div is usually 75% width, but it looks better on a phone in portrait mode at 95% width, so this simply detects
 if (window.innerWidth < window.innerHeight){
 	MAINDIV.style.width = "95%";
+	//MAINDIV.style.fontSize = "40px";
 }
 
 const QUERYSTRING = window.location.search;
