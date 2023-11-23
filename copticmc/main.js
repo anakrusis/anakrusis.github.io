@@ -74,19 +74,22 @@ var PAGETOPTITLES = {
 	"etym-sem": 			"Words of Semitic origin",
 	"etym-unk": 			"Words of unknown origin",
 	"generic-material":		"Generic materials",
+	"generic-type":			"Generic types",
 	"item":					"Items",
 	"mob":					"Mobs",
+	"thermalexpansion":		"Thermal Expansion",
 	"thermalfoundation":	"Thermal Foundation",
 	"vanilla":				"Vanilla Minecraft"
 }
 var PAGETOPDESC		= {
 	"all":			"",
 	"etym-egy":		"This category is for words whose predecessors are certainly attested in earlier stages of the Egyptian language. If a word is only attested in Demotic and Coptic, and not earlier Egyptian, then I usually do not include it in this category.",
-	"etym-grk":		"This category is for Greek loanwords which were introduced and attested during the productive period of Coptic (and Demotic). For new Greek loanwords, and situations where Greek is one of various modern languages that share a similar word, see the section <a href=\"?tags=etym-mod\">Words of modern origin</a>.",
-	"generic-material":		"Words which do not refer to a specific block or item, but instead are used in a whole family of blocks/items made out of this material.",
+	"etym-grk":		"This category is for Greek loanwords which were introduced and attested during the productive period of Coptic. For new Greek loanwords, and situations where Greek is one of various modern languages that share a similar word, see the section <a href=\"?tags=etym-mod\">Words of modern origin</a>.",
+	"generic-material":		"Words which do not refer to a specific block or item, but instead are used in a whole family of blocks/items made out of this material. Usually combines with a <a href=\"?tags=generic-type\">generic type</a> to make specific blocks and items.",
+	"thermalexpansion":		"Words used in the mod <a href=\"https://teamcofh.com/docs/1.12/thermal-expansion/\">Thermal Expansion</a>. This is a mod about industrialization, so the attested Coptic vocabulary to work with is understandably limited. But the machines are not realistic and almost in the realm of fantasy; names such as \"Aqueous Accumulator\" are not much more attested in English than the Coptic translated equivalents. So I feel a bit less hesitant about coinage and using unattested terms for this particular mod than with <a href=\"?tags=vanilla\">the base game</a> or other mods, but I still try to be faithful to the language and find the proper citations wherever possible.",
 	"thermalfoundation":	"Words used in the mod <a href=\"https://teamcofh.com/docs/1.12/thermal-foundation/\">Thermal Foundation</a>.",
-	"not-to-be-translated": "Words which are on fully or partially on the \"Not to be translated\" list of the <a href=\"https://docs.google.com/spreadsheets/d/1xxDvR2MrPUaxXwNfn-oJX-fBerEsZkfo\">Minecraft Official Glossary</a>.",
-	"untranslated":			"Words for which a suitable translation has not been decided upon yet.",
+	"not-to-be-translated": "Words which are fully or partially on the \"Not to be translated\" list of the <a href=\"https://docs.google.com/spreadsheets/d/1xxDvR2MrPUaxXwNfn-oJX-fBerEsZkfo\">Minecraft Official Glossary</a>.",
+	"uncertain":			"Words for which a suitable translation has not been decided upon yet.",
 	"vanilla":				"Words used in the base game without mods."
 }
 
@@ -422,6 +425,9 @@ function getEntryTitle( ce ){
 	// if the word is unattested then put an asterisk beside the name
 	if (ce.tags.indexOf("unattested") != -1){
 		titlestring += " *";
+	}
+	if (ce.tags.indexOf('uncertain') != -1){
+		titlestring += " ?";
 	}
 	titlestring += " — " + ce.english;
 	titlestring = doMarkup( titlestring );

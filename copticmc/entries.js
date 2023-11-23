@@ -1,17 +1,17 @@
 ENTRIES = {
 	"tile.stone.granite.name":{
-		"coptic": "?",
+		"coptic": "",
 		"english": "Granite",
 		"etym": [],
 		"notes": "It is attested in earlier Egyptian as[h]𓌳𓍿𓎶[/h]<i>mꜣṯ</i> \"granite\" [c]tla-67580[/c], also the phrase[h]𓇋𓈖𓂋𓊌𓈖𓌳𓄿𓏏𓎶[/h]<i>jnr n mꜣṯ</i> \"granite stone\" [c]tla-650034[/c]. To my knowledge this word does not survive into Demotic nor Coptic.<br><br>In the Demotic dream handbook Papyrus Berlin P. 8769 (Trismegistos 55958) there is the phrase <i>ỉny km n Yb</i> \"black stone (i.e., granite) of Elephantine\" [c]cdd_i-164[/c]. The first part survives as Coptic ⲁⲛⲓⲕⲁⲙ but has other non-granite-related meanings \"copper sulfate, copper vitriol\" [c]cdd_i-163[/c][c]ce-9[/c].<br><br>The Rosetta Stone is made of granodiorite, which is between granite and diorite in composition, and is referred to itself in the text as simply [d]𓇋𓆛:𓈖𓇋𓇋𓏲𓊌1 𓍑𓃭𓇋𓇋𓏲𓏴:𓂡1[/d]<i>ỉny ḏry</i> \"hard stone\" [c]cdd_i-164[/c].",
-		"tags": [ "block", "no-descendant", "untranslated", "vanilla" ]
+		"tags": [ "block", "no-descendant", "uncertain", "vanilla" ]
 	},
 	"tile.oreIron.name":{
-		"coptic": "?",
+		"coptic": "",
 		"english": "Iron Ore",
 		"etym": [],
 		"notes": "There are several different types of iron ores with distinct names:<br><br><b>Hematite: </b> It is attested in numerous Coptic medical texts with spelling variations such as ϣⲉϯⲛⲉϩ [c]sawy-46, 55, 106[/c][c]richter-519[/c], ϣⲁⲧⲁⲛϩ [c]sawy-108[/c], ⲁϣϣⲉⲧⲓⲛⲁϩ [c]richter-520[/c], etc. ( < Arabic الشادنه ) <br><br><b>Magnetite: </b>It is attested in Demotic with spelling variations such as[d]𓅓𓉻:𓂝*𓏛𓎡:𓈖:𓏌*𓏲𓇋𓏲𓐠𓏤𓏰:𓏛𓊌1[/d]<i>mꜥknes</i>,[d]𓅓𓉻:𓂝*𓏛𓎡𓈖:𓏌*𓏲𓇋𓏲𓐠𓏤𓏰:𓏛𓇋𓇋𓏲𓉻:𓂝*𓏛𓊌1[/d]<i>mꜥknesyꜥ</i>,[d]𓅓𓉻:𓂝*𓏛𓈖:𓏌*𓏲𓇋𓏲𓐠𓏤𓏰:𓏛𓊌1[/d]<i>mꜥnes</i> ( < Greek μάγνης, μαγνησία, μαγνῆτις λίθος ) [c]cdd_m-62[/c].",
-		"tags": [ "block", "ore", "untranslated", "vanilla" ]
+		"tags": [ "block", "ore", "uncertain", "vanilla" ]
 	},
 	"death.attack.generic":{
 		"coptic": "ⲁ[i]player[/i] ⲙⲟⲩ",
@@ -50,6 +50,20 @@ ENTRIES = {
 		"notes": "",
 		"tags": [ "etym-egy", "generic-material", "vanilla" ]
 	},
+	"entity.Ghast.name": {
+		"coptic":	"ⲅⲁⲥⲧ",
+		"english":	"Ghast",
+		"etym":	["< proper name <i>Ghast</i>"],
+		"notes": "On the \"Not to be translated\" list of the Minecraft Official Glossary.",
+		"tags": [ "etym-mod", "mob", "not-to-be-translated", "unattested", "vanilla" ]
+	},
+	"entity.enderDragon.name": {
+		"coptic":	"ⲇⲣⲁⲕⲱⲛ (ⲛ̄ⲉⲛⲇⲉⲣ)",
+		"english":	"(Ender) Dragon",
+		"etym":	["< Greek δράκων \"dragon, serpent\""],
+		"notes": "\"dragon, serpent\" [c]cdo-C8832[/c].",
+		"tags": [ "etym-grk", "mob", "vanilla" ]
+	},
 	"tile.anvil.name":{
 		"coptic": "ⲉⲙⲏϣ",
 		"english": "Anvil",
@@ -61,7 +75,7 @@ ENTRIES = {
 		"coptic":	"ⲉⲛⲇⲉⲣⲙⲁⲛ",
 		"english":	"Enderman",
 		"etym":	["< proper name <i>Enderman</i>"],
-		"notes": "On the “Not to be translated” list of the Minecraft Official Glossary, with an exception: <i>\"In some languages this word is offensive, translate \'man\' and leave Ender unchanged.\"</i><br><br>Fully transliterating the name is the most common method. ⲉⲛⲇⲉⲣⲙⲁⲛ seems to be fine, but a partial translation such as ⲣⲙⲛ̄ⲉⲛⲇⲉⲣ is a possibility as well.",
+		"notes": "On the \"Not to be translated\" list of the Minecraft Official Glossary, with an exception: <i>\"In some languages this word is offensive, translate \'man\' and leave Ender unchanged.\"</i><br><br>Fully transliterating the name is the most common method. ⲉⲛⲇⲉⲣⲙⲁⲛ seems to be fine, but a partial translation such as ⲣⲙⲛ̄ⲉⲛⲇⲉⲣ is a possibility as well.",
 		"tags": [ "etym-mod", "mob", "mob", "not-to-be-translated", "unattested", "vanilla" ]
 	},
 	"item.thermalfoundation.material.dustSulfur.name":{
@@ -82,7 +96,7 @@ ENTRIES = {
 		"coptic":	"ⲕⲣⲓⲡⲉⲣ",
 		"english":	"Creeper",
 		"etym":	["< proper name <i>Creeper</i>"],
-		"notes": "On the “Not to be translated” list of the Minecraft Official Glossary.",
+		"notes": "On the \"Not to be translated\" list of the Minecraft Official Glossary.",
 		"tags": [ "etym-mod", "mob", "not-to-be-translated", "unattested", "vanilla" ]
 	},
 	"generic.Birch.name": {
@@ -92,12 +106,32 @@ ENTRIES = {
 		"notes": "[c]cdo-C9617[/c].<br><br>Plant names are among the most varied translations in the game, and substitutions are common. As I could not find a word for the birch tree attested in Coptic, I substituted a different kind of tree. The white poplar (<i>Populus alba</i>) has very similar white bark with black markings, and its wood is similarly \"white... with a slightly yellowish color\".<br><br>This word appears in Hosea 4:13 in the same sentence as ⲥⲉⲓ - Oak. It also appears in Isaiah 41:19.",
 		"tags": [ "etym-grk", "generic-material", "plant", "tree", "vanilla" ]
 	},
+	"generic.Machine.name": {
+		"coptic": "ⲙⲏⲭⲁⲛⲏ",
+		"english": "Machine",
+		"etym": ["< Greek μηχανή \"machine, engine\""],
+		"notes": "\"machine, machinism\" [c]cdo-C9788[/c]. I use the word ⲙⲏⲭⲁⲛⲏ more often than the English text uses \"machine\", because I want the meaning of the text to be clear and unambiguous.<br><br>Thermal Expansion distinguishes between machines (which use electricity) and devices (which do not). Other words I might consider if the distinction is needed: ⲟⲣⲅⲁⲛⲟⲛ \"instrument, tool\" [c]cdo-C9943[/c], such as in ⲛⲙⲙⲏⲭⲁⲛⲏ ⲙⲡⲟⲣⲅⲁⲛⲟⲛ ⲉⲧⲟⲩⲛⲟⲩ ϫⲉⲙⲙⲟⲟⲩ ⲉϩⲟⲩⲛ ⲉⲣⲟϥ \"the mechanical contrivances of the instrument for lifting them up into it\" (History of Eustathius and Theopiste).",
+		"tags": [ "etym-grk", "generic-type", "thermalexpansion" ]
+	},
+	"tile.water.name":{
+		"coptic": "ⲙⲟⲟⲩ",
+		"english": "Water",
+		"etym": ["< Demotic[d]𓈗𓏤1𓈘:𓈇[/d]<i>mw</i> \"water\", < Egyptian[h]𓈗[/h]<i>mw</i> \"water\" [c]ce-95[/c]"],
+		"tags": [ "block", "etym-egy", "vanilla" ]
+	},
 	"tile.flower2.allium.name": {
 		"coptic": "ⲙ̄ϫⲱⲗ ϩⲟⲟⲩⲧ",
 		"english": "Allium",
 		"etym": ["< Demotic[d]𓅓𓍑𓄿4𓃭𓏤𓆰𓏪[/d]<i>mḏl</i> \"onion\", from a Semitic language [c]ce-101[/c][c]vy-132[/c]", "< Demotic[d]𓂺𓍘𓇋2[/d]<i>ḥwṱ</i> \"male\", from Egyptian[h]𓂛𓄿𓅱‌𓏏𓏭𓀜[/h]<i>ꜥḥꜣwtj</i> \"fighter\" [c]ce-305[/c][c]vy-319[/c]"],
 		"notes": "Plant names are among the most varied translations in the game, and substitutions are common. Examples: <table><tr><td>Arabic:</td><td>خولنجان</td><td>\"galangal\" (<i>Alpinia officinarum</i> and similar plants in the ginger family <i>Zingiberaceae</i>, not in <i>Allium</i>)</td></tr><tr><td>Armenian:</td><td>սոխ</td><td>\"onion\"</td></tr><tr><td>Asturian:</td><td>Ayu bravu</td><td>\"wild garlic\"</td></tr><tr><td>Chinese:</td><td>绒球花</td><td>literally \"pompom flower\". searching it up returns various unrelated species of flowers that all share a similar shape</td></tr><tr><td>Georgian:</td><td>ხახვი</td><td>\"onion\"</td></tr><tr><td>Greek:</td><td>Άλλιο</td><td>\"allium\" (unadapted borrowing)</td></tr><tr><td>Hebrew:</td><td>שום</td><td>\"garlic\"</td></tr><tr><td>Latin:</td><td>Allium</td><td>\"garlic\" (this is the origin of the <i>Allium</i> genus name)</td></tr></table>I think that this translation ⲙ̄ϫⲱⲗ ϩⲟⲟⲩⲧ, which is literally \"wild onion\", fits in with the rest. It is attested in Demotic as <i>mḏwl hwṱ</i> [c]cdd_m-308[/c] and in Coptic, where it can also be seen with the spelling ⲉⲙϫⲱⲗ ϩⲉⲩⲧ. [c]ce-101[/c]",
 		"tags": [ "block", "etym-sem", "etym-egy", "flower", "plant", "vanilla" ]
+	},
+	"generic.Nether.name": {
+		"coptic":	"(ⲡ)ⲛⲉⲑⲉⲣ",
+		"english":	"(The) Nether",
+		"etym":	["< proper name <i>The Nether</i>"],
+		"notes": "On the \"Not to be translated\" list of the Minecraft Official Glossary. If it were not on the list, I would translate it as ⲁⲙⲛ̄ⲧⲉ \"underworld, Hades, Hell\" [c]cdo-C102[/c][c]lambdin-211[/c].",
+		"tags": [ "etym-mod", "not-to-be-translated", "unattested", "vanilla" ]
 	},
 	"entity.Villager.name": {
 		"coptic":	"ⲣⲙ̄ⲛ̄ϯⲙⲉ",
@@ -118,7 +152,7 @@ ENTRIES = {
 		"english": "Wool",
 		"etym": [ "< Demotic[d]𓋴𓉻:𓂝*𓏛𓃭𓍘𓇋2𓁸[/d]<i>sꜥrṱ</i> \"wool\", < Egyptian[h]𓐠‌𓏤𓉻𓏛𓂋‌𓏤𓍘𓇋𓆰𓏥[/h]<i>sꜥrt</i> \"wool\", from a Semitic language [c]ce-162[/c]"],
 		"notes": "",
-		"tags": [ "block", "etym-sem", "vanilla" ]
+		"tags": [ "etym-sem", "vanilla" ]
 	},
 	"item.egg.name":{
 		"coptic": "ⲥⲟⲟⲩϩⲉ",
@@ -126,6 +160,13 @@ ENTRIES = {
 		"etym": [ "< Demotic[d]𓋴 𓍯𓄑:𓏛@𓊌1𓏏[/d]<i>swḥ.t</i> \"egg\", < Egyptian[h]𓋴𓅱𓎛𓆇𓏏[/h]<i>swḥt</i> \"egg\" [c]ce-169[/c]" ],
 		"notes": "",
 		"tags": [ "etym-egy", "item", "vanilla" ]
+	},
+	"tile.dragonEgg.name": {
+		"coptic":	"ⲥⲟⲟⲩϩⲉ ⲛ̄ⲇⲣⲁⲕⲱⲛ",
+		"english":	"Dragon Egg",
+		"etym":	["See [r]item.egg.name[/r]", "See [r]entity.enderDragon.name[/r]"],
+		"notes": "",
+		"tags": [ "block", "etym-egy", "etym-grk", "vanilla" ]
 	},
 	"item.monsterPlacer.name":{
         "coptic": "ⲥⲟⲟⲩϩⲉ ⲧⲣⲉϥϫⲡⲉ[i]mob[/i]",
@@ -139,7 +180,7 @@ ENTRIES = {
         "english": "Brewing",
         "etym": [ "< Greek φαρμακεία \"use of drugs (esp. of purgatives); witchcraft\"" ],
 		"img": "item.minecraft.potion",
-        "notes": "One of the tabs in the Creative menu in 1.12.<br><br>\"Potion-brewing, witchery\" [c]cdo-C10839[/c].",
+        "notes": "One of the tabs in the Creative menu in 1.12. \"potion-brewing, witchery\" [c]cdo-C10839[/c].",
         "tags": [ "etym-grk", "ui", "vanilla" ]
     },
 	"tile.thermalfoundation.ore.copper.name": {
