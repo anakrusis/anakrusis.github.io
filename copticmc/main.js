@@ -86,9 +86,11 @@ var PAGETOPDESC		= {
 	"etym-egy":		"This category is for words whose predecessors are certainly attested in earlier stages of the Egyptian language. If a word is only attested in Demotic and Coptic, and not earlier Egyptian, then I usually do not include it in this category.",
 	"etym-grk":		"This category is for Greek loanwords which were introduced and attested during the productive period of Coptic. For new Greek loanwords, and situations where Greek is one of various modern languages that share a similar word, see the section <a href=\"?tags=etym-mod\">Words of modern origin</a>.",
 	"generic-material":		"Words which do not refer to a specific block or item, but instead are used in a whole family of blocks/items made out of this material. Usually combines with a <a href=\"?tags=generic-type\">generic type</a> to make specific blocks and items.",
+	"generic-type":			"Words which do not refer to a specific block or item, but instead are used in a whole family of blocks/items of this type. This includes materials which the blocks/items are made out of (examples: gold, iron, wood), forms of blocks/items (examples: planks, stairs, swords), or the generic terms for objects which are always colored (examples: bed, wool). All of these words have a number of derived terms.",
+	"no-descendant": 		"Words for which an earlier Egyptian / Demotic term is attested, but a Coptic descendant is not known.",
+	"not-to-be-translated": "Words which are fully or partially on the \"Not to be translated\" list of the <a href=\"https://docs.google.com/spreadsheets/d/1xxDvR2MrPUaxXwNfn-oJX-fBerEsZkfo\">Minecraft Official Glossary</a>.",
 	"thermalexpansion":		"Words used in the mod <a href=\"https://teamcofh.com/docs/1.12/thermal-expansion/\">Thermal Expansion</a>. This is a mod about industrialization, so the attested Coptic vocabulary to work with is understandably limited. But the machines are not realistic and almost in the realm of fantasy; names such as \"Aqueous Accumulator\" are not much more attested in English than the Coptic translated equivalents. So I feel a bit less hesitant about coinage and using unattested terms for this particular mod than with <a href=\"?tags=vanilla\">the base game</a> or other mods, but I still try to be faithful to the language and find the proper citations wherever possible.",
 	"thermalfoundation":	"Words used in the mod <a href=\"https://teamcofh.com/docs/1.12/thermal-foundation/\">Thermal Foundation</a>.",
-	"not-to-be-translated": "Words which are fully or partially on the \"Not to be translated\" list of the <a href=\"https://docs.google.com/spreadsheets/d/1xxDvR2MrPUaxXwNfn-oJX-fBerEsZkfo\">Minecraft Official Glossary</a>.",
 	"uncertain":			"Words for which a suitable translation has not been decided upon yet.",
 	"vanilla":				"Words used in the base game without mods."
 }
@@ -227,6 +229,32 @@ function addDictEntry(key, ce){
 		outerdiv.appendChild( notesdiv );
 	}
 	
+	// ENTRY DERIVED TERMS
+	if (ce.derivedterms){
+		// giving it the same class as etymdiv cus they both contain tables inside the div
+		var dtdiv	= document.createElement("div");
+		dtdiv.setAttribute("class","etymdiv");
+		dtdiv.innerHTML = "<b>Derived terms:</b><br>"	
+		var dttable	= document.createElement("table");
+		dtdiv.appendChild( dttable );
+		dttable.style.marginBottom = "0px";
+		
+		var currentrow;
+		for (var i = 0; i < ce.derivedterms.length; i++){
+			// start a new row
+			if (i % 2 == 0){
+				currentrow = dttable.insertRow();
+			}
+			var currentdt = ce.derivedterms[i];
+			var cdtstring = doMarkup( "• [r]" + currentdt + "[/r]" );
+			var cc = currentrow.insertCell(); // current cell
+			cc.style.width = "50%"
+			cc.innerHTML += cdtstring;
+		}
+		dtdiv.innerHTML += "</table>"
+		outerdiv.appendChild( dtdiv );
+	}
+	
 	// ENTRY TAGS
 	// while iterating thru tags, if an etym tag is found, the corresponding etym cell is colored in all in one pass
 	var curretymcell = 0;
@@ -236,7 +264,7 @@ function addDictEntry(key, ce){
 	var tagsdiv		= document.createElement("div");
 	tagsdiv.setAttribute("class","tagsdiv");
 	var tagsstring = "<b>Tags: </b>"
-	if (ce.tags.length > 0){
+	if (ce.tags){
 		for (var i = 0; i < ce.tags.length; i++){
 			// current tag
 			var ctag = ce.tags[i]

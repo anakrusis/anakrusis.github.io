@@ -4,13 +4,13 @@ ENTRIES = {
 		"english": "Granite",
 		"etym": [],
 		"notes": "It is attested in earlier Egyptian as[h]𓌳𓍿𓎶[/h]<i>mꜣṯ</i> \"granite\" [c]tla-67580[/c], also the phrase[h]𓇋𓈖𓂋𓊌𓈖𓌳𓄿𓏏𓎶[/h]<i>jnr n mꜣṯ</i> \"granite stone\" [c]tla-650034[/c]. To my knowledge this word does not survive into Demotic nor Coptic.<br><br>In the Demotic dream handbook Papyrus Berlin P. 8769 (Trismegistos 55958) there is the phrase <i>ỉny km n Yb</i> \"black stone (i.e., granite) of Elephantine\" [c]cdd_i-164[/c]. The first part survives as Coptic ⲁⲛⲓⲕⲁⲙ but has other non-granite-related meanings \"copper sulfate, copper vitriol\" [c]cdd_i-163[/c][c]ce-9[/c].<br><br>The Rosetta Stone is made of granodiorite, which is between granite and diorite in composition, and is referred to itself in the text as simply [d]𓇋𓆛:𓈖𓇋𓇋𓏲𓊌1 𓍑𓃭𓇋𓇋𓏲𓏴:𓂡1[/d]<i>ỉny ḏry</i> \"hard stone\" [c]cdd_i-164[/c].",
-		"tags": [ "block", "no-descendant", "uncertain", "vanilla" ]
+		"tags": [ "block", "no-descendant", "uncertain", "stone", "vanilla" ]
 	},
 	"tile.oreIron.name":{
 		"coptic": "",
 		"english": "Iron Ore",
 		"etym": [],
-		"notes": "There are several different types of iron ores with distinct names:<br><br><b>Hematite: </b> It is attested in numerous Coptic medical texts with spelling variations such as ϣⲉϯⲛⲉϩ [c]sawy-46, 55, 106[/c][c]richter-519[/c], ϣⲁⲧⲁⲛϩ [c]sawy-108[/c], ⲁϣϣⲉⲧⲓⲛⲁϩ [c]richter-520[/c], etc. ( < Arabic الشادنه ) <br><br><b>Magnetite: </b>It is attested in Demotic with spelling variations such as[d]𓅓𓉻:𓂝*𓏛𓎡:𓈖:𓏌*𓏲𓇋𓏲𓐠𓏤𓏰:𓏛𓊌1[/d]<i>mꜥknes</i>,[d]𓅓𓉻:𓂝*𓏛𓎡𓈖:𓏌*𓏲𓇋𓏲𓐠𓏤𓏰:𓏛𓇋𓇋𓏲𓉻:𓂝*𓏛𓊌1[/d]<i>mꜥknesyꜥ</i>,[d]𓅓𓉻:𓂝*𓏛𓈖:𓏌*𓏲𓇋𓏲𓐠𓏤𓏰:𓏛𓊌1[/d]<i>mꜥnes</i> ( < Greek μάγνης, μαγνησία, μαγνῆτις λίθος ) [c]cdd_m-62[/c].",
+		"notes": "There are several different types of iron ores with distinct names:<br><br><b>Hematite: </b> It is attested in numerous Coptic medical texts with spelling variations such as ϣⲉϯⲛⲉϩ [c]sawy-46, 55, 106[/c][c]richter-519[/c], ϣⲁⲧⲁⲛϩ [c]sawy-108[/c], ⲁϣϣⲉⲧⲓⲛⲁϩ [c]richter-520[/c], etc. ( < Arabic الشادنه ) <br><br><b>Magnetite: </b>It is attested in Demotic with spelling variations such as[d]𓅓𓉻:𓂝*𓏛𓎡:𓈖:𓏌*𓏲𓇋𓏲𓐠𓏤𓏰:𓏛𓊌1[/d]<i>mꜥknes</i>,[d]𓅓𓉻:𓂝*𓏛𓎡𓈖:𓏌*𓏲𓇋𓏲𓐠𓏤𓏰:𓏛𓇋𓇋𓏲𓉻:𓂝*𓏛𓊌1[/d]<i>mꜥknesyꜥ</i>,[d]𓅓𓉻:𓂝*𓏛𓈖:𓏌*𓏲𓇋𓏲𓐠𓏤𓏰:𓏛𓊌1[/d]<i>mꜥnes</i> ( < Greek μάγνης, μαγνησία, μαγνῆτις λίθος ) [c]cdd_m-62[/c]. I do not know if it is attested in Coptic.",
 		"tags": [ "block", "ore", "uncertain", "vanilla" ]
 	},
 	"death.attack.generic":{
@@ -18,6 +18,7 @@ ENTRIES = {
 		"english": "[i]player[/i] died",
 		"etym": [ "< Demotic[d]𓅓:𓏏𓀐[/d]<i>mwt</i> \"die\", < Egyptian[h]𓅓‌𓏏‌𓀐[/h]<i>m(w)t</i> \"die\" [c]ce-79[/c]" ],
 		"img": "none",
+		"derivedterms": [ "death.attack.starve" ],
 		"tags": [ "death-message", "etym-egy", "ui", "vanilla" ]
 	},
 	"death.attack.starve":{
@@ -40,7 +41,7 @@ ENTRIES = {
 		"english": "Miscellaneous",
 		"etym": ["ⲁⲧⲟ \"multitude\" < unknown, no etymology given by Černy nor Vycichl","< Demotic[d]𓋴𓅓':𓏏𓀁[/d]<i>smt</i> \"form, likeness\" [c]cdd_s-241[/c][c]ce-153[/c][c]vy-189[/c] < ? "],
 		"img": "item.bucketLava.name",
-		"notes": "One of the tabs in the Creative menu in 1.12.<br><br>Literally \"Of various sorts/forms\" [c]lambdin-213[/c], which I think is in line with the translations in other languages:<table><tr><td>Arabic:</td><td>متنوعات</td><td>\"diverse, varied, miscellaneous, assorted\"</td></tr><tr><td>Hebrew:</td><td>שונות</td><td>\"various, different\"</td></tr><tr><td>Spanish:</td><td>Varios<br>Objetos varios</td><td>\"various\"<br>\"various objects\"</td></tr></table>But I am a little worried that the attested uses of this word are not places where I would ever use \"miscellaneous\":<table><tr><td>(Wisdom of Solomon 7:22)</td><td>ⲟⲩⲛ̄ⲟⲩⲡⲛ︦ⲁ ⲅⲁⲣ ⲛ̄ϩⲏⲧⲥ̄ ⲉϥⲟⲩⲁⲁⲃ ⲛ̄ⲣⲉϥⲛⲟⲓ ⲛ̄ⲟⲩⲥⲙⲟⲧ ⲛ̄ⲟⲩⲱⲧ <b>ⲛ̄ⲁⲧⲉⲥⲙⲟⲧ</b>...</td><td>\"For in her (i.e. wisdom) is an understanding spirit holy, one only, <b>manifold</b>...\"</td></tr><tr><td>(Ephesians 3:10)</td><td>ϫⲉⲉⲩⲉⲟⲩⲱⲛϩ ⲧⲉⲛⲟⲩ ⲉⲃⲟⲗ ⲛ̄ⲛ̄ⲁⲣⲭⲏ. ⲙⲛ̄ⲛ̄ⲉⲝⲟⲩⲥⲓⲁ ϩⲛ̄ⲙⲡⲏⲩⲉ. ⲉⲃⲟⲗ ϩⲓⲧⲛ̄ⲧⲉⲕⲕⲗⲏⲥⲓⲁ ⲧⲥⲟⲫⲓⲁ <b>ⲛ̄ⲁⲧⲉⲥⲙⲟⲧ</b> ⲛ̄ⲧⲉⲡⲛⲟⲩⲧⲉ</td><td>\"To the intent that now unto the principalities and powers in heavenly places might be known by the church the <b>manifold</b> wisdom of God,\"</td></tr></table>",
+		"notes": "\"Of various or many sorts\" [c]lambdin-213[/c], which I think is in line with the translations in other languages:<table><tr><td>Arabic:</td><td>متنوعات</td><td>\"diverse, varied, miscellaneous, assorted\"</td></tr><tr><td>Hebrew:</td><td>שונות</td><td>\"various, different\"</td></tr><tr><td>Spanish:</td><td>Varios<br>Objetos varios</td><td>\"various\"<br>\"various objects\"</td></tr></table>But I am a little worried that the attested uses of this word are not places where I would ever use \"miscellaneous\":<table><tr><td>(Wisdom of Solomon 7:22)</td><td>ⲟⲩⲛ̄ⲟⲩⲡⲛ︦ⲁ ⲅⲁⲣ ⲛ̄ϩⲏⲧⲥ̄ ⲉϥⲟⲩⲁⲁⲃ ⲛ̄ⲣⲉϥⲛⲟⲓ ⲛ̄ⲟⲩⲥⲙⲟⲧ ⲛ̄ⲟⲩⲱⲧ <b>ⲛ̄ⲁⲧⲉⲥⲙⲟⲧ</b>...</td><td>\"For in her (i.e. wisdom) is an understanding spirit holy, one only, <b>manifold</b>...\"</td></tr><tr><td>(Ephesians 3:10)</td><td>ϫⲉⲉⲩⲉⲟⲩⲱⲛϩ ⲧⲉⲛⲟⲩ ⲉⲃⲟⲗ ⲛ̄ⲛ̄ⲁⲣⲭⲏ. ⲙⲛ̄ⲛ̄ⲉⲝⲟⲩⲥⲓⲁ ϩⲛ̄ⲙⲡⲏⲩⲉ. ⲉⲃⲟⲗ ϩⲓⲧⲛ̄ⲧⲉⲕⲕⲗⲏⲥⲓⲁ ⲧⲥⲟⲫⲓⲁ <b>ⲛ̄ⲁⲧⲉⲥⲙⲟⲧ</b> ⲛ̄ⲧⲉⲡⲛⲟⲩⲧⲉ</td><td>\"To the intent that now unto the principalities and powers in heavenly places might be known by the church the <b>manifold</b> wisdom of God,\"</td></tr></table>This was one of the tabs in the Creative menu in 1.12, but was removed some time between then and 1.19.",
 		"tags": [ "etym-unk", "etym-unk", "ui", "vanilla" ]
 	},
 	"generic.Iron.name":{
@@ -48,7 +49,7 @@ ENTRIES = {
 		"english": "Iron",
 		"etym": [ "< Demotic[d]𓅡◳𓏤:𓈖1𓊪1𓇋𓇋𓏲𓈔[/d]<i>bnpy</i> \"iron\", < Egyptian[h]𓃀𓇋𓄿𓄑𓈖𓇯𓈒𓏥[/h]<i>bjꜣ n pt</i> \"iron\" (literally \"metal of the heaven\") [c]ce-24[/c][c]tla-54450[/c]" ],
 		"notes": "",
-		"tags": [ "etym-egy", "generic-material", "vanilla" ]
+		"tags": [ "etym-egy", "generic-type", "vanilla" ]
 	},
 	"entity.Ghast.name": {
 		"coptic":	"ⲅⲁⲥⲧ",
@@ -60,9 +61,10 @@ ENTRIES = {
 	"entity.enderDragon.name": {
 		"coptic":	"ⲇⲣⲁⲕⲱⲛ (ⲛ̄ⲉⲛⲇⲉⲣ)",
 		"english":	"(Ender) Dragon",
-		"etym":	["< Greek δράκων \"dragon, serpent\""],
-		"notes": "\"dragon, serpent\" [c]cdo-C8832[/c].",
-		"tags": [ "etym-grk", "mob", "vanilla" ]
+		"etym":	["< Greek δράκων \"dragon, serpent\"", "See [r]generic.Ender.name[/r]"],
+		"notes": "\"dragon, serpent\" [c]cdo-C8832[/c].<br><br>The Ender Dragon is the only type of dragon in the base game, so I do not have seperate entries for ⲇⲣⲁⲕⲱⲛ and ⲇⲣⲁⲕⲱⲛ ⲛ̄ⲉⲛⲇⲉⲣ.",
+		"derivedterms": [ "tile.dragonEgg.name" ],
+		"tags": [ "etym-grk", "etym-mod", "mob", "not-to-be-translated", "vanilla" ]
 	},
 	"tile.anvil.name":{
 		"coptic": "ⲉⲙⲏϣ",
@@ -70,6 +72,15 @@ ENTRIES = {
 		"etym": [ "Unknown. Černy connects it to ⲙⲓϣⲉ \"strike\". [c]ce-35[/c] Vycichl says this is unlikely; \"it seems impossible to derive the noun\" [c]vy-43[/c]" ],
 		"notes": "[c]cd-56a[/c][c]lambdin-219[/c].<br><br>There are several damage levels of the anvil which I have not decided how to translate yet.<br><br>Clicking on the anvil opens up an interface which says <b>\"Repair & Name\"</b>. I have unconfidently translated this as <b>ϫⲓϫⲁⲥϥⲉ ⲁⲩⲱ ϯⲣⲁⲛ</b>. These are two transitive verbs intended to take a direct object but are written as bare infinitives. Compare the Spanish <b>Reparar y renombrar</b>. Maybe ⲁⲩⲱ is not necessary here and could be omitted; I don't think a conjunctive form works though because there is no subject to these verbs.<br><br>ϫⲓϫⲁⲥϥⲉ \"to repair, put in order\" [c]cd-790b[/c][c]lambdin-341[/c]. ϯⲣⲛ̄ⲧ⸗ (ⲉ) ϫⲉ- (prepronominal) and ϯⲣⲛ̄ⲡⲣⲁⲛ ϫⲉ- (freestanding) [c]lambdin-261[/c]. Various forms listed in Crum at ϯⲣⲉⲛ⸗ \"give name, call\" [c]cd-298a[/c]. Also ⲁⲧϯⲣⲁⲛ \"unnamed\"  (ibid).",
 		"tags": [ "block", "etym-unk", "vanilla" ]
+	},
+	"generic.Ender.name": {
+		"coptic": "ⲉⲛⲇⲉⲣ",
+		"english": "Ender",
+		"etym": ["< proper name <i>Ender</i>"],
+		"img": "none",
+		"notes": "The Minecraft Official Glossary says that \"Ender\" is not to be translated, but other words next to it are fine to translate.",
+		"derivedterms": [ "entity.enderDragon.name" ],
+		"tags": [ "etym-mod", "not-to-be-translated", "unattested", "vanilla" ]
 	},
 	"entity.Enderman.name": {
 		"coptic":	"ⲉⲛⲇⲉⲣⲙⲁⲛ",
@@ -104,7 +115,7 @@ ENTRIES = {
 		"english": "White Poplar (\"Birch\")",
 		"etym": ["< Greek λεύκη \"white poplar\""],
 		"notes": "[c]cdo-C9617[/c].<br><br>Plant names are among the most varied translations in the game, and substitutions are common. As I could not find a word for the birch tree attested in Coptic, I substituted a different kind of tree. The white poplar (<i>Populus alba</i>) has very similar white bark with black markings, and its wood is similarly \"white... with a slightly yellowish color\".<br><br>This word appears in Hosea 4:13 in the same sentence as ⲥⲉⲓ - Oak. It also appears in Isaiah 41:19.",
-		"tags": [ "etym-grk", "generic-material", "plant", "tree", "vanilla" ]
+		"tags": [ "etym-grk", "generic-type", "plant", "tree", "vanilla" ]
 	},
 	"generic.Machine.name": {
 		"coptic": "ⲙⲏⲭⲁⲛⲏ",
@@ -130,7 +141,7 @@ ENTRIES = {
 		"coptic":	"(ⲡ)ⲛⲉⲑⲉⲣ",
 		"english":	"(The) Nether",
 		"etym":	["< proper name <i>The Nether</i>"],
-		"notes": "On the \"Not to be translated\" list of the Minecraft Official Glossary. If it were not on the list, I would translate it as ⲁⲙⲛ̄ⲧⲉ \"underworld, Hades, Hell\" [c]cdo-C102[/c][c]lambdin-211[/c].",
+		"notes": "On the \"Not to be translated\" list of the Minecraft Official Glossary. If it were not on the list, I would translate it as ⲁⲙⲛ̄ⲧⲉ \"underworld, Hades, Hell\" [c]cdo-C102[/c][c]lambdin-211[/c]. It is interesting that the definite article is never used in the word ⲁⲙⲛ̄ⲧⲉ; perhaps it is not needed in ⲛⲉⲑⲉⲣ either.",
 		"tags": [ "etym-mod", "not-to-be-translated", "unattested", "vanilla" ]
 	},
 	"entity.Villager.name": {
@@ -152,13 +163,14 @@ ENTRIES = {
 		"english": "Wool",
 		"etym": [ "< Demotic[d]𓋴𓉻:𓂝*𓏛𓃭𓍘𓇋2𓁸[/d]<i>sꜥrṱ</i> \"wool\", < Egyptian[h]𓐠‌𓏤𓉻𓏛𓂋‌𓏤𓍘𓇋𓆰𓏥[/h]<i>sꜥrt</i> \"wool\", from a Semitic language [c]ce-162[/c]"],
 		"notes": "",
-		"tags": [ "etym-sem", "vanilla" ]
+		"tags": [ "etym-sem", "generic-type", "vanilla" ]
 	},
 	"item.egg.name":{
 		"coptic": "ⲥⲟⲟⲩϩⲉ",
 		"english": "Egg",
 		"etym": [ "< Demotic[d]𓋴 𓍯𓄑:𓏛@𓊌1𓏏[/d]<i>swḥ.t</i> \"egg\", < Egyptian[h]𓋴𓅱𓎛𓆇𓏏[/h]<i>swḥt</i> \"egg\" [c]ce-169[/c]" ],
 		"notes": "",
+		"derivedterms": [ "tile.dragonEgg.name", "item.monsterPlacer.name" ],
 		"tags": [ "etym-egy", "item", "vanilla" ]
 	},
 	"tile.dragonEgg.name": {
@@ -180,7 +192,7 @@ ENTRIES = {
         "english": "Brewing",
         "etym": [ "< Greek φαρμακεία \"use of drugs (esp. of purgatives); witchcraft\"" ],
 		"img": "item.minecraft.potion",
-        "notes": "One of the tabs in the Creative menu in 1.12. \"potion-brewing, witchery\" [c]cdo-C10839[/c].",
+        "notes": "\"potion-brewing, witchery\" [c]cdo-C10839[/c].<br><br>This was one of the tabs in the Creative menu in 1.12, but was removed some time between then and 1.19.",
         "tags": [ "etym-grk", "ui", "vanilla" ]
     },
 	"tile.thermalfoundation.ore.copper.name": {
@@ -202,27 +214,45 @@ ENTRIES = {
 		"english": "Stone",
 		"etym": [ "< Demotic[d]𓇋2𓆛:𓈖𓇋𓇋𓏲𓊌1[/d]<i>ỉny</i> \"stone\", < Egyptian[h]𓇋‌𓈖𓂋‌𓊌[/h]<i></i> \"stone\" [c]ce-228[/c]" ],
 		"notes": "",
-		"tags": [ "block", "etym-egy", "vanilla" ]
+		"derivedterms": [ "tile.stoneMoss.name" ],
+		"tags": [ "block", "etym-egy", "stone", "vanilla" ]
 	},
 	"tile.stoneMoss.name":{
 		"coptic": "ⲱⲛⲉ ⲛ̄ⲗⲏⲭⲏ",
 		"english": "Moss Stone",
 		"etym": [ "See [r]tile.stone.stone.name[/r]", "< Greek λειχήν \"tree-moss, lichen\"" ],
-		"notes": "The word ⲗⲏⲭⲏ means \"lichen\" or \"tree-moss\". [c]cdo-C9626[/c]. It is used in the medical text P. Carlsberg 500, where ⲗⲏⲭⲏ ⲙ̄ⲡⲏⲥⲓⲥⲏⲣⲁⲥ is an ingredient in a remedy for psora / itch. The second word, in some way describing the lichen / moss, is interesting. Erichsen in \"Aus einem koptischen Arzneibuch\", <i>Acta Orientalia</i> vol. 27 (1962) gave the translation <i>Pech(artige) Flechte</i> \"Pitch(-like) lichen\" and connected it to Greek πέσσειν [c]aeka-33[/c]. Sawy instead translates it as \"Cooked lichen\" [c]sawy-324[/c].",
-		"tags": [ "block", "etym-egy", "etym-grk", "vanilla" ]
+		"notes": "The word ⲗⲏⲭⲏ means \"lichen\" or \"tree-moss\". [c]cdo-C9626[/c].<br><br>In the medical text P. Carlsberg 500, ⲗⲏⲭⲏ ⲙ̄ⲡⲏⲥⲓⲥⲏⲣⲁⲥ is an ingredient in a remedy for psora / itch. The second word, in some way describing the lichen / moss, is interesting. Erichsen in \"Aus einem koptischen Arzneibuch\", <i>Acta Orientalia</i> vol. 27 (1962) gave the translation <i>Pech(artige) Flechte</i> \"Pitch(-like) lichen\" and connected it to Greek πέσσειν [c]aeka-33[/c]. Sawy instead translates it as \"Cooked lichen\" [c]sawy-324[/c].",
+		"tags": [ "block", "etym-egy", "etym-grk", "stone",  "vanilla" ]
+	},
+	"generic.Wood.name": {
+		"coptic": "ϣⲉ",
+		"english": "Wood",
+		"etym": [ "< Demotic[d]𓆱:𓏏*𓏤𓆱:𓏥[/d]<i>ḫt</i> \"wood\", < Egyptian[h]𓆱𓏏𓏤[/h]<i>ḫt</i> \"wood\" [c]ce-235[/c][c]dpdp-d4610[/c][c]tla-121200[/c]"],
+		"notes": "In 1.12 this refers to the unprocessed log. But by 1.19 it is renamed to \"log\", and in that version \"wood\" refers to the block which has the bark texture on all six sides.<br><br>Types of wood follow the typical genitive construction ϣⲉ ⲛ̄- [c]lambdin-307[/c].",
+		"derivedterms": [ "tile.log.acacia.name" ],
+		"tags": [ "etym-egy", "generic-type", "vanilla", "wood" ]
+	},
+	"tile.log.acacia.name": {
+		"coptic": "ϣⲉ ⲛ̄ϣⲟⲛⲧⲉ",
+		"english": "Acacia Wood",
+		"etym": [ "See [r]generic.Wood.name[/r]", "See [r]generic.Acacia.name[/r]" ],
+		"notes": "",
+		"tags": [ "block", "etym-egy", "etym-egy", "vanilla", "wood" ]
 	},
 	"generic.Acacia.name": {
 		"coptic": "ϣⲟⲛⲧⲉ",
 		"english": "Acacia",
 		"etym": [ "< Demotic[d]𓍴𓈖:𓈖:𓏏*𓏰𓏏:°𓆰𓏪𓏏[/d]<i>šnt.t</i> \"thorn tree (<i>Acacia nilotica</i>)\", < Egyptian[h]𓍲𓈖𓆓𓏏𓆭[/h]<i>šnḏt</i> (same meaning) [c]ce-247[/c][c]dpdp-d6087[/c][c]tla-156510[/c]"],
 		"notes": "",
-		"tags": [ "etym-egy", "generic-material", "plant", "vanilla" ]
+		"derivedterms": [ "tile.log.acacia.name" ],
+		"tags": [ "etym-egy", "generic-type", "plant", "tree", "vanilla" ]
 	},
 	"effect.hunger": {
 		"coptic": "ϩⲕⲟ",
 		"english": "Hunger",
 		"etym": [ "< Demotic[d]𓎛𓈎𓃭𓈒:𓏥𓀐[/d]<i>ḥqr</i> \"hunger\", < Egyptian[h]𓎛𓈎𓂋𓀁[/h]<i>ḥqr</i> \"hunger, famine\" [c]ce-277[/c]" ],
 		"notes": "",
+		"derivedterms": [ "death.attack.starve" ],
 		"tags": [ "etym-egy", "status-effect", "vanilla" ]
 	},
 	"container.crafting": {
@@ -238,5 +268,12 @@ ENTRIES = {
 		"etym": [ "< Demotic[d]𓍑𓄿4𓅓𓊪1𓄑:𓏛@𓆰𓏪[/d]<i>ḏmpḥ</i>,[d]𓍑𓄿4𓊪1𓐍:𓏭𓆰𓏪[/d]<i>ḏpḫ</i> \"apple\", < Late Egyptian[h]𓆓𓊪𓎛𓏲𓆰[/h]<i>ḏpḥ</i> \"apple\", from a Semitic language [c]ce-314[/c][c]tla-183730[/c]"],
 		"notes": "",
 		"tags": [ "etym-sem", "food", "item", "vanilla" ]
+	},
+	"item.book.name": {
+		"coptic": "ϫⲱⲱⲙⲉ",
+		"english": "Book",
+		"etym": [ "< Demotic[d]𓍑𓄿3𓅓𓉻:𓂝*𓏛𓆰𓏪[/d]<i>ḏmꜥ</i> \"papyrus document, book\", < Egyptian[h]𓍑𓄿𓌷𓂝𓎅[/h]<i>ḏmꜥ</i> \"papyrus (sheet or roll)\" [c]ce-314[/c][c]dpdp-d7748[/c][c]tla-184040[/c]"],
+		"notes": "",
+		"tags": [ "etym-egy", "item", "vanilla" ]
 	}
 }
