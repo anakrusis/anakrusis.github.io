@@ -63,11 +63,13 @@ SOURCE_PAGE_OFFSETS["ce"] 	= SOURCE_PAGE_OFFSETS["cerny"]
 SOURCE_PAGE_OFFSETS["vy"]	= SOURCE_PAGE_OFFSETS["vycichl"]
 
 var SCRIPTORIUM_LINKS = {
+	"exo24":	"https://data.copticscriptorium.org/texts/old-testament/02_exodus_24/",
 	"jer11":	"https://data.copticscriptorium.org/texts/old-testament/24_jeremiah_11/",
 	"prov25":	"https://data.copticscriptorium.org/texts/old-testament/20_proverbs_25/",
 	"rev21": 	"https://data.copticscriptorium.org/texts/new-testament/66_revelation_21/"
 }
 var SCRIPTORIUM_NAMES = {
+	"exo24":	"Exodus&nbsp;24",
 	"jer11":	"Jeremiah&nbsp;11",
 	"prov25":	"Proverbs&nbsp;25",
 	"rev21": 	"Revelation&nbsp;21"

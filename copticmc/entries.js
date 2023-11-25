@@ -167,6 +167,13 @@ ENTRIES = {
 		"notes": "Lambdin lists this word as ⲣⲙ̄ϯⲙⲉ [c]lambdin-283[/c] but ⲣⲙ̄ⲛ̄ϯⲙⲉ is the more common and usual spelling.",
 		"tags": [ "etym-egy", "mob", "vanilla" ]
 	},
+	"item.dyePowder.blue.name":{
+		"coptic": "ⲥⲁⲡⲡⲓⲣⲟⲥ",
+		"english": "Lapis Lazuli",
+		"etym": [ "< Greek σάπφειρος \"lapis lazuli, sapphire\"" ],
+		"notes": "Usually translated \"sapphire\" [c]cdo-C10407[/c][c]cdo-C10408[/c] but a reading of \"lapis lazuli\" is probably more accurate considering the attestations, most of which are translations of Hebrew ספיר:<br><br>ⲁⲩⲱ ⲡⲙⲁ ⲉⲧϩⲁⲛⲉϥⲟⲩⲉⲣⲏⲧⲉ ⲉϥⲟ ⲛ̄ⲧϩⲉ ⲛ̄ⲟⲩϩⲱⲃ ⲛ̄ⲧⲱⲃⲉ ⲛ̄<b>ⲥⲁⲡⲡⲓⲣⲟⲛ</b><br>וְתַחַת רַגְלָיו, כְּמַעֲשֵׂה לִבְנַת הַ<b>סַּפִּיר</b><br>\"and under his feet was as it were a work of <b>sapphire</b> slabs\" ([s]exo24-10[/s])<br><br>In Demotic the word was [d]𓐍𓐠𓏤𓏰:𓏛𓏏𓃀𓏲1𓊌1[/d]<i>ḫstb</i> \"lapis lazuli\", which is a metathesis of earlier Egyptian [h]𓐍𓋴𓃀𓆓𓈒𓏥[/h]<i>ḫsbḏ</i> \"lapis lazuli\" [c]dpdp-d4605[/c][c]tla-874421[/c].",
+		"tags": [ "etym-grk", "item", "vanilla" ]
+	},
 	"tile.tallgrass.name":{
         "coptic": "ⲥⲓⲙ",
         "english": "Grass",
@@ -237,7 +244,7 @@ ENTRIES = {
 		"coptic": "ⲱⲛⲉ ⲙ̄ⲙⲉ",
 		"english": "Diamond",
 		"etym": [ "< Demotic [d]𓇋𓆛:𓈖1𓇋𓇋𓏲𓊌1𓌶:𓂝1𓆄𓏏[/d]<i>ỉny (n) mꜣꜥ.t</i> \"precious stone\" (literally \"genuine stone\") [c]cdd_i-163[/c], which is:<table><tr><td>See [r]tile.stone.stone.name[/r]</td><td style=\"width:50%\">Demotic [d]𓌶:𓂝1𓆄𓏏[/d]<i>mꜣꜥ.t</i> \"truth\", < Egyptian[h]𓌳𓐙𓂝𓏏𓏛[/h]<i></i> \"truth, justice\" [c]ce-78[/c][c]dpdp-d2297[/c][c]tla-66620[/c]</td></tr></table>" ],
-		"notes": "Thank you to Maciej Ⲙⲁⲣⲉⲕ for suggesting this translation: \"precious stone, pearl\" [c]cd-524a[/c][c]cdo-C5498[/c],. Also spelled ⲉⲛⲉⲙ̄ⲙⲉ ([s]rev21-11[/s]), even interchangeably with ⲱⲛⲉ ⲙ̄ⲙⲉ within the same text ([s]rev21-19[/s]). ",
+		"notes": "Thank you to Maciej Ⲙⲁⲣⲉⲕ for suggesting this translation: \"precious stone, pearl\" [c]cd-524a[/c][c]cdo-C5498[/c]. Also spelled ⲉⲛⲉⲙ̄ⲙⲉ ([s]rev21-11[/s]), even interchangeably with ⲱⲛⲉ ⲙ̄ⲙⲉ within the same text ([s]rev21-19[/s]). ",
 		"tags": [ "etym-egy", "item", "vanilla" ]
 	},
 	"tile.stoneMoss.name":{
@@ -297,7 +304,7 @@ ENTRIES = {
 		"coptic": "ϫⲙ̄ⲡⲉϩ ⲛ̄ⲛⲟⲩⲃ",
 		"english": "Golden Apple",
 		"etym": [ "See [r]item.apple.name[/r]", "See [r]generic.Gold.name[/r]"],
-		"notes": "Example: ⲛ̄ⲧϩⲉ ⲛ̄ⲟⲩ<b>ϫⲙ̄ⲡⲉϩ ⲛ̄ⲛⲟⲩⲃ</b> ϩⲛ̄ⲟⲩϩⲟⲣⲙⲓⲥⲕⲟⲥ ⲛ̄ⲥⲁⲣⲇⲓⲟⲛ \"As a <b>golden apple</b> in a necklace of sardius...\" ([s]prov25-11[/s])",
+		"notes": "Example: ⲛ̄ⲧϩⲉ ⲛ̄ⲟⲩ<b>ϫⲙ̄ⲡⲉϩ ⲛ̄ⲛⲟⲩⲃ</b> ϩⲛ̄ⲟⲩϩⲟⲣⲙⲓⲥⲕⲟⲥ ⲛ̄ⲥⲁⲣⲇⲓⲟⲛ<br>\"As a <b>golden apple</b> in a necklace of sardius...\" ([s]prov25-11[/s])",
 		"tags": [ "etym-sem", "etym-egy", "food", "item", "vanilla" ]
 	},
 	"item.book.name": {
