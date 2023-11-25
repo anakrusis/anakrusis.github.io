@@ -26,7 +26,7 @@ ENTRIES = {
 		"english": "[i]player[/i] starved to death",
 		"etym": [ "See [r]death.attack.generic[/r]", "See [r]effect.hunger[/r]" ],
 		"img": "none",
-		"notes": "Example: ⲛⲉⲩϣⲏⲣⲉ ⲙⲛ̄ⲛⲉⲩϣⲉⲉⲣⲉ ⲥⲉⲛⲁⲙⲟⲩ ϩⲙ̄ⲡⲉϩⲕⲟ \"Their sons and daughters will die of starvation\" (Jeremiah 11:22).",
+		"notes": "Example: ⲛⲉⲩϣⲏⲣⲉ ⲙⲛ̄ⲛⲉⲩϣⲉⲉⲣⲉ ⲥⲉⲛⲁ<b>ⲙⲟⲩ ϩⲙ̄ⲡⲉϩⲕⲟ</b> \"Their sons and their daughters shall <b>die of famine</b>\" ([s]jer11-22[/s]).",
 		"tags": [ "death-message", "etym-egy", "etym-egy", "ui", "vanilla" ]
 	},
 	"item.thermalfoundation.material.crystalCrudeOil.name":{
@@ -44,11 +44,19 @@ ENTRIES = {
 		"notes": "\"Of various or many sorts\" [c]lambdin-213[/c], which I think is in line with the translations in other languages:<table><tr><td>Arabic:</td><td>متنوعات</td><td>\"diverse, varied, miscellaneous, assorted\"</td></tr><tr><td>Hebrew:</td><td>שונות</td><td>\"various, different\"</td></tr><tr><td>Spanish:</td><td>Varios<br>Objetos varios</td><td>\"various\"<br>\"various objects\"</td></tr></table>But I am a little worried that the attested uses of this word are not places where I would ever use \"miscellaneous\":<table><tr><td>(Wisdom of Solomon 7:22)</td><td>ⲟⲩⲛ̄ⲟⲩⲡⲛ︦ⲁ ⲅⲁⲣ ⲛ̄ϩⲏⲧⲥ̄ ⲉϥⲟⲩⲁⲁⲃ ⲛ̄ⲣⲉϥⲛⲟⲓ ⲛ̄ⲟⲩⲥⲙⲟⲧ ⲛ̄ⲟⲩⲱⲧ <b>ⲛ̄ⲁⲧⲉⲥⲙⲟⲧ</b>...</td><td>\"For in her (i.e. wisdom) is an understanding spirit holy, one only, <b>manifold</b>...\"</td></tr><tr><td>(Ephesians 3:10)</td><td>ϫⲉⲉⲩⲉⲟⲩⲱⲛϩ ⲧⲉⲛⲟⲩ ⲉⲃⲟⲗ ⲛ̄ⲛ̄ⲁⲣⲭⲏ. ⲙⲛ̄ⲛ̄ⲉⲝⲟⲩⲥⲓⲁ ϩⲛ̄ⲙⲡⲏⲩⲉ. ⲉⲃⲟⲗ ϩⲓⲧⲛ̄ⲧⲉⲕⲕⲗⲏⲥⲓⲁ ⲧⲥⲟⲫⲓⲁ <b>ⲛ̄ⲁⲧⲉⲥⲙⲟⲧ</b> ⲛ̄ⲧⲉⲡⲛⲟⲩⲧⲉ</td><td>\"To the intent that now unto the principalities and powers in heavenly places might be known by the church the <b>manifold</b> wisdom of God,\"</td></tr></table>This was one of the tabs in the Creative menu in 1.12, but was removed some time between then and 1.19.",
 		"tags": [ "etym-unk", "etym-unk", "ui", "vanilla" ]
 	},
+	"item.eyeOfEnder.name":{
+		"coptic": "ⲃⲁⲗ ⲛ̄ⲉⲛⲇⲉⲣ",
+		"english": "Eye of Ender",
+		"etym": [ "< Demotic[d]𓅡◳𓏤𓃭𓏤𓁻𓄹:𓏭[/d]<i>bl</i> \"eye\", < Egyptian[h]𓃀𓂋𓂂𓂂[/h]<i>br</i> \"eyeball, eye\" [c]ce-22[/c][c]tla-56270[/c]", "See [r]generic.Ender.name[/r]" ],
+		"notes": "",
+		"tags": [ "etym-egy", "etym-mod", "item", "vanilla" ]
+	},
 	"generic.Iron.name":{
 		"coptic": "ⲃⲉⲛⲓⲡⲉ",
 		"english": "Iron",
 		"etym": [ "< Demotic[d]𓅡◳𓏤:𓈖1𓊪1𓇋𓇋𓏲𓈔[/d]<i>bnpy</i> \"iron\", < Egyptian[h]𓃀𓇋𓄿𓄑𓈖𓇯𓈒𓏥[/h]<i>bjꜣ n pt</i> \"iron\" (literally \"metal of the heaven\") [c]ce-24[/c][c]tla-54450[/c]" ],
 		"notes": "",
+		"img": "item.ingotIron.name",
 		"tags": [ "etym-egy", "generic-type", "vanilla" ]
 	},
 	"entity.Ghast.name": {
@@ -79,7 +87,7 @@ ENTRIES = {
 		"etym": ["< proper name <i>Ender</i>"],
 		"img": "none",
 		"notes": "The Minecraft Official Glossary says that \"Ender\" is not to be translated, but other words next to it are fine to translate.",
-		"derivedterms": [ "entity.enderDragon.name" ],
+		"derivedterms": [ "item.eyeOfEnder.name", "entity.enderDragon.name" ],
 		"tags": [ "etym-mod", "not-to-be-translated", "unattested", "vanilla" ]
 	},
 	"entity.Enderman.name": {
@@ -144,10 +152,18 @@ ENTRIES = {
 		"notes": "On the \"Not to be translated\" list of the Minecraft Official Glossary. If it were not on the list, I would translate it as ⲁⲙⲛ̄ⲧⲉ \"underworld, Hades, Hell\" [c]cdo-C102[/c][c]lambdin-211[/c]. It is interesting that the definite article is never used in the word ⲁⲙⲛ̄ⲧⲉ; perhaps it is not needed in ⲛⲉⲑⲉⲣ either.",
 		"tags": [ "etym-mod", "not-to-be-translated", "unattested", "vanilla" ]
 	},
+	"generic.Gold.name": {
+		"coptic": "ⲛⲟⲩⲃ",
+		"english": "Gold",
+		"etym": ["< Demotic[d]𓋞:𓈒*𓏥1[/d]<i>nb</i> \"gold\", < Egyptian[h]𓋞[/h]<i>nbw</i> \"gold\" [c]ce-106[/c]"],
+		"img": "item.ingotGold.name",
+		"derivedterms": [ "item.appleGold.name" ],
+		"tags": [ "etym-egy", "generic-type", "vanilla" ]
+	},
 	"entity.Villager.name": {
 		"coptic":	"ⲣⲙ̄ⲛ̄ϯⲙⲉ",
 		"english":	"Villager",
-		"etym":	["< Demotic[d]𓂋:𓍿𓀀𓏪𓈖2:𓂧𓏇2𓏤𓏰:𓊖[/d]<i>rmṯ n tmy</i> \"local (man)\" [c]two-10[/c], which is:<table><tr><td>[d]𓂋:𓍿𓀀𓏪[/d]<i>rmṯ</i> \"human\" < Egyptian[h]𓂋𓍿𓀀[/h]<i>rmṯ</i> \"human\" [c]ce-136[/c]</td><td>[d]𓂧𓏇2𓏤𓏰:𓊖[/d]<i>tmy</i> \"town, village\" < Egyptian[h]𓂧𓏇𓇋𓈅𓏤[/h]<i>dmj</i> \"locality\" [c]ce-187[/c]</td></tr></table>"],
+		"etym":	["< Demotic[d]𓂋:𓍿𓀀𓏪𓈖2:𓂧𓏇2𓏤𓏰:𓊖[/d]<i>rmṯ n tmy</i> \"local (man)\" [c]two-10[/c], which is:<table><tr><td style=\"width:50%\">[d]𓂋:𓍿𓀀𓏪[/d]<i>rmṯ</i> \"human\" < Egyptian[h]𓂋𓍿𓀀[/h]<i>rmṯ</i> \"human\" [c]ce-136[/c]</td><td>[d]𓂧𓏇2𓏤𓏰:𓊖[/d]<i>tmy</i> \"town, village\" < Egyptian[h]𓂧𓏇𓇋𓈅𓏤[/h]<i>dmj</i> \"locality\" [c]ce-187[/c]</td></tr></table>"],
 		"notes": "Lambdin lists this word as ⲣⲙ̄ϯⲙⲉ [c]lambdin-283[/c] but ⲣⲙ̄ⲛ̄ϯⲙⲉ is the more common and usual spelling.",
 		"tags": [ "etym-egy", "mob", "vanilla" ]
 	},
@@ -214,8 +230,15 @@ ENTRIES = {
 		"english": "Stone",
 		"etym": [ "< Demotic[d]𓇋2𓆛:𓈖𓇋𓇋𓏲𓊌1[/d]<i>ỉny</i> \"stone\", < Egyptian[h]𓇋‌𓈖𓂋‌𓊌[/h]<i></i> \"stone\" [c]ce-228[/c]" ],
 		"notes": "",
-		"derivedterms": [ "tile.stoneMoss.name" ],
+		"derivedterms": [ "item.diamond.name", "tile.stoneMoss.name" ],
 		"tags": [ "block", "etym-egy", "stone", "vanilla" ]
+	},
+	"item.diamond.name":{
+		"coptic": "ⲱⲛⲉ ⲙ̄ⲙⲉ",
+		"english": "Diamond",
+		"etym": [ "< Demotic [d]𓇋𓆛:𓈖1𓇋𓇋𓏲𓊌1𓌶:𓂝1𓆄𓏏[/d]<i>ỉny (n) mꜣꜥ.t</i> \"precious stone\" (literally \"genuine stone\") [c]cdd_i-163[/c], which is:<table><tr><td>See [r]tile.stone.stone.name[/r]</td><td style=\"width:50%\">Demotic [d]𓌶:𓂝1𓆄𓏏[/d]<i>mꜣꜥ.t</i> \"truth\", < Egyptian[h]𓌳𓐙𓂝𓏏𓏛[/h]<i></i> \"truth, justice\" [c]ce-78[/c][c]dpdp-d2297[/c][c]tla-66620[/c]</td></tr></table>" ],
+		"notes": "Thank you to Maciej Ⲙⲁⲣⲉⲕ for suggesting this translation: \"precious stone, pearl\" [c]cd-524a[/c][c]cdo-C5498[/c],. Also spelled ⲉⲛⲉⲙ̄ⲙⲉ ([s]rev21-11[/s]), even interchangeably with ⲱⲛⲉ ⲙ̄ⲙⲉ within the same text ([s]rev21-19[/s]). ",
+		"tags": [ "etym-egy", "item", "vanilla" ]
 	},
 	"tile.stoneMoss.name":{
 		"coptic": "ⲱⲛⲉ ⲛ̄ⲗⲏⲭⲏ",
@@ -263,11 +286,19 @@ ENTRIES = {
 		"tags": [ "etym-egy", "etym-egy", "ui", "vanilla" ]
 	},
 	"item.apple.name": {
-		"coptic": "ϫⲉⲙⲡⲉϩ",
+		"coptic": "ϫⲙ̄ⲡⲉϩ",
 		"english": "Apple",
 		"etym": [ "< Demotic[d]𓍑𓄿4𓅓𓊪1𓄑:𓏛@𓆰𓏪[/d]<i>ḏmpḥ</i>,[d]𓍑𓄿4𓊪1𓐍:𓏭𓆰𓏪[/d]<i>ḏpḫ</i> \"apple\", < Late Egyptian[h]𓆓𓊪𓎛𓏲𓆰[/h]<i>ḏpḥ</i> \"apple\", from a Semitic language [c]ce-314[/c][c]tla-183730[/c]"],
 		"notes": "",
+		"derivedterms": [ "item.appleGold.name" ],
 		"tags": [ "etym-sem", "food", "item", "vanilla" ]
+	},
+	"item.appleGold.name": {
+		"coptic": "ϫⲙ̄ⲡⲉϩ ⲛ̄ⲛⲟⲩⲃ",
+		"english": "Golden Apple",
+		"etym": [ "See [r]item.apple.name[/r]", "See [r]generic.Gold.name[/r]"],
+		"notes": "Example: ⲛ̄ⲧϩⲉ ⲛ̄ⲟⲩ<b>ϫⲙ̄ⲡⲉϩ ⲛ̄ⲛⲟⲩⲃ</b> ϩⲛ̄ⲟⲩϩⲟⲣⲙⲓⲥⲕⲟⲥ ⲛ̄ⲥⲁⲣⲇⲓⲟⲛ \"As a <b>golden apple</b> in a necklace of sardius...\" ([s]prov25-11[/s])",
+		"tags": [ "etym-sem", "etym-egy", "food", "item", "vanilla" ]
 	},
 	"item.book.name": {
 		"coptic": "ϫⲱⲱⲙⲉ",

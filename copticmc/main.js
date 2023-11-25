@@ -62,6 +62,17 @@ SOURCE_NAMES["cd"] 			= SOURCE_NAMES["crum"]
 SOURCE_PAGE_OFFSETS["ce"] 	= SOURCE_PAGE_OFFSETS["cerny"]
 SOURCE_PAGE_OFFSETS["vy"]	= SOURCE_PAGE_OFFSETS["vycichl"]
 
+var SCRIPTORIUM_LINKS = {
+	"jer11":	"https://data.copticscriptorium.org/texts/old-testament/24_jeremiah_11/",
+	"prov25":	"https://data.copticscriptorium.org/texts/old-testament/20_proverbs_25/",
+	"rev21": 	"https://data.copticscriptorium.org/texts/new-testament/66_revelation_21/"
+}
+var SCRIPTORIUM_NAMES = {
+	"jer11":	"Jeremiah&nbsp;11",
+	"prov25":	"Proverbs&nbsp;25",
+	"rev21": 	"Revelation&nbsp;21"
+}
+
 // the page can be specially titled if certain tags are put in
 var PAGETOPTITLES = {
 	"all":					"All words",
@@ -418,6 +429,43 @@ function doMarkup( instring ){
 				outstring += getEntryTitle( ENTRIES[innertext] )
 				outstring += "</b>"
 			}
+			i = tagcloseindex + 3;
+			
+		// [s][/s] TAG: SCRIPTORIUM CITATION ( no parentheses, can do colon for bible verses )
+		}else if (substring3 == "[s]"){
+			var tagcloseindex = instring.indexOf("[/s]", i);
+			if (tagcloseindex == -1){
+				console.log("Error: [s] tag not closed")
+				i++;
+				continue;
+			}
+			var innertext = instring.substring(i+3, tagcloseindex);
+			var hyphenindex = innertext.indexOf("-")
+			// if there is a hyphen, then use the part before the hyphen as the key to the link table with a scriptorium page
+			// if there is no hyphen, then use the whole string
+			var keystring = ( hyphenindex > -1 ) ? innertext.substring(0, hyphenindex) : innertext
+			var citationlink = SCRIPTORIUM_LINKS[keystring]
+			var citationname = SCRIPTORIUM_NAMES[keystring];
+			// the text before the link tag gets wrapped around it ( or doesn't )
+			var citationstring = "";
+			if (citationname){
+				citationstring = citationname;
+			}else{
+				citationstring = "Invalid Scriptorium citation name"
+			}
+			if ( hyphenindex > -1 ){
+				var citationverse = innertext.substring(hyphenindex + 1);
+				citationstring += ":" + citationverse;
+			}
+			
+			if (citationlink){
+				// automatically goes to the analytic page, but that could be changed 
+				citationlink += "analytic"
+				citationstring = "<a href=\"" + citationlink + "\" target=\"_blank\" rel=\"noopener noreferrer\">" + citationstring
+				citationstring += "</a>"
+			}
+			outstring += citationstring
+			
 			i = tagcloseindex + 3;
 			
 		// only put characters one by one if there is no tag to deal with
