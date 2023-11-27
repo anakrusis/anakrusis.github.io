@@ -49,7 +49,7 @@ ENTRIES = {
 		"english": "Eye of Ender",
 		"etym": [ "< Demotic[d]𓅡◳𓏤𓃭𓏤𓁻𓄹:𓏭[/d]<i>bl</i> \"eye\", < Egyptian[h]𓃀𓂋𓂂𓂂[/h]<i>br</i> \"eyeball, eye\" [c]ce-22[/c][c]tla-56270[/c]", "See [r]generic.Ender.name[/r]" ],
 		"notes": "",
-		"tags": [ "etym-egy", "etym-mod", "item", "vanilla" ]
+		"tags": [ "etym-egy", "etym-mod", "item", "not-to-be-translated", "vanilla" ]
 	},
 	"generic.Iron.name":{
 		"coptic": "ⲃⲉⲛⲓⲡⲉ",
@@ -160,6 +160,20 @@ ENTRIES = {
 		"derivedterms": [ "item.appleGold.name" ],
 		"tags": [ "etym-egy", "generic-type", "vanilla" ]
 	},
+	"item.potato.name":{
+        "coptic": "ⲡⲁⲧⲁⲧⲁ",
+        "english": "Potato",
+        "etym": [ "< various languages, all ultimately from Taino <i>batata</i> \"sweet potato\"" ],
+        "notes": "Potatoes are from the Americas, so a borrowing of some sort is fully expected. Here are some of the common forms:<br><br><b>The \"earth-apple\" calque: </b> Probably originated with the French <i>pomme de terre</i> and spread to other languages such as Afrikaans&nbsp;<i>aartappel</i>, Dutch&nbsp;<i>aardappel</i>, Hebrew&nbsp;תפוח&nbsp;אדמה, Persian&nbsp;سیب‌زمینی. The Coptic Wikipedia Incubator has <a href=\"https://incubator.wikimedia.org/wiki/Wp/cop/%CF%AB%E2%B2%89%E2%B2%99%E2%B2%AB%E2%B2%89%CF%A9_%E2%B2%9B%CC%80%E2%B2%95%E2%B2%81%CF%A9%E2%B2%93\">ϫⲉⲙⲫⲉϩ ⲛ̀ⲕⲁϩⲓ</a> formed in the same manner.<br><br><b><i>Kartoffel</i> and variations:</b> Originally from German and spread to other languages: Armenian&nbsp;կարտոֆիլ&nbsp;<i>kartofil</i>, Azerbaijani&nbsp;<i>kartof</i>, Georgian&nbsp;კარტოფილი&nbsp;<i>k’art’opili</i>,  Russian&nbsp;картофель&nbsp;<i>kartofelʹ</i>, Yiddish&nbsp;קאַרטאָפֿל&nbsp;<i>kartofl</i><br><br><b><i>Batata</i> and variations:</b> Originally from Taino and spread via Spanish/Portuguese: Arabic بطاطس&nbsp;<i>baṭāṭis</i> / بطاطا‎&nbsp;<i>baṭāṭa</i>, Catalan&nbsp;<i>patata</i>, English&nbsp;<i>potato</i>, Greek&nbsp;<i>πατάτα</i>, Italian&nbsp;<i>patata</i>, Maltese&nbsp;<i>patata</i>, Sorani (Kurdish)&nbsp;پەتاتە&nbsp<i>petate</i>, Spanish&nbsp;<i>patata</i>, Turkish&nbsp;<i>patates</i>, etc.<br><br>Because it can be mutually understood by Arabic speakers, English speakers and Greek speakers, ⲡⲁⲧⲁⲧⲁ is a natural choice. Alternate forms such as ⲡⲁⲧⲁⲧⲉ (demonstrating the second syllable stress /pa'ta.tə/) or ⲡⲁⲧⲁⲧⲉⲥ (closer to Arabic بطاطس) are also potentially good.",
+        "tags": [ "etym-mod", "food", "item", "unattested", "vanilla" ]
+    },
+	"item.redstone.name": {
+		"coptic":	"ⲣⲉⲇⲥⲧⲱⲛ",
+		"english":	"Redstone",
+		"etym":	["< proper name <i>Redstone</i>"],
+		"notes": "On the \"Not to be translated\" list of the Minecraft Official Glossary.",
+		"tags": [ "etym-mod", "item", "not-to-be-translated", "unattested", "vanilla" ]
+	},
 	"entity.Villager.name": {
 		"coptic":	"ⲣⲙ̄ⲛ̄ϯⲙⲉ",
 		"english":	"Villager",
@@ -170,9 +184,24 @@ ENTRIES = {
 	"item.dyePowder.blue.name":{
 		"coptic": "ⲥⲁⲡⲡⲓⲣⲟⲥ",
 		"english": "Lapis Lazuli",
-		"etym": [ "< Greek σάπφειρος \"lapis lazuli, sapphire\"" ],
-		"notes": "Usually translated \"sapphire\" [c]cdo-C10407[/c][c]cdo-C10408[/c] but a reading of \"lapis lazuli\" is probably more accurate considering the attestations, most of which are translations of Hebrew ספיר:<br><br>ⲁⲩⲱ ⲡⲙⲁ ⲉⲧϩⲁⲛⲉϥⲟⲩⲉⲣⲏⲧⲉ ⲉϥⲟ ⲛ̄ⲧϩⲉ ⲛ̄ⲟⲩϩⲱⲃ ⲛ̄ⲧⲱⲃⲉ ⲛ̄<b>ⲥⲁⲡⲡⲓⲣⲟⲛ</b><br>וְתַחַת רַגְלָיו, כְּמַעֲשֵׂה לִבְנַת הַ<b>סַּפִּיר</b><br>\"and under his feet was as it were a work of <b>sapphire</b> slabs\" ([s]exo24-10[/s])<br><br>In Demotic the word was [d]𓐍𓐠𓏤𓏰:𓏛𓏏𓃀𓏲1𓊌1[/d]<i>ḫstb</i> \"lapis lazuli\", which is a metathesis of earlier Egyptian [h]𓐍𓋴𓃀𓆓𓈒𓏥[/h]<i>ḫsbḏ</i> \"lapis lazuli\" [c]dpdp-d4605[/c][c]tla-874421[/c].",
+		"etym": [ "< Greek σάπφειρος \"lapis lazuli, sapphire\", < possibly loaned from Pre-Greek (whence also Hebrew ספיר) (Beekes 1307)" ],
+		"notes": "Usually translated \"sapphire\" [c]cdo-C10407[/c][c]cdo-C10408[/c] but a reading of \"lapis lazuli\" is probably more historically accurate (see <a href=\"https://jewishencyclopedia.com/articles/13190-sapphire\">Jewish Encyclopedia v.11 p.52</a> for more). Usually used where the Hebrew text has ספיר.<br><br>Examples:<br>ⲁⲩⲱ ⲡⲙⲁ ⲉⲧϩⲁⲛⲉϥⲟⲩⲉⲣⲏⲧⲉ ⲉϥⲟ ⲛ̄ⲧϩⲉ ⲛ̄ⲟⲩϩⲱⲃ ⲛ̄ⲧⲱⲃⲉ ⲛ̄<b>ⲥⲁⲡⲡⲓⲣⲟⲛ</b><br>\"and under his feet was as it were a work of <b>sapphire</b> slabs\" ([s]exo24-10[/s])<br><br>ⲧϣⲟⲣⲡ ⲛ̄ⲥⲛⲧⲉ ⲉⲥⲉⲓⲛⲉ ⲛ̄ⲓⲁⲥⲡⲓⲥ ⲧⲙⲉϩⲥⲛ̄ⲧⲉ ⲛ<b>ⲥⲁⲡⲡⲓⲣⲟⲥ</b><br>\"The first foundation was jasper; the second, <b>sapphire</b>...\" ([s]rev21-19[/s])<br><br> In Demotic the word was [d]𓐍𓐠𓏤𓏰:𓏛𓏏𓃀𓏲1𓊌1[/d]<i>ḫstb</i> \"lapis lazuli\", which is a metathesis of earlier Egyptian [h]𓐍𓋴𓃀𓆓𓈒𓏥[/h]<i>ḫsbḏ</i> \"lapis lazuli\" [c]dpdp-d4605[/c][c]tla-874421[/c].",
 		"tags": [ "etym-grk", "item", "vanilla" ]
+	},
+	"generic.Sword.name":{
+		"coptic": "ⲥⲏϥⲉ",
+		"english": "Sword",
+		"etym": [ "< Demotic[d]𓋴𓆑:𓏭1𓇋𓇋𓏲𓌪[/d]<i>sfy</i> \"sword, knife\", < Egyptian[h]𓊃𓆑𓏏𓌪[/h]<i>zf.t</i> \"knife, sword\" [c]ce-171[/c][c]dpdp-d5269[/c][c]tla-133420[/c]" ],
+		"notes": "",
+		"derivedterms": [ "item.swordIron.name" ],
+		"tags": [ "etym-egy", "generic-type", "vanilla" ]
+	},
+	"item.swordIron.name":{
+		"coptic": "ⲥⲏϥⲉ ⲛ̄ⲃⲉⲛⲓⲡⲉ",
+		"english": "Iron Sword",
+		"etym": [ "See [r]generic.Sword.name[/r]", "See [r]generic.Iron.name[/r]" ],
+		"notes": "",
+		"tags": [ "etym-egy", "etym-egy", "item", "vanilla" ]
 	},
 	"tile.tallgrass.name":{
         "coptic": "ⲥⲓⲙ",
