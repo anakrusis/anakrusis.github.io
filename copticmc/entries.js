@@ -10,7 +10,7 @@ ENTRIES = {
 		"coptic": "",
 		"english": "Iron Ore",
 		"etym": [],
-		"notes": "There are several different types of iron ores with distinct names:<br><br><b>Hematite: </b> It is attested in numerous Coptic medical texts with spelling variations such as ϣⲉϯⲛⲉϩ [c]sawy-46, 55, 106[/c][c]richter-519[/c], ϣⲁⲧⲁⲛϩ [c]sawy-108[/c], ⲁϣϣⲉⲧⲓⲛⲁϩ [c]richter-520[/c], etc. ( < Arabic الشادنه ) <br><br><b>Magnetite: </b>It is attested in Demotic with spelling variations such as[d]𓅓𓉻:𓂝*𓏛𓎡:𓈖:𓏌*𓏲𓇋𓏲𓐠𓏤𓏰:𓏛𓊌1[/d]<i>mꜥknes</i>,[d]𓅓𓉻:𓂝*𓏛𓎡𓈖:𓏌*𓏲𓇋𓏲𓐠𓏤𓏰:𓏛𓇋𓇋𓏲𓉻:𓂝*𓏛𓊌1[/d]<i>mꜥknesyꜥ</i>,[d]𓅓𓉻:𓂝*𓏛𓈖:𓏌*𓏲𓇋𓏲𓐠𓏤𓏰:𓏛𓊌1[/d]<i>mꜥnes</i> ( < Greek μάγνης, μαγνησία, μαγνῆτις λίθος ) [c]cdd_m-62[/c]. I do not know if it is attested in Coptic.",
+		"notes": "There are several different types of iron ores with distinct names:<br><br><b>Hematite: </b> It is attested in numerous Coptic medical texts with spelling variations such as ϣⲉϯⲛⲉϩ [c]sawy-46, 55, 106[/c][c]richter-519[/c], ϣⲁⲧⲁⲛϩ [c]sawy-108[/c], ⲁϣϣⲉⲧⲓⲛⲁϩ [c]richter-520[/c], etc., all from Arabic الشادنه. <br><br><b>Magnetite: </b>It is attested in Demotic with spelling variations such as[d]𓅓𓉻:𓂝*𓏛𓎡:𓈖:𓏌*𓏲𓇋𓏲𓐠𓏤𓏰:𓏛𓊌1[/d]<i>mꜥknes</i>,[d]𓅓𓉻:𓂝*𓏛𓎡𓈖:𓏌*𓏲𓇋𓏲𓐠𓏤𓏰:𓏛𓇋𓇋𓏲𓉻:𓂝*𓏛𓊌1[/d]<i>mꜥknesyꜥ</i>,[d]𓅓𓉻:𓂝*𓏛𓈖:𓏌*𓏲𓇋𓏲𓐠𓏤𓏰:𓏛𓊌1[/d]<i>mꜥnes</i>, which are from Greek μάγνης, μαγνησία, μαγνῆτις λίθος [c]cdd_m-62[/c]. I do not know if it is attested in Coptic.",
 		"tags": [ "block", "ore", "uncertain", "vanilla" ]
 	},
 	"death.attack.generic":{
@@ -87,7 +87,7 @@ ENTRIES = {
 		"etym": ["< proper name <i>Ender</i>"],
 		"img": "none",
 		"notes": "The Minecraft Official Glossary says that \"Ender\" is not to be translated, but other words next to it are fine to translate.",
-		"derivedterms": [ "item.eyeOfEnder.name", "entity.enderDragon.name" ],
+		"derivedterms": [ "item.eyeOfEnder.name", "entity.enderDragon.name", "tile.enderChest.name" ],
 		"tags": [ "etym-mod", "not-to-be-translated", "unattested", "vanilla" ]
 	},
 	"entity.Enderman.name": {
@@ -111,6 +111,13 @@ ENTRIES = {
         "notes": "The word κάκτος did not originally refer to cactus as we understand it today (cacti are from the Americas), so this usage of the word is a modern invention.<br><br>Compare Armenian կակտուս, Hebrew קקטוס, Latin <i>cactus</i>, Persian کاکتوس, etc. One notable exception is Arabic صبار, which is derived from صبر \"aloe\" (whence also Coptic ⲥⲁⲡⲣ̄ \"aloe juice\", attested several times in P. Louvre AF 12530 [c]sawy-98, 129, 130[/c])",
         "tags": [ "block", "etym-mod", "plant", "unattested", "vanilla" ]
     },
+	"generic.Axe.name":{
+		"coptic": "ⲕⲉⲗⲉⲃⲓⲛ",
+		"english": "Axe",
+		"etym": [ "< Demotic[d]𓈎𓃭𓅡◳𓏤[...][/d]<i>qrb[n]</i> \"axe, pickaxe\", also as a proper name[d]𓂓𓏤𓃭𓅡◳𓏤𓈖:𓏌*𓏲𓀀3@[/d]<i>qrbn</i> \"Kelebinis\", from a Semitic language [c]ce-55[/c][c]cdd_q-59[/c][c]dpdp_tm-410[/c]" ],
+		"notes": "There are many tool names attested in Coptic. In order to narrow down the choices, I try to find one that matches the uses of the in-game tool. Axes in Minecraft are used primarily for cutting down trees and chopping wood. The ⲕⲉⲗⲉⲃⲓⲛ is well attested and used in the same kind of situations:<br><br>ⲉⲩⲙⲁ ⲛ̄ϣⲏⲛ ⲉⲩⲕⲉⲣⲉϣⲉ ⲁⲩⲱ ⲛ̄ⲧⲉⲧⲉϥϭⲓϫ ϫⲱⲣⲡ ⲉϥⲕⲱⲱⲣⲉ ⲙ̄ⲡϣⲉ ϩⲙ̄ⲡ<b>ⲕⲉⲗⲉⲃⲓⲛ</b><br>\"...into a forest to gather wood, if the hand of him that cuts wood with the <b>axe</b> should be violently shaken...\" ([s]deut19-5[/s])<br><br>ⲁϥϫⲓ ⲛ̄ϭⲓ ⲁⲃⲓⲙⲉⲗⲉⲭ ⲛ̄ⲟⲩ<b>ⲕⲉⲗⲉⲃⲓⲛ</b> ϩⲛ̄ⲧⲉϥϭⲓϫ ⲁϥϣⲱⲱⲧ ⲛ̄ⲟⲩⲧⲁⲣ ⲛ̄ϣⲉ<br>...Abimelech took an <b>axe</b> in his hand, and cut down a branch of a tree... ([s]jud9-48[/s])<br><br>ⲁⲩϣⲱⲱⲧ ⲛ̄ⲛⲉⲥⲣⲟ ϩⲛ̄ϩⲉⲛ<b>ⲕⲉⲗⲉⲃⲓⲛ</b> ⲛ̄ⲧϩⲉ ⲛ̄ϩⲉⲛϣⲏⲛ ϩⲛ̄ⲧⲥⲱϣⲉ<br>...they cut down its doors with <b>axes</b> as in a wood of trees... ([s]psa73-5[/s])<br>(Note: the axe is the best tool for breaking doors in Minecraft as well.)<br><br>",
+		"tags": [ "etym-sem", "generic-type", "vanilla" ]
+	},
 	"entity.Creeper.name": {
 		"coptic":	"ⲕⲣⲓⲡⲉⲣ",
 		"english":	"Creeper",
@@ -239,6 +246,28 @@ ENTRIES = {
         "notes": "Thank you to Maciej Ⲙⲁⲣⲉⲕ and ℝandy for suggesting this translation: literally \"[i]mob[/i] begetter egg\" or \"[i]mob[/i] maker egg\". Analogous to ⲙⲁⲣⲓⲁ ⲧⲣⲉϥϫⲡⲉⲡⲛⲟⲩⲧⲉ. The verb ϫⲡⲟ feels well aligned to the various concepts of \"spawning\": begetting, producing, acquiring, offspring... [c]lambdin-345[/c]<br><br>This longer translation is from the newer versions of the game. In 1.12 spawn eggs are simply labelled \"Spawn [i]mob[/i]\", which is translated ϫⲡⲉ[i]mob[/i].",
         "tags": [ "etym-egy", "etym-egy", "item", "vanilla" ]
     },
+	"entity.Villager.nitwit":{
+		"coptic": "ⲥⲟϭ",
+		"english": "Nitwit",
+		"etym": [ "< Demotic[d]𓋴'𓍯𓎼𓀐[/d]<i>swg</i> \"be foolish, idiot\", < Late Egyptian[h]𓋴𓅱𓎼𓄿𓀔𓀁[/h]<i>swgꜣ</i> \"to be foolish\" [c]ce-176[/c][c]dpdp-d5157[/c][c]tla-130800[/c]" ],
+		"notes": "Literally \"fool\" [c]cd-388a[/c][c]lambdin-273[/c]. One of the villager professions; these are the villagers who do nothing and can't be traded with.",
+		"tags": [ "etym-egy", "mob", "vanilla", "villager-profession" ]
+	},
+	"tile.chest.name":{
+		"coptic": "ⲧⲁⲓⲃⲉ",
+		"english": "Chest",
+		"etym": [ "< Demotic[d]𓏏𓃀𓏲1𓇋𓇋𓏲𓊌1𓏏[/d]<i>tby.t</i>, [d]𓏏:°𓇋𓇋𓏲𓅡◳𓏤:°𓊌𓏏[/d]<i>tyb.t</i> \"coffin, shrine, chest\", which is a conflation of two similar earlier Egyptian words; the one relevant here is[h]𓂧𓃀𓏏𓆱[/h]<i>dbt</i> \"chest, box\" [c]ce-180[/c]"],
+		"notes": "",
+		"derivedterms": [ "tile.enderChest.name" ],
+		"tags": [ "block", "etym-egy", "vanilla" ]
+	},
+	"tile.enderChest.name":{
+		"coptic": "ⲧⲁⲓⲃⲉ ⲛ̄ⲉⲛⲇⲉⲣ",
+		"english": "Ender Chest",
+		"etym": [ "See [r]tile.chest.name[/r]", "See [r]generic.Ender.name[/r]" ],
+		"notes": "",
+		"tags": [ "block", "etym-egy", "etym-mod", "not-to-be-translated", "vanilla" ]
+	},
 	"itemGroup.brewing":{
         "coptic": "ⲫⲁⲣⲙⲁⲕⲓⲁ",
         "english": "Brewing",
@@ -333,7 +362,7 @@ ENTRIES = {
 		"coptic": "ϫⲙ̄ⲡⲉϩ ⲛ̄ⲛⲟⲩⲃ",
 		"english": "Golden Apple",
 		"etym": [ "See [r]item.apple.name[/r]", "See [r]generic.Gold.name[/r]"],
-		"notes": "Example: ⲛ̄ⲧϩⲉ ⲛ̄ⲟⲩ<b>ϫⲙ̄ⲡⲉϩ ⲛ̄ⲛⲟⲩⲃ</b> ϩⲛ̄ⲟⲩϩⲟⲣⲙⲓⲥⲕⲟⲥ ⲛ̄ⲥⲁⲣⲇⲓⲟⲛ<br>\"As a <b>golden apple</b> in a necklace of sardius...\" ([s]prov25-11[/s])",
+		"notes": "Example:<br><br>ⲛ̄ⲧϩⲉ ⲛ̄ⲟⲩ<b>ϫⲙ̄ⲡⲉϩ ⲛ̄ⲛⲟⲩⲃ</b> ϩⲛ̄ⲟⲩϩⲟⲣⲙⲓⲥⲕⲟⲥ ⲛ̄ⲥⲁⲣⲇⲓⲟⲛ<br>\"As a <b>golden apple</b> in a necklace of sardius...\" ([s]prov25-11[/s])",
 		"tags": [ "etym-sem", "etym-egy", "food", "item", "vanilla" ]
 	},
 	"item.book.name": {

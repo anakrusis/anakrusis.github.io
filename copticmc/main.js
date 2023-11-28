@@ -20,6 +20,7 @@ var SOURCE_LINKS = {
 	"cerny":	"",
 	"crum":		"https://coptot.manuscriptroom.com/crum-coptic-dictionary/?docID=800000&pageID=",
 	"dpdp":		"http://129.206.5.162/beta/palaeography/palaeography.html?q=tla:",
+	"dpdp_tm":	"http://129.206.5.162/beta/palaeography/palaeography.html?q=tm_nam:",
 	"lambdin":	"",
 	"richter":  "https://archiv.ub.uni-heidelberg.de/propylaeumdok/4629/1/Richter_Borrowing_into_Coptic_2017.pdf#page=",
 	"sawy":		"https://d-nb.info/1274430623/34#page=",
@@ -37,6 +38,7 @@ var SOURCE_NAMES = {
 	"cerny":	"<i>ČED</i>",
 	"crum":		"<i>CD</i>",
 	"dpdp":		"<i>DPDP</i>",
+	"dpdp_tm":	"<i>DPDP tm</i>",
 	"lambdin":	"Lambdin",
 	"richter":	"Richter",
 	"sawy":		"Sawy",
@@ -63,15 +65,21 @@ SOURCE_PAGE_OFFSETS["ce"] 	= SOURCE_PAGE_OFFSETS["cerny"]
 SOURCE_PAGE_OFFSETS["vy"]	= SOURCE_PAGE_OFFSETS["vycichl"]
 
 var SCRIPTORIUM_LINKS = {
+	"deut19":	"https://data.copticscriptorium.org/texts/old-testament/05_deuteronomy_19/",
 	"exo24":	"https://data.copticscriptorium.org/texts/old-testament/02_exodus_24/",
 	"jer11":	"https://data.copticscriptorium.org/texts/old-testament/24_jeremiah_11/",
+	"jud9":		"https://data.copticscriptorium.org/texts/old-testament/07_judges_9/",
 	"prov25":	"https://data.copticscriptorium.org/texts/old-testament/20_proverbs_25/",
+	"psa73":	"https://data.copticscriptorium.org/texts/old-testament/19_psalms_73/",
 	"rev21": 	"https://data.copticscriptorium.org/texts/new-testament/66_revelation_21/"
 }
 var SCRIPTORIUM_NAMES = {
+	"deut19":	"Deuteronomy&nbsp19",
 	"exo24":	"Exodus&nbsp;24",
 	"jer11":	"Jeremiah&nbsp;11",
+	"jud9":		"Judges&nbsp;9",
 	"prov25":	"Proverbs&nbsp;25",
+	"psa73":	"Psalm&nbsp;73",
 	"rev21": 	"Revelation&nbsp;21"
 }
 
