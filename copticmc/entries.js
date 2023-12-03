@@ -59,6 +59,13 @@ ENTRIES = {
 		"img": "item.ingotIron.name",
 		"tags": [ "etym-egy", "generic-type", "vanilla" ]
 	},
+	"tile.pumpkin.name":{
+		"coptic": "ⲃⲛ̄ⲧⲛ̄ⲉϭⲗⲟϭ",
+		"english": "Pumpkin",
+		"etym": [ "< Demotic[d]𓅡◳𓏤𓇋𓇋𓏲𓈖:𓏌*𓏲𓏏𓆰𓏪[/d]<i>bynt</i> \"gourd, cucumber\", < Egyptian[h]𓅡𓏤𓂧𓏏𓏯𓆰𓏪[/h]<i>bꜣdt</i>, [h]𓅡𓏤𓈖𓏏𓏯𓆰𓏥[/h]<i>bnt</i> \"cucumber garden, cucumber\" [c]ce-25[/c][c]cdd_b-29[/c][c]tla-850454[/c]", "*[k]ⲧⲗⲟϭ[/k] < Demotic[d]𓎼𓃭𓏤𓎼𓆰𓏪[/d]<i>glg</i> \"gourd\", < Egyptian[h]𓄔𓈖𓏥𓂋𓏤𓎼𓄿𓆰𓏪[/h]<i>dnrg</i> \"a fruit (melon?)\", from a Semitic language [c]ce-330[/c][c]cdd_g-64[/c][c]tla-600464[/c]" ],
+		"notes": "Literally \"(round) gourd\" [c]cdo-C493[/c], \"κολοκύντη\" [c]cd-41b[/c], \"pumpkin\" [c]lambdin-216[/c].",
+		"tags": [ "block", "etym-egy", "etym-sem", "vanilla" ]
+	},
 	"entity.Ghast.name": {
 		"coptic":	"ⲅⲁⲥⲧ",
 		"english":	"Ghast",
@@ -95,7 +102,23 @@ ENTRIES = {
 		"english":	"Enderman",
 		"etym":	["< proper name <i>Enderman</i>"],
 		"notes": "On the \"Not to be translated\" list of the Minecraft Official Glossary, with an exception: <i>\"In some languages this word is offensive, translate \'man\' and leave Ender unchanged.\"</i><br><br>Fully transliterating the name is the most common method. ⲉⲛⲇⲉⲣⲙⲁⲛ seems to be fine, but a partial translation such as ⲣⲙⲛ̄ⲉⲛⲇⲉⲣ is a possibility as well.",
-		"tags": [ "etym-mod", "mob", "mob", "not-to-be-translated", "unattested", "vanilla" ]
+		"tags": [ "etym-mod", "mob", "not-to-be-translated", "unattested", "vanilla" ]
+	},
+	"generic.Ender.name": {
+		"coptic": "ⲉⲛⲇⲉⲣ",
+		"english": "Ender",
+		"etym": ["< proper name <i>Ender</i>"],
+		"img": "none",
+		"notes": "The Minecraft Official Glossary says that \"Ender\" is not to be translated, but other words next to it are fine to translate.",
+		"derivedterms": [ "item.eyeOfEnder.name", "entity.enderDragon.name", "tile.enderChest.name" ],
+		"tags": [ "etym-mod", "not-to-be-translated", "unattested", "vanilla" ]
+	},
+	"entity.Zombie.name": {
+		"coptic":	"ⲍⲟⲙⲡⲓ",
+		"english":	"Zombie",
+		"etym":	["< various languages, all ultimately from a Bantu language"],
+		"notes": "This word is not listed in the Minecraft Official Glossary, so it is intended to be translated.<br><br>Most of the translations have borrowed this word unadapted: Afrikaans&nbsp;<i>zombie</i>, Albanian&nbsp;<i>zombi</i>, Arabic&nbsp;زومبي‎&nbsp;<i>zūmbī</i>, Armenian&nbsp;զոմբի&nbsp;<i>zombi</i>, Azerbaijani&nbsp;<i>zombi</i>, Bulgarian&nbsp;зомби&nbsp;<i>zombi</i>, Catalan&nbsp;<i>zombi</i>, Finnish&nbsp;<i>zombi</i>, French&nbsp;<i>zombie</i>, Georgian&nbsp;ზომბი&nbsp;<i>zombi</i>, German&nbsp;<i>Zombie</i>, Greek&nbsp;ζόμπι, Hebrew&nbsp;זומבי&nbsp;<i>zombi</i>, Hindi&nbsp;जॉम्बी&nbsp;<i>jŏmbī</i>, Igbo&nbsp;<i>zombie</i>, Indonesian&nbsp;<i>zombi</i>, Italian&nbsp;<i>zombi</i>, Japanese&nbsp;ゾンビ&nbsp;<i>zonbi</i>, Korean&nbsp;좀비&nbsp<i>jombi</i>, Persian&nbsp;زامبی&nbsp;<i>zâmbi</i>, Portuguese&nbsp;<i>zombie</i>&nbsp;/&nbsp;<i>zumbi</i>, Russian&nbsp;зомби&nbsp;<i>zombi</i>, Somali&nbsp;<i>zombie</i>, Sorani (Kurdish)&nbsp;زۆمبی&nbsp;<i>zombî</i>, Spanish&nbsp;<i>zombi</i>, Tamil&nbsp;ஸோம்பி&nbsp;<i>sōmpi</i>, Turkish&nbsp;<i>zombi</i>, Welsh&nbsp;<i>sombi</i> <br><br>The other translations use words of various forms, sometimes substituting a similar kind of monster: the old 1.12 Asturian translation&nbsp;<i>muertu viviente</i>&nbsp;\"living dead\", Belarusian&nbsp;мярцвяк&nbsp;\"corpse\", Chinese&nbsp;僵尸&nbsp;/&nbsp;殭屍&nbsp;\"<a href=\"https://en.wikipedia.org/wiki/Jiangshi\">jiangshi</a>\", Icelandic&nbsp;<i>uppvakningur</i>&nbsp;\"zombie\" (literally \"one who wakes up\"), Latin&nbsp;<i>resurrectus</i> \"risen again\", Maltese&nbsp;<i>mostru</i>&nbsp;\"monster\", Maori&nbsp;<i><a href=\"https://en.wikipedia.org/wiki/Taniwha\">taniwha</a>&nbsp;tūpāpaku</i>, Scottish Gaelic&nbsp;<i>corp-coisiche</i>&nbsp;\"walker-corpse(?)\", Sicilian&nbsp;<i>mortuvivu</i>&nbsp;\"living dead\", Vietnamese&nbsp;<i>thây ma</i>&nbsp;\"zombie\", Yoruba&nbsp;<i>ẹbọra</i>&nbsp;\"<a href=\"https://en.wiktionary.org/wiki/%E1%BA%B9b%E1%BB%8Dra\">mythological monster or troll believed to live in forests</a>\".<br><br>The underlying concepts of these monsters share common threads but are different enough that I doubt a calque into Coptic is effective at conveying,  ",
+		"tags": [ "etym-mod", "mob", "unattested", "vanilla" ]
 	},
 	"item.thermalfoundation.material.dustSulfur.name":{
 		"coptic": "ⲑⲏⲛ",
@@ -167,6 +190,13 @@ ENTRIES = {
 		"derivedterms": [ "item.appleGold.name" ],
 		"tags": [ "etym-egy", "generic-type", "vanilla" ]
 	},
+	"item.bread.name": {
+		"coptic":	"ⲟⲉⲓⲕ",
+		"english":	"Bread",
+		"etym":	["< Demotic[d]𓂝:𓈎𓏲𓏒:𓏥[/d]<i>ꜥq</i> \"loaf, ration\", < Egyptian[h]𓅧𓈎𓅱𓏒𓏥[/h]<i>ꜥqw</i> \" loaves (of bread), income\" [c]ce-120[/c][c]dpdp-d1123[/c][c]tla-41470[/c]"],
+		"notes": "",
+		"tags": [ "etym-egy", "food", "item", "vanilla" ]
+	},
 	"item.potato.name":{
         "coptic": "ⲡⲁⲧⲁⲧⲁ",
         "english": "Potato",
@@ -192,7 +222,7 @@ ENTRIES = {
 		"coptic": "ⲥⲁⲡⲡⲓⲣⲟⲥ",
 		"english": "Lapis Lazuli",
 		"etym": [ "< Greek σάπφειρος \"lapis lazuli, sapphire\", < possibly loaned from Pre-Greek (whence also Hebrew ספיר) (Beekes 1307)" ],
-		"notes": "Usually translated \"sapphire\" [c]cdo-C10407[/c][c]cdo-C10408[/c] but a reading of \"lapis lazuli\" is probably more historically accurate (see <a href=\"https://jewishencyclopedia.com/articles/13190-sapphire\">Jewish Encyclopedia v.11 p.52</a> for more). Usually used where the Hebrew text has ספיר.<br><br>Examples:<br>ⲁⲩⲱ ⲡⲙⲁ ⲉⲧϩⲁⲛⲉϥⲟⲩⲉⲣⲏⲧⲉ ⲉϥⲟ ⲛ̄ⲧϩⲉ ⲛ̄ⲟⲩϩⲱⲃ ⲛ̄ⲧⲱⲃⲉ ⲛ̄<b>ⲥⲁⲡⲡⲓⲣⲟⲛ</b><br>\"and under his feet was as it were a work of <b>sapphire</b> slabs\" ([s]exo24-10[/s])<br><br>ⲧϣⲟⲣⲡ ⲛ̄ⲥⲛⲧⲉ ⲉⲥⲉⲓⲛⲉ ⲛ̄ⲓⲁⲥⲡⲓⲥ ⲧⲙⲉϩⲥⲛ̄ⲧⲉ ⲛ<b>ⲥⲁⲡⲡⲓⲣⲟⲥ</b><br>\"The first foundation was jasper; the second, <b>sapphire</b>...\" ([s]rev21-19[/s])<br><br> In Demotic the word was [d]𓐍𓐠𓏤𓏰:𓏛𓏏𓃀𓏲1𓊌1[/d]<i>ḫstb</i> \"lapis lazuli\", which is a metathesis of earlier Egyptian [h]𓐍𓋴𓃀𓆓𓈒𓏥[/h]<i>ḫsbḏ</i> \"lapis lazuli\" [c]dpdp-d4605[/c][c]tla-874421[/c].",
+		"notes": "Usually translated \"sapphire\" [c]cdo-C10407[/c][c]cdo-C10408[/c] but a reading of \"lapis lazuli\" is probably more historically accurate (see <a href=\"https://jewishencyclopedia.com/articles/13190-sapphire\">Jewish Encyclopedia v.11 p.52</a> for more). Usually used where the Hebrew text has ספיר.<br><br>Examples:<br>ⲁⲩⲱ ⲡⲙⲁ ⲉⲧϩⲁⲛⲉϥⲟⲩⲉⲣⲏⲧⲉ ⲉϥⲟ ⲛ̄ⲧϩⲉ ⲛ̄ⲟⲩϩⲱⲃ ⲛ̄ⲧⲱⲃⲉ ⲛ̄<b>ⲥⲁⲡⲡⲓⲣⲟⲛ</b><br>\"and under his feet was as it were a work of <b>sapphire</b> slabs\" ([s]exo24-10[/s])<br><br>ⲧϣⲟⲣⲡ ⲛ̄ⲥⲛⲧⲉ ⲉⲥⲉⲓⲛⲉ ⲛ̄ⲓⲁⲥⲡⲓⲥ ⲧⲙⲉϩⲥⲛ̄ⲧⲉ ⲛ<b>ⲥⲁⲡⲡⲓⲣⲟⲥ</b><br>\"The first foundation was jasper; the second, <b>sapphire</b>...\" ([s]rev21-19[/s])<br><br> In Demotic the word was[d]𓐍𓐠𓏤𓏰:𓏛𓏏𓃀𓏲1𓊌1[/d]<i>ḫstb</i> \"lapis lazuli\", which is a metathesis of earlier Egyptian[h]𓐍𓋴𓃀𓆓𓈒𓏥[/h]<i>ḫsbḏ</i> \"lapis lazuli\" [c]dpdp-d4605[/c][c]tla-874421[/c].",
 		"tags": [ "etym-grk", "item", "vanilla" ]
 	},
 	"generic.Sword.name":{
@@ -293,7 +323,7 @@ ENTRIES = {
 	"tile.stone.stone.name":{
 		"coptic": "ⲱⲛⲉ",
 		"english": "Stone",
-		"etym": [ "< Demotic[d]𓇋2𓆛:𓈖𓇋𓇋𓏲𓊌1[/d]<i>ỉny</i> \"stone\", < Egyptian[h]𓇋‌𓈖𓂋‌𓊌[/h]<i></i> \"stone\" [c]ce-228[/c]" ],
+		"etym": [ "< Demotic[d]𓇋2𓆛:𓈖𓇋𓇋𓏲𓊌1[/d]<i>ỉny</i> \"stone\", < Egyptian[h]𓇋‌𓈖𓂋‌𓊌[/h]<i>jnr</i> \"stone\" [c]ce-228[/c]" ],
 		"notes": "",
 		"derivedterms": [ "item.diamond.name", "tile.stoneMoss.name" ],
 		"tags": [ "block", "etym-egy", "stone", "vanilla" ]
@@ -301,7 +331,7 @@ ENTRIES = {
 	"item.diamond.name":{
 		"coptic": "ⲱⲛⲉ ⲙ̄ⲙⲉ",
 		"english": "Diamond",
-		"etym": [ "< Demotic [d]𓇋𓆛:𓈖1𓇋𓇋𓏲𓊌1𓌶:𓂝1𓆄𓏏[/d]<i>ỉny (n) mꜣꜥ.t</i> \"precious stone\" (literally \"genuine stone\") [c]cdd_i-163[/c], which is:<table><tr><td>See [r]tile.stone.stone.name[/r]</td><td style=\"width:50%\">Demotic [d]𓌶:𓂝1𓆄𓏏[/d]<i>mꜣꜥ.t</i> \"truth\", < Egyptian[h]𓌳𓐙𓂝𓏏𓏛[/h]<i></i> \"truth, justice\" [c]ce-78[/c][c]dpdp-d2297[/c][c]tla-66620[/c]</td></tr></table>" ],
+		"etym": [ "< Demotic [d]𓇋𓆛:𓈖1𓇋𓇋𓏲𓊌1𓌶:𓂝1𓆄𓏏[/d]<i>ỉny (n) mꜣꜥ.t</i> \"precious stone\" (literally \"genuine stone\") [c]cdd_i-163[/c], which is:<table><tr><td>See [r]tile.stone.stone.name[/r]</td><td style=\"width:50%\">Demotic [d]𓌶:𓂝1𓆄𓏏[/d]<i>mꜣꜥ.t</i> \"truth\", < Egyptian[h]𓌳𓐙𓂝𓏏𓏛[/h]<i>mꜣꜥt</i> \"truth, justice\" [c]ce-78[/c][c]dpdp-d2297[/c][c]tla-66620[/c]</td></tr></table>" ],
 		"notes": "Thank you to Maciej Ⲙⲁⲣⲉⲕ for suggesting this translation: \"precious stone, pearl\" [c]cd-524a[/c][c]cdo-C5498[/c]. Also spelled ⲉⲛⲉⲙ̄ⲙⲉ ([s]rev21-11[/s]), even interchangeably with ⲱⲛⲉ ⲙ̄ⲙⲉ within the same text ([s]rev21-19[/s]). ",
 		"tags": [ "etym-egy", "item", "vanilla" ]
 	},
@@ -309,7 +339,7 @@ ENTRIES = {
 		"coptic": "ⲱⲛⲉ ⲛ̄ⲗⲏⲭⲏ",
 		"english": "Moss Stone",
 		"etym": [ "See [r]tile.stone.stone.name[/r]", "< Greek λειχήν \"tree-moss, lichen\"" ],
-		"notes": "The word ⲗⲏⲭⲏ means \"lichen\" or \"tree-moss\". [c]cdo-C9626[/c].<br><br>In the medical text P. Carlsberg 500, ⲗⲏⲭⲏ ⲙ̄ⲡⲏⲥⲓⲥⲏⲣⲁⲥ is an ingredient in a remedy for psora / itch. The second word, in some way describing the lichen / moss, is interesting. Erichsen in \"Aus einem koptischen Arzneibuch\", <i>Acta Orientalia</i> vol. 27 (1962) gave the translation <i>Pech(artige) Flechte</i> \"Pitch(-like) lichen\" and connected it to Greek πέσσειν [c]aeka-33[/c]. Sawy instead translates it as \"Cooked lichen\" [c]sawy-324[/c].",
+		"notes": "The word ⲗⲏⲭⲏ means \"lichen\" or \"tree-moss\". [c]cdo-C9626[/c].<br><br>In the medical text P. Carlsberg 500, ⲗⲏⲭⲏ ⲙ̄ⲡⲏⲥⲓⲥⲏⲣⲁⲥ is an ingredient in a remedy for psora / itch. The second word, in some way describing the lichen / moss, is interesting. Erichsen in \"Aus einem koptischen Arzneibuch\", <i>Acta Orientalia</i> vol. 27 (1962) gave the translation <i>Pech(artige) Flechte</i> \"Pitchy (i.e. covered in / full of tar) lichen\" and connected it to Greek πέσσειν [c]aeka-33[/c]. Sawy instead translates it as \"Cooked lichen\" [c]sawy-324[/c].",
 		"tags": [ "block", "etym-egy", "etym-grk", "stone",  "vanilla" ]
 	},
 	"generic.Wood.name": {
@@ -342,6 +372,13 @@ ENTRIES = {
 		"notes": "",
 		"derivedterms": [ "death.attack.starve" ],
 		"tags": [ "etym-egy", "status-effect", "vanilla" ]
+	},
+	"entity.Horse.name": {
+		"coptic": "ϩⲧⲟ",
+		"english": "Horse",
+		"etym": [ "< Demotic[d]𓎛𓏏:𓂋𓇋𓆵𓄛[/d]<i>ḥtr</i> \"horse, team of horses\", < Egyptian[h]𓎛𓏏𓂋𓃗[/h]<i>ḥtr</i> \"team of horses; steeds; chariotry\" [c]ce-277[/c][c]dpdp-d4348[/c][c]tla-111810[/c]" ],
+		"notes": "",
+		"tags": [ "animal", "etym-egy", "mob", "vanilla" ]
 	},
 	"container.crafting": {
 		"coptic": "ϩⲱⲃ ⲛ̄ϭⲓϫ",

@@ -86,10 +86,16 @@ img{
 	}
 
 @font-face {
-  font-family:'EgyptianHiero';
-  src: 	url("font/egyptianhiero3.03.woff2") 	format('woff2'),
-		url("font/egyptianhiero3.03.woff") 		format('woff'),
-		unicode-range:U+13000-1342F
+	font-family: "EgyptianHiero";
+	src: 	url("font/egyptianhiero3.03.woff2") 	format('woff2'),
+			url("font/egyptianhiero3.03.woff") 		format('woff'),
+			unicode-range:U+13000-1342F
+}
+
+@font-face {
+	font-family: "NotoSans";
+	src:	url("font/NotoSansCoptic-Regular.ttf")		format('truetype'),
+			url("font/NotoSans-Regular.ttf")			format('truetype')
 }
 
 .demotic {
@@ -120,10 +126,14 @@ img{
 
 .notbold{
     font-weight:normal;
+	font-family: sans-serif;
 	color: #7f7f7f;
 }​
 .emphasis{
 	font-weight:bold;
 	color: #7f0000;
+}
+.coptic{
+	font-family: "NotoSans";
 }
 

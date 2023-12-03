@@ -10,6 +10,8 @@ var ETYM_COLORS = {
 var SOURCE_LINKS = {
 	"aeka": "https://journals.uio.no/actaorientalia/article/view/5256/4598/",
 	// Johnson, Janet H. (2001) The Demotic Dictionary of the Institute for the Study of Ancient Cultures of the University of Chicago
+	"cdd_b":	"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/CDD_B.pdf#page=",
+	"cdd_g":	"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/CDD_G.pdf#page=",
 	"cdd_i":	"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/CDD_'I.pdf#page=",
 	"cdd_m": 	"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/CDD_M.pdf#page=",
 	"cdd_s":	"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/CDD_S.pdf#page=",
@@ -30,6 +32,8 @@ var SOURCE_LINKS = {
 }
 var SOURCE_NAMES = {
 	"aeka":		"Erichsen",
+	"cdd_b":	"<i>CDD</i> B",
+	"cdd_g":	"<i>CDD</i> G",
 	"cdd_i":	"<i>CDD</i> Ỉ",
 	"cdd_m":	"<i>CDD</i> M",
 	"cdd_s":	"<i>CDD</i> S",
@@ -415,6 +419,21 @@ function doMarkup( instring ){
 			
 			i = tagcloseindex + 3;
 			
+		// [k][/k] TAG: COPTIC TEXT (the k stands for Keme / Khemi)
+		}else if (substring3 == "[k]"){
+			var tagcloseindex = instring.indexOf("[/k]", i);
+			if (tagcloseindex == -1){
+				console.log("Error: [k] tag not closed")
+				i++;
+				continue;
+			}
+			var innertext = instring.substring(i+3, tagcloseindex);
+			outstring += "<span class=\"coptic\">";
+			outstring += innertext
+			outstring += "</span>"
+			
+			i = tagcloseindex + 3;
+			
 		// [r][/r] TAG: REFERENCE TO ANOTHER ENTRY
 		// inner text should be a valid key 
 		}else if (substring3 == "[r]"){
@@ -507,7 +526,10 @@ function parseTagString(instring){
 }
 
 function getEntryTitle( ce ){
-	var titlestring =  ce.coptic;
+	// first, get the coptic text in [k] tags and markup it as such
+	var titlestring = "[k]" + ce.coptic + "[/k]";
+	titlestring = doMarkup( titlestring );	
+	
 	// if the word is unattested then put an asterisk beside the name
 	if (ce.tags.indexOf("unattested") != -1){
 		titlestring += " *";
@@ -516,6 +538,8 @@ function getEntryTitle( ce ){
 		titlestring += " ?";
 	}
 	titlestring += " — " + ce.english;
+	// now do the markup again to get stuff like the [i] tags and similar marked up
 	titlestring = doMarkup( titlestring );
+	
 	return titlestring;
 }
