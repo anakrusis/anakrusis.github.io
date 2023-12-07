@@ -3,7 +3,7 @@ ENTRIES = {
 		"coptic": "",
 		"english": "Granite",
 		"etym": [],
-		"notes": "It is attested in earlier Egyptian as[h]𓌳𓍿𓎶[/h]<i>mꜣṯ</i> \"granite\" [c]tla-67580[/c], also the phrase[h]𓇋𓈖𓂋𓊌𓈖𓌳𓄿𓏏𓎶[/h]<i>jnr n mꜣṯ</i> \"granite stone\" [c]tla-650034[/c]. To my knowledge this word does not survive into Demotic nor Coptic.<br><br>In the Demotic dream handbook Papyrus Berlin P. 8769 (Trismegistos 55958) there is the phrase <i>ỉny km n Yb</i> \"black stone (i.e., granite) of Elephantine\" [c]cdd_i-164[/c]. The first part survives as Coptic ⲁⲛⲓⲕⲁⲙ but has other non-granite-related meanings \"copper sulfate, copper vitriol\" [c]cdd_i-163[/c][c]ce-9[/c].<br><br>The Rosetta Stone is made of granodiorite, which is between granite and diorite in composition, and is referred to itself in the text as simply [d]𓇋𓆛:𓈖𓇋𓇋𓏲𓊌1 𓍑𓃭𓇋𓇋𓏲𓏴:𓂡1[/d]<i>ỉny ḏry</i> \"hard stone\" [c]cdd_i-164[/c].",
+		"notes": "[d]𓉔𓇋𓇋𓏲𓀁° 𓋴'𓍯𓏲𓏭:𓏛𓂧:𓐠𓏤𓏰:𓏛[/d]<br><br>It is attested in earlier Egyptian as[h]𓌳𓍿𓎶[/h]<i>mꜣṯ</i> \"granite\" [c]tla-67580[/c], also the phrase[h]𓇋𓈖𓂋𓊌𓈖𓌳𓄿𓏏𓎶[/h]<i>jnr n mꜣṯ</i> \"granite stone\" [c]tla-650034[/c]. To my knowledge this word does not survive into Demotic nor Coptic.<br><br>In the Demotic dream handbook Papyrus Berlin P. 8769 (TM 55958) there is the phrase <i>ỉny km n Yb</i> \"black stone (i.e., granite) of Elephantine\" [c]cdd_i-164[/c]. The first part survives as Coptic ⲁⲛⲓⲕⲁⲙ but has other non-granite-related meanings \"copper sulfate, copper vitriol\" [c]cdd_i-163[/c][c]ce-9[/c].<br><br>The Rosetta Stone is made of granodiorite, which is between granite and diorite in composition, and is referred to itself in the text as simply [d]𓇋𓆛:𓈖𓇋𓇋𓏲𓊌1 𓍑𓃭𓇋𓇋𓏲𓏴:𓂡1[/d]<i>ỉny ḏry</i> \"hard stone\" [c]cdd_i-164[/c].",
 		"tags": [ "block", "no-descendant", "uncertain", "stone", "vanilla" ]
 	},
 	"tile.oreIron.name":{
@@ -62,7 +62,7 @@ ENTRIES = {
 	"tile.pumpkin.name":{
 		"coptic": "ⲃⲛ̄ⲧⲛ̄ⲉϭⲗⲟϭ",
 		"english": "Pumpkin",
-		"etym": [ "< Demotic[d]𓅡◳𓏤𓇋𓇋𓏲𓈖:𓏌*𓏲𓏏𓆰𓏪[/d]<i>bynt</i> \"gourd, cucumber\", < Egyptian[h]𓅡𓏤𓂧𓏏𓏯𓆰𓏪[/h]<i>bꜣdt</i>, [h]𓅡𓏤𓈖𓏏𓏯𓆰𓏥[/h]<i>bnt</i> \"cucumber garden, cucumber\" [c]ce-25[/c][c]cdd_b-29[/c][c]tla-850454[/c]", "*[k]ⲧⲗⲟϭ[/k] < Demotic[d]𓎼𓃭𓏤𓎼𓆰𓏪[/d]<i>glg</i> \"gourd\", < Egyptian[h]𓄔𓈖𓏥𓂋𓏤𓎼𓄿𓆰𓏪[/h]<i>dnrg</i> \"a fruit (melon?)\", from a Semitic language [c]ce-330[/c][c]cdd_g-64[/c][c]tla-600464[/c]" ],
+		"etym": [ "< Demotic[d]𓅡◳𓏤𓇋𓇋𓏲𓈖:𓏌*𓏲𓏏𓆰𓏪[/d]<i>bynt</i> \"gourd, cucumber\", < Egyptian[h]𓅡𓏤𓂧𓏏𓏯𓆰𓏪[/h]<i>bꜣdt</i>, [h]𓅡𓏤𓈖𓏏𓏯𓆰𓏥[/h]<i>bnt</i> \"cucumber garden, cucumber\" [c]ce-25[/c][c]cdd_b-29[/c][c]tla-850454[/c]", "< Demotic[d]𓎼𓃭𓏤𓎼𓆰𓏪[/d]<i>glg</i> \"gourd\", < Egyptian[h]𓄔𓈖𓏥𓂋𓏤𓎼𓄿𓆰𓏪[/h]<i>dnrg</i> \"a fruit (melon?)\", from a Semitic language [c]ce-330[/c][c]cdd_g-64[/c][c]tla-600464[/c]" ],
 		"notes": "Literally \"(round) gourd\" [c]cdo-C493[/c], \"κολοκύντη\" [c]cd-41b[/c], \"pumpkin\" [c]lambdin-216[/c].",
 		"tags": [ "block", "etym-egy", "etym-sem", "vanilla" ]
 	},
@@ -117,7 +117,7 @@ ENTRIES = {
 		"coptic":	"ⲍⲟⲙⲡⲓ",
 		"english":	"Zombie",
 		"etym":	["< various languages, all ultimately from a Bantu language"],
-		"notes": "This word is not listed in the Minecraft Official Glossary, so it is intended to be translated.<br><br>Most of the translations have borrowed this word unadapted: Afrikaans&nbsp;<i>zombie</i>, Albanian&nbsp;<i>zombi</i>, Arabic&nbsp;زومبي‎&nbsp;<i>zūmbī</i>, Armenian&nbsp;զոմբի&nbsp;<i>zombi</i>, Azerbaijani&nbsp;<i>zombi</i>, Bulgarian&nbsp;зомби&nbsp;<i>zombi</i>, Catalan&nbsp;<i>zombi</i>, Finnish&nbsp;<i>zombi</i>, French&nbsp;<i>zombie</i>, Georgian&nbsp;ზომბი&nbsp;<i>zombi</i>, German&nbsp;<i>Zombie</i>, Greek&nbsp;ζόμπι, Hebrew&nbsp;זומבי&nbsp;<i>zombi</i>, Hindi&nbsp;जॉम्बी&nbsp;<i>jŏmbī</i>, Igbo&nbsp;<i>zombie</i>, Indonesian&nbsp;<i>zombi</i>, Italian&nbsp;<i>zombi</i>, Japanese&nbsp;ゾンビ&nbsp;<i>zonbi</i>, Korean&nbsp;좀비&nbsp<i>jombi</i>, Persian&nbsp;زامبی&nbsp;<i>zâmbi</i>, Portuguese&nbsp;<i>zombie</i>&nbsp;/&nbsp;<i>zumbi</i>, Russian&nbsp;зомби&nbsp;<i>zombi</i>, Somali&nbsp;<i>zombie</i>, Sorani (Kurdish)&nbsp;زۆمبی&nbsp;<i>zombî</i>, Spanish&nbsp;<i>zombi</i>, Tamil&nbsp;ஸோம்பி&nbsp;<i>sōmpi</i>, Turkish&nbsp;<i>zombi</i>, Welsh&nbsp;<i>sombi</i> <br><br>The other translations use words of various forms, sometimes substituting a similar kind of monster: the old 1.12 Asturian translation&nbsp;<i>muertu viviente</i>&nbsp;\"living dead\", Belarusian&nbsp;мярцвяк&nbsp;\"corpse\", Chinese&nbsp;僵尸&nbsp;/&nbsp;殭屍&nbsp;\"<a href=\"https://en.wikipedia.org/wiki/Jiangshi\">jiangshi</a>\", Icelandic&nbsp;<i>uppvakningur</i>&nbsp;\"zombie\" (literally \"one who wakes up\"), Latin&nbsp;<i>resurrectus</i> \"risen again\", Maltese&nbsp;<i>mostru</i>&nbsp;\"monster\", Maori&nbsp;<i><a href=\"https://en.wikipedia.org/wiki/Taniwha\">taniwha</a>&nbsp;tūpāpaku</i>, Scottish Gaelic&nbsp;<i>corp-coisiche</i>&nbsp;\"walker-corpse(?)\", Sicilian&nbsp;<i>mortuvivu</i>&nbsp;\"living dead\", Vietnamese&nbsp;<i>thây ma</i>&nbsp;\"zombie\", Yoruba&nbsp;<i>ẹbọra</i>&nbsp;\"<a href=\"https://en.wiktionary.org/wiki/%E1%BA%B9b%E1%BB%8Dra\">mythological monster or troll believed to live in forests</a>\".<br><br>The underlying concepts of these monsters share common threads but are different enough that I doubt a calque into Coptic is effective at conveying,  ",
+		"notes": "This word is not listed in the Minecraft Official Glossary, so it is intended to be translated.<br><br>Most of the translations have borrowed this word unadapted; to name a few: Arabic&nbsp;زومبي‎&nbsp;<i>zūmbī</i>, Armenian&nbsp;զոմբի&nbsp;<i>zombi</i>, Azerbaijani&nbsp;<i>zombi</i>, Catalan&nbsp;<i>zombi</i>, French&nbsp;<i>zombie</i>, Georgian&nbsp;ზომბი&nbsp;<i>zombi</i>, Greek&nbsp;ζόμπι, Hebrew&nbsp;זומבי&nbsp;<i>zombi</i>, Hindi&nbsp;जॉम्बी&nbsp;<i>jŏmbī</i>, Igbo&nbsp;<i>zombie</i>, Italian&nbsp;<i>zombi</i>, Persian&nbsp;زامبی&nbsp;<i>zâmbi</i>, Portuguese&nbsp;<i>zombie</i>&nbsp;/&nbsp;<i>zumbi</i>, Russian&nbsp;зомби&nbsp;<i>zombi</i>, Somali&nbsp;<i>zombie</i>, Sorani (Kurdish)&nbsp;زۆمبی&nbsp;<i>zombî</i>, Spanish&nbsp;<i>zombi</i>, Tamil&nbsp;ஸோம்பி&nbsp;<i>sōmpi</i>, Turkish&nbsp;<i>zombi</i>. <br><br>A number of the translations substitute a similar concept or kind of monster: the old 1.12 Asturian translation&nbsp;<i>muertu viviente</i>&nbsp;\"living dead\", Belarusian&nbsp;мярцвяк&nbsp;\"corpse\", Chinese&nbsp;僵尸&nbsp;/&nbsp;殭屍&nbsp;\"<a href=\"https://en.wikipedia.org/wiki/Jiangshi\">jiangshi</a>\", Icelandic&nbsp;<i>uppvakningur</i>&nbsp;\"zombie\" (literally \"one who wakes up\"), Latin&nbsp;<i>resurrectus</i> \"risen again\", Maltese&nbsp;<i>mostru</i>&nbsp;\"monster\", Sicilian&nbsp;<i>mortuvivu</i>&nbsp;\"living dead\",  Yoruba&nbsp;<i>ẹbọra</i>&nbsp;\"<a href=\"https://en.wiktionary.org/wiki/%E1%BA%B9b%E1%BB%8Dra\">mythological monster or troll believed to live in forests</a>\".<br><br>In agreement with the majority of the translations, a loanword such as [k]ⲍⲟⲙⲡⲓ[/k] is most likely to be widely understood by players.",
 		"tags": [ "etym-mod", "mob", "unattested", "vanilla" ]
 	},
 	"item.thermalfoundation.material.dustSulfur.name":{
@@ -147,6 +147,14 @@ ENTRIES = {
 		"etym":	["< proper name <i>Creeper</i>"],
 		"notes": "On the \"Not to be translated\" list of the Minecraft Official Glossary.",
 		"tags": [ "etym-mod", "mob", "not-to-be-translated", "unattested", "vanilla" ]
+	},
+	"entity.Frog.name":{
+		"coptic": "ⲕⲣⲟⲩⲣ",
+		"english": "Frog",
+		"etym": ["< Demotic[d]𓈎𓃭𓃭𓄛[/d]<i>qrr</i> \"frog\", < Egyptian[h]𓈎𓂋𓂋𓆏[/h]<i>qrr</i> \"frog\" [c]ce-62[/c][c]dpdp-d6402[/c][c]tla-161780[/c]"],
+		"notes": "Frogs are present both in vanilla Minecraft from 1.19 onwards, and were also ported back to 1.12 by the mod <i>Quark</i>.",
+		"derivedterms": [ "block.minecraft.frogspawn" ],
+		"tags": [ "1.19", "animal", "etym-egy", "mob", "quark", "vanilla" ]
 	},
 	"generic.Birch.name": {
 		"coptic": "ⲗⲉⲩⲕⲏ",
@@ -259,7 +267,7 @@ ENTRIES = {
 		"english": "Egg",
 		"etym": [ "< Demotic[d]𓋴 𓍯𓄑:𓏛@𓊌1𓏏[/d]<i>swḥ.t</i> \"egg\", < Egyptian[h]𓋴𓅱𓎛𓆇𓏏[/h]<i>swḥt</i> \"egg\" [c]ce-169[/c]" ],
 		"notes": "",
-		"derivedterms": [ "tile.dragonEgg.name", "item.monsterPlacer.name" ],
+		"derivedterms": [ "tile.dragonEgg.name", "block.minecraft.frogspawn", "item.monsterPlacer.name" ],
 		"tags": [ "etym-egy", "item", "vanilla" ]
 	},
 	"tile.dragonEgg.name": {
@@ -268,6 +276,13 @@ ENTRIES = {
 		"etym":	["See [r]item.egg.name[/r]", "See [r]entity.enderDragon.name[/r]"],
 		"notes": "",
 		"tags": [ "block", "etym-egy", "etym-grk", "vanilla" ]
+	},
+	"block.minecraft.frogspawn": {
+		"coptic": "ⲥⲟⲟⲩϩⲉ ⲛ̄ⲕⲣⲟⲩⲣ",
+		"english": "Frogspawn",
+		"etym": [ "See [r]item.egg.name[/r]", "See [r]entity.Frog.name[/r]" ],
+		"notes": "Literally \"frog egg(s)\". Some translations have a distinct word for \"spawn\" as in a bunch of aquatic eggs, but it is not uncommon that others have here \"egg(s)\".<br><br>Compare Armenian&nbsp;Գորտի&nbsp;խավիար <i>gorti khaviar</i> \"frog spawn/caviar\", Arabic&nbsp;بيض ال&nbsp;فدع \"frog eggs\", Chinese&nbsp;青蛙卵 \"frog egg(s)\", Persian&nbsp;تخم قور&nbsp;اغه \"frog egg(s)\".",
+		"tags": [ "1.19", "block", "etym-egy", "etym-egy", "vanilla" ]
 	},
 	"item.monsterPlacer.name":{
         "coptic": "ⲥⲟⲟⲩϩⲉ ⲧⲣⲉϥϫⲡⲉ[i]mob[/i]",
@@ -383,7 +398,7 @@ ENTRIES = {
 	"container.crafting": {
 		"coptic": "ϩⲱⲃ ⲛ̄ϭⲓϫ",
 		"english": "Crafting",
-		"etym": [ "< Demotic[d]𓉔𓃀𓏲1[/d]<i>hb</i> \"letter, dispatch, thing\", < Egyptian[h]𓉔𓄿𓃀𓂻[/h]<i>hb</i> \"sending, errand\" [c]ce-274[/c]", "< Demotic[d]𓎼:𓇋𓇋𓏲𓍑𓄿4𓄹:𓏭[/d]<i>gyḏ</i> \"hand\", < Egyptian[h]𓈎𓄿𓍑𓄿‌𓏏𓄹[/h]<i>qḏt</i> \"hand\" [c]ce-340[/c]" ],
+		"etym": [ "< Demotic[d]𓉔𓃀𓏲1[/d]<i>hb</i> \"letter, dispatch, thing\", < Egyptian[h]𓉔𓄿𓃀𓂻[/h]<i>hꜣb</i> \"sending, errand\" [c]ce-274[/c]", "< Demotic[d]𓎼:𓇋𓇋𓏲𓍑𓄿4𓄹:𓏭[/d]<i>gyḏ</i> \"hand\", < Egyptian[h]𓈎𓄿𓍑𓄿‌𓏏𓄹[/h]<i>qḏt</i> \"hand\" [c]ce-340[/c]" ],
 		"notes": "Literally \"handiwork\" or \"handicraft\" [c]lambdin-335[/c].",
 		"tags": [ "etym-egy", "etym-egy", "ui", "vanilla" ]
 	},
