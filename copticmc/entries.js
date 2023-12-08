@@ -1,9 +1,15 @@
 ENTRIES = {
+	"generic.block.name":{
+		"coptic": "",
+		"english": "Block",
+		"notes": "The world is comprised of countless blocks of every material imaginable. They are not all cube-shaped, but are all aligned on a grid of cubes. This is a difficult word to translate into Coptic; here are some of the possible translations being discussed currently:<br><br>[k]<b>ⲧⲱⲣⲧ / ⲧⲱⲣⲧⲣ̄:</b>[/k] Thank you to ℝandy for this most recent suggestion: \"staircase\" [c]cdo-C4522[/c] and \"ladder, step, stair\" [c]cdo-C4523[/c] respectively. They are similarly discrete bits of material that take up space and can be stepped on. The similarity is visible in the earlier Egyptian form[h]𓇿𓂋𓂧𓂾𓊍[/h]<i>tꜣ-rd</i> \"stairway, ramp\" [c]ce-195[/c] with the[h]𓊍[/h]determinative. In this case, there is the issue of what to call the actual stairs blocks, for which [k]ⲧⲱⲣⲧ[/k] would have been a good fit. <br><br>[k]<b>ⲧⲱⲱⲃⲉ:</b>[/k] \"brick\" [c]cd-398a[/c][c]ce-181[/c]. It is used in reference to objects of various materials, often with the material specified after (in the same way we might say \"a block of X\" or \"an X block\"— [k]ⲟⲩⲧⲱⲱⲃⲉ ⲛ̄[/k] X), so it sounds like a good contender for this generic term. <br><br>[k]<b>ⲕⲩⲃⲟⲥ:</b>[/k]<br><br>[k]<b>ⲡⲗⲟⲕ:</b>[/k]",
+		"tags": [ "generic-type", "uncertain", "vanilla" ]
+	},
 	"tile.stone.granite.name":{
 		"coptic": "",
 		"english": "Granite",
 		"etym": [],
-		"notes": "[d]𓉔𓇋𓇋𓏲𓀁° 𓋴'𓍯𓏲𓏭:𓏛𓂧:𓐠𓏤𓏰:𓏛[/d]<br><br>It is attested in earlier Egyptian as[h]𓌳𓍿𓎶[/h]<i>mꜣṯ</i> \"granite\" [c]tla-67580[/c], also the phrase[h]𓇋𓈖𓂋𓊌𓈖𓌳𓄿𓏏𓎶[/h]<i>jnr n mꜣṯ</i> \"granite stone\" [c]tla-650034[/c]. To my knowledge this word does not survive into Demotic nor Coptic.<br><br>In the Demotic dream handbook Papyrus Berlin P. 8769 (TM 55958) there is the phrase <i>ỉny km n Yb</i> \"black stone (i.e., granite) of Elephantine\" [c]cdd_i-164[/c]. The first part survives as Coptic ⲁⲛⲓⲕⲁⲙ but has other non-granite-related meanings \"copper sulfate, copper vitriol\" [c]cdd_i-163[/c][c]ce-9[/c].<br><br>The Rosetta Stone is made of granodiorite, which is between granite and diorite in composition, and is referred to itself in the text as simply [d]𓇋𓆛:𓈖𓇋𓇋𓏲𓊌1 𓍑𓃭𓇋𓇋𓏲𓏴:𓂡1[/d]<i>ỉny ḏry</i> \"hard stone\" [c]cdd_i-164[/c].",
+		"notes": "It is attested in earlier Egyptian as[h]𓌳𓍿𓎶[/h]<i>mꜣṯ</i> \"granite\" [c]tla-67580[/c], also the phrase[h]𓇋𓈖𓂋𓊌𓈖𓌳𓄿𓏏𓎶[/h]<i>jnr n mꜣṯ</i> \"granite stone\" [c]tla-650034[/c]. To my knowledge this word does not survive into Demotic nor Coptic.<br><br>In the Demotic dream handbook Papyrus Berlin P. 8769 (TM 55958) there is the phrase <i>ỉny km n Yb</i> \"black stone (i.e., granite) of Elephantine\" [c]cdd_i-164[/c]. The first part survives as Coptic ⲁⲛⲓⲕⲁⲙ but has other non-granite-related meanings \"copper sulfate, copper vitriol\" [c]cdd_i-163[/c][c]ce-9[/c].<br><br>The Rosetta Stone is made of granodiorite, which is between granite and diorite in composition, and is referred to itself in the text as simply [d]𓇋𓆛:𓈖𓇋𓇋𓏲𓊌1 𓍑𓃭𓇋𓇋𓏲𓏴:𓂡1[/d]<i>ỉny ḏry</i> \"hard stone\" [c]cdd_i-164[/c].",
 		"tags": [ "block", "no-descendant", "uncertain", "stone", "vanilla" ]
 	},
 	"tile.oreIron.name":{
@@ -28,6 +34,13 @@ ENTRIES = {
 		"img": "none",
 		"notes": "Example: ⲛⲉⲩϣⲏⲣⲉ ⲙⲛ̄ⲛⲉⲩϣⲉⲉⲣⲉ ⲥⲉⲛⲁ<b>ⲙⲟⲩ ϩⲙ̄ⲡⲉϩⲕⲟ</b> \"Their sons and their daughters shall <b>die of famine</b>\" ([s]jer11-22[/s]).",
 		"tags": [ "death-message", "etym-egy", "etym-egy", "ui", "vanilla" ]
+	},
+	"tile.glass.name":{
+		"coptic": "ⲁⲃⲁϭⲏⲉⲓⲛ",
+		"english": "Glass",
+		"etym": [ "< Persian آبگینه <i>âbgine</i> \"glass\" [c]ce-3[/c][c]vy-4[/c]" ],
+		"notes": "",
+		"tags": [ "block", "etym-prs", "vanilla" ]
 	},
 	"item.thermalfoundation.material.crystalCrudeOil.name":{
 		"coptic": "ⲁⲙⲣⲏϩⲉ",
@@ -64,7 +77,7 @@ ENTRIES = {
 		"english": "Pumpkin",
 		"etym": [ "< Demotic[d]𓅡◳𓏤𓇋𓇋𓏲𓈖:𓏌*𓏲𓏏𓆰𓏪[/d]<i>bynt</i> \"gourd, cucumber\", < Egyptian[h]𓅡𓏤𓂧𓏏𓏯𓆰𓏪[/h]<i>bꜣdt</i>, [h]𓅡𓏤𓈖𓏏𓏯𓆰𓏥[/h]<i>bnt</i> \"cucumber garden, cucumber\" [c]ce-25[/c][c]cdd_b-29[/c][c]tla-850454[/c]", "< Demotic[d]𓎼𓃭𓏤𓎼𓆰𓏪[/d]<i>glg</i> \"gourd\", < Egyptian[h]𓄔𓈖𓏥𓂋𓏤𓎼𓄿𓆰𓏪[/h]<i>dnrg</i> \"a fruit (melon?)\", from a Semitic language [c]ce-330[/c][c]cdd_g-64[/c][c]tla-600464[/c]" ],
 		"notes": "Literally \"(round) gourd\" [c]cdo-C493[/c], \"κολοκύντη\" [c]cd-41b[/c], \"pumpkin\" [c]lambdin-216[/c].",
-		"tags": [ "block", "etym-egy", "etym-sem", "vanilla" ]
+		"tags": [ "block", "etym-egy", "etym-sem", "plant", "vanilla" ]
 	},
 	"entity.Ghast.name": {
 		"coptic":	"ⲅⲁⲥⲧ",
@@ -131,14 +144,14 @@ ENTRIES = {
         "coptic": "ⲕⲁⲕⲧⲟⲥ",
         "english": "Cactus",
         "etym": [ "< various languages, all ultimately from Greek κάκτος \"a kind of thistle, cardoon\" (Beekes 620)" ],
-        "notes": "The word κάκτος did not originally refer to cactus as we understand it today (cacti are from the Americas), so this usage of the word is a modern invention.<br><br>Compare Armenian կակտուս, Hebrew קקטוס, Latin <i>cactus</i>, Persian کاکتوس, etc. One notable exception is Arabic صبار, which is derived from صبر \"aloe\" (whence also Coptic ⲥⲁⲡⲣ̄ \"aloe juice\", attested several times in P. Louvre AF 12530 [c]sawy-98, 129, 130[/c])",
+        "notes": "The word κάκτος did not originally refer to cactus as we understand it today (cacti are from the Americas), so this usage of the word is a modern invention.<br><br>Compare Armenian կակտուս <i>kaktus</i>, Hebrew קקטוס <i>kaktus</i>, Latin <i>cactus</i>, Persian کاکتوس <i>kâktus</i>, etc. One notable exception is Arabic صبار <i>ṣabbār</i>, which is derived from صبر <i>ṣabr</i> \"aloe\" (whence also Coptic ⲥⲁⲡⲣ̄ \"aloe juice\", attested several times in P. Louvre AF 12530 [c]sawy-98, 129, 130[/c])",
         "tags": [ "block", "etym-mod", "plant", "unattested", "vanilla" ]
     },
 	"generic.Axe.name":{
 		"coptic": "ⲕⲉⲗⲉⲃⲓⲛ",
 		"english": "Axe",
 		"etym": [ "< Demotic[d]𓈎𓃭𓅡◳𓏤[...][/d]<i>qrb[n]</i> \"axe, pickaxe\", also as a proper name[d]𓂓𓏤𓃭𓅡◳𓏤𓈖:𓏌*𓏲𓀀3@[/d]<i>qrbn</i> \"Kelebinis\", from a Semitic language [c]ce-55[/c][c]cdd_q-59[/c][c]dpdp_tm-410[/c]" ],
-		"notes": "There are many tool names attested in Coptic. In order to narrow down the choices, I try to find one that matches the uses of the in-game tool. Axes in Minecraft are used primarily for cutting down trees and chopping wood. The ⲕⲉⲗⲉⲃⲓⲛ is well attested and used in the same kind of situations:<br><br>ⲉⲩⲙⲁ ⲛ̄ϣⲏⲛ ⲉⲩⲕⲉⲣⲉϣⲉ ⲁⲩⲱ ⲛ̄ⲧⲉⲧⲉϥϭⲓϫ ϫⲱⲣⲡ ⲉϥⲕⲱⲱⲣⲉ ⲙ̄ⲡϣⲉ ϩⲙ̄ⲡ<b>ⲕⲉⲗⲉⲃⲓⲛ</b><br>\"...into a forest to gather wood, if the hand of him that cuts wood with the <b>axe</b> should be violently shaken...\" ([s]deut19-5[/s])<br><br>ⲁϥϫⲓ ⲛ̄ϭⲓ ⲁⲃⲓⲙⲉⲗⲉⲭ ⲛ̄ⲟⲩ<b>ⲕⲉⲗⲉⲃⲓⲛ</b> ϩⲛ̄ⲧⲉϥϭⲓϫ ⲁϥϣⲱⲱⲧ ⲛ̄ⲟⲩⲧⲁⲣ ⲛ̄ϣⲉ<br>...Abimelech took an <b>axe</b> in his hand, and cut down a branch of a tree... ([s]jud9-48[/s])<br><br>ⲁⲩϣⲱⲱⲧ ⲛ̄ⲛⲉⲥⲣⲟ ϩⲛ̄ϩⲉⲛ<b>ⲕⲉⲗⲉⲃⲓⲛ</b> ⲛ̄ⲧϩⲉ ⲛ̄ϩⲉⲛϣⲏⲛ ϩⲛ̄ⲧⲥⲱϣⲉ<br>...they cut down its doors with <b>axes</b> as in a wood of trees... ([s]psa73-5[/s])<br>(Note: the axe is the best tool for breaking doors in Minecraft as well.)<br><br>",
+		"notes": "There are many tool names attested in Coptic. In order to narrow down the choices, I try to find one that matches the uses of the in-game tool. Axes in Minecraft are used primarily for cutting down trees and chopping wood. The ⲕⲉⲗⲉⲃⲓⲛ is well attested and used in the same kind of situations:<br><br>ⲉⲩⲙⲁ ⲛ̄ϣⲏⲛ ⲉⲩⲕⲉⲣⲉϣⲉ ⲁⲩⲱ ⲛ̄ⲧⲉⲧⲉϥϭⲓϫ ϫⲱⲣⲡ ⲉϥⲕⲱⲱⲣⲉ ⲙ̄ⲡϣⲉ ϩⲙ̄ⲡ<b>ⲕⲉⲗⲉⲃⲓⲛ</b><br>\"...into a forest to gather wood, if the hand of him that cuts wood with the <b>axe</b> should be violently shaken...\" ([s]deut19-5[/s])<br><br>ⲁϥϫⲓ ⲛ̄ϭⲓ ⲁⲃⲓⲙⲉⲗⲉⲭ ⲛ̄ⲟⲩ<b>ⲕⲉⲗⲉⲃⲓⲛ</b> ϩⲛ̄ⲧⲉϥϭⲓϫ ⲁϥϣⲱⲱⲧ ⲛ̄ⲟⲩⲧⲁⲣ ⲛ̄ϣⲉ<br>...Abimelech took an <b>axe</b> in his hand, and cut down a branch of a tree... ([s]jud9-48[/s])<br><br>ⲁⲩϣⲱⲱⲧ ⲛ̄ⲛⲉⲥⲣⲟ ϩⲛ̄ϩⲉⲛ<b>ⲕⲉⲗⲉⲃⲓⲛ</b> ⲛ̄ⲧϩⲉ ⲛ̄ϩⲉⲛϣⲏⲛ ϩⲛ̄ⲧⲥⲱϣⲉ<br>...they cut down its doors with <b>axes</b> as in a wood of trees... ([s]psa73-5[/s])<br>(Note: the axe is the best tool for breaking doors in Minecraft as well.)",
 		"tags": [ "etym-sem", "generic-type", "vanilla" ]
 	},
 	"entity.Creeper.name": {
