@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title>Minecraft Sahidic Coptic Translation</title>
+	<meta charset="UTF-8">	
+	<link rel="stylesheet" href="./style.css" />	
+</head>
+</html>
+
+<body>
+
+	<div class="maindiv" id="maindiv">
+		<h2>Todo List </h2>
+		<h3>Markup</h3>
+		
+		<b>[ ]</b> Make a generic function that tokenizes all markup tags into their respective arguments, delimited by pipe (|) characters<br><br>
+		
+		<b>[ ]</b> [d], [h] and [k] tags should be conflated into a single [l] "language" tag for all languages with the following parameters: <br><br> 
+		
+		--- <b>[ ]</b> Language code, for example "cop" Coptic, "egx-dem" Demotic, "egy" Egyptian <br><br>
+		
+		--- <b>[ ]</b> The text in its own script. Demotic and hieroglyphic text ( detected by the language codes above ) will be auto-spanned into the correct fonts. <br><br>
+		
+		--- <b>[ ]</b> A transliteration of the text in Latin script. This will not be done for Coptic and Greek text as it is implied that the reader is already familiar with the alphabet. Transliteration will be automatically italicized.<br><br>
+		
+		--- --- <b>[ ]</b> Transliteration of Demotic and Egyptian hieroglyphs can be inputted using Manuel de Codage notation or Unicode. The MdC should be automatically converted to Unicode, for example A > ꜣ, D > ḏ.<br><br>
+		
+		--- <b>[ ]</b> The meaning of the word in English. Optional if many words from various languages are listed all sharing the same meaning. This text will be automatically surrounded by quotation marks.<br><br>
+		
+		--- <b>[ ]</b> An optional fifth argument: boolean true = place the original passage, transliteration and translation on separate lines. This is to be used for passages longer than a few words, for example a Bible verse. false = place them all in line together, such as a single word in a definition.<br><br>
+		
+		<b>[ ]</b> [c] tags (parenthetical citations) should be one argument (the ID of the source) with an optional second argument for the page number<br><br>
+		
+		<b>[ ]</b> [r] tags (reference to another entry on this site) should have one argument (the ID of the entry) and an optional second argument for how the name should be displayed. By default it will be "(Coptic name) — (English name)" but in some situations it can be specified otherwise.<br><br>
+		
+		<b>[ ]</b> [s] tags (scriptorium links) should be one argument ( the name of the book ) with optional second and third arguments for the chapter/book number and page number.<br><br>
+		
+		<b>[ ]</b> [d] tag, now no longer referring to Demotic styled text, could be repurposed for DPDP links, with the same arguments as the scriptorium links.
+		
+		<h3>Search Page</h3>
+		
+		<b>[ ]</b> Very condensed entry display. Just a four column table with each entry using two columns: a small thumbnail image on the left , and a [r] tagged reference link to the entry title in Coptic and English.<br><br>
+		
+		<b>[ ]</b> A bunch of toggle buttons to help categorize the search results under different headings. By default I will show Blocks, Items, Mobs, UI and Misc.<br><br>
+
+		<b>[ ]</b> A bunch of toggle buttons to filter for certain tags. The buttons will have three states: 1. neutral (does not affect search results), 2. positive (search results must have this tag), and 3. negative (search results must not have this tag). The buttons will be colored white, blue and red to indicate the state, and the text for the negative state can be strikethroughed as well.<br><br>
+		
+		<b>[ ]</b> An option to color code the entries on the search page by etymology. If the entry has two or more different etymologies, then display the colors in diagonal stripes using a background gradient.
+	</div>
+</body>
