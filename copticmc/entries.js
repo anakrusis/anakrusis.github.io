@@ -5,6 +5,13 @@ ENTRIES = {
 		"notes": "The world is comprised of countless blocks of every material imaginable. They are not all cube-shaped, but are all aligned on a grid of cubes. This is a difficult word to precisely translate into Coptic; here are some of the possible translations being discussed currently:<br><br>[k]<b>• ⲧⲱⲣⲧ / ⲧⲱⲣⲧⲣ̄:</b>[/k] Thank you to ℝandy for this most recent suggestion: \"staircase\" [c]cdo-C4522[/c] and \"ladder, step, stair\" [c]cdo-C4523[/c] respectively. They are similarly discrete bits of material that take up space and can be stepped on. The similarity is visible in the earlier Egyptian form[h]𓇿𓂋𓂧𓂾𓊍[/h]<i>tꜣ-rd</i> \"stairway, ramp\" [c]ce-195[/c] with the[h]𓊍[/h]determinative. In this case, there is the issue of what to call the actual stairs blocks, for which [k]ⲧⲱⲣⲧ[/k] would have been a good fit; perhaps [k]ⲧⲱⲣⲧⲣ̄[/k] can be used here.<br><br>[k]<b>• ⲧⲱⲱⲃⲉ: </b>[/k]\"brick\" [c]cd-398a[/c][c]ce-181[/c]. It is used sometimes with the material specified after (in the same way we might say in the game \"block of X\" or \"X block\"— [k]ⲧⲱⲱⲃⲉ ⲛ̄[/k] X), so it sounds like a good contender for this generic term. Examples of this construction:<br><br>[k]ⲁⲩⲱ ⲡⲙⲁ ⲉⲧϩⲁⲛⲉϥⲟⲩⲉⲣⲏⲧⲉ ⲉϥⲟ ⲛ̄ⲧϩⲉ ⲛ̄ⲟⲩϩⲱⲃ ⲛ̄<b>ⲧⲱⲃⲉ</b> ⲛ̄ⲥⲁⲡⲡⲓⲣⲟⲛ[/k]<br>\"and under his feet was as it were a work of sapphire <b>slabs</b>\" ([s]exo24-10[/s])<br>(It demonstrates that the [k]ⲧⲱⲱⲃⲉ[/k] is not limited to mud/clay-like materials, and if chosen, [k]ⲧⲱⲱⲃⲉ ⲛ̄ⲥⲁⲡⲡⲓⲣⲟⲛ[/k] would be used as the word for the Lapis Lazuli Block— see [r]item.dyePowder.blue.name[/r]) <br><br>[k]ⲟⲩ<b>ⲧⲱⲱⲃⲉ</b> ⲛ̄ⲟⲙⲉ ⲉⲩϣⲁⲛⲛⲟϫⲥ ⲉⲩⲥⲛ̄ⲧⲉ ϩⲁⲧⲙ̄ⲡⲓⲉⲣⲟ . ⲛ̄ⲥⲛⲁϩⲩⲡⲟⲙⲓⲛⲉ ⲁⲛ ⲛ̄ⲟⲩϩⲟⲟⲩ ⲛ̄ⲟⲩⲱⲧ[/k]<br>\"A mud <b>brick</b> that is laid as a foundation by the river will not last a single day.\" (Apa Orsisius, Apophthegmata Patrum)<br><br>Compared to the other translations,  using a word for \"brick\" to translate the word \"block\" is atypical. One issue that arises from this is what to call the actual brick items and brick blocks. I might suggest here [k]ⲧⲉⲣⲡⲟⲥⲉ[/k] “baked brick” [c]ce-195[/c][c]lambdin-282[/c] which is accurate to how they are made in the game as well.<br><br>[k]<b>• ⲕⲩⲃⲟⲥ: </b>[/k]This word could be widely understood by players, but the problem is that it is not attested in Coptic as far as I know. It is from the Greek word κύβος \"cube\", which did spread to other contemporaneous languages such as Latin&nbsp;<i>cubus</i> (Beekes&nbsp;795) and Syriac&nbsp;ܩܘܒܘܣ&nbsp<i>qwbws</i> (Smith 491b). The Modern Greek and Latin translations of the game have κύβος and <i>cubus</i> for \"block\". These are not the only languages which have translated \"block\" using a word for \"cube\"; Finnish&nbsp;<i>kuutio</i> does as well. <br><br>[k]<b>• ⲡⲗⲟⲕ: </b>[/k]",
 		"tags": [ "generic-type", "uncertain", "vanilla" ]
 	},
+	"tile.cactus.name":{
+        "coptic": "",
+        "english": "Cactus",
+        //"etym": [ "< various languages, all ultimately from Greek κάκτος \"a kind of thistle, cardoon\" (Beekes 620)" ],
+        "notes": "The word κάκτος did not originally refer to cactus as we understand it today (cacti are from the Americas), so this usage of the word is a modern invention.<br><br>Compare Armenian կակտուս <i>kaktus</i>, Hebrew קקטוס <i>kaktus</i>, Latin <i>cactus</i>, Persian کاکتوس <i>kâktus</i>, etc. One notable exception is Arabic صبار <i>ṣabbār</i>, which is derived from صبر <i>ṣabr</i> \"aloe\" (whence also Coptic ⲥⲁⲡⲣ̄ \"aloe juice\", attested several times in P. Louvre AF 12530 [c]sawy-98, 129, 130[/c])",
+        "tags": [ "block", "plant", "uncertain", "vanilla" ]
+    },
 	"tile.stone.granite.name":{
 		"coptic": "",
 		"english": "Granite",
@@ -56,14 +63,14 @@ ENTRIES = {
 		"notes": "The word ⲁⲙⲣⲏϩⲉ means both \"bitumen\" and \"asphalt\" [c]cd-9a[/c][c]lambdin-211[/c].<br><br>There is also a Greek loanword ⲁⲥⲫⲁⲗⲧⲟⲛ of the same meaning [c]cdo-C8519[/c]. It appears in medical texts such as P. Sarga 20 [c]sawy-144[/c] and Ch 118 [c]sawy-162[/c].",
 		"tags": [ "etym-egy", "item", "thermalfoundation" ]
 	},
-	"itemGroup.misc": {
+/* 	"itemGroup.misc": {
 		"coptic": "ⲁⲧⲉⲥⲙⲟⲧ",
 		"english": "Miscellaneous",
 		"etym": ["ⲁⲧⲟ \"multitude\" < unknown, no etymology given by Černy nor Vycichl","< Demotic[d]𓋴𓅓':𓏏𓀁[/d]<i>smt</i> \"form, likeness\" [c]cdd_s-241[/c][c]ce-153[/c][c]vy-189[/c] < ? "],
 		"img": "item.bucketLava.name",
 		"notes": "\"Of various or many sorts\" [c]lambdin-213[/c], which I think is in line with the translations in other languages:<table><tr><td>Arabic:</td><td>متنوعات</td><td>\"diverse, varied, miscellaneous, assorted\"</td></tr><tr><td>Hebrew:</td><td>שונות</td><td>\"various, different\"</td></tr><tr><td>Spanish:</td><td>Varios<br>Objetos varios</td><td>\"various\"<br>\"various objects\"</td></tr></table>But I am a little worried that the attested uses of this word are not places where I would ever use \"miscellaneous\":<table><tr><td>(Wisdom of Solomon 7:22)</td><td>ⲟⲩⲛ̄ⲟⲩⲡⲛ︦ⲁ ⲅⲁⲣ ⲛ̄ϩⲏⲧⲥ̄ ⲉϥⲟⲩⲁⲁⲃ ⲛ̄ⲣⲉϥⲛⲟⲓ ⲛ̄ⲟⲩⲥⲙⲟⲧ ⲛ̄ⲟⲩⲱⲧ <b>ⲛ̄ⲁⲧⲉⲥⲙⲟⲧ</b>...</td><td>\"For in her (i.e. wisdom) is an understanding spirit holy, one only, <b>manifold</b>...\"</td></tr><tr><td>(Ephesians 3:10)</td><td>ϫⲉⲉⲩⲉⲟⲩⲱⲛϩ ⲧⲉⲛⲟⲩ ⲉⲃⲟⲗ ⲛ̄ⲛ̄ⲁⲣⲭⲏ. ⲙⲛ̄ⲛ̄ⲉⲝⲟⲩⲥⲓⲁ ϩⲛ̄ⲙⲡⲏⲩⲉ. ⲉⲃⲟⲗ ϩⲓⲧⲛ̄ⲧⲉⲕⲕⲗⲏⲥⲓⲁ ⲧⲥⲟⲫⲓⲁ <b>ⲛ̄ⲁⲧⲉⲥⲙⲟⲧ</b> ⲛ̄ⲧⲉⲡⲛⲟⲩⲧⲉ</td><td>\"To the intent that now unto the principalities and powers in heavenly places might be known by the church the <b>manifold</b> wisdom of God,\"</td></tr></table>This was one of the tabs in the Creative menu in 1.12, but was removed some time between then and 1.19.",
 		"tags": [ "etym-unk", "etym-unk", "ui", "vanilla" ]
-	},
+	}, */
 	"item.eyeOfEnder.name":{
 		"coptic": "ⲃⲁⲗ ⲛ̄ⲉⲛⲇⲉⲣ",
 		"english": "Eye of Ender",
@@ -147,13 +154,6 @@ ENTRIES = {
 		"notes": "Černý writes that ⲑⲏⲛ is a Bohairic word, but it appears many times in Sahidic too [c]cd-69a[/c][c]lambdin-291[/c].",
 		"tags": [ "etym-grk", "item", "thermalfoundation" ]
 	},
-	"tile.cactus.name":{
-        "coptic": "ⲕⲁⲕⲧⲟⲥ",
-        "english": "Cactus",
-        "etym": [ "< various languages, all ultimately from Greek κάκτος \"a kind of thistle, cardoon\" (Beekes 620)" ],
-        "notes": "The word κάκτος did not originally refer to cactus as we understand it today (cacti are from the Americas), so this usage of the word is a modern invention.<br><br>Compare Armenian կակտուս <i>kaktus</i>, Hebrew קקטוס <i>kaktus</i>, Latin <i>cactus</i>, Persian کاکتوس <i>kâktus</i>, etc. One notable exception is Arabic صبار <i>ṣabbār</i>, which is derived from صبر <i>ṣabr</i> \"aloe\" (whence also Coptic ⲥⲁⲡⲣ̄ \"aloe juice\", attested several times in P. Louvre AF 12530 [c]sawy-98, 129, 130[/c])",
-        "tags": [ "block", "etym-mod", "plant", "unattested", "vanilla" ]
-    },
 	"generic.Axe.name":{
 		"coptic": "ⲕⲉⲗⲉⲃⲓⲛ",
 		"english": "Axe",

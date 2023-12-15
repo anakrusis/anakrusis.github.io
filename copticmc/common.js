@@ -25,6 +25,7 @@ var SOURCE_LINKS = {
 	"crum":		"https://coptot.manuscriptroom.com/crum-coptic-dictionary/?docID=800000&pageID=",
 	"dpdp":		"http://129.206.5.162/beta/palaeography/palaeography.html?q=tla:",
 	"dpdp_tm":	"http://129.206.5.162/beta/palaeography/palaeography.html?q=tm_nam:",
+	"dvs":		"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/SAOC38.pdf#page=",
 	"lambdin":	"",
 	"prhind1":	"http://129.206.5.162/beta/palaeography/database/papyri/pRhind%20I.html/",
 	"richter":  "https://archiv.ub.uni-heidelberg.de/propylaeumdok/4629/1/Richter_Borrowing_into_Coptic_2017.pdf#page=",
@@ -35,6 +36,7 @@ var SOURCE_LINKS = {
 }
 var SOURCE_NAMES = {
 	"aeka":		"Erichsen",
+	"aep":		"Allen <i>AEP</i>",
 	"cdd_b":	"<i>CDD</i> B",
 	"cdd_g":	"<i>CDD</i> G",
 	"cdd_i":	"<i>CDD</i> Ỉ",
@@ -46,20 +48,22 @@ var SOURCE_NAMES = {
 	"crum":		"<i>CD</i>",
 	"dpdp":		"<i>DPDP</i>",
 	"dpdp_tm":	"<i>DPDP tm</i>",
+	"dvs":		"Johnson <i>DVS</i>",
 	"lambdin":	"Lambdin",
 	"prhind1":	"P.&nbsp;Rhind&nbsp;I",
 	"richter":	"Richter",
 	"sawy":		"Sawy",
 	"tla":		"<i>TLA</i>",
-	"two":		"<i>TWO</i>",
+	"two":		"Johnson <i>TWO</i>",
 	"vycichl":	"<i>DELC</i>"
 }
 
 // when citing a page number , but linking to the document the page number is different
 var SOURCE_PAGE_OFFSETS = {
+	"dvs":		12,
 	"richter": -512,
-	"sawy": 3,
-	"two":	6
+	"sawy": 	3,
+	"two":		6
 }
 
 // abbreviations in case I forget how to spell their names
