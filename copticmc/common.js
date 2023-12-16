@@ -49,6 +49,7 @@ var SOURCE_NAMES = {
 	"dpdp":		"<i>DPDP</i>",
 	"dpdp_tm":	"<i>DPDP tm</i>",
 	"dvs":		"Johnson <i>DVS</i>",
+	"ep":		"Peust <i>EP</i>",
 	"lambdin":	"Lambdin",
 	"prhind1":	"P.&nbsp;Rhind&nbsp;I",
 	"richter":	"Richter",
