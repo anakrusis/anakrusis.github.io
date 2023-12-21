@@ -1,5 +1,15 @@
 // common functions used by the whole site
 
+// registry of tag keywords:
+// [c]: citation
+// [d]: demotic text 		(soon to be deprecated)
+// [h]: hieroglyphic text 	(soon to be deprecated)
+// [k]:	coptic text			(soon to be deprecated)
+// [r]: reference to another entry on the site
+// [s]: scriptorium link 	(soon to be deprecated)
+
+var TAG_KEYWORDS = [ "c", "d", "h", "i", "k", "r" ]
+
 var ETYM_COLORS = {
 	"egy": "#fff6db",
 	"grk": "#deeaff",
@@ -24,6 +34,7 @@ var SOURCE_LINKS = {
 	"cerny":	"",
 	"crum":		"https://coptot.manuscriptroom.com/crum-coptic-dictionary/?docID=800000&pageID=",
 	"dpdp":		"http://129.206.5.162/beta/palaeography/palaeography.html?q=tla:",
+	"dpdp_c":	"http://129.206.5.162/beta/palaeography/palaeography.html?q=",
 	"dpdp_tm":	"http://129.206.5.162/beta/palaeography/palaeography.html?q=tm_nam:",
 	"dvs":		"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/SAOC38.pdf#page=",
 	"lambdin":	"",
@@ -47,10 +58,12 @@ var SOURCE_NAMES = {
 	"cerny":	"<i>ČED</i>",
 	"crum":		"<i>CD</i>",
 	"dpdp":		"<i>DPDP</i>",
+	"dpdp_c":	"<i>DPDP</i>",
 	"dpdp_tm":	"<i>DPDP tm</i>",
 	"dvs":		"Johnson <i>DVS</i>",
 	"ep":		"Peust <i>EP</i>",
 	"lambdin":	"Lambdin",
+	"ma":		"Mawood",
 	"prhind1":	"P.&nbsp;Rhind&nbsp;I",
 	"richter":	"Richter",
 	"sawy":		"Sawy",
@@ -130,9 +143,8 @@ var PAGETOPDESC		= {
 }
 
 function getEntryTitle( ce ){
-	// first, get the coptic text in [k] tags and markup it as such
+	// first, get the coptic text in [k] tags
 	var titlestring = "[k]" + ce.coptic + "[/k]";
-	titlestring = doMarkup( titlestring );	
 	
 	// if the word is unattested then put an asterisk beside the name
 	if (ce.tags.indexOf("unattested") != -1){
@@ -142,7 +154,7 @@ function getEntryTitle( ce ){
 		titlestring += " ?";
 	}
 	titlestring += " — " + ce.english;
-	// now do the markup again to get stuff like the [i] tags and similar marked up
+
 	titlestring = doMarkup( titlestring );
 	
 	return titlestring;
@@ -154,7 +166,7 @@ function parseTagString(instring){
 	if (!instring){ return outtable; }
 	var lastcommaindex = 0;
 	for (var i = 0; i < instring.length; i++){
-		var cc = instring.substring(i, i+1);
+		var cc = instring.substring(i, i+1); // current char
 		if (cc == ","){
 			outtable.push( instring.substring( lastcommaindex, i ) );
 			// skip the comma itself by adding 1
@@ -166,12 +178,136 @@ function parseTagString(instring){
 	return outtable;
 }
 
+// give it the string with the first character being the opener [
+// returns an array with two items: [0]: the new string, [1]: char count in the old string to skip over
+function parseTag( intagstring ){
+	var outstring = "";
+	// 0 = skip no characters, 1 = skip one character, etc.
+	var skipcharcount = 0;
+	
+	// find first ] starting at the index of the current [
+	var rightbracketind = intagstring.indexOf("]");
+	var innertagtext = intagstring.substring(1, rightbracketind)
+	
+	// if no tag exists for the string between the [] brackets, then just put the [ char,
+	//  and continue as normal-- this is so that sequences like "[...]" (i.e. a lacuna) can be ignored
+	if (TAG_KEYWORDS.indexOf(innertagtext) == -1){
+		console.log("Warning: [" + innertagtext + "] tag does not exist!");
+		//outstring += cc; i++; continue;
+		return [ "[", 0 ];
+	}
+	// now we must find the first closing tag that matches the opening tag
+	var closingtag = "[/" + innertagtext + "]";
+	var closingtagindex = intagstring.indexOf(closingtag)
+	// if no closing tag exists then just put the [ char and continue on (and give a warning)
+	if (closingtagindex == -1){
+		console.log("Warning: [" + innertagtext + "] tag was not closed!")
+		//outstring += cc; i++; continue;
+		return [ "[", 0 ];
+	}
+	// inner text = the text between the [] and [/] tags
+	var innertext = intagstring.substring( (innertagtext.length + 2), closingtagindex );	
+	
+	// gather all the arguments inside the inner text (delimited by pipe (|) chars)
+	var i = 0; var tagargs = []; var currargstring = "";
+	while (i < innertext.length){
+		var cc = innertext.substring(i, i+1); // current char
+		
+		// if another tag is opened inside of this tag, then handle it recursively!
+		if (cc == "["){
+			var outs = parseTag( innertext.substring( i ) );
+			currargstring += outs[0];
+			i += outs[1];
+			
+		// pipe: argument delimiter
+		}else if (cc == "|"){
+			tagargs.push( currargstring );
+			currargstring = "";
+		}else{
+			currargstring += cc
+		}
+		i++;
+	}
+	// the last ( or only ) argument won't have a pipe following, so push it
+	tagargs.push( currargstring );
+	console.log( tagargs );
+	
+	// handling the different tags is much simpler now than before
+	
+	// [c][/c] TAG: CITATION
+	if (innertagtext == "c"){
+		if (!SOURCE_NAMES[tagargs[0]]){
+			console.log("Warning: unknown source " + tagargs[0] + " was cited!")
+			return [ "[", 0 ];
+		}
+	
+	// [d][/d] TAG: DEMOTIC TEXT (soon to be deprecated)
+	}else if (innertagtext == "d"){
+		outstring += " <span class=\"demotic\">";
+		outstring += tagargs[0]
+		outstring += "</span> "
+		
+	// [h][/h] TAG: HIEROGLYPHIC TEXT (soon to be deprecated)
+	}else if (innertagtext == "h"){
+		outstring += " <span class=\"hiero\">";
+		outstring += tagargs[0]
+		outstring += "</span> "
+		
+	// [i][/i] TAG: ITALIC TEXT
+	// (used for bracketed non-bold italic sections in headers)
+	}else if (innertagtext == "i"){
+		outstring += "<span class=\"notbold\">[<i>";
+		outstring += tagargs[0]
+		outstring += "</i>]</span>"
+		
+	// [k][/k] TAG: COPTIC TEXT (soon to be deprecated)
+	}else if (innertagtext == "k"){
+		outstring += "<span class=\"coptic\">";
+		outstring += tagargs[0]
+		outstring += "</span>"
+		
+	// [r][/r] TAG: REFERENCE TO ANOTHER ENTRY
+	}else if (innertagtext == "r"){
+		var ce = ENTRIES[tagargs[0]]; // current entry 
+		if (!ce){
+			console.log("Warning: unknown entry " + tagargs[0] + " was referenced!")
+			return [ "[", 0 ];
+		}
+		// if entry exists on the page then link to it, otherwise dont
+		if (CURRENTENTRIES.indexOf( tagargs[0] ) > -1){
+			outstring += "<b><a href=\"entry.html#" + tagargs[0] + "\">"
+			outstring += getEntryTitle( ce )
+			outstring += "</a></b>"
+		}else{
+			outstring += "<b>"
+			outstring += getEntryTitle( ce )
+			outstring += "</b>"
+		}
+	}
+	
+	return [ outstring, closingtagindex + closingtag.length - 1 ];
+}
+
 function doMarkup( instring ){
 	var outstring = "";
 	
 	var i = 0;
 	while (i < instring.length) {
-		var substring3 = instring.substring( i, i+3 )
+		var cc = instring.substring(i, i+1); // current char
+		
+		if (cc == "["){
+			var outs = parseTag( instring.substring( i ) );
+			outstring += outs[0];
+			i += outs[1];
+			
+		// only put characters one by one if there is no tag to deal with
+		}else{
+			outstring += cc;
+		}
+		
+		i++;
+	}
+/* 		var substring3 = instring.substring( i, i+3 )
 		// [c][/c] TAG: CITATION
 		if (substring3 == "[c]"){
 			var tagcloseindex = instring.indexOf("[/c]", i);
@@ -347,7 +483,7 @@ function doMarkup( instring ){
 			outstring = outstring + instring.substring(i, i+1);
 		}
 		i++;
-	}
+	} */
 	
 	return outstring;
 }
