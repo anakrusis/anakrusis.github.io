@@ -1,0 +1,33 @@
+<html>
+<head>
+	<title>Emoji Hieroglyphs</title>
+	<meta charset="UTF-8">	
+	<link rel="stylesheet" href="./style.css" />	
+</head>
+</html>
+
+<body>
+
+	<div class="maindiv" id="maindiv">
+		<h2>Todo List </h2>
+		
+		<h3>Canvas</h3>
+		<b>[ ]</b> Two canvases: a hidden canvas which is the image data of the whole page, and the viewport<br><br>
+		<b>[ ]</b> A grid (probably in light blue) to guide the drawing of glyphs. I think 30 squares wide is my graph paper irl<br><br>
+		<b>[ ]</b> Scroll the viewport with middle click (or right click) + drag. The viewport only has to update when drawing or scrolling<br><br>
+		<b>[ ]</b> Export the whole document hidden canvas as an image <a href="https://p5js.org/reference/#/p5/saveCanvas">(Thank you p5.js for making this easy)</a>
+		
+		<h3>Brushes</h3>
+		<b>[ ]</b> Load brushes from image (the default will probably be a diagonal ellipse for a chisel tip appearance)<br><br>
+		<b>[ ]</b> "Flick" feature of brush: when the direction abruptly changes, velocity increases and brush thickness decreases. This way hooked line endings look good, and also increases the likelihood that loops will have whitespace inside and not be unintentionally filled in<br><br>
+		<b>[ ]</b> Brush color: doesnt need to be a fancy color picker, I mainly just use red for emphasis/headers and black for everything else
+		
+		<h3>Misc</h3>
+		<b>[ ]</b> Undo and redo:<br><br>
+		--- <b>[ ]</b> Each action must keep track of all the pixel changes; what color it was before and what it is after, and in order to make it simpler maybe the image should be palette restricted. I suppose each pixel change could be an object or a string, whichever has less memory footprint when instanced thousands of times<br><br>
+		
+		--- <b>[ ]</b> The actions are put in an array; a pointer points to the most recent undo/redo; performing a new action overwrites what was in the redo queue<br><br>
+		
+		--- <b>[ ]</b> A limit of undo 50(?) actions, or however many until it starts chugging/using up all the memory lol
+	</div>
+</body>

@@ -2,8 +2,10 @@
 // https://www.gorillasun.de/blog/simulating-brush-strokes-with-hookes-law-in-p5js-and-processing/
 
 function setup() {
-  createCanvas(1000, 1000);
-  	background(255)
+	maincanvas = createCanvas(1000, 1000);
+	background(255)
+	
+	//ellipseMode(CENTER);
 }
 
 // brushSize simply is the thikness of the brush stroke
@@ -26,6 +28,7 @@ function draw() {
       x = mouseX;
       y = mouseY;
     }
+	
     vx += ( mouseX - x ) * spring;
     vy += ( mouseY - y ) * spring;
     vx *= friction;
@@ -44,11 +47,24 @@ function draw() {
       y += vy / splitNum;
       oldR += ( r - oldR ) / splitNum;
       if(oldR < 1) { oldR = 1; }
-      strokeWeight( oldR+diff );  // AMEND: oldR -> oldR+diff
-      line( x, y, oldX, oldY );
-      strokeWeight( oldR );  // ADD
-      line( x+diff*1.5, y+diff*2, oldX+diff*2, oldY+diff*2 );  // ADD
-      line( x-diff, y-diff, oldX-diff, oldY-diff );  // ADD
+	  
+	  //push()
+	  //translate(x,y)
+	  //rotate(PI/2)
+	  
+	  //rx = (x * cos( -PI/2 )) - (y * sin( -PI / 2))
+	  //ry = (x * sin( -PI/2 )) + (y * cos( -PI/2))
+	  
+	  fill(0);
+	  ellipse( x, y, oldR, oldR / 2);
+	  
+	  //pop();
+	  
+      //strokeWeight( oldR+diff );  // AMEND: oldR -> oldR+diff
+      //line( x, y, oldX, oldY );
+      //strokeWeight( oldR );  // ADD
+      //line( x+diff*1.5, y+diff*2, oldX+diff*2, oldY+diff*2 );  // ADD
+      //line( x-diff, y-diff, oldX-diff, oldY-diff );  // ADD
     }
 
   } else if(f) {
