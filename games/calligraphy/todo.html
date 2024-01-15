@@ -14,14 +14,21 @@
 		
 		<h3>Canvas</h3>
 		<b>[✅]</b> <s>Two canvases: a hidden canvas which is the image data of the whole page, and the viewport</s> <b>(13 Jan 2024 ✔)</b><br><br>
-		<b>[ ]</b> A grid (probably in light blue) to guide the drawing of glyphs. I think 30 squares wide is my graph paper irl<br><br>
+		<b>[ ]</b> A grid (probably in light blue) to guide the drawing of glyphs:<br><br>
+		--- <b>[ ]</b> Should be on its own layer so it can be toggled on and off with ease<br><br>
+		--- <b>[ ]</b> Grid width (i think by default 72px is good, thats how big the emoji stamps are by default)<br><br>
+		--- <b>[ ]</b> Columns count (my irl graph paper is 30 columns i think)<br><br>
 		<b>[✅]</b> <s>Scroll the viewport with middle click (or right click) + drag. The viewport only has to update when drawing or scrolling</s> <b>(14 Jan 2024 ✔)</b><br><br>
+		<b>[✅]</b> <s>Zoom the viewport with mouse wheel</s> <b>(14 Jan 2024 ✔)</b><br><br>
 		<b>[ ]</b> Export the whole document hidden canvas as an image <a href="https://p5js.org/reference/#/p5/saveCanvas">(Thank you p5.js for making this easy)</a>
 		
 		<h3>Brushes</h3>
 		<b>[ ]</b> Load brushes from image (the default will probably be a diagonal ellipse for a chisel tip appearance)<br><br>
 		<b>[ ]</b> "Flick" feature of brush: when the direction abruptly changes, velocity increases and brush thickness decreases. This way hooked line endings look good, and also increases the likelihood that loops will have whitespace inside and not be unintentionally filled in<br><br>
-		<b>[ ]</b> Brush color: doesnt need to be a fancy color picker, I mainly just use red for emphasis/headers and black for everything else
+		<b>[✅]</b> <s>Brush color: doesnt need to be a fancy color picker, I mainly just use red for emphasis/headers and black for everything else</s> <b>(14 Jan 2024 ✔)</b><br><br>
+		<b>[ ]</b> Don't have the start of the brush stroke automatically be low velocity, currently every fast, thin stroke still begins with a big thick serif<br><br>
+		<b>[ ]</b> Compensate for zoom level when calculating brush velocity. Currently when very zoomed in everything is super fast velocity<br><br>
+		<b>[ ]</b> Likewise when the brush sits still on a spot, dont keep making it bigger (maybe it could be optional)
 		
 		<h3>Stamps</h3>
 		<b>[ ]</b> Place classical emojis on the grid, allowing for mixed script classical and cursive texts<br><br>
