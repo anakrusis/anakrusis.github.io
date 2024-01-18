@@ -2,17 +2,23 @@
 // https://www.gorillasun.de/blog/simulating-brush-strokes-with-hookes-law-in-p5js-and-processing/
 
 // in pixels
-GRID_SIZE 		= 72;
-GRID_COLUMNS 	= 30;
-GRID_ROWS 		= 2;
-GRID_STROKE		= 2;
+GRID_SIZE 				= 72;
+GRID_COLUMNS 			= 16;
+GRID_ROWS 				= 16;
+GRID_STROKE				= 2;
+GRID_ENABLED			= true;
 
-ZOOM_PRESETS = [0.25, 0.5, 1, 1.5, 2, 3, 4, 5, 6]
-currentZoomPreset = 2;
+// in pixels
+DOC_PADDING_OUTER 		= 36;
+DOC_PADDING_BTWN_LINES	= 36;
+
+ZOOM_PRESETS = [0.25, 0.5, 0.75, 1, 1.5, 2, 3, 4, 5, 6]
+currentZoomPreset = 3;
 
 BRUSH_COLOR_PRESETS 		= [ [0, 0, 0], [255, 0, 0] ];
 BRUSH_COLOR_PRESET_NAMES 	= [ "Black", "Red" ]
 brushColor = 0;
+brushSensitivity = 1.5;
 
 // text that appears when changing a setting
 marqueeText = "";
@@ -31,18 +37,25 @@ function setup() {
 	
 	textSize(48);
 	textAlign(CENTER, CENTER);
+	noSmooth();
 }
 
 // returns gcanvas , an offscreen graphics buffer for the grid
 function newDocumentGrid() {
-	var gcanvas = createGraphics(500, 500);
+	var docwidth = (GRID_SIZE * GRID_COLUMNS) + (2 * DOC_PADDING_OUTER);
+	var docheight = (GRID_SIZE * 2 * GRID_ROWS) + (2 * DOC_PADDING_OUTER) + ((GRID_ROWS - 1) * DOC_PADDING_BTWN_LINES);
+	var gcanvas = createGraphics(docwidth, docheight);
 	gcanvas.fill(0,0,0,0)
 	gcanvas.stroke(128,128,255)
 	
 	var sx, sy; // square x, square y
 	for (sy = 0; sy < GRID_ROWS; sy++){
 		for (sx = 0; sx < GRID_COLUMNS; sx++){
-			gcanvas.rect( sx * GRID_SIZE, sy * GRID_SIZE, GRID_SIZE, GRID_SIZE );
+			// fine x and y
+			var fx = (sx * GRID_SIZE) + DOC_PADDING_OUTER;
+			var fy = (sy * 2 * GRID_SIZE) + DOC_PADDING_OUTER + (sy * DOC_PADDING_BTWN_LINES);
+			gcanvas.rect( fx, fy, GRID_SIZE, GRID_SIZE );
+			gcanvas.rect( fx, fy + GRID_SIZE, GRID_SIZE, GRID_SIZE );
 		}
 	}
 	
@@ -51,7 +64,9 @@ function newDocumentGrid() {
 
 // returns dcanvas , an offscreen graphics buffer for the document 
 function newDocument(){
-	dcanvas = createGraphics(500, 500);
+	var docwidth = (GRID_SIZE * GRID_COLUMNS) + (2 * DOC_PADDING_OUTER);
+	var docheight = (GRID_SIZE * 2 * GRID_ROWS) + (2 * DOC_PADDING_OUTER) + ((GRID_ROWS - 1) * DOC_PADDING_BTWN_LINES);
+	var dcanvas = createGraphics(docwidth, docheight);
 	dcanvas.background(255);
 	//dcanvas.blendMode(MULTIPLY) // for some reason it slows everything awfully
 	
@@ -107,6 +122,10 @@ function keyPressed() {
 		brushColor++; brushColor %= 2;
 		doMarqueeText( "Brush color: " + BRUSH_COLOR_PRESET_NAMES[ brushColor ] )
 	}
+	else if (key == "g"){
+		GRID_ENABLED = !GRID_ENABLED;
+		doMarqueeText( "Grid " + (GRID_ENABLED ? "enabled" : "disabled") )
+	}
 }
 
 function draw() {
@@ -130,14 +149,17 @@ function draw() {
 	clear(); //background(220);
 	blendMode(BLEND)
 	image(dcanvas, tra_x(0), tra_y(0), dcanvas.width * cam_zoom, dcanvas.height * cam_zoom); // document
-	blendMode(MULTIPLY)
-	image(gcanvas, tra_x(0), tra_y(0), gcanvas.width * cam_zoom, gcanvas.height * cam_zoom); // grid
+	if (GRID_ENABLED){
+		blendMode(MULTIPLY)
+		image(gcanvas, tra_x(0), tra_y(0), gcanvas.width * cam_zoom, gcanvas.height * cam_zoom); // grid
+	}
 	// border outlining docment
 	fill(0,0,0,0);
 	rect( tra_x(0), tra_y(0), dcanvas.width * cam_zoom, dcanvas.height * cam_zoom )
 	
+	blendMode(DIFFERENCE)
 	if (marqueeTimer > 0){
-		fill(0); stroke(0);
+		fill(255); noStroke();
 		text( marqueeText, width/2, 40);
 	}
 	
@@ -154,17 +176,21 @@ function draw() {
 				x = mouseX;
 				y = mouseY;
 			}
-
-			vx += ( mouseX - x ) * spring;
-			vy += ( mouseY - y ) * spring;
-			vx *= friction;
-			vy *= friction;
-
-			v += sqrt( vx*vx + vy*vy ) - v;
-			v *= 0.6;
+			
+			//if (movedX > 0 || movedY > 0){
+				vx += ( mouseX - x ) * spring;
+				vy += ( mouseY - y ) * spring;
+				vx *= friction;
+				vy *= friction;
+			//}
+			
+			if (movedX > 0 || movedY > 0){
+				v += sqrt( vx*vx + vy*vy ) - v;
+				v *= 0.6;
+			}
 
 			oldR = r;
-			r = brushSize - v;
+			r = brushSize - (v / (cam_zoom / brushSensitivity));
 
 			for( let i = 0; i < splitNum; ++i ) {
 				oldX = x;
