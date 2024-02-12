@@ -29,13 +29,14 @@
 		<b>[ ]</b> Don't have the start of the brush stroke automatically be low velocity, currently every fast, thin stroke still begins with a big thick serif<br><br>
 		<b>[✅]</b> <s>Compensate for zoom level when calculating brush velocity. Currently when very zoomed in everything is super fast velocity</s> <b>(17 Jan 2024 ✔)</b><br><br>
 		<b>[✅]</b> <s>Likewise when the brush sits still on a spot, dont keep making it bigger (maybe it could be optional)</s> <b>(15 Jan 2024 ✔)</b><br><br>
-		<b>[ ]</b> Brush sensitivity slider (I like how it feels around 150% zoom right now)<br><br>
+		<b>[✅]</b> <s>Brush sensitivity slider (I like how it feels around 150% zoom right now)</s> <b>(19 Jan 2024 ✔)</b><br><br>
 		<b>[ ]</b> Brush size slider<br><br>
 		
 		<h3>Stamps</h3>
 		<b>[ ]</b> Place classical emojis on the grid, allowing for mixed script classical and cursive texts<br><br>
 		<b>[ ]</b> Also allow placing on the vertical midpoint of the grid for single emoji columns<br><br>
-		<b>[ ]</b> Placing a stamp on the grid while the column has one on the midpoint erases the midpoint one, so that if one decides to add an emoji to the same column and make it a full column, it doesnt leave beind a partial emoji remnant
+		<b>[ ]</b> Placing a stamp on the grid while the column has one on the midpoint erases the midpoint one, so that if one decides to add an emoji to the same column and make it a full column, it doesnt leave beind a partial emoji remnant<br><br>
+		<b>[ ]</b> Pre-calculate on page load the indexed color versions of the used images. DON'T do this on the fly
 		
 		<h3>Misc</h3>
 		<b>[ ]</b> Undo and redo:<br><br>
@@ -43,7 +44,9 @@
 		
 		--- <b>[ ]</b> The actions are put in an array; a pointer points to the most recent undo/redo; performing a new action overwrites what was in the redo queue<br><br>
 		
-		--- <b>[ ]</b> A limit of undo 50(?) actions, or however many until it starts chugging/using up all the memory lol
+		--- <b>[ ]</b> A limit of undo 50(?) actions, or however many until it starts chugging/using up all the memory lol<br><br>
+		
+		<b>[ ]</b> Make sure mouse events only occur when inside the canvas area ( so moving sliders and pressing buttons dont draw on the canvas, mouse wheeling doesnt always have to zoom in and out )
 		<br><br>
 		</div>
 		
@@ -56,6 +59,8 @@
 		Additionally not storing the document state as a canvas removes the nice p5.js image processing features, like the blend modes would have to be calculated manually per pixel...</s>
 		<br><br>
 		<b>Answer:</b> The <a href="https://p5js.org/reference/#/p5/createGraphics">p5.js offscreen buffer</a> makes this straightforward
+		<br><br><br>
+		2.) What is the best way to store the actions for undoing/redoing? The outermost layer will certainly be an array of actions, but will the information contained inside the actions be stored as an object, an array of objects, a string, or something else?
 		<br><br>
 		</div>
 	</div>

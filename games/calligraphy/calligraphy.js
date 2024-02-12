@@ -15,6 +15,8 @@ DOC_PADDING_BTWN_LINES	= 36;
 ZOOM_PRESETS = [0.25, 0.5, 0.75, 1, 1.5, 2, 3, 4, 5, 6]
 currentZoomPreset = 3;
 
+// image objects
+BRUSHES 					= [];
 BRUSH_COLOR_PRESETS 		= [ [0, 0, 0], [255, 0, 0] ];
 BRUSH_COLOR_PRESET_NAMES 	= [ "Black", "Red" ]
 brushColor = 0;
@@ -24,7 +26,20 @@ brushSensitivity = 1.5;
 marqueeText = "";
 marqueeTimer = 0;
 
+var SLIDER_SENSITIVITY = document.getElementById("slider_sensitivity");
+var HDR_SENSITIVITY = document.getElementById("hdr_sensitivity");
+HDR_SENSITIVITY.innerHTML = "Brush sensitivity: " + SLIDER_SENSITIVITY.value;
+SLIDER_SENSITIVITY.oninput = function() {
+	HDR_SENSITIVITY.innerHTML = "Brush sensitivity: " + this.value;
+	brushSensitivity = this.value;
+}
+
 function setup() {
+	BRUSH_ELLIPSE20 = new Image(20, 10);
+	BRUSH_ELLIPSE20.initImageStringFromImage( "ellipse20.png" );
+	
+	// ~~~
+	
 	document.documentElement.style.overflow = 'hidden';  // firefox, chrome
     document.body.scroll = "no"; // ie only
 	
