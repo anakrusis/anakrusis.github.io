@@ -40,7 +40,9 @@
 		
 		<h3>Misc</h3>
 		<b>[ ]</b> Undo and redo:<br><br>
-		--- <b>[ ]</b> Each action must keep track of all the pixel changes; what color it was before and what it is after, and in order to make it simpler maybe the image should be palette restricted. I suppose each pixel change could be an object or a string, whichever has less memory footprint when instanced thousands of times<br><br>
+		--- <b>[ ]</b> Each action keeps track its bounds. Rectangular area of image that was modified<br><br>
+		
+		--- <b>[ ]</b> Each action contains an undo image ( what was within the bounds before, and will be restored back to the canvas upon undo ), and a series of redo image commands ( what was drawn to the canvas in this action, and will be restored back to the canvas upon redo after having been undone )<br><br>
 		
 		--- <b>[ ]</b> The actions are put in an array; a pointer points to the most recent undo/redo; performing a new action overwrites what was in the redo queue<br><br>
 		

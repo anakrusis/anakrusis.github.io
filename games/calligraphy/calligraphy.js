@@ -15,8 +15,8 @@ DOC_PADDING_BTWN_LINES	= 36;
 ZOOM_PRESETS = [0.25, 0.5, 0.75, 1, 1.5, 2, 3, 4, 5, 6]
 currentZoomPreset = 3;
 
-// image objects
-BRUSHES 					= [];
+// p5.js image objects
+BRUSH_IMAGES 				= [];
 BRUSH_COLOR_PRESETS 		= [ [0, 0, 0], [255, 0, 0] ];
 BRUSH_COLOR_PRESET_NAMES 	= [ "Black", "Red" ]
 brushColor = 0;
@@ -34,9 +34,15 @@ SLIDER_SENSITIVITY.oninput = function() {
 	brushSensitivity = this.value;
 }
 
+function preload() {
+	BRUSH_IMAGES[ "ellipse20.png" ] = loadImage("img/brush/ellipse20.png");
+}
+
 function setup() {
-	BRUSH_ELLIPSE20 = new Image(20, 10);
-	BRUSH_ELLIPSE20.initImageStringFromImage( "ellipse20.png" );
+	BRUSH_ELLIPSE20 = new ImageString(20, 10);
+	BRUSH_ELLIPSE20.initFromImage( BRUSH_IMAGES["ellipse20.png"] );
+	
+	//console.log(BRUSH_ELLIPSE20.colorsToHexString( [255,0,0,1] ));
 	
 	// ~~~
 	
@@ -113,9 +119,7 @@ function mousePressed() {
 	
 }
 
-function mouseWheel(e) {
-	print(e.delta);
-	
+function mouseWheel(e) {	
 	if (e.delta < 0){
 		currentZoomPreset++;
 	}else{
@@ -127,9 +131,6 @@ function mouseWheel(e) {
 	cam_zoom = ZOOM_PRESETS[ currentZoomPreset ];
 	
 	var zoompc = Math.floor(cam_zoom * 100); doMarqueeText("Zoom: " + zoompc + "%");
-	
-	//cam_zoom += ((-e.delta) / 200)
-	//cam_zoom *= (e.delta / 100)
 }
 
 function keyPressed() {
@@ -199,7 +200,7 @@ function draw() {
 				vy *= friction;
 			//}
 			
-			if (movedX > 0 || movedY > 0){
+			if (Math.abs(movedX) > 0 || Math.abs(movedY) > 0){
 				v += sqrt( vx*vx + vy*vy ) - v;
 				v *= 0.6;
 			}
@@ -228,7 +229,11 @@ function draw() {
 				
 				var ux = untra_x(x,y); var uy = untra_y(x,y);
 				//console.log("ux: " + ux + " uy: " + uy );
-				dcanvas.ellipse( ux, uy, oldR, oldR / 2);
+				//dcanvas.ellipse( ux, uy, oldR, oldR / 2);
+
+				var centeroffsetX = BRUSH_IMAGES[ "ellipse20.png" ].width / 2;
+				var centeroffsetY = BRUSH_IMAGES[ "ellipse20.png" ].height / 2;
+				dcanvas.image( BRUSH_IMAGES[ "ellipse20.png" ], ux - centeroffsetX, uy - centeroffsetY, oldR, oldR / 2 )
 
 				//pop();
 
