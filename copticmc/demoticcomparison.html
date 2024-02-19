@@ -1,0 +1,59 @@
+<html>
+<head>
+	<title>Demotic Comparison</title>
+	<meta charset="UTF-8">	
+	<link rel="stylesheet" href="./style.css" />	
+</head>
+</html>
+
+<body>
+
+	<div class="maindiv" id="maindiv">
+		
+		<table style="text-align:center;">
+			<tr>
+				<th>DPDP<br><span class="encdemo">(encoding)</span></th><th>t2i<br><span class="encdemo">(encoding)</span></th><th>transliteration</th><th>meaning</th><th>Coptic descendants</th>
+			</tr>
+			<!-- frequency: 21st -->
+			<tr>
+				<td>[d]𓂋:𓍿𓀀𓏪[/d]<br><span class="encdemobig">𓂋:𓍿𓀀𓏪</span></td>
+				<td><image style="height:64px;" src="https://upload.wikimedia.org/wikipedia/commons/2/29/Demotic-character-rm%E1%B9%AF.png"><br><span class="encdemo">{{t2i-Egyd|rmṯ}}</span></td>
+				<td><i>rmṯ</i></td><td>person</td><td>[k]ⲣⲱⲙⲓ (B), ⲣⲱⲙⲉ (S)[/k]</td>
+			</tr>
+			<!-- frequency: 31st -->
+			<tr>
+				<td>[d]𓊹𓅆[/d]<br><span class="encdemobig">𓊹𓅆</span></td>
+				<td><image style="height:64px;" src="https://upload.wikimedia.org/wikipedia/commons/3/37/Demotic-character-G7.png"><image style="height:64px;" src="https://upload.wikimedia.org/wikipedia/commons/1/14/Demotic-character-ntr.png"><br><span class="encdemo">{{t2i-Egyd|ntr|G7}}</span></td>
+				<td><i>nṯr</i></td><td>god</td><td>[k]ⲛⲟⲩϯ (B), ⲛⲟⲩⲧⲉ (S)[/k]</td>
+			</tr>
+			<!-- frequency: 156th -->
+			<tr>
+				<td>[d]𓈗𓏤1𓈘:𓈇[/d]<br><span class="encdemobig">𓈗𓏤1𓈘:𓈇</span></td>
+				<td><image style="height:64px;" src="https://upload.wikimedia.org/wikipedia/commons/1/13/Demotic-character-N36-N23.png"><image style="height:64px;" src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Demotic-character-Z1.png"><image style="height:64px;" src="https://upload.wikimedia.org/wikipedia/commons/8/88/Demotic-character-mw.png"><br><span class="encdemo">{{t2i-Egyd|mw|Z1|N36-N23}}</span></td>
+				<td><i>mw</i></td><td>water</td><td>[k]ⲙⲱⲟⲩ (B), ⲙⲟⲟⲩ (S)[/k]</td>
+			</tr>
+			<!-- frequency: 3112nd -->
+			<tr>
+				<td>[d]𓂝𓉐𓏤𓏏𓋴𓅡◳𓏤𓄿1𓏭:𓏛1𓀁[/d]<br><span class="encdemobig">𓂝𓉐𓏤𓏏𓋴𓅡◳𓏤𓄿1𓏭:𓏛1𓀁</span></td>
+				<td><image style="height:64px;" src="ansebe.png"><br><span class="encdemo">{{t2i-Egyd|ꜥ-2|pr|t-2|s|b|ꜣ-2|Y1-2|A2}}</span></td>
+				<td><i>ꜥ.t-(n)-sbꜣ</i></td><td>school</td><td>[k]ⲁⲛⲍⲏⲃ (B), ⲁⲛⲥⲏⲃⲉ (S)[/k]</td>
+			</tr>
+			<tr>
+				<td></td><td></td><td></td><td></td><td></td>
+			</tr>
+		</table>
+		
+	</div>
+	
+	<script src="common.js"></script>
+	<script>
+		var MAINDIV = document.getElementById("maindiv");
+		MAINDIV.innerHTML = doMarkup( MAINDIV.innerHTML )
+		
+		if (window.innerWidth < window.innerHeight){
+			MAINDIV.style.width = "95%";
+		//MAINDIV.style.fontSize = "40px";
+		}
+	</script>
+	
+</body>
