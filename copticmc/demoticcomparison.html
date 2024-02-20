@@ -9,10 +9,29 @@
 <body>
 
 	<div class="maindiv" id="maindiv">
+		<h2>Demotic Text Comparison</h2>
+		The DPDP font and t2i-Egyd template encode Demotic text in different ways.<br>
+		DPDP (<a href="http://129.206.5.162/beta/index.html">the Demotic Palaeographical Database Project</a>) uses the existing Unicode hieroglyphs, which are the ancestors of the Demotic glyphs. Because hieroglyphs are not 1:1 equivalent with Demotic, they can be ligatured together so that what were historically multiple hieroglyphs now can form single glyphs, and numbers can be used to disambiguate when one hieroglyph or ligature has multiple Demotic forms. The font allows the stacking of glyphs.<br>
+		The <a href="https://en.wiktionary.org/wiki/Template:t2i-Egyd">t2i-Egyd template</a> on Wiktionary, which was created by <a href="https://en.wiktionary.org/wiki/User:Vorziblix">Vorziblix</a>, constructs Demotic text out of images when given either transliterations or their Gardiner's numbers. Similar to the DPDP font, numbers afterward differentiate between variants. The ligatures and stacking of glyphs must be baked into the images. This one is more limited as it doesn't have all the commonly used glyphs and combinations, but understandable as Vorziblix has singlehandedly drawn all the images.<br>
+		I am very grateful for both of their efforts toward representing Demotic text for computers, and I hope that this lays the groundwork for wider support for Demotic in the future.<br><br>
+		
+		Below is a table which demonstrates the two systems, with some common example words ordered by frequency (source: DPDP):
 		
 		<table style="text-align:center;">
 			<tr>
-				<th>DPDP<br><span class="encdemo">(encoding)</span></th><th>t2i<br><span class="encdemo">(encoding)</span></th><th>transliteration</th><th>meaning</th><th>Coptic descendants</th>
+				<th>DPDP<br><span class="encdemo">(encoding)</span></th><th>t2i-Egyd<br><span class="encdemo">(encoding)</span></th><th>transliteration</th><th>meaning</th><th>Coptic descendants</th>
+			</tr>
+			<!-- frequency: 9th -->
+			<tr>
+				<td>[d]𓂞:𓏏4[/d]<br><span class="encdemobig">𓂞:𓏏4</span></td>
+				<td><image style="height:64px;" src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Demotic-character-%E1%B8%8Fj.png"><br><span class="encdemo">{{t2i-Egyd|ty}}</span></td>
+				<td><i>ḏi̯</i></td><td>give, cause</td><td>[k]ϯ (SB)[/k]</td>
+			</tr>
+			<!-- frequency: 11th -->
+			<tr>
+				<td>[d]𓂋1[/d]<br><span class="encdemobig">𓂋1</span></td>
+				<td><image style="height:64px;" src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Demotic-character-r-2.png"><br><span class="encdemo">{{t2i-Egyd|r-2}}</span></td>
+				<td><i>r</i></td><td>to(ward)</td><td>[k]ⲉ- (SB)[/k]</td>
 			</tr>
 			<!-- frequency: 21st -->
 			<tr>
@@ -26,20 +45,41 @@
 				<td><image style="height:64px;" src="https://upload.wikimedia.org/wikipedia/commons/3/37/Demotic-character-G7.png"><image style="height:64px;" src="https://upload.wikimedia.org/wikipedia/commons/1/14/Demotic-character-ntr.png"><br><span class="encdemo">{{t2i-Egyd|ntr|G7}}</span></td>
 				<td><i>nṯr</i></td><td>god</td><td>[k]ⲛⲟⲩϯ (B), ⲛⲟⲩⲧⲉ (S)[/k]</td>
 			</tr>
+			<!-- frequency: 34th -->
+			<tr>
+				<td>[d]𓂝:𓂝𓏤𓉐𓏤[/d]<br><span class="encdemobig">𓂝:𓂝𓏤𓉐𓏤</span></td>
+				<td><image style="height:64px;" src="https://upload.wikimedia.org/wikipedia/commons/d/df/Demotic-character-pr.png"><image style="height:64px;" src="https://upload.wikimedia.org/wikipedia/commons/8/81/Demotic-character-Z3.png"><image style="height:64px;" src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Demotic-character-%EA%9C%A5wy.png"><br><span class="encdemo">{{t2i-Egyd|ꜥwy|Z1-2|pr}}</span></td>
+				<td><i>ꜥ.wỉ</i></td><td>house</td><td>[k]ⲏⲓ (SB)[/k]</td>
+			</tr>
+			<!-- frequency: 104th -->
+			<tr>
+				<td>[d]𓈖:𓎡:𓏏*𓏰𓏭:𓏛[/d]<br><span class="encdemobig">𓈖:𓎡:𓏏*𓏰𓏭:𓏛</span></td>
+				<td><image style="height:64px;" src="https://upload.wikimedia.org/wikipedia/commons/1/16/Demotic-character-Y1.png"><image style="height:64px;" src="https://upload.wikimedia.org/wikipedia/commons/6/68/Demotic-character-nkt.png"><br><span class="encdemo">{{t2i-Egyd|nkt|Y1}}</span></td>
+				<td><i>nkt</i></td><td>thing</td><td>[k]ⲛⲭⲁⲓ, ⲉⲛⲭⲁⲓ (B), ⲛⲕⲁ (S)[/k]</td>
+			</tr>
 			<!-- frequency: 156th -->
 			<tr>
 				<td>[d]𓈗𓏤1𓈘:𓈇[/d]<br><span class="encdemobig">𓈗𓏤1𓈘:𓈇</span></td>
 				<td><image style="height:64px;" src="https://upload.wikimedia.org/wikipedia/commons/1/13/Demotic-character-N36-N23.png"><image style="height:64px;" src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Demotic-character-Z1.png"><image style="height:64px;" src="https://upload.wikimedia.org/wikipedia/commons/8/88/Demotic-character-mw.png"><br><span class="encdemo">{{t2i-Egyd|mw|Z1|N36-N23}}</span></td>
 				<td><i>mw</i></td><td>water</td><td>[k]ⲙⲱⲟⲩ (B), ⲙⲟⲟⲩ (S)[/k]</td>
 			</tr>
+			<!-- frequency: 216th -->
+			<tr>
+				<td>[d]𓋞:𓈒*𓏥1[/d]<br><span class="encdemobig">𓋞:𓈒*𓏥1</span></td>
+				<td><image style="height:64px;" src="https://upload.wikimedia.org/wikipedia/commons/d/d2/Demotic-character-nb-3.png"><br><span class="encdemo">{{t2i-Egyd|nb-3}}</span></td>
+				<td><i>nb</i></td><td>gold</td><td>[k]ⲛⲟⲩⲃ (SB)[/k]</td>
+			</tr>
+			<!-- frequency: 497th -->
+			<tr>
+				<td>[d]𓅓𓆷1𓉻:𓂝*𓏛𓂻:°[/d]<br><span class="encdemobig">𓅓𓆷1𓉻:𓂝*𓏛𓂻:°</span></td>
+				<td><image style="height:64px;" src="mooshe.png"><br><span class="encdemo">{{t2i-Egyd|m|š-2|ꜥ|D54}}</span></td>
+				<td><i>mšꜥ</i></td><td>walk</td><td>[k]ⲙⲟϣⲓ (B), ⲙⲟⲟϣⲉ (S)[/k]</td>
+			</tr>
 			<!-- frequency: 3112nd -->
 			<tr>
 				<td>[d]𓂝𓉐𓏤𓏏𓋴𓅡◳𓏤𓄿1𓏭:𓏛1𓀁[/d]<br><span class="encdemobig">𓂝𓉐𓏤𓏏𓋴𓅡◳𓏤𓄿1𓏭:𓏛1𓀁</span></td>
 				<td><image style="height:64px;" src="ansebe.png"><br><span class="encdemo">{{t2i-Egyd|ꜥ-2|pr|t-2|s|b|ꜣ-2|Y1-2|A2}}</span></td>
 				<td><i>ꜥ.t-(n)-sbꜣ</i></td><td>school</td><td>[k]ⲁⲛⲍⲏⲃ (B), ⲁⲛⲥⲏⲃⲉ (S)[/k]</td>
-			</tr>
-			<tr>
-				<td></td><td></td><td></td><td></td><td></td>
 			</tr>
 		</table>
 		
