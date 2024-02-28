@@ -10,11 +10,6 @@ SIZE_DIVISORS = [ 128, 64, 32, 20 ]
 function setup() {
 	document.getElementById("textarea").value = "";
 	
-	greaterDim = Math.max( windowWidth, windowHeight );
-	if (greaterDim > 1500){
-		pixelDensity(0.5);
-	}
-	
 	document.getElementById("btn_size").onclick = function(){
 		POINTSIZE += 1; 
 		if (POINTSIZE >= 5){
@@ -39,9 +34,20 @@ function setup() {
 		STARPOINTS = [];
 		document.getElementById("textarea").value = "";
 	}
+	document.getElementById("btn_cleartext").onclick = function(){
+		document.getElementById("textarea").value = "";
+	}
+	
+	greaterDim = Math.max( windowWidth, windowHeight );
+	if (greaterDim > 1500){
+		pixelDensity(0.5);
+	}
+	// get the screen ratio and make a canvas proportional to it
+	//var ratio = (windowHeight * 0.8) / windowWidth
 	
 	// VIEWPORT CANVAS
-	vcanvas		= createCanvas(windowWidth, windowHeight * 0.8);
+	vcanvas	= createCanvas( windowWidth, windowHeight * 0.8 );
+	//vcanvas		= createCanvas(1024, Math.floor(1024 * ratio) );
 	vcanvas.touchEnded(VCanvasTouched);
 	vcanvas.mouseReleased(VCanvasTouched);
 }
@@ -88,11 +94,12 @@ function draw() {
 	textSize(CIRCLERADIUS / 20)
 	textAlign(LEFT)
 	text(datestring + " " + timestring, 0, 64)
-	text(POINTSIZE, 0, 128)
+	text(width + "x" + height, 0, 128)
 }
 
 function windowResized() {
-	resizeCanvas(windowWidth, windowHeight * 0.8);
+/* 	var ratio = (windowHeight * 0.8) / windowWidth
+	resizeCanvas(1024, Math.floor(1024 * ratio)); */
 }
 
 // coordinates are polar
