@@ -74,10 +74,36 @@ function VCanvasTouched() {
 
 function draw() {
 	background(0);
-	fill(0); stroke(255,0,0)
-	CIRCLERADIUS = Math.min(width, height);
-	circle( width/2, height/2, CIRCLERADIUS )
 	
+	// current circle x/y
+	var ccx = width/2; var ccy = height/2;
+	
+	// crosshair
+	strokeWeight( 1 )
+	// half red for crosshair and fov circle
+	stroke(128,0,0)
+	var ANGLEDIVISON = Math.PI / 4
+	var linecount = Math.floor(( 2 * Math.PI ) / ANGLEDIVISON)
+	var currangle = 0;
+	for (var i = 0; i < linecount; i++){
+		var currx = (CIRCLERADIUS * Math.cos( currangle )) + ccx;
+		var curry = (CIRCLERADIUS * Math.sin( currangle )) + ccy;
+		line ( ccx, ccy, currx, curry )
+		
+		currangle += ANGLEDIVISON;
+	}
+	
+	//line( 0,   ccy, width,	ccy )
+	//line( ccx, 0,	ccx,	height )
+	
+	strokeWeight(3)
+	fill(0,0,0,0); 
+	CIRCLERADIUS = Math.min(width, height);
+	circle( ccx, ccy, CIRCLERADIUS )
+	
+	// full red for star points and text
+	strokeWeight( 1 )
+	stroke(255,0,0)
 	for (var i = 0; i < STARPOINTS.length; i++){
 		STARPOINTS[i].drawPoint();
 	}
