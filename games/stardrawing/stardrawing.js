@@ -2,9 +2,10 @@ MONTH_NAMES = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov"
 
 CIRCLERADIUS = 0;
 
-var STARPOINTS = [];
+var STARPOINTS = [ ];
 
 SIZE = 1; DIFFUSE = false;
+SIZE_DIVISORS = [ 128, 64, 32, 20 ]
 
 function setup() {
 	document.getElementById("textarea").value = "";
@@ -12,6 +13,14 @@ function setup() {
 	greaterDim = Math.max( windowWidth, windowHeight );
 	if (greaterDim > 1500){
 		pixelDensity(0.5);
+	}
+	
+	document.getElementById("btn_size").onclick = function(){
+		SIZE += 1; 
+		if (SIZE >= 5){
+			SIZE = 1;
+		}
+		this.innerHTML = "Size: " + SIZE
 	}
 	
 	document.getElementById("btn_undo").onclick = function(){
@@ -102,7 +111,8 @@ class StarPoint {
 		var curry = (crad * Math.sin( this.angle )) + ccy;
 		
 		fill(255,0,0);
-		circle( currx, curry, 5 );
+		var size = CIRCLERADIUS / SIZE_DIVISORS[ this.size - 1 ]
+		circle( currx, curry, size );
 		
 		fill(255,0,0); stroke(0);
 		textAlign(CENTER)
