@@ -4,7 +4,7 @@ CIRCLERADIUS = 0;
 
 var STARPOINTS = [ ];
 
-SIZE = 1; DIFFUSE = false;
+POINTSIZE = 1; DIFFUSE = false;
 SIZE_DIVISORS = [ 128, 64, 32, 20 ]
 
 function setup() {
@@ -16,11 +16,11 @@ function setup() {
 	}
 	
 	document.getElementById("btn_size").onclick = function(){
-		SIZE += 1; 
-		if (SIZE >= 5){
-			SIZE = 1;
+		POINTSIZE += 1; 
+		if (POINTSIZE >= 5){
+			POINTSIZE = 1;
 		}
-		this.innerHTML = "Size: " + SIZE
+		this.innerHTML = "Size: " + POINTSIZE
 	}
 	
 	document.getElementById("btn_undo").onclick = function(){
@@ -60,7 +60,7 @@ function VCanvasTouched() {
 	
 	var objname = document.getElementById("textarea").value
 	
-	var currpoint = new StarPoint( objname, currradius, currangle, SIZE, DIFFUSE )
+	var currpoint = new StarPoint( objname, currradius, currangle, POINTSIZE, DIFFUSE )
 	STARPOINTS.push( currpoint );
 }
 

@@ -1,5 +1,9 @@
+ * {
+      touch-action: manipulation;
+  }
+
 body {
-	font-size: 20px;
+	font-size: 48px;
 	background-color: black;
 	color: white;
 	font-family: sans-serif;
