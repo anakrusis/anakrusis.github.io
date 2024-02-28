@@ -7,14 +7,28 @@ var STARPOINTS = [];
 SIZE = 1; DIFFUSE = false;
 
 function setup() {
+	document.getElementById("textarea").value = "";
+	
+	greaterDim = Math.max( windowWidth, windowHeight );
+	if (greaterDim > 1500){
+		pixelDensity(0.5);
+	}
+	
 	document.getElementById("btn_undo").onclick = function(){
 		STARPOINTS.pop();
 	}
 	document.getElementById("btn_save").onclick = function(){
-		saveCanvas();
+		var filename = year();
+		filename += month().toString().padStart(2,0);
+		filename += day().toString().padStart(2,0);
+		filename += "_" + hour().toString().padStart(2,0);
+		filename += minute().toString().padStart(2,0);
+		filename += second().toString().padStart(2,0);
+		saveCanvas( filename );
 	}
 	document.getElementById("btn_clear").onclick = function(){
 		STARPOINTS = [];
+		document.getElementById("textarea").value = "";
 	}
 	
 	// VIEWPORT CANVAS
@@ -35,7 +49,9 @@ function VCanvasTouched() {
 	var currangle  = Math.atan2( winMouseY - ccy, winMouseX - ccx )
 	//console.log(currangle);
 	
-	var currpoint = new StarPoint( "", currradius, currangle, SIZE, DIFFUSE )
+	var objname = document.getElementById("textarea").value
+	
+	var currpoint = new StarPoint( objname, currradius, currangle, SIZE, DIFFUSE )
 	STARPOINTS.push( currpoint );
 }
 
@@ -58,7 +74,8 @@ function draw() {
 	var timestring 		= hourstring + ":" + minutestring + ":" + secondstring;
 	
 	fill(255,0,0); stroke(0);
-	textSize(windowHeight / 32)
+	textSize(CIRCLERADIUS / 20)
+	textAlign(LEFT)
 	text(datestring + " " + timestring, 0, 64)
 }
 
@@ -86,5 +103,10 @@ class StarPoint {
 		
 		fill(255,0,0);
 		circle( currx, curry, 5 );
+		
+		fill(255,0,0); stroke(0);
+		textAlign(CENTER)
+		textSize(CIRCLERADIUS / 32)
+		text( this.name, currx, curry - (CIRCLERADIUS / 32) )
 	}
 }
