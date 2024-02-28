@@ -51,6 +51,8 @@ function touchStarted() {
 }
 
 function VCanvasTouched() {
+	if (winMouseY > height){ return }
+	
 	// current circle x/y
 	var ccx = width/2; var ccy = height/2;
 	var currradius = Math.sqrt( Math.pow(winMouseX - ccx, 2) + Math.pow(winMouseY - ccy, 2) ) / CIRCLERADIUS
