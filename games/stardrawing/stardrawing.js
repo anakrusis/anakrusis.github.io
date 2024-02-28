@@ -86,6 +86,7 @@ function draw() {
 	textSize(CIRCLERADIUS / 20)
 	textAlign(LEFT)
 	text(datestring + " " + timestring, 0, 64)
+	text(POINTSIZE, 0, 128)
 }
 
 function windowResized() {

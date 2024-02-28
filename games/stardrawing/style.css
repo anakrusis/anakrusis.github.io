@@ -27,7 +27,7 @@ input:hover {
 input, button, textarea, select {
 	background-color: black;
 	border: 3px solid red;
-	font-size: 48px;
+	font-size: 300%;
 	color: red;
 }
 
@@ -37,7 +37,7 @@ input, button, textarea, select {
 
 .topbutton{
 	width: 32%;
-	font-size: 48px;
+	font-size: 300%;
 }
 
 .button1, .moves{
