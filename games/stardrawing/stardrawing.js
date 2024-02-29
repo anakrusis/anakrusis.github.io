@@ -79,7 +79,7 @@ function draw() {
 	var ccx = width/2; var ccy = height/2;
 	
 	// crosshair
-	strokeWeight( 1 )
+	strokeWeight( 3 )
 	// half red for crosshair and fov circle
 	stroke(128,0,0)
 	var ANGLEDIVISON = Math.PI / 4
