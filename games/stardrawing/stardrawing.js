@@ -29,6 +29,7 @@ function setup() {
 		filename += minute().toString().padStart(2,0);
 		filename += second().toString().padStart(2,0);
 		saveCanvas( filename );
+		saveJSON(STARPOINTS, filename + '.json');
 	}
 	document.getElementById("btn_clear").onclick = function(){
 		STARPOINTS = [];
@@ -120,7 +121,7 @@ function draw() {
 	textSize(CIRCLERADIUS / 20)
 	textAlign(LEFT)
 	text(datestring + " " + timestring, 0, 64)
-	text(width + "x" + height, 0, 128)
+	//text(width + "x" + height, 0, 128)
 }
 
 function windowResized() {
