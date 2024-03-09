@@ -1,0 +1,6 @@
+ENTRIES = [
+	{ 
+		"date": new Date("8 March 2024"),
+		"text": "The first question, before thinking about stitching the drawings together, is how to project a single flat drawing back onto the curved celestial sphere.<br><br><div class=\"left\"><img  src=\"img/figure1.png\"></div>First, I want to know if the distances between the points on the flat plane are proportional to the angles on the sphere. Simplifying it to a two-dimensional model, where the image plane is represented by a chord of the circle, does the midpoint of the chord bisect the angle subtended by its arc?<br><br><img src=\"img/figure2.png\"><br><br>In this model the FOV is 45° (I tried drawing it with the real 6.6°, but the angle is so narrow it is impractical to draw, I would need a much larger resolution image). Inside the unit circle, the FOV is bounded by the lines y=x and x=0. I made the chord using the slope between the points (0,1) and (√(2)/2, √(2)/2).<br><br>Now the angle at the center of the FOV, bisecting it, is halfway between π/4 and π/2 radians (I am switching over to radians for this) which is 3π/8 rad. And to the point at this angle on the circle, from the origin, gives a line of sight of slope ~2.414... which is 1+√(2), the <a href=\"https://en.wikipedia.org/wiki/Silver_ratio\">Silver ratio</a>."	
+	}
+]
