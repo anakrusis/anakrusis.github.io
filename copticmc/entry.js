@@ -1,3 +1,5 @@
+var DATEOPTIONS = { year: 'numeric', month: 'long', day: 'numeric' };
+
 var MAINDIV = document.getElementById("maindiv");
 // the outermost div is usually 75% width, but it looks better on a phone in portrait mode at 95% width, so this simply detects
 if (window.innerWidth < window.innerHeight){
@@ -8,25 +10,33 @@ if (window.innerWidth < window.innerHeight){
 const QUERYSTRING = window.location.search;
 const URLPARAMS = new URLSearchParams(QUERYSTRING);
 const TAGSSTRING = URLPARAMS.get('tags')
+const IDSTRING   = URLPARAMS.get('id')
 CURRENTTAGS = parseTagString( TAGSSTRING )
 
 CURRENTENTRIES = [];
 
-// for every entry, we will see if it matches all the tags being searched
-for (key in ENTRIES) {
-	var ce = ENTRIES[key] // current entry
-	var tagismissing = false;
-	for (var i = 0; i < CURRENTTAGS.length; i++){
-		var ct = CURRENTTAGS[i] // current tag
-		if (ce.tags.indexOf(ct) == -1){
-			tagismissing = true;
+// id present: just put in the one entry on the page
+if (IDSTRING){
+	CURRENTENTRIES.push(IDSTRING);
+	
+// no id string: put entries by tags (TODO i think searching by tag should go back to the abbreviated search page)
+}else{
+	// for every entry, we will see if it matches all the tags being searched
+	for (key in ENTRIES) {
+		var ce = ENTRIES[key] // current entry
+		var tagismissing = false;
+		for (var i = 0; i < CURRENTTAGS.length; i++){
+			var ct = CURRENTTAGS[i] // current tag
+			if (ce.tags.indexOf(ct) == -1){
+				tagismissing = true;
+			}
 		}
+		// skip this entry if any of the tags are not present
+		if (tagismissing){
+			continue;
+		}
+		CURRENTENTRIES.push(key);
 	}
-	// skip this entry if any of the tags are not present
-	if (tagismissing){
-		continue;
-	}
-	CURRENTENTRIES.push(key);
 }
 
 // add the header at the top of the page
@@ -54,9 +64,13 @@ if (PAGETOPDESC[ TAGSSTRING ]){
 	pagetopnotesstring += "<br><br>"
 	pagetopnotesstring += PAGETOPDESC[ TAGSSTRING ];
 }
-pagetopnotes.innerHTML = "<b>" + pagetopstring + ": " + CURRENTENTRIES.length + " out of " + Object.keys(ENTRIES).length +  " entries" + "</b>" + pagetopnotesstring
-
-pagetopnotes.innerHTML += "<br><br><b><a href=\"entry.html\"><-- Clear all tags</a></b>"
+if (!IDSTRING){
+	pagetopnotes.innerHTML = "<b>" + pagetopstring + ": " + CURRENTENTRIES.length + " out of " + Object.keys(ENTRIES).length +  " entries" +"</b>" + pagetopnotesstring + "<br><br>"
+}
+if (TAGSSTRING){
+	pagetopnotes.innerHTML += "<b><a href=\"entry.html\"><-- View all entries</a></b><br><br>"
+}
+pagetopnotes.innerHTML += "<b><a href=\"search.html\"><-- Back to search</a></b>"
 
 for (var i = 0; i < CURRENTENTRIES.length; i++){
 	var key = CURRENTENTRIES[i];
@@ -91,6 +105,11 @@ function addDictEntry(key, ce){
 	titlediv.setAttribute("class","titlediv");
 	var titlestring = getEntryTitle( ce )
 	titlediv.innerHTML = "<h2>" + titlestring + "</h2>";
+	
+	if (ce.date){
+		titlediv.innerHTML += "Last updated: " + ce.date.toLocaleDateString("en-GB", DATEOPTIONS);
+	}
+	
 	headerdiv.appendChild( titlediv );
 	
 	outerdiv.appendChild( headerdiv );

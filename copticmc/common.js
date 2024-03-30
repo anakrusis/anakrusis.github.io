@@ -134,7 +134,7 @@ var PAGETOPDESC		= {
 	"etym-grk":		"This category is for Greek loanwords which were introduced and attested during the productive period of Coptic. For new Greek loanwords, and situations where Greek is one of various modern languages that share a similar word, see the section <a href=\"?tags=etym-mod\">Words of modern origin</a>.",
 	"generic-material":		"Words which do not refer to a specific block or item, but instead are used in a whole family of blocks/items made out of this material. Usually combines with a <a href=\"?tags=generic-type\">generic type</a> to make specific blocks and items.",
 	"generic-type":			"Words which do not refer to a specific block or item, but instead are used in a whole family of blocks/items of this type. This includes materials which the blocks/items are made out of (examples: gold, iron, wood), forms of blocks/items (examples: planks, stairs, swords), or the generic terms for objects which are always colored (examples: bed, wool). All of these words have a number of derived terms.",
-	"no-descendant": 		"Words for which an earlier Egyptian / Demotic term is attested, but a Coptic descendant is not known.",
+	"no-descendant": 		"Words for which an earlier Egyptian / Demotic term is attested, but a Coptic descendant is not known or not yet decided upon.",
 	"not-to-be-translated": "Words which are fully or partially on the \"Not to be translated\" list of the <a href=\"https://docs.google.com/spreadsheets/d/1xxDvR2MrPUaxXwNfn-oJX-fBerEsZkfo\">Minecraft Official Glossary</a>.",
 	"thermalexpansion":		"Words used in the mod <a href=\"https://teamcofh.com/docs/1.12/thermal-expansion/\">Thermal Expansion</a>. This is a mod about industrialization, so the attested Coptic vocabulary to work with is understandably limited. But the machines are not realistic and almost in the realm of fantasy; names such as \"Aqueous Accumulator\" are not much more attested in English than the Coptic translated equivalents. So I feel a bit less hesitant about coinage and using unattested terms for this particular mod than with <a href=\"?tags=vanilla\">the base game</a> or other mods, but I still try to be faithful to the language and find the proper citations wherever possible.",
 	"thermalfoundation":	"Words used in the mod <a href=\"https://teamcofh.com/docs/1.12/thermal-foundation/\">Thermal Foundation</a>.",
@@ -275,7 +275,7 @@ function parseTag( intagstring ){
 		}
 		// if entry exists on the page then link to it, otherwise dont
 		if (CURRENTENTRIES.indexOf( tagargs[0] ) > -1){
-			outstring += "<b><a href=\"entry.html#" + tagargs[0] + "\">"
+			outstring += "<b><a href=\"entry.html?id=" + tagargs[0] + "\">"
 			outstring += getEntryTitle( ce )
 			outstring += "</a></b>"
 		}else{
