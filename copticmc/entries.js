@@ -181,7 +181,7 @@ ENTRIES = {
 		"date": new Date( "March 31 2024" ),
 		"english": "Cuttlefish (≈ Squid)",
 		"etym": [ "< Demotic[d]𓃭𓏤𓐠𓏤𓏰:𓏛𓄹:𓏭[/d]<i>ls</i> \"tongue\", < Egyptian[h]𓄓𓏤𓄹[/h]<i>ns</i> \"tongue\" [c]ce|74[/c] [c]tla|87800[/c]", "< Demotic[d]𓇋𓇋𓏲𓅓𓈗𓏤1𓈘:𓈇[/d]<i>ym</i> \"sea\", < Late Egyptian[h]𓇋𓇋𓅖𓈗𓈘𓈇[/h]<i>ym</i> \"sea\", from a Semitic language [c]ce|46[/c] [c]tla|24730[/c]" ],
-		"notes": "The only animal similar to squid I could find attested: \"[k]ⲗⲁⲥ ⲛ̄ ⲉⲓⲟⲙ[/k] means tongue of sea, which is cuttlefish and corresponds to the Arabic حبار [i]squid / cuttlefish[/i], لسان البحر [i]tongue of the sea[/i]\" [c]sawy|313[/c]. Cuttlefish bones appear in a recipe for eye medication powder (Ch 54).",
+		"notes": "The only animal similar to squid I could find attested: \"[k]ⲗⲁⲥ ⲛ̄ ⲉⲓⲟⲙ[/k] means tongue of sea, which is cuttlefish and corresponds to the Arabic حبار [i]squid / cuttlefish[/i], لسان البحر [i]tongue of the sea[/i]\" [c]sawy|313[/c]. Cuttlefish appears in a recipe for eye medication powder (Ch&nbsp;54).",
 		"tags": [ "animal", "etym-egy", "etym-sem", "mob", "uncertain", "vanilla" ]
 	},
 	"generic.Birch.name": {
@@ -226,6 +226,15 @@ ENTRIES = {
 		"derivedterms": [ "item.appleGold.name" ],
 		"tags": [ "etym-egy", "generic-type", "vanilla" ]
 	},
+	"generic.Game.name": {
+		"coptic": "ⲡⲁⲓⲅⲛⲓⲟⲛ",
+		"date": new Date( "31 Mar 2024" ),
+		"english": "Game",
+		"etym": [ "< Greek παίγνιον \"plaything, toy\"" ],
+		"img": "none",
+		"notes": "\"game\" [c]cdo|C9980[/c].<br><br>Although this is the only word I can find attested in Coptic, it seems to be used with a negative connotation. For example translations of the Gospel of Philip from Nag Hammadi Codex II have \"trifle\" or \"foolish thing\":<br><br>[k]ⲁϥⲉⲓ [...] ⲁⲡⲧⲏⲣϥ ⲉⲧⲃⲉ [... ⲟⲩ<b>ⲡ</b>]<b>ⲁⲓⲅⲛⲓⲟⲛ</b> ⲡⲉ, ⲁⲗ[ⲗⲁ... ⲣ̄ⲕⲁⲧⲁⲫ]ⲣⲟⲛⲉⲓ ⲙ̄ⲡⲉⲓⲡⲉ-[...]ⲛ ⲉⲧⲙⲛ̄ⲧⲉⲣⲟ ⲛⲙ̄[ⲡⲏⲩⲉ...] ⲉϥϣⲁⲣ̄ⲕⲁⲧⲁⲫⲣⲟⲛⲉⲓ [... ⲁ]ⲩⲱ ⲛ̄ϥϣⲟⲥϥ ϩⲱⲥ <b>ⲡⲁⲓⲅⲛⲓ</b>[<b>ⲟⲛ</b>... ⲉⲃ]ⲟⲗ ⲉϥⲥⲱⲃⲉ.[/k]<br><br>He came [...] to the entirety because [...] it is [a] <b>foolish thing</b>, but [...] despise this [...] the kingdom of [heaven...]. If he despises [...] and looks down on it as a <b>foolish thing</b> [...] he is laughing. (Smith <i>Valentinian Christianity</i>, 283)",
+		"tags": [ "etym-grk", "ui", "vanilla" ]
+	},
 	"item.bread.name": {
 		"coptic":	"ⲟⲉⲓⲕ",
 		"english":	"Bread",
@@ -267,7 +276,7 @@ ENTRIES = {
 		"english": "Oak",
 		"etym": [ "Unknown [c]ce|363[/c]." ],
 		"notes": "Oaks are mentioned many times in the Bible, so it seems like it would be straightforward to translate. But many of those mentions are simply translated as [k]ϣⲏⲛ[/k] \"tree\". Also, there is confusion / conflation in some Bible translations between the oak (Hebrew&nbsp;אלון) and the terebinth (Hebrew&nbsp;אלה). Here are some attested words:<br><br>[k]<b>• ⲥⲉⲓ:</b>[/k] \"a tree... <i>terebinth</i> (oak) or <i>lotus-tree</i>\" [c]cd|317a[/c],<br>\"name of a tree (oak?)\" [c]cdo|C3294[/c] [c]lambdin|267[/c],<br> \" بلوط [i]oak[/i], سِدْرَة [i]tree in the buckthorn family, <a href=\"https://en.wikipedia.org/wiki/Ziziphus\">Ziziphus</a>[/i]\" [c]ma|354a[/c].<br><br>And its variant <b>[k]ⲥⲓⲥⲟⲩ:[/k]</b> \"سدرة\" [c]cd|317a[/c], \"بلوط [i]oak[/i], بطْمة [i]terebinth[/i] (نوع شجر [i]type of tree[/i])\" [c]ma|369[/c].<br><br>The sources agree that [k]ⲥⲉⲓ / ⲥⲓⲥⲟⲩ[/k] can refer to more than one kind of tree, but it generally includes oak trees.<br><br>[k]<b>• ⲡⲣⲓⲛⲟⲥ:</b>[/k] Specifically refers to <a href=\"https://en.wikipedia.org/wiki/Quercus_ilex\"><i>Quercus ilex</i></a>, the evergreen / holly oak. Those familiar with Susanna will recognise this word, and it is borrowed from Greek.<br><br>[k]<b>• ϣⲏⲛ ⲛ̄ⲃⲁⲗⲁⲛⲟⲥ:</b>[/k] literally \"acorn tree\". But oak trees in Minecraft bizarrely bear apples instead of acorns...<br><br>Isaiah 2:13 in Sahidic uses this term.",
-		"tags": [ "etym-unk", "plant", "tree", "uncertain", "vanilla" ]
+		"tags": [ "etym-unk", "generic-type", "plant", "tree", "uncertain", "vanilla" ]
 	},
 	"generic.Sword.name":{
 		"coptic": "ⲥⲏϥⲉ",
@@ -366,10 +375,10 @@ ENTRIES = {
 	},
 	"item.paper.name": {
 		"coptic": "ⲭⲁⲣⲧⲏⲥ",
-		"date": new Date( "30 Mar 2024" ),
+		"date": new Date( "31 Mar 2024" ),
 		"english": "Paper",
 		"etym": [ "< Greek χάρτης \"sheet of papyrus/paper\" [c]cdo|C10946[/c][c]vy|247[/c]" ],
-		"notes": "This is the common word for a piece of paper or papyrus throughout the lifespan of Coptic, from Shenoute to the late medical texts, both used for writing and as an ingredient in recipes:<br><br>[k]ⲁⲩⲱ ϫⲉⲁⲓⲧⲣⲉⲩⲙⲟⲩⲣ ⲙ̄ⲡⲉⲕⲥⲱϣ ⲙⲛ̄ⲡⲉⲕϣⲓⲡⲉ ⲉϩⲟⲩⲛ ⲉⲛⲟⲩⲉϭⲣⲟ ⲙⲡⲉⲕⲏⲓ ⲉⲩⲥⲏϩ ⲉ<b>ϩⲉⲛⲭⲁⲣⲧⲏⲥ</b>[/k]<br>\"and since I have had them bind your contempt and your shame to the gateposts of your house, written on <b>pieces of papyrus</b>...\" (<i>Not Because a Fox Barks</i> 2:2-3)<br><br>[k]...ⲑⲓⲟⲩ ⲁⲡⲉⲣⲟⲩ <b>ⲭⲁⲣⲧⲏⲥ</b> ⲉϥⲣⲱⲭ, ⲙⲱⲗⲏⲃⲟⲩ, ⲁⲗⲟⲥ...[/k]<br>\"...native sulfur, burnt <b>paper</b>, lead, salt...\" (Ch 178)[c]sawy|93[/c]<br><br>Sawy also mentions that \"Abd ar-Razzaq (p. 133) said that ‘قرطاس’ (χάρτης), is Egyptian paper made from papyrus بردى.\" [c]sawy|298[/c]",
+		"notes": "This is the common word for a piece of paper or papyrus throughout the history of Coptic, from Shenoute to the late medical texts, both used for writing and as an ingredient in recipes:<br><br>[k]ⲁⲩⲱ ϫⲉⲁⲓⲧⲣⲉⲩⲙⲟⲩⲣ ⲙ̄ⲡⲉⲕⲥⲱϣ ⲙⲛ̄ⲡⲉⲕϣⲓⲡⲉ ⲉϩⲟⲩⲛ ⲉⲛⲟⲩⲉϭⲣⲟ ⲙⲡⲉⲕⲏⲓ ⲉⲩⲥⲏϩ ⲉ<b>ϩⲉⲛⲭⲁⲣⲧⲏⲥ</b>[/k]<br>\"and since I have had them bind your contempt and your shame to the gateposts of your house, written on <b>pieces of papyrus</b>...\" (<i>Not Because a Fox Barks</i> 2:2-3)<br><br>[k]...ⲑⲓⲟⲩ ⲁⲡⲉⲣⲟⲩ <b>ⲭⲁⲣⲧⲏⲥ</b> ⲉϥⲣⲱⲭ, ⲙⲱⲗⲏⲃⲟⲩ, ⲁⲗⲟⲥ...[/k]<br>\"...native sulfur, burnt <b>paper</b>, lead, salt...\" (Ch 178)[c]sawy|93[/c]<br><br>Sawy also mentions that \"Abd ar-Razzaq (p. 133) said that ‘قرطاس’ (χάρτης), is Egyptian paper made from papyrus بردى.\" [c]sawy|298[/c]",
 		"tags": [ "etym-grk", "item", "vanilla" ]
 	},
 	"tile.snow.name":{
@@ -471,10 +480,10 @@ ENTRIES = {
 	},
 	"item.writtenBook.name": {
 		"coptic": "ϫⲱⲱⲙⲉ ⲉϥⲥⲏϩ",
-		"date": new Date( "30 March 2024" ),
+		"date": new Date( "31 March 2024" ),
 		"english": "Written Book",
 		"img": "item.writtenBook.name.gif",
-		"etym": [ "See [r]item.book.name[/r]", "Q of [k]ⲥϩⲁⲓ[/k] \"write\" [c]cdo|C3972[/c], < Demotic[d]𓏞𓍼:𓏤[/d]<i>sẖꜣ</i> \"write\" [c]ce|172[/c]" ],
+		"etym": [ "See [r]item.book.name[/r]", "Q of [k]ⲥϩⲁⲓ[/k] \"write\" [c]cdo|C3972[/c], < Demotic[d]𓏞𓍼:𓏤[/d]<i>sẖꜣ</i> \"write\", < Egyptian[h]𓊃𓈙𓏟[/h]<i>zẖꜣ</i> \"write\" [c]ce|172[/c] [c]tla|600375[/c]" ],
 		"notes": "This name is usually not shown because the player can name the book anything they wish.<br><br>The tooltip has several lines of text after the title. First, the author is credited \"by  [i]username[/i]\", which is translated [k]ϩⲓⲧⲛ̄[/k] [i]username[/i]. Also shown is an indication of what generation the copy of the book is:<br><br>- \"Original\": [k]ⲁⲩⲑⲉⲛⲧⲏⲥ[/k] \"original (of a text)\" [c]cdo|C8536[/c]<br><br>- \"Copy of original\": [k]ϩⲓⲥⲟⲛ ⲙ̄ⲡⲁⲩⲑⲉⲛⲧⲏⲥ[/k] \"copy/duplicate (of a text) of the original\" [c]cdo|C11140[/c]<br><br>- \"Copy of a copy\": translated as [k]ϩⲓⲥⲟⲛ ⲛ̄ⲟⲩϩⲓⲥⲟⲛ[/k] \"copy of a copy\"<br><br>- \"Tattered\": not sure how to translate yet",
 		"tags": [ "etym-egy", "etym-egy", "item", "vanilla" ]
 	}
