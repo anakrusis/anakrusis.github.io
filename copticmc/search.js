@@ -12,6 +12,12 @@ for (key in ENTRIES) {
 	CURRENTENTRIES.push(key);
 }
 
+var pagetopnotes = document.createElement("div");
+pagetopnotes.setAttribute("class", "notesdiv");
+MAINDIV.appendChild( pagetopnotes );
+
+pagetopnotes.innerHTML += "<b>" + CURRENTENTRIES.length + " out of " + Object.keys(ENTRIES).length +  " entries" +"</b>"
+
 var cattable = document.createElement("table");
 MAINDIV.appendChild( cattable );
 cattable.style.marginBottom = "0px";
@@ -36,7 +42,15 @@ for (var i = 0; i < CURRENTENTRIES.length; i++){
 	}
 	if (imgsrc != "none"){
 		var img = document.createElement("img");
-		img.src = "img/" + imgsrc + ".png"; img.style.height = "48px"
+		
+		// gifs dont need to have a file extension added at the end. png is the default.
+		if (imgsrc.indexOf("gif") != -1){
+			img.src = "img/" + imgsrc + ""
+		}else{
+			img.src = "img/" + imgsrc + ".png"
+		}
+		
+		img.style.height = "48px"
 		cc.appendChild( img );
 		cc.style.padding = "0px"; cc.style.textAlign = "center";
 		//cc.innerHTML = "<img src='img/" + imgsrc + ".png'>"

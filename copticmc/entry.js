@@ -96,7 +96,13 @@ function addDictEntry(key, ce){
 	}
 	if (imgsrc != "none"){
 		imgdiv.setAttribute("class","imgdiv");
-		imgdiv.innerHTML = "<img src='img/" + imgsrc + ".png'>"
+		
+		// gifs dont need to have a file extension added at the end. png is the default.
+		if (imgsrc.indexOf("gif") != -1){
+			imgdiv.innerHTML = "<img src='img/" + imgsrc + "'>"
+		}else{
+			imgdiv.innerHTML = "<img src='img/" + imgsrc + ".png'>"
+		}
 		headerdiv.appendChild( imgdiv );
 	}
 	

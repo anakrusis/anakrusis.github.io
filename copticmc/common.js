@@ -240,6 +240,29 @@ function parseTag( intagstring ){
 			console.log("Warning: unknown source " + tagargs[0] + " was cited!")
 			return [ "[", 0 ];
 		}
+		var citationname = tagargs[0];
+		var citationpage = tagargs[1];
+		
+		var pstring = "";
+		pstring = pstring + "(" + SOURCE_NAMES[citationname] + " " + citationpage + ")"
+		
+		// generates a link and sets it to the right page if it can
+		if (SOURCE_LINKS[citationname]){
+			// add an offset onto the page number only if the page number is a number and an offset exists
+			if (typeof(parseInt(citationpage)) == "number" && SOURCE_PAGE_OFFSETS[citationname]){
+				var num = parseInt(citationpage)
+				citationpage = num + SOURCE_PAGE_OFFSETS[citationname];
+			}
+			
+			outstring = outstring + "<a href=\""
+			outstring = outstring + SOURCE_LINKS[citationname]
+			outstring = outstring + citationpage
+			outstring = outstring + "\" target=\"_blank\" rel=\"noopener noreferrer\">"
+			outstring = outstring + pstring
+			outstring = outstring + "</a>"
+		}else{
+			outstring = outstring + pstring
+		}
 	
 	// [d][/d] TAG: DEMOTIC TEXT (soon to be deprecated)
 	}else if (innertagtext == "d"){
@@ -273,16 +296,9 @@ function parseTag( intagstring ){
 			console.log("Warning: unknown entry " + tagargs[0] + " was referenced!")
 			return [ "[", 0 ];
 		}
-		// if entry exists on the page then link to it, otherwise dont
-		if (CURRENTENTRIES.indexOf( tagargs[0] ) > -1){
-			outstring += "<b><a href=\"entry.html?id=" + tagargs[0] + "\">"
-			outstring += getEntryTitle( ce )
-			outstring += "</a></b>"
-		}else{
-			outstring += "<b>"
-			outstring += getEntryTitle( ce )
-			outstring += "</b>"
-		}
+		outstring += "<b><a href=\"entry.html?id=" + tagargs[0] + "\">"
+		outstring += getEntryTitle( ce )
+		outstring += "</a></b>"
 	}
 	
 	return [ outstring, closingtagindex + closingtag.length - 1 ];
