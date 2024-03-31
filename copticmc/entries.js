@@ -9,7 +9,7 @@ ENTRIES = {
 		"coptic": "",
 		"english": "Granite",
 		"etym": [],
-		"notes": "It is attested in earlier Egyptian as[h]𓌳𓍿𓎶[/h]<i>mꜣṯ</i> \"granite\" [c]tla|67580[/c], also the phrase[h]𓇋𓈖𓂋𓊌𓈖𓌳𓄿𓏏𓎶[/h]<i>jnr n mꜣṯ</i> \"granite stone\" [c]tla|650034[/c]. To my knowledge this word does not survive into Demotic nor Coptic.<br><br>In the Demotic dream handbook Papyrus Berlin P. 8769 (TM 55958) there is the phrase <i>ỉny km n Yb</i> \"black stone (i.e., granite) of Elephantine\" [c]cdd_i-164[/c]. The first part survives as Coptic ⲁⲛⲓⲕⲁⲙ but has other non-granite-related meanings \"copper sulfate, copper vitriol\" [c]cdd_i-163[/c][c]ce|9[/c].<br><br>The Rosetta Stone is made of granodiorite, which is between granite and diorite in composition, and is referred to itself in the text as simply [d]𓇋𓆛:𓈖𓇋𓇋𓏲𓊌1 𓍑𓃭𓇋𓇋𓏲𓏴:𓂡1[/d]<i>ỉny ḏry</i> \"hard stone\" [c]cdd_i-164[/c].",
+		"notes": "It is attested in earlier Egyptian as[h]𓌳𓍿𓎶[/h]<i>mꜣṯ</i> \"granite\" [c]tla|67580[/c], also the phrase[h]𓇋𓈖𓂋𓊌𓈖𓌳𓄿𓏏𓎶[/h]<i>jnr n mꜣṯ</i> \"granite stone\" [c]tla|650034[/c]. To my knowledge this word does not survive into Demotic nor Coptic.<br><br>In the Demotic dream handbook Papyrus Berlin P. 8769 (TM 55958) there is the phrase <i>ỉny km n Yb</i> \"black stone (i.e., granite) of Elephantine\" [c]cdd_i|164[/c]. The first part survives as Coptic ⲁⲛⲓⲕⲁⲙ but has other non-granite-related meanings \"copper sulfate, copper vitriol\" [c]cdd_i|163[/c][c]ce|9[/c].<br><br>The Rosetta Stone is made of granodiorite, which is between granite and diorite in composition, and is referred to itself in the text as simply [d]𓇋𓆛:𓈖𓇋𓇋𓏲𓊌1 𓍑𓃭𓇋𓇋𓏲𓏴:𓂡1[/d]<i>ỉny ḏry</i> \"hard stone\" [c]cdd_i|164[/c].",
 		"tags": [ "block", "no-descendant", "uncertain", "stone", "vanilla" ]
 	},
 	"tile.oreIron.name":{
@@ -51,9 +51,9 @@ ENTRIES = {
 	},
 	"tile.cactus.name":{
         "coptic": "ⲁⲗ",
-		"date":	new Date( "30 Mar 2024" ),
+		"date":	new Date( "31 Mar 2024" ),
         "english": "Cactus",
-        "notes": "Cacti are native to the Americas-- with possibly one exception. <i>Rhipsalis baccifera</i> is native to a large part of Africa as far north as Sudan <a href=\"https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:219250-2\">(source:&nbsp;Kew)</a>. But there is still uncertainty over how and when this cactus arrived in Africa. If it happened during the period of early modern trade with the Americas, then a Coptic word for cactus is unlikely to have existed. But if <i>R. baccifera</i> has been there since antiquity or earlier, then it is possible a Coptic word exists for it. Here are some ideas:<br><br>[k]<b>• ⲁⲗ: </b>[/k]This word is in Mawood's dictionary as \"<i>cactus</i> الصبَّارة\" [c]ma|2[/c] and it is both Sahidic and Bohairic. But I do not know of any texts where it is attested in (if anyone knows where, I would greatly appreciate it). It's difficult to search for this word because [k]ⲁⲗ[/k] has several other common meanings. And [k]ⲁⲗ-[/k] starts many Arabic loanwords, so I haven't ruled out the possibility of rebracketing having occurred.<br>I also thought about this word possibly being related to [k]ⲁⲗⲗⲱⲏ[/k] \"aloe\", especially considering the same semantic shift happened in Arabic with صبار <i>ṣabbār</i> \"cactus\" derived from صبر <i>ṣabr</i> \"aloe\".<br><br>[k]<b>• ⲕⲁⲕⲧⲟⲥ: </b>[/k]Following the example of many modern languages that repurposed the old Greek word κάκτος (which did not originally refer to cactus). Compare Armenian կակտուս <i>kaktus</i>, Hebrew קקטוס <i>kaktus</i>, Latin <i>cactus</i>, Persian کاکتوس <i>kâktus</i>, etc. But it is not attested in Coptic, and this would be a neologism (though widely understood).<br><br>It should also be noted that many other kinds of succulent plants can be found in the region, and the one true cactus which may be native does not really resemble the Minecraft cactus. So an exact match is probably not going to happen, and it's okay to be flexible when choosing a word for it. ",
+        "notes": "Cacti are native to the Americas-- with possibly one exception. <i>Rhipsalis baccifera</i> is native to a large part of Africa as far north as Sudan <a href=\"https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:219250-2\">(source:&nbsp;Kew)</a>. But there is still uncertainty over how and when this cactus arrived in Africa. If it happened during the period of early modern trade with the Americas, then a Coptic word for cactus is unlikely to have existed. But if <i>R. baccifera</i> has been there since antiquity or earlier, then it is possible a Coptic word exists for it. Here are some ideas:<br><br>[k]<b>• ⲁⲗ: </b>[/k]\"<i>cactus</i> الصبَّارة\" [c]ma|2[/c], both Sahidic and Bohairic. I do not know of any texts where this word is attested in (if anyone knows where, I would greatly appreciate it). It's difficult to search in the corpus because [k]ⲁⲗ[/k] has several other common meanings.<br>I thought about this word possibly being related to [k]ⲁⲗⲗⲱⲏ[/k] \"aloe\", especially considering the same semantic shift happened in Arabic with صبار <i>ṣabbār</i> \"cactus\" derived from صبر <i>ṣabr</i> \"aloe\".<br><br>[k]<b>• ⲕⲁⲕⲧⲟⲥ: </b>[/k]Following the example of many modern languages that repurposed the old Greek word κάκτος (which did not originally refer to cactus). Compare Armenian կակտուս <i>kaktus</i>, Hebrew קקטוס <i>kaktus</i>, Latin <i>cactus</i>, Persian کاکتوس <i>kâktus</i>, etc. But it is not attested in Coptic, and this would be a neologism (though widely understood).<br><br>It should also be noted that many other kinds of succulent plants can be found in the region, and the one true cactus which may be native does not really resemble the Minecraft cactus. So an exact match is probably not going to happen, and it's okay to be flexible when choosing a word for it. ",
         "tags": [ "block", "plant", "uncertain", "vanilla" ]
     },
 	"item.thermalfoundation.material.crystalCrudeOil.name":{
@@ -176,9 +176,17 @@ ENTRIES = {
 		"derivedterms": [ "block.minecraft.frogspawn" ],
 		"tags": [ "1.19", "animal", "etym-egy", "mob", "quark", "vanilla" ]
 	},
+	"entity.Squid.name": {
+		"coptic": "ⲗⲁⲥ ⲛ̄ⲉⲓⲟⲙ",
+		"date": new Date( "March 31 2024" ),
+		"english": "Cuttlefish (≈ Squid)",
+		"etym": [ "< Demotic[d]𓃭𓏤𓐠𓏤𓏰:𓏛𓄹:𓏭[/d]<i>ls</i> \"tongue\", < Egyptian[h]𓄓𓏤𓄹[/h]<i>ns</i> \"tongue\" [c]ce|74[/c] [c]tla|87800[/c]", "< Demotic[d]𓇋𓇋𓏲𓅓𓈗𓏤1𓈘:𓈇[/d]<i>ym</i> \"sea\", < Late Egyptian[h]𓇋𓇋𓅖𓈗𓈘𓈇[/h]<i>ym</i> \"sea\", from a Semitic language [c]ce|46[/c] [c]tla|24730[/c]" ],
+		"notes": "The only animal similar to squid I could find attested: \"[k]ⲗⲁⲥ ⲛ̄ ⲉⲓⲟⲙ[/k] means tongue of sea, which is cuttlefish and corresponds to the Arabic حبار [i]squid / cuttlefish[/i], لسان البحر [i]tongue of the sea[/i]\" [c]sawy|313[/c]. Cuttlefish bones appear in a recipe for eye medication powder (Ch 54).",
+		"tags": [ "animal", "etym-egy", "etym-sem", "mob", "uncertain", "vanilla" ]
+	},
 	"generic.Birch.name": {
 		"coptic": "ⲗⲉⲩⲕⲏ",
-		"english": "White Poplar (\"Birch\")",
+		"english": "White Poplar (≈ Birch)",
 		"etym": ["< Greek λεύκη \"white poplar\""],
 		"notes": "[c]cdo|C9617[/c].<br><br>Plant names are among the most varied translations in the game, and substitutions are common. As I could not find a word for the birch tree attested in Coptic, I substituted a different kind of tree. The white poplar (<i>Populus alba</i>) has very similar white bark with black markings, and its wood is similarly \"white... with a slightly yellowish color\".<br><br>This word appears in Hosea 4:13 in the same sentence as ⲥⲉⲓ - Oak. It also appears in Isaiah 41:19.",
 		"tags": [ "etym-grk", "generic-type", "plant", "tree", "vanilla" ]
@@ -242,7 +250,7 @@ ENTRIES = {
 	"entity.Villager.name": {
 		"coptic":	"ⲣⲙ̄ⲛ̄ϯⲙⲉ",
 		"english":	"Villager",
-		"etym":	["< Demotic[d]𓂋:𓍿𓀀𓏪𓈖2:𓂧𓏇2𓏤𓏰:𓊖[/d]<i>rmṯ n tmy</i> \"local (man)\" [c]two-10[/c], which is:<table><tr><td style=\"width:50%\">[d]𓂋:𓍿𓀀𓏪[/d]<i>rmṯ</i> \"human\" < Egyptian[h]𓂋𓍿𓀀[/h]<i>rmṯ</i> \"human\" [c]ce|136[/c]</td><td>[d]𓂧𓏇2𓏤𓏰:𓊖[/d]<i>tmy</i> \"town, village\" < Egyptian[h]𓂧𓏇𓇋𓈅𓏤[/h]<i>dmj</i> \"locality\" [c]ce|187[/c]</td></tr></table>"],
+		"etym":	["< Demotic[d]𓂋:𓍿𓀀𓏪𓈖2:𓂧𓏇2𓏤𓏰:𓊖[/d]<i>rmṯ n tmy</i> \"local (man)\" [c]two|10[/c], which is:<table><tr><td style=\"width:50%\">[d]𓂋:𓍿𓀀𓏪[/d]<i>rmṯ</i> \"human\" < Egyptian[h]𓂋𓍿𓀀[/h]<i>rmṯ</i> \"human\" [c]ce|136[/c]</td><td>[d]𓂧𓏇2𓏤𓏰:𓊖[/d]<i>tmy</i> \"town, village\" < Egyptian[h]𓂧𓏇𓇋𓈅𓏤[/h]<i>dmj</i> \"locality\" [c]ce|187[/c]</td></tr></table>"],
 		"notes": "Lambdin lists this word as ⲣⲙ̄ϯⲙⲉ [c]lambdin|283[/c] but ⲣⲙ̄ⲛ̄ϯⲙⲉ is the more common and usual spelling.",
 		"tags": [ "etym-egy", "mob", "vanilla" ]
 	},
@@ -252,6 +260,14 @@ ENTRIES = {
 		"etym": [ "< Greek σάπφειρος \"lapis lazuli, sapphire\", < possibly loaned from Pre-Greek (whence also Hebrew ספיר) (Beekes 1307)" ],
 		"notes": "Usually translated \"sapphire\" [c]cdo|C10407[/c][c]cdo|C10408[/c] but a reading of \"lapis lazuli\" is probably more historically accurate (see <a href=\"https://jewishencyclopedia.com/articles/13190-sapphire\">Jewish Encyclopedia v.11 p.52</a> for more). Usually used where the Hebrew text has ספיר.<br><br>Examples:<br>ⲁⲩⲱ ⲡⲙⲁ ⲉⲧϩⲁⲛⲉϥⲟⲩⲉⲣⲏⲧⲉ ⲉϥⲟ ⲛ̄ⲧϩⲉ ⲛ̄ⲟⲩϩⲱⲃ ⲛ̄ⲧⲱⲃⲉ ⲛ̄<b>ⲥⲁⲡⲡⲓⲣⲟⲛ</b><br>\"and under his feet was as it were a work of <b>sapphire</b> slabs\" ([s]exo24-10[/s])<br><br>ⲧϣⲟⲣⲡ ⲛ̄ⲥⲛⲧⲉ ⲉⲥⲉⲓⲛⲉ ⲛ̄ⲓⲁⲥⲡⲓⲥ ⲧⲙⲉϩⲥⲛ̄ⲧⲉ ⲛ<b>ⲥⲁⲡⲡⲓⲣⲟⲥ</b><br>\"The first foundation was jasper; the second, <b>sapphire</b>...\" ([s]rev21-19[/s])<br><br> In Demotic the word was[d]𓐍𓐠𓏤𓏰:𓏛𓏏𓃀𓏲1𓊌1[/d]<i>ḫstb</i> \"lapis lazuli\", which is a metathesis of earlier Egyptian[h]𓐍𓋴𓃀𓆓𓈒𓏥[/h]<i>ḫsbḏ</i> \"lapis lazuli\" [c]dpdp|d4605[/c][c]tla|874421[/c].",
 		"tags": [ "etym-grk", "item", "vanilla" ]
+	},
+	"generic.Oak.name": {
+		"coptic": "ⲥⲉⲓ",
+		"date": new Date( "31 March 2024" ),
+		"english": "Oak",
+		"etym": [ "Unknown [c]ce|363[/c]." ],
+		"notes": "Oaks are mentioned many times in the Bible, so it seems like it would be straightforward to translate. But many of those mentions are simply translated as [k]ϣⲏⲛ[/k] \"tree\". Also, there is confusion / conflation in some Bible translations between the oak (Hebrew&nbsp;אלון) and the terebinth (Hebrew&nbsp;אלה). Here are some attested words:<br><br>[k]<b>• ⲥⲉⲓ:</b>[/k] \"a tree... <i>terebinth</i> (oak) or <i>lotus-tree</i>\" [c]cd|317a[/c],<br>\"name of a tree (oak?)\" [c]cdo|C3294[/c] [c]lambdin|267[/c],<br> \" بلوط [i]oak[/i], سِدْرَة [i]tree in the buckthorn family, <a href=\"https://en.wikipedia.org/wiki/Ziziphus\">Ziziphus</a>[/i]\" [c]ma|354a[/c].<br><br>And its variant <b>[k]ⲥⲓⲥⲟⲩ:[/k]</b> \"سدرة\" [c]cd|317a[/c], \"بلوط [i]oak[/i], بطْمة [i]terebinth[/i] (نوع شجر [i]type of tree[/i])\" [c]ma|369[/c].<br><br>The sources agree that [k]ⲥⲉⲓ / ⲥⲓⲥⲟⲩ[/k] can refer to more than one kind of tree, but it generally includes oak trees.<br><br>[k]<b>• ⲡⲣⲓⲛⲟⲥ:</b>[/k] Specifically refers to <a href=\"https://en.wikipedia.org/wiki/Quercus_ilex\"><i>Quercus ilex</i></a>, the evergreen / holly oak. Those familiar with Susanna will recognise this word, and it is borrowed from Greek.<br><br>[k]<b>• ϣⲏⲛ ⲛ̄ⲃⲁⲗⲁⲛⲟⲥ:</b>[/k] literally \"acorn tree\". But oak trees in Minecraft bizarrely bear apples instead of acorns...<br><br>Isaiah 2:13 in Sahidic uses this term.",
+		"tags": [ "etym-unk", "plant", "tree", "uncertain", "vanilla" ]
 	},
 	"generic.Sword.name":{
 		"coptic": "ⲥⲏϥⲉ",
@@ -374,7 +390,7 @@ ENTRIES = {
 	"item.diamond.name":{
 		"coptic": "ⲱⲛⲉ ⲙ̄ⲙⲉ",
 		"english": "Diamond",
-		"etym": [ "< Demotic [d]𓇋𓆛:𓈖1𓇋𓇋𓏲𓊌1𓌶:𓂝1𓆄𓏏[/d]<i>ỉny (n) mꜣꜥ.t</i> \"precious stone\" (literally \"genuine stone\") [c]cdd_i-163[/c], which is:<table><tr><td>See [r]tile.stone.stone.name[/r]</td><td style=\"width:50%\">Demotic [d]𓌶:𓂝1𓆄𓏏[/d]<i>mꜣꜥ.t</i> \"truth\", < Egyptian[h]𓌳𓐙𓂝𓏏𓏛[/h]<i>mꜣꜥt</i> \"truth, justice\" [c]ce|78[/c][c]dpdp|d2297[/c][c]tla|66620[/c]</td></tr></table>" ],
+		"etym": [ "< Demotic [d]𓇋𓆛:𓈖1𓇋𓇋𓏲𓊌1𓌶:𓂝1𓆄𓏏[/d]<i>ỉny (n) mꜣꜥ.t</i> \"precious stone\" (literally \"genuine stone\") [c]cdd_i|163[/c], which is:<table><tr><td>See [r]tile.stone.stone.name[/r]</td><td style=\"width:50%\">Demotic [d]𓌶:𓂝1𓆄𓏏[/d]<i>mꜣꜥ.t</i> \"truth\", < Egyptian[h]𓌳𓐙𓂝𓏏𓏛[/h]<i>mꜣꜥt</i> \"truth, justice\" [c]ce|78[/c][c]dpdp|d2297[/c][c]tla|66620[/c]</td></tr></table>" ],
 		"notes": "Thank you to Maciej Ⲙⲁⲣⲉⲕ for suggesting this translation: \"precious stone, pearl\" [c]cd|524a[/c][c]cdo|C5498[/c]. Also spelled ⲉⲛⲉⲙ̄ⲙⲉ ([s]rev21-11[/s]), even interchangeably with ⲱⲛⲉ ⲙ̄ⲙⲉ within the same text ([s]rev21-19[/s]). ",
 		"tags": [ "etym-egy", "item", "vanilla" ]
 	},
@@ -455,9 +471,10 @@ ENTRIES = {
 	},
 	"item.writtenBook.name": {
 		"coptic": "ϫⲱⲱⲙⲉ ⲉϥⲥⲏϩ",
+		"date": new Date( "30 March 2024" ),
 		"english": "Written Book",
 		"img": "item.writtenBook.name.gif",
-		"etym": [ "See [r]item.book.name[/r]", "Q of [k]ⲥϩⲁⲓ[/k] \"write\" [c]cdo|C3972[/c], < Demotic" ],
+		"etym": [ "See [r]item.book.name[/r]", "Q of [k]ⲥϩⲁⲓ[/k] \"write\" [c]cdo|C3972[/c], < Demotic[d]𓏞𓍼:𓏤[/d]<i>sẖꜣ</i> \"write\" [c]ce|172[/c]" ],
 		"notes": "This name is usually not shown because the player can name the book anything they wish.<br><br>The tooltip has several lines of text after the title. First, the author is credited \"by  [i]username[/i]\", which is translated [k]ϩⲓⲧⲛ̄[/k] [i]username[/i]. Also shown is an indication of what generation the copy of the book is:<br><br>- \"Original\": [k]ⲁⲩⲑⲉⲛⲧⲏⲥ[/k] \"original (of a text)\" [c]cdo|C8536[/c]<br><br>- \"Copy of original\": [k]ϩⲓⲥⲟⲛ ⲙ̄ⲡⲁⲩⲑⲉⲛⲧⲏⲥ[/k] \"copy/duplicate (of a text) of the original\" [c]cdo|C11140[/c]<br><br>- \"Copy of a copy\": translated as [k]ϩⲓⲥⲟⲛ ⲛ̄ⲟⲩϩⲓⲥⲟⲛ[/k] \"copy of a copy\"<br><br>- \"Tattered\": not sure how to translate yet",
 		"tags": [ "etym-egy", "etym-egy", "item", "vanilla" ]
 	}
