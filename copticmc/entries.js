@@ -232,7 +232,7 @@ ENTRIES = {
 		"english": "Gold",
 		"etym": ["< Demotic[d]𓋞:𓈒*𓏥1[/d]<i>nb</i> \"gold\", < Egyptian[h]𓋞[/h]<i>nbw</i> \"gold\" [c]ce|106[/c]"],
 		"img": "item.ingotGold.name",
-		"derivedterms": [ "item.appleGold.name" ],
+		"derivedterms": [ "item.swordGold.name", "item.appleGold.name" ],
 		"tags": [ "etym-egy", "generic-type", "vanilla" ]
 	},
 	"item.bread.name": {
@@ -248,7 +248,7 @@ ENTRIES = {
 		"english": "Game",
 		"etym": [ "< Greek παίγνιον \"plaything, toy\"" ],
 		"img": "none",
-		"notes": "\"game\" [c]cdo|C9980[/c].<br><br>This is the only word I can find attested for \"game\"; it seems to be used with a negative connotation. For example translations of the Gospel of Philip from Nag Hammadi Codex II have \"trifle\" or \"foolish thing\":<br><br>[k]ⲁϥⲉⲓ [...] ⲁⲡⲧⲏⲣϥ ⲉⲧⲃⲉ [... ⲟⲩ<b>ⲡ</b>]<b>ⲁⲓⲅⲛⲓⲟⲛ</b> ⲡⲉ, ⲁⲗ[ⲗⲁ... ⲣ̄ⲕⲁⲧⲁⲫ]ⲣⲟⲛⲉⲓ ⲙ̄ⲡⲉⲓⲡⲉ-[...]ⲛ ⲉⲧⲙⲛ̄ⲧⲉⲣⲟ ⲛⲙ̄[ⲡⲏⲩⲉ...] ⲉϥϣⲁⲣ̄ⲕⲁⲧⲁⲫⲣⲟⲛⲉⲓ [... ⲁ]ⲩⲱ ⲛ̄ϥϣⲟⲥϥ ϩⲱⲥ <b>ⲡⲁⲓⲅⲛⲓ</b>[<b>ⲟⲛ</b>... ⲉⲃ]ⲟⲗ ⲉϥⲥⲱⲃⲉ.[/k]<br><br>He came [...] to the entirety because [...] it is [a] <b>foolish thing</b>, but [...] despise this [...] the kingdom of [heaven...]. If he despises [...] and looks down on it as a <b>foolish thing</b> [...] he is laughing. (Smith, <i>Valentinian Christianity</i> 283)<br><br>Its usage in Coptic may be limited due to the subject matter of the texts, but in Greek the word is evidently broad enough:<br><br>\"...games with dice, board games, and games of skill played by children or adults, excluding athletic, acrobatic, and theatrical activities, as forexample the Olympic and other contests, gladiatorial combats, or chariot races ... the Greek term <i>paignion</i> ... comprise all these kinds of games.\" (Schädler, <i>Games, Greek and Roman</i>)<br><br>παίγνιον is also the ancestor of Modern Greek παιχνίδι \"game\" and its derivative βιντεοπαιχνίδι \"video game\".<br><br>~~~<br><br>The Demotic word, which would have been a good fit as well, was[d]𓄑:𓏛@𓅡◳𓏤:°𓉻:𓂝*𓏛𓁻:°𓏏[/d]<i>ḥbꜥ.t</i> \"game(-board)\". It is derived from[d]𓄑:𓏛@𓅡◳𓏤𓉻:𓂝*𓏛𓁻:°[/d]<i>ḥbꜥ</i> \"to play (a game)\" [c]cdd_h2|87[/c] [c]dpdp|d4025[/c] [c]dpdp|d4026[/c]. Neither word survives in Coptic as far as I know.",
+		"notes": "\"game\" [c]cdo|C9980[/c].<br><br>This is the only word I can find attested for \"game\"; it seems to be used with a negative connotation. For example translations of the Gospel of Philip from Nag Hammadi Codex II have \"trifle\" or \"foolish thing\":<br><br>[k]ⲁϥⲉⲓ [...] ⲁⲡⲧⲏⲣϥ ⲉⲧⲃⲉ [... ⲟⲩ<b>ⲡ</b>]<b>ⲁⲓⲅⲛⲓⲟⲛ</b> ⲡⲉ, ⲁⲗ[ⲗⲁ... ⲣ̄ⲕⲁⲧⲁⲫ]ⲣⲟⲛⲉⲓ ⲙ̄ⲡⲉⲓⲡⲉ-[...]ⲛ ⲉⲧⲙⲛ̄ⲧⲉⲣⲟ ⲛⲙ̄[ⲡⲏⲩⲉ...] ⲉϥϣⲁⲣ̄ⲕⲁⲧⲁⲫⲣⲟⲛⲉⲓ [... ⲁ]ⲩⲱ ⲛ̄ϥϣⲟⲥϥ ϩⲱⲥ <b>ⲡⲁⲓⲅⲛⲓ</b>[<b>ⲟⲛ</b>... ⲉⲃ]ⲟⲗ ⲉϥⲥⲱⲃⲉ.[/k]<br><br>He came [...] to the entirety because [...] it is [a] <b>foolish thing</b>, but [...] despise this [...] the kingdom of [heaven...]. If he despises [...] and looks down on it as a <b>foolish thing</b> [...] he is laughing. (Smith, <i>Valentinian Christianity</i> 283)<br><br>Its usage in Coptic may be limited due to the subject matter of the texts, but in Greek the word is evidently broad enough:<br><br>\"...games with dice, board games, and games of skill played by children or adults, excluding athletic, acrobatic, and theatrical activities, as forexample the Olympic and other contests, gladiatorial combats, or chariot races ... the Greek term <i>paignion</i> ... comprise all these kinds of games.\" (Schädler, <i>Games, Greek and Roman</i>)<br><br>παίγνιον is also the ancestor of Modern Greek παιχνίδι \"game\" and its derivative βιντεοπαιχνίδι \"video game\".<br><br>~~~<br><br>The Demotic word[d]𓄑:𓏛@𓅡◳𓏤:°𓉻:𓂝*𓏛𓁻:°𓏏[/d]<i>ḥbꜥ.t</i> \"game(-board)\" would have been a good fit as well. It is derived from[d]𓄑:𓏛@𓅡◳𓏤𓉻:𓂝*𓏛𓁻:°[/d]<i>ḥbꜥ</i> \"to play (a game)\" [c]cdd_h2|87[/c] [c]dpdp|d4025[/c] [c]dpdp|d4026[/c]. Neither word survives in Coptic as far as I know.",
 		"tags": [ "etym-grk", "ui", "vanilla" ]
 	},
 	"item.potato.name":{
@@ -272,6 +272,14 @@ ENTRIES = {
 		"notes": "Lambdin lists this word as ⲣⲙ̄ϯⲙⲉ [c]lambdin|283[/c] but ⲣⲙ̄ⲛ̄ϯⲙⲉ is the more common and usual spelling.",
 		"tags": [ "etym-egy", "mob", "vanilla" ]
 	},
+	"generic.Door.name": {
+		"coptic":	"ⲣⲟ",
+		"date": new Date( "1 April 2024" ),
+		"english":	"Door",
+		"etym":	["< Demotic[d]𓏭:𓂋𓏤𓉐𓏤[/d]<i>rꜣ</i> or <i>rʾ</i> \"door, entrance\", < Egyptian[h]𓂋𓏤𓉿[/h]<i>rꜣ</i> or <i>rʾ</i> \"opening, door\" [c]ce|134[/c] [c]dpdp|d3409[/c] [c]tla|92570[/c]"],
+		"notes": "",
+		"tags": [ "etym-egy", "generic-type", "vanilla" ]
+	},
 	"item.dyePowder.blue.name":{
 		"coptic": "ⲥⲁⲡⲡⲓⲣⲟⲥ",
 		"english": "Lapis Lazuli",
@@ -293,7 +301,7 @@ ENTRIES = {
         "english": "Page",
 		"etym": [ "< Greek σελίς \"column of writing in a papyrus roll, writing page\"" ],
 		"img": "none",
-		"notes": "Several places in the UI mention pages: the page number of a written book, world creation options, spectator mode options, etc.<br><br>At first I was considering [k]<b>ϭⲱⲱⲃⲉ</b>[/k], usually a literal leaf but also \"page (of a book); leaf (of paper)\" [c]cdo|C7560[/c] [c]cd|804b[/c]. Crum compares this sense of the word to [r]item.paper.name|[k]ⲭⲁⲣⲧⲏⲥ[/k][/r] \"sheet of paper\" and ورق \"leaves, paper\".<br><br>I think [k]<b>ⲥⲉⲗⲓⲥ</b>[/k] is more precisely closer to the intended meaning of \"page\", and it is attested as such:<br><br>[k]ⲁⲩⲱ ⲁⲥϣⲱⲡⲉ ⲉϥⲱϣ ⲛϭⲓ ⲓⲟⲩⲇⲉⲓⲛ ⲛⲧⲙⲉϩⲛϣⲟⲙⲧⲉ ⲙⲛⲧⲙⲉϩϥⲧⲟ ⲛ<b>ⲥⲉⲗⲓⲥ</b>...[/k]<br>And it came to pass when Judin had read three or four <b>leaves</b>... (Jeremiah 43:23)<br><br>[k]ⲡⲉϣⲃⲣⲣϩⲱⲃ ⲛⲛⲉⲛⲧⲁⲩϣⲱⲱⲧ ϩⲙⲡⲧⲟⲕ ⲙⲡⲉⲅⲣⲁⲙⲙⲁⲧⲉⲩⲥ ⲛⲛ<b>ⲥⲉⲗⲓⲥ</b> ⲙⲡ[r]item.book.name|ϫⲱⲱⲙⲉ|true[/r] ⲛⲛϣⲁϫⲉ...[/k]<br>The accomplice in the work of those who destroyed with the scribe's knife the <b>pages</b> of the book of the words... (Shenoute <i>Not Because a Fox Barks</i> 3:3)",
+		"notes": "Several places in the UI mention pages: the page number of a written book, world creation options, spectator mode options, etc.<br><br>At first I was considering [k]<b>ϭⲱⲱⲃⲉ</b>[/k], usually a literal leaf but also \"page (of a book); leaf (of paper)\" [c]cdo|C7560[/c] [c]cd|804b[/c]. Crum compares this sense of the word to [r]item.paper.name|[k]ⲭⲁⲣⲧⲏⲥ[/k][/r] \"sheet of paper\" and ورق \"leaves, paper\".<br><br>I think [k]<b>ⲥⲉⲗⲓⲥ</b>[/k] is more precisely closer to the intended meaning of \"page\", and it is attested as such:<br><br>[k]ⲁⲩⲱ ⲁⲥϣⲱⲡⲉ ⲉϥⲱϣ ⲛϭⲓ ⲓⲟⲩⲇⲉⲓⲛ ⲛⲧⲙⲉϩⲛϣⲟⲙⲧⲉ ⲙⲛⲧⲙⲉϩϥⲧⲟ ⲛ<b>ⲥⲉⲗⲓⲥ</b>...[/k]<br>And it came to pass when Judin had read three or four <b>leaves</b>... (Jeremiah 43:23)<br><br>[k]ⲡⲉϣⲃⲣⲣϩⲱⲃ ⲛⲛⲉⲛⲧⲁⲩϣⲱⲱⲧ ϩⲙⲡⲧⲟⲕ ⲙⲡⲉⲅⲣⲁⲙⲙⲁⲧⲉⲩⲥ ⲛⲛ<b>ⲥⲉⲗⲓⲥ</b> ⲙⲡ[r]item.book.name|ϫⲱⲱⲙⲉ|true[/r] ⲛⲛϣⲁϫⲉ...[/k]<br>The accomplice in the work of those who destroyed with the scribe's knife the <b>pages</b> of the book of the words... (Shenoute, <i>Not Because a Fox Barks</i> 3:3)",
 		"tags": [ "etym-grk", "ui", "vanilla" ]
 	},
 	"generic.Sword.name":{
@@ -301,13 +309,29 @@ ENTRIES = {
 		"english": "Sword",
 		"etym": [ "< Demotic[d]𓋴𓆑:𓏭1𓇋𓇋𓏲𓌪[/d]<i>sfy</i> \"sword, knife\", < Egyptian[h]𓊃𓆑𓏏𓌪[/h]<i>zf.t</i> \"knife, sword\" [c]ce|171[/c][c]dpdp|d5269[/c][c]tla|133420[/c]" ],
 		"notes": "",
-		"derivedterms": [ "item.swordIron.name" ],
+		"derivedterms": [ "item.swordIron.name", "item.swordGold.name", "item.swordStone.name" ],
 		"tags": [ "etym-egy", "generic-type", "vanilla" ]
 	},
 	"item.swordIron.name":{
 		"coptic": "ⲥⲏϥⲉ ⲛ̄ⲃⲉⲛⲓⲡⲉ",
 		"english": "Iron Sword",
 		"etym": [ "See [r]generic.Sword.name[/r]", "See [r]generic.Iron.name[/r]" ],
+		"notes": "",
+		"tags": [ "etym-egy", "etym-egy", "item", "vanilla" ]
+	},
+	"item.swordGold.name":{
+		"coptic": "ⲥⲏϥⲉ ⲛ̄ⲛⲟⲩⲃ",
+		"date": new Date( "1 April 2024" ),
+		"english": "Golden Sword",
+		"etym": [ "See [r]generic.Sword.name[/r]", "See [r]generic.Gold.name[/r]" ],
+		"notes": "Attested in the Life of St. Hilaria:<br><br>[k]ⲁⲩⲱ ⲁⲥϫⲓ ⲛ̄ⲟⲩ<b>ⲥⲏϥⲉ ⲛ̄ⲛⲟⲩⲃ</b> ⲉⲧⲉⲥϭⲓϫ...[/k]<br>And she took a <b>golden sword</b> in her hand...",
+		"tags": [ "etym-egy", "etym-egy", "item", "vanilla" ]
+	},
+	"item.swordStone.name":{
+		"coptic": "ⲥⲏϥⲉ ⲛ̄ⲱⲛⲉ",
+		"date": new Date( "1 April 2024" ),
+		"english": "Stone Sword",
+		"etym": [ "See [r]generic.Sword.name[/r]", "See [r]tile.stone.stone.name[/r]" ],
 		"notes": "",
 		"tags": [ "etym-egy", "etym-egy", "item", "vanilla" ]
 	},
@@ -411,7 +435,7 @@ ENTRIES = {
 		"english": "Stone",
 		"etym": [ "< Demotic[d]𓇋2𓆛:𓈖𓇋𓇋𓏲𓊌1[/d]<i>ỉny</i> \"stone\", < Egyptian[h]𓇋‌𓈖𓂋‌𓊌[/h]<i>jnr</i> \"stone\" [c]ce|228[/c]" ],
 		"notes": "",
-		"derivedterms": [ "item.diamond.name", "tile.stoneMoss.name" ],
+		"derivedterms": [ "item.swordStone.name", "item.diamond.name", "tile.stoneMoss.name" ],
 		"tags": [ "block", "etym-egy", "stone", "vanilla" ]
 	},
 	"item.diamond.name":{
@@ -504,5 +528,13 @@ ENTRIES = {
 		"etym": [ "See [r]item.book.name[/r]", "Q of [k]ⲥϩⲁⲓ[/k] \"write\" [c]cdo|C3972[/c], < Demotic[d]𓏞𓍼:𓏤[/d]<i>sẖꜣ</i> \"write\", < Egyptian[h]𓊃𓈙𓏟[/h]<i>zẖꜣ</i> \"write\" [c]ce|172[/c] [c]tla|600375[/c]" ],
 		"notes": "This name is usually not shown because the player can name the book anything they wish.<br><br>The tooltip has several lines of text after the title. First, the author is credited \"by  [i]username[/i]\", which is translated [k]ϩⲓⲧⲛ̄[/k] [i]username[/i]. Also shown is an indication of what generation the copy of the book is:<br><br>- \"Original\": [k]ⲁⲩⲑⲉⲛⲧⲏⲥ[/k] \"original (of a text)\" [c]cdo|C8536[/c]<br><br>- \"Copy of original\": [k]ϩⲓⲥⲟⲛ ⲙ̄ⲡⲁⲩⲑⲉⲛⲧⲏⲥ[/k] \"copy/duplicate (of a text) of the original\" [c]cdo|C11140[/c]<br><br>- \"Copy of a copy\": translated as [k]ϩⲓⲥⲟⲛ ⲛ̄ⲟⲩϩⲓⲥⲟⲛ[/k] \"copy of a copy\"<br><br>- \"Tattered\": not sure how to translate yet",
 		"tags": [ "etym-egy", "etym-egy", "item", "vanilla" ]
-	}
+	},
+	"generic.Bed.name":{
+		"coptic": "ϭⲗⲟϭ",
+		"date": new Date( "1 April 2024" ),
+		"english": "Bed",
+		"etym": [ "< Demotic[d]𓎼𓃭𓏤𓎼𓆱:𓏏*𓏤[/d]<i>glg</i> \"bed\", < [c]ce|330[/c]" ],
+		"notes": "• When a player tries to click the bed but is out of reach, it displays the message \"You may not rest now, the bed is too far away\". Translated into Coptic (and back):<br><br>[k]ⲛ̄ⲛⲉⲕⲙ̄ⲧⲟⲛ ⲙ̄ⲙⲟⲕ ⲧⲉⲛⲟⲩ, ⲡⲉϭⲗⲟϭ ⲅⲁⲣ ⲟⲩⲏⲩ ⲉⲃⲟⲗ ⲙ̄ⲙⲟⲕ[/k]<br>You shall not rest now, for the bed is far away from you.<br><br>• When another player is in the bed, it says \"This bed is occupied\":<br><br>[k]ⲟⲩⲛ̄ⲟⲩⲁ ϩⲙ̄ⲡⲉⲓϭⲗⲟϭ[/k]<br>Someone is in this bed.",
+		"tags": [ "etym-egy", "generic-type", "vanilla" ]
+	},
 }
