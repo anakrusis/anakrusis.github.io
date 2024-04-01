@@ -84,6 +84,7 @@ ENTRIES = {
 		"etym": [ "< Demotic[d]𓅡◳𓏤:𓈖1𓊪1𓇋𓇋𓏲𓈔[/d]<i>bnpy</i> \"iron\", < Egyptian[h]𓃀𓇋𓄿𓄑𓈖𓇯𓈒𓏥[/h]<i>bjꜣ n pt</i> \"iron\" (literally \"metal of the heaven\") [c]ce|24[/c][c]tla|54450[/c]" ],
 		"notes": "",
 		"img": "item.ingotIron.name",
+		"derivedterms": [ "item.swordIron.name" ],
 		"tags": [ "etym-egy", "generic-type", "vanilla" ]
 	},
 	"tile.pumpkin.name":{
@@ -161,6 +162,14 @@ ENTRIES = {
 		"notes": "There are many tool names attested in Coptic. In order to narrow down the choices, I try to find one that matches the uses of the in-game tool. Axes in Minecraft are used primarily for cutting down trees and chopping wood. The ⲕⲉⲗⲉⲃⲓⲛ is well attested and used in the same kind of situations:<br><br>ⲉⲩⲙⲁ ⲛ̄ϣⲏⲛ ⲉⲩⲕⲉⲣⲉϣⲉ ⲁⲩⲱ ⲛ̄ⲧⲉⲧⲉϥϭⲓϫ ϫⲱⲣⲡ ⲉϥⲕⲱⲱⲣⲉ ⲙ̄ⲡϣⲉ ϩⲙ̄ⲡ<b>ⲕⲉⲗⲉⲃⲓⲛ</b><br>\"...into a forest to gather wood, if the hand of him that cuts wood with the <b>axe</b> should be violently shaken...\" ([s]deut19-5[/s])<br><br>ⲁϥϫⲓ ⲛ̄ϭⲓ ⲁⲃⲓⲙⲉⲗⲉⲭ ⲛ̄ⲟⲩ<b>ⲕⲉⲗⲉⲃⲓⲛ</b> ϩⲛ̄ⲧⲉϥϭⲓϫ ⲁϥϣⲱⲱⲧ ⲛ̄ⲟⲩⲧⲁⲣ ⲛ̄ϣⲉ<br>...Abimelech took an <b>axe</b> in his hand, and cut down a branch of a tree... ([s]jud9-48[/s])<br><br>ⲁⲩϣⲱⲱⲧ ⲛ̄ⲛⲉⲥⲣⲟ ϩⲛ̄ϩⲉⲛ<b>ⲕⲉⲗⲉⲃⲓⲛ</b> ⲛ̄ⲧϩⲉ ⲛ̄ϩⲉⲛϣⲏⲛ ϩⲛ̄ⲧⲥⲱϣⲉ<br>...they cut down its doors with <b>axes</b> as in a wood of trees... ([s]psa73-5[/s])<br>(The axe is the best tool for breaking doors in Minecraft as well.)",
 		"tags": [ "etym-sem", "generic-type", "vanilla" ]
 	},
+	"generic.World.name": {
+		"coptic": "ⲕⲟⲥⲙⲟⲥ",
+		"date": new Date( "31 Mar 2024" ),
+		"english": "World",
+		"etym": [ "< Greek κόσμος \"order, world, universe\"" ],
+		"img": "none",
+		"tags": [ "etym-grk", "ui", "vanilla" ]
+	},
 	"entity.Creeper.name": {
 		"coptic":	"ⲕⲣⲓⲡⲉⲣ",
 		"english":	"Creeper",
@@ -226,21 +235,21 @@ ENTRIES = {
 		"derivedterms": [ "item.appleGold.name" ],
 		"tags": [ "etym-egy", "generic-type", "vanilla" ]
 	},
-	"generic.Game.name": {
-		"coptic": "ⲡⲁⲓⲅⲛⲓⲟⲛ",
-		"date": new Date( "31 Mar 2024" ),
-		"english": "Game",
-		"etym": [ "< Greek παίγνιον \"plaything, toy\"" ],
-		"img": "none",
-		"notes": "\"game\" [c]cdo|C9980[/c].<br><br>Although this is the only word I can find attested in Coptic, it seems to be used with a negative connotation. For example translations of the Gospel of Philip from Nag Hammadi Codex II have \"trifle\" or \"foolish thing\":<br><br>[k]ⲁϥⲉⲓ [...] ⲁⲡⲧⲏⲣϥ ⲉⲧⲃⲉ [... ⲟⲩ<b>ⲡ</b>]<b>ⲁⲓⲅⲛⲓⲟⲛ</b> ⲡⲉ, ⲁⲗ[ⲗⲁ... ⲣ̄ⲕⲁⲧⲁⲫ]ⲣⲟⲛⲉⲓ ⲙ̄ⲡⲉⲓⲡⲉ-[...]ⲛ ⲉⲧⲙⲛ̄ⲧⲉⲣⲟ ⲛⲙ̄[ⲡⲏⲩⲉ...] ⲉϥϣⲁⲣ̄ⲕⲁⲧⲁⲫⲣⲟⲛⲉⲓ [... ⲁ]ⲩⲱ ⲛ̄ϥϣⲟⲥϥ ϩⲱⲥ <b>ⲡⲁⲓⲅⲛⲓ</b>[<b>ⲟⲛ</b>... ⲉⲃ]ⲟⲗ ⲉϥⲥⲱⲃⲉ.[/k]<br><br>He came [...] to the entirety because [...] it is [a] <b>foolish thing</b>, but [...] despise this [...] the kingdom of [heaven...]. If he despises [...] and looks down on it as a <b>foolish thing</b> [...] he is laughing. (Smith <i>Valentinian Christianity</i>, 283)",
-		"tags": [ "etym-grk", "ui", "vanilla" ]
-	},
 	"item.bread.name": {
 		"coptic":	"ⲟⲉⲓⲕ",
 		"english":	"Bread",
 		"etym":	["< Demotic[d]𓂝:𓈎𓏲𓏒:𓏥[/d]<i>ꜥq</i> \"loaf, ration\", < Egyptian[h]𓅧𓈎𓅱𓏒𓏥[/h]<i>ꜥqw</i> \" loaves (of bread), income\" [c]ce|120[/c][c]dpdp|d1123[/c][c]tla|41470[/c]"],
 		"notes": "",
 		"tags": [ "etym-egy", "food", "item", "vanilla" ]
+	},
+	"generic.Game.name": {
+		"coptic": "ⲡⲁⲓⲅⲛⲓⲟⲛ",
+		"date": new Date( "31 Mar 2024" ),
+		"english": "Game",
+		"etym": [ "< Greek παίγνιον \"plaything, toy\"" ],
+		"img": "none",
+		"notes": "\"game\" [c]cdo|C9980[/c].<br><br>This is the only word I can find attested for \"game\"; it seems to be used with a negative connotation. For example translations of the Gospel of Philip from Nag Hammadi Codex II have \"trifle\" or \"foolish thing\":<br><br>[k]ⲁϥⲉⲓ [...] ⲁⲡⲧⲏⲣϥ ⲉⲧⲃⲉ [... ⲟⲩ<b>ⲡ</b>]<b>ⲁⲓⲅⲛⲓⲟⲛ</b> ⲡⲉ, ⲁⲗ[ⲗⲁ... ⲣ̄ⲕⲁⲧⲁⲫ]ⲣⲟⲛⲉⲓ ⲙ̄ⲡⲉⲓⲡⲉ-[...]ⲛ ⲉⲧⲙⲛ̄ⲧⲉⲣⲟ ⲛⲙ̄[ⲡⲏⲩⲉ...] ⲉϥϣⲁⲣ̄ⲕⲁⲧⲁⲫⲣⲟⲛⲉⲓ [... ⲁ]ⲩⲱ ⲛ̄ϥϣⲟⲥϥ ϩⲱⲥ <b>ⲡⲁⲓⲅⲛⲓ</b>[<b>ⲟⲛ</b>... ⲉⲃ]ⲟⲗ ⲉϥⲥⲱⲃⲉ.[/k]<br><br>He came [...] to the entirety because [...] it is [a] <b>foolish thing</b>, but [...] despise this [...] the kingdom of [heaven...]. If he despises [...] and looks down on it as a <b>foolish thing</b> [...] he is laughing. (Smith, <i>Valentinian Christianity</i> 283)<br><br>Its usage in Coptic may be limited due to the subject matter of the texts, but in Greek the word is evidently broad enough:<br><br>\"...games with dice, board games, and games of skill played by children or adults, excluding athletic, acrobatic, and theatrical activities, as forexample the Olympic and other contests, gladiatorial combats, or chariot races ... the Greek term <i>paignion</i> ... comprise all these kinds of games.\" (Schädler, <i>Games, Greek and Roman</i>)<br><br>παίγνιον is also the ancestor of Modern Greek παιχνίδι \"game\" and its derivative βιντεοπαιχνίδι \"video game\".<br><br>~~~<br><br>The Demotic word, which would have been a good fit as well, was[d]𓄑:𓏛@𓅡◳𓏤:°𓉻:𓂝*𓏛𓁻:°𓏏[/d]<i>ḥbꜥ.t</i> \"game(-board)\". It is derived from[d]𓄑:𓏛@𓅡◳𓏤𓉻:𓂝*𓏛𓁻:°[/d]<i>ḥbꜥ</i> \"to play (a game)\" [c]cdd_h2|87[/c] [c]dpdp|d4025[/c] [c]dpdp|d4026[/c]. Neither word survives in Coptic as far as I know.",
+		"tags": [ "etym-grk", "ui", "vanilla" ]
 	},
 	"item.potato.name":{
         "coptic": "ⲡⲁⲧⲁⲧⲁ",
@@ -277,6 +286,15 @@ ENTRIES = {
 		"etym": [ "Unknown [c]ce|363[/c]." ],
 		"notes": "Oaks are mentioned many times in the Bible, so it seems like it would be straightforward to translate. But many of those mentions are simply translated as [k]ϣⲏⲛ[/k] \"tree\". Also, there is confusion / conflation in some Bible translations between the oak (Hebrew&nbsp;אלון) and the terebinth (Hebrew&nbsp;אלה). Here are some attested words:<br><br>[k]<b>• ⲥⲉⲓ:</b>[/k] \"a tree... <i>terebinth</i> (oak) or <i>lotus-tree</i>\" [c]cd|317a[/c],<br>\"name of a tree (oak?)\" [c]cdo|C3294[/c] [c]lambdin|267[/c],<br> \" بلوط [i]oak[/i], سِدْرَة [i]tree in the buckthorn family, <a href=\"https://en.wikipedia.org/wiki/Ziziphus\">Ziziphus</a>[/i]\" [c]ma|354a[/c].<br><br>And its variant <b>[k]ⲥⲓⲥⲟⲩ:[/k]</b> \"سدرة\" [c]cd|317a[/c], \"بلوط [i]oak[/i], بطْمة [i]terebinth[/i] (نوع شجر [i]type of tree[/i])\" [c]ma|369[/c].<br><br>The sources agree that [k]ⲥⲉⲓ / ⲥⲓⲥⲟⲩ[/k] can refer to more than one kind of tree, but it generally includes oak trees.<br><br>[k]<b>• ⲡⲣⲓⲛⲟⲥ:</b>[/k] Specifically refers to <a href=\"https://en.wikipedia.org/wiki/Quercus_ilex\"><i>Quercus ilex</i></a>, the evergreen / holly oak. Those familiar with Susanna will recognise this word, and it is borrowed from Greek.<br><br>[k]<b>• ϣⲏⲛ ⲛ̄ⲃⲁⲗⲁⲛⲟⲥ:</b>[/k] literally \"acorn tree\". But oak trees in Minecraft bizarrely bear apples instead of acorns...<br><br>Isaiah 2:13 in Sahidic uses this term.",
 		"tags": [ "etym-unk", "generic-type", "plant", "tree", "uncertain", "vanilla" ]
+	},
+	"generic.Page.name":{
+        "coptic": "ⲥⲉⲗⲓⲥ",
+		"date": new Date( "31 March 2024" ),
+        "english": "Page",
+		"etym": [ "< Greek σελίς \"column of writing in a papyrus roll, writing page\"" ],
+		"img": "none",
+		"notes": "Several places in the UI mention pages: the page number of a written book, world creation options, spectator mode options, etc.<br><br>At first I was considering [k]<b>ϭⲱⲱⲃⲉ</b>[/k], usually a literal leaf but also \"page (of a book); leaf (of paper)\" [c]cdo|C7560[/c] [c]cd|804b[/c]. Crum compares this sense of the word to [r]item.paper.name|[k]ⲭⲁⲣⲧⲏⲥ[/k][/r] \"sheet of paper\" and ورق \"leaves, paper\".<br><br>I think [k]<b>ⲥⲉⲗⲓⲥ</b>[/k] is more precisely closer to the intended meaning of \"page\", and it is attested as such:<br><br>[k]ⲁⲩⲱ ⲁⲥϣⲱⲡⲉ ⲉϥⲱϣ ⲛϭⲓ ⲓⲟⲩⲇⲉⲓⲛ ⲛⲧⲙⲉϩⲛϣⲟⲙⲧⲉ ⲙⲛⲧⲙⲉϩϥⲧⲟ ⲛ<b>ⲥⲉⲗⲓⲥ</b>...[/k]<br>And it came to pass when Judin had read three or four <b>leaves</b>... (Jeremiah 43:23)<br><br>[k]ⲡⲉϣⲃⲣⲣϩⲱⲃ ⲛⲛⲉⲛⲧⲁⲩϣⲱⲱⲧ ϩⲙⲡⲧⲟⲕ ⲙⲡⲉⲅⲣⲁⲙⲙⲁⲧⲉⲩⲥ ⲛⲛ<b>ⲥⲉⲗⲓⲥ</b> ⲙⲡ[r]item.book.name|ϫⲱⲱⲙⲉ|true[/r] ⲛⲛϣⲁϫⲉ...[/k]<br>The accomplice in the work of those who destroyed with the scribe's knife the <b>pages</b> of the book of the words... (Shenoute <i>Not Because a Fox Barks</i> 3:3)",
+		"tags": [ "etym-grk", "ui", "vanilla" ]
 	},
 	"generic.Sword.name":{
 		"coptic": "ⲥⲏϥⲉ",
@@ -407,7 +425,7 @@ ENTRIES = {
 		"coptic": "ⲱⲛⲉ ⲛ̄ⲗⲏⲭⲏ",
 		"english": "Moss Stone",
 		"etym": [ "See [r]tile.stone.stone.name[/r]", "< Greek λειχήν \"tree-moss, lichen\"" ],
-		"notes": "The word ⲗⲏⲭⲏ means \"lichen\" or \"tree-moss\". [c]cdo|C9626[/c].<br><br>In the medical text P. Carlsberg 500, ⲗⲏⲭⲏ ⲙ̄ⲡⲏⲥⲓⲥⲏⲣⲁⲥ is an ingredient in a remedy for psora / itch. The second word, in some way describing the lichen / moss, is interesting. Erichsen in \"Aus einem koptischen Arzneibuch\", <i>Acta Orientalia</i> vol. 27 (1962) gave the translation <i>Pech(artige) Flechte</i> \"Pitchy (i.e. covered in / full of tar) lichen\" and connected it to Greek πέσσειν [c]aeka-33[/c]. Sawy instead translates it as \"Cooked lichen\" [c]sawy|324[/c].",
+		"notes": "The word ⲗⲏⲭⲏ means \"lichen\" or \"tree-moss\". [c]cdo|C9626[/c].<br><br>In the medical text P. Carlsberg 500, ⲗⲏⲭⲏ ⲙ̄ⲡⲏⲥⲓⲥⲏⲣⲁⲥ is an ingredient in a remedy for psora / itch. The second word, in some way describing the lichen / moss, is interesting. Erichsen in \"Aus einem koptischen Arzneibuch\", <i>Acta Orientalia</i> vol. 27 (1962) gave the translation <i>Pech(artige) Flechte</i> \"Pitchy (i.e. covered in / full of tar) lichen\" and connected it to Greek πέσσειν [c]aeka|33[/c]. Sawy instead translates it as \"Cooked lichen\" [c]sawy|324[/c].",
 		"tags": [ "block", "etym-egy", "etym-grk", "stone",  "vanilla" ]
 	},
 	"generic.Wood.name": {

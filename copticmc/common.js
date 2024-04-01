@@ -24,6 +24,7 @@ var SOURCE_LINKS = {
 	// Johnson, Janet H. (2001) The Demotic Dictionary of the Institute for the Study of Ancient Cultures of the University of Chicago
 	"cdd_b":	"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/CDD_B.pdf#page=",
 	"cdd_g":	"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/CDD_G.pdf#page=",
+	"cdd_h2":	"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/CDD_H2.pdf#page=",
 	"cdd_i":	"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/CDD_'I.pdf#page=",
 	"cdd_m": 	"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/CDD_M.pdf#page=",
 	"cdd_s":	"https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/CDD_S.pdf#page=",
@@ -48,9 +49,10 @@ var SOURCE_LINKS = {
 var SOURCE_NAMES = {
 	"aeka":		"Erichsen",
 	"aep":		"Allen <i>AEP</i>",
-	"cdd_b":	"<i>CDD</i> B",
-	"cdd_g":	"<i>CDD</i> G",
-	"cdd_i":	"<i>CDD</i> Ỉ",
+	"cdd_b":	"<i>CDD</i> B",
+	"cdd_g":	"<i>CDD</i> G",
+	"cdd_h2":	"<i>CDD</i> Ḥ",
+	"cdd_i":	"<i>CDD</i> Ỉ",
 	"cdd_m":	"<i>CDD</i> M",
 	"cdd_s":	"<i>CDD</i> S",
 	"cdd_q":	"<i>CDD</i> Q",
@@ -296,9 +298,24 @@ function parseTag( intagstring ){
 			console.log("Warning: unknown entry " + tagargs[0] + " was referenced!")
 			return [ "[", 0 ];
 		}
-		outstring += "<b><a href=\"entry.html?id=" + tagargs[0] + "\">"
-		outstring += getEntryTitle( ce )
-		outstring += "</a></b>"
+		// third argument non bolds the links so that they can be placed in a line of text without taking attention away from bold words
+		if (!tagargs[2]){
+			outstring += "<b>"
+		}
+		
+		outstring += "<a href=\"entry.html?id=" + tagargs[0] + "\">"
+		
+		// second argument can substitute any text for the link text, 
+		// but by default the entry title "[coptic] - [english]"
+		if (tagargs[1]){
+			outstring += tagargs[1]
+		}else{
+			outstring += getEntryTitle( ce )
+		}
+		outstring += "</a>"
+		if (!tagargs[2]){
+			outstring += "</b>"
+		}
 	}
 	
 	return [ outstring, closingtagindex + closingtag.length - 1 ];
