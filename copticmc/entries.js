@@ -188,17 +188,24 @@ ENTRIES = {
 	"entity.Squid.name": {
 		"coptic": "ⲗⲁⲥ ⲛ̄ⲉⲓⲟⲙ",
 		"date": new Date( "March 31 2024" ),
-		"english": "Cuttlefish (≈ Squid)",
+		"english": "Cuttlefish (Squid)",
 		"etym": [ "< Demotic[d]𓃭𓏤𓐠𓏤𓏰:𓏛𓄹:𓏭[/d]<i>ls</i> \"tongue\", < Egyptian[h]𓄓𓏤𓄹[/h]<i>ns</i> \"tongue\" [c]ce|74[/c] [c]tla|87800[/c]", "< Demotic[d]𓇋𓇋𓏲𓅓𓈗𓏤1𓈘:𓈇[/d]<i>ym</i> \"sea\", < Late Egyptian[h]𓇋𓇋𓅖𓈗𓈘𓈇[/h]<i>ym</i> \"sea\", from a Semitic language [c]ce|46[/c] [c]tla|24730[/c]" ],
 		"notes": "The only animal similar to squid I could find attested: \"[k]ⲗⲁⲥ ⲛ̄ ⲉⲓⲟⲙ[/k] means tongue of sea, which is cuttlefish and corresponds to the Arabic حبار [i]squid / cuttlefish[/i], لسان البحر [i]tongue of the sea[/i]\" [c]sawy|313[/c]. Cuttlefish appears in a recipe for eye medication powder (Ch&nbsp;54).",
 		"tags": [ "animal", "etym-egy", "etym-sem", "mob", "uncertain", "vanilla" ]
 	},
 	"generic.Birch.name": {
 		"coptic": "ⲗⲉⲩⲕⲏ",
-		"english": "White Poplar (≈ Birch)",
+		"english": "White Poplar (Birch)",
 		"etym": ["< Greek λεύκη \"white poplar\""],
 		"notes": "[c]cdo|C9617[/c].<br><br>Plant names are among the most varied translations in the game, and substitutions are common. As I could not find a word for the birch tree attested in Coptic, I substituted a different kind of tree. The white poplar (<i>Populus alba</i>) has very similar white bark with black markings, and its wood is similarly \"white... with a slightly yellowish color\".<br><br>This word appears in Hosea 4:13 in the same sentence as ⲥⲉⲓ - Oak. It also appears in Isaiah 41:19.",
 		"tags": [ "etym-grk", "generic-type", "plant", "tree", "vanilla" ]
+	},
+	"generic.Menu.name":{
+		"coptic": "ⲙⲉⲛⲟⲩ",
+		"english": "Menu",
+		"etym": [ "< English or French <i>menu</i>" ],
+		"img": "none",
+		"tags": [ "etym-mod", "ui", "unattested", "vanilla" ] 
 	},
 	"generic.Machine.name": {
 		"coptic": "ⲙⲏⲭⲁⲛⲏ",
@@ -297,11 +304,11 @@ ENTRIES = {
 	},
 	"generic.Page.name":{
         "coptic": "ⲥⲉⲗⲓⲥ",
-		"date": new Date( "31 March 2024" ),
+		"date": new Date( "8 April 2024" ),
         "english": "Page",
 		"etym": [ "< Greek σελίς \"column of writing in a papyrus roll, writing page\"" ],
 		"img": "none",
-		"notes": "Several places in the UI mention pages: the page number of a written book, world creation options, spectator mode options, etc.<br><br>At first I was considering [k]<b>ϭⲱⲱⲃⲉ</b>[/k], usually a literal leaf but also \"page (of a book); leaf (of paper)\" [c]cdo|C7560[/c] [c]cd|804b[/c]. Crum compares this sense of the word to [r]item.paper.name|[k]ⲭⲁⲣⲧⲏⲥ[/k][/r] \"sheet of paper\" and ورق \"leaves, paper\".<br><br>I think [k]<b>ⲥⲉⲗⲓⲥ</b>[/k] is more precisely closer to the intended meaning of \"page\", and it is attested as such:<br><br>[k]ⲁⲩⲱ ⲁⲥϣⲱⲡⲉ ⲉϥⲱϣ ⲛϭⲓ ⲓⲟⲩⲇⲉⲓⲛ ⲛⲧⲙⲉϩⲛϣⲟⲙⲧⲉ ⲙⲛⲧⲙⲉϩϥⲧⲟ ⲛ<b>ⲥⲉⲗⲓⲥ</b>...[/k]<br>And it came to pass when Judin had read three or four <b>leaves</b>... (Jeremiah 43:23)<br><br>[k]ⲡⲉϣⲃⲣⲣϩⲱⲃ ⲛⲛⲉⲛⲧⲁⲩϣⲱⲱⲧ ϩⲙⲡⲧⲟⲕ ⲙⲡⲉⲅⲣⲁⲙⲙⲁⲧⲉⲩⲥ ⲛⲛ<b>ⲥⲉⲗⲓⲥ</b> ⲙⲡ[r]item.book.name|ϫⲱⲱⲙⲉ|true[/r] ⲛⲛϣⲁϫⲉ...[/k]<br>The accomplice in the work of those who destroyed with the scribe's knife the <b>pages</b> of the book of the words... (Shenoute, <i>Not Because a Fox Barks</i> 3:3)",
+		"notes": "Several places in the UI mention pages: the page number of a written book, world creation options, spectator mode options, etc.<br><br>At first I was considering [k]<b>ϭⲱⲱⲃⲉ</b>[/k], usually a literal leaf but also \"page (of a book); leaf (of paper)\" [c]cdo|C7560[/c] [c]cd|804b[/c]. Crum compares this sense of the word to [r]item.paper.name|[k]ⲭⲁⲣⲧⲏⲥ[/k][/r] \"sheet of paper\" and ورق \"leaves, paper\".<br><br>I think [k]<b>ⲥⲉⲗⲓⲥ</b>[/k] is more precisely closer to the intended meaning of \"page\", and it is attested as such:<br><br>[k]ⲁⲩⲱ ⲁⲥϣⲱⲡⲉ ⲉϥⲱϣ ⲛϭⲓ ⲓⲟⲩⲇⲉⲓⲛ ⲛⲧⲙⲉϩⲛϣⲟⲙⲧⲉ ⲙⲛⲧⲙⲉϩϥⲧⲟ ⲛ<b>ⲥⲉⲗⲓⲥ</b> ⲛⲉϥϣⲱⲱⲧ ⲙⲙⲟⲟⲩ ⲉⲃⲟⲗ ϩⲙⲡⲧⲟⲕ ⲙⲡⲉⲅⲣⲁⲙⲙⲁⲧⲉⲩⲥ...[/k]<br>And it came to pass when Judin had read three or four <b>leaves</b>, he cut them off with a penknife... (Jeremiah 43:23)<br><br>[k]ⲡⲉϣⲃⲣⲣϩⲱⲃ ⲛⲛⲉⲛⲧⲁⲩϣⲱⲱⲧ ϩⲙⲡⲧⲟⲕ ⲙⲡⲉⲅⲣⲁⲙⲙⲁⲧⲉⲩⲥ ⲛⲛ<b>ⲥⲉⲗⲓⲥ</b> ⲙⲡ[r]item.book.name|ϫⲱⲱⲙⲉ|true[/r] ⲛⲛϣⲁϫⲉ...[/k]<br>The accomplice in the work of those who destroyed with the scribe's knife the <b>pages</b> of the book of the words... (Shenoute, <i>Not Because a Fox Barks</i> 3:3)",
 		"tags": [ "etym-grk", "ui", "vanilla" ]
 	},
 	"generic.Sword.name":{
@@ -335,13 +342,6 @@ ENTRIES = {
 		"notes": "",
 		"tags": [ "etym-egy", "etym-egy", "item", "vanilla" ]
 	},
-	"tile.tallgrass.name":{
-        "coptic": "ⲥⲓⲙ",
-        "english": "Grass",
-        "etym": [ "< Demotic[d]𓋴𓅓𓄧𓆰𓏪[/d]<i>sm</i> \"herbs\", < Egyptian[h]𓋴𓇐𓅓𓆰𓏥[/h]<i>smw</i> \"herbs\" [c]ce|152[/c]" ],
-        "notes": "",
-        "tags": [ "block", "etym-egy", "plant", "vanilla" ]
-    },
 	"tile.cloth.name":{
 		"coptic": "ⲥⲟⲣⲧ",
 		"english": "Wool",
@@ -430,6 +430,15 @@ ENTRIES = {
         "notes": "[c]cdo|C10963[/c][c]lambdin|363[/c].<br><br>The older Egyptian word for \"snow\" was[h]𓐠𓏤𓂋𓏤𓈎𓅱𓇲𓏥[/h]<i>srq</i> [c]tla|139820[/c], which was borrowed from a Semitic language. ⲭⲓⲱⲛ appears to have completely replaced it.",
         "tags": [ "block", "etym-grk", "vanilla" ]
     },
+	"tile.tallgrass.name":{
+        "coptic": "ⲭⲟⲣⲧⲟⲥ",
+		"date": new Date( "8 April 2024" ),
+        "english": "Grass",
+		"etym": ["< Greek χόρτος \"feeding-ground, pasture, fodder, provender, green crop\""],
+        //"etym": [ "< Demotic[d]𓋴𓅓𓄧𓆰𓏪[/d]<i>sm</i> \"herbs\", < Egyptian[h]𓋴𓇐𓅓𓆰𓏥[/h]<i>smw</i> \"herbs\" [c]ce|152[/c]" ],
+        "notes": "I originally had here [k]<b>ⲥⲓⲙ</b>[/k] \"grass, fodder, herbs\" [c]cd|334a[/c] [c]cdo|C3525[/c] [c]ce|152[/c] [c]lambdin|268[/c]. This seemed to be a good semantic match, and it is well attested, but it isn't as common of a word in Sahidic as I thought it was. A quick search on the Coptic Scriptorium ANNIS returns zero results.<br><br>Searching through the medical texts, [k]ⲥⲓⲙ[/k] is often modified by or modifies other nouns to refer to specific herbs and oils. The most common of these usages is [k]ⲛⲉϩ ⲛ̄ⲥⲓⲙ[/k] \"radish oil\" [c]cdo|C3527[/c] [c]ce|152[/c] [c]sawy|145, 161, 205, 208[/c]. Others include [k]ⲥⲓⲙ ⲛ̄ⲟⲩⲟⲟϩⲉ[/k] \"scorpion grass (= <a href=\"https://en.wikipedia.org/wiki/Schenkia_spicata\"><i>Erythraea spicata</i></a>)\" [c]cd|509a[/c] [c]cdo|C5303[/c] [c]ce|223[/c] [c]sawy|204-205[/c] and [k]ⲥⲓⲙ ⲛ̄ϭⲣⲟⲟⲙⲡⲉ[/k] \"dove grass (= περῐστέρῐον, <a href=\"https://en.wikipedia.org/wiki/Verbena_officinalis\"><i>Verbena officinalis</i></a>)\" [c]cd|334a[/c] [c]sawy|59, 92[/c]. None of these usages are close in meaning to the grass intended.<br><br>When referring to grass or herbs in the general sense, as occurs throughout the Bible for example, while Bohairic texts do use [k]ⲥⲓⲙ[/k] in this way, the Sahidic parallels have the Greek [k]<b>ⲭⲟⲣⲧⲟⲥ</b>[/k] [c]cdo|C10977[/c] instead. This word is very common; ANNIS search returns 58 uses in 48 documents. For example:<br><br>[k]ⲁϥⲟⲩⲉϩⲥⲁϩⲛⲉ ⲉⲧⲣⲉⲛⲙⲏⲏϣⲉ ⲛⲟϫⲟⲩ ⲉϩⲣⲁⲓ ⲉϫⲙⲡⲉ<b>ⲭⲟⲣⲧⲟⲥ</b>[/k]<br>He commanded the multitudes to sit down on the <b>grass</b> (Matthew 14:19).<br><br>All four gospels record the feeding of the multitudes, of which three of them mention the grass they sat on, and those three all refer to it as [k]ⲭⲟⲣⲧⲟⲥ[/k]. (Mark 6:39 more specifically calls it [k]ⲭⲟⲣⲧⲟⲥ ⲉⲧⲟⲩⲉⲧⲟⲩⲱⲧ[/k] \"green grass\".) This is the kind of grass that covers the ground, like in a Minecraft world-- [k]ⲡⲉⲭⲟⲣⲧⲟⲥ ⲉⲧϩⲛ̄ⲧⲥⲱϣⲉ[/k] \"the grass in the field\" (Luke 12:28). <br><br>Out of curiosity I checked the Bohairic equivalents of all these passages, and every one has [k]ⲥⲓⲙ[/k] in the same places where Sahidic has [k]ⲭⲟⲣⲧⲟⲥ[/k]. As both words are the same in meaning, this is not a matter of which word is more correct, but rather which is more typical of the dialect being used, and which a reader familiar with that dialect will more likely understand. So a Sahidic Minecraft translation will use what is typical of Sahidic, [k]ⲭⲟⲣⲧⲟⲥ[/k], and a Bohairic translation will use [k]ⲥⲓⲙ[/k].",
+        "tags": [ "block", "etym-grk", "plant", "vanilla" ]
+    },
 	"tile.stone.stone.name":{
 		"coptic": "ⲱⲛⲉ",
 		"english": "Stone",
@@ -440,7 +449,7 @@ ENTRIES = {
 	},
 	"item.diamond.name":{
 		"coptic": "ⲱⲛⲉ ⲙ̄ⲙⲉ",
-		"english": "Diamond",
+		"english": "Precious Stone (Diamond)",
 		"etym": [ "< Demotic [d]𓇋𓆛:𓈖1𓇋𓇋𓏲𓊌1𓌶:𓂝1𓆄𓏏[/d]<i>ỉny (n) mꜣꜥ.t</i> \"precious stone\" (literally \"genuine stone\") [c]cdd_i|163[/c], which is:<table><tr><td>See [r]tile.stone.stone.name[/r]</td><td style=\"width:50%\">Demotic [d]𓌶:𓂝1𓆄𓏏[/d]<i>mꜣꜥ.t</i> \"truth\", < Egyptian[h]𓌳𓐙𓂝𓏏𓏛[/h]<i>mꜣꜥt</i> \"truth, justice\" [c]ce|78[/c][c]dpdp|d2297[/c][c]tla|66620[/c]</td></tr></table>" ],
 		"notes": "Thank you to Maciej Ⲙⲁⲣⲉⲕ for suggesting this translation: \"precious stone, pearl\" [c]cd|524a[/c][c]cdo|C5498[/c]. Also spelled ⲉⲛⲉⲙ̄ⲙⲉ ([s]rev21-11[/s]), even interchangeably with ⲱⲛⲉ ⲙ̄ⲙⲉ within the same text ([s]rev21-19[/s]). ",
 		"tags": [ "etym-egy", "item", "vanilla" ]
