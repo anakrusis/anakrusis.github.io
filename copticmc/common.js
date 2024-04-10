@@ -63,6 +63,7 @@ var SOURCE_NAMES = {
 	"dpdp_c":	"<i>DPDP</i>",
 	"dpdp_tm":	"<i>DPDP tm</i>",
 	"dvs":		"Johnson <i>DVS</i>",
+	"edg":		"Erichsen <i>DG</i>",
 	"ep":		"Peust <i>EP</i>",
 	"lambdin":	"Lambdin",
 	"ma":		"Mawood",

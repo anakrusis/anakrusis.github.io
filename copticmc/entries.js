@@ -102,8 +102,8 @@ ENTRIES = {
 		"tags": [ "etym-mod", "mob", "not-to-be-translated", "unattested", "vanilla" ]
 	},
 	"entity.enderDragon.name": {
-		"coptic":	"ⲇⲣⲁⲕⲱⲛ (ⲛ̄ⲉⲛⲇⲉⲣ)",
-		"english":	"(Ender) Dragon",
+		"coptic":	"ⲇⲣⲁⲕⲱⲛ ⲛ̄ⲉⲛⲇⲉⲣ",
+		"english":	"Ender Dragon",
 		"etym":	["< Greek δράκων \"dragon, serpent\"", "See [r]generic.Ender.name[/r]"],
 		"notes": "\"dragon, serpent\" [c]cdo|C8832[/c].<br><br>The Ender Dragon is the only type of dragon in the base game, so I do not have seperate entries for ⲇⲣⲁⲕⲱⲛ and ⲇⲣⲁⲕⲱⲛ ⲛ̄ⲉⲛⲇⲉⲣ.",
 		"derivedterms": [ "tile.dragonEgg.name" ],
@@ -308,7 +308,8 @@ ENTRIES = {
         "english": "Page",
 		"etym": [ "< Greek σελίς \"column of writing in a papyrus roll, writing page\"" ],
 		"img": "none",
-		"notes": "Several places in the UI mention pages: the page number of a written book, world creation options, spectator mode options, etc.<br><br>At first I was considering [k]<b>ϭⲱⲱⲃⲉ</b>[/k], usually a literal leaf but also \"page (of a book); leaf (of paper)\" [c]cdo|C7560[/c] [c]cd|804b[/c]. Crum compares this sense of the word to [r]item.paper.name|[k]ⲭⲁⲣⲧⲏⲥ[/k][/r] \"sheet of paper\" and ورق \"leaves, paper\".<br><br>I think [k]<b>ⲥⲉⲗⲓⲥ</b>[/k] is more precisely closer to the intended meaning of \"page\", and it is attested as such:<br><br>[k]ⲁⲩⲱ ⲁⲥϣⲱⲡⲉ ⲉϥⲱϣ ⲛϭⲓ ⲓⲟⲩⲇⲉⲓⲛ ⲛⲧⲙⲉϩⲛϣⲟⲙⲧⲉ ⲙⲛⲧⲙⲉϩϥⲧⲟ ⲛ<b>ⲥⲉⲗⲓⲥ</b> ⲛⲉϥϣⲱⲱⲧ ⲙⲙⲟⲟⲩ ⲉⲃⲟⲗ ϩⲙⲡⲧⲟⲕ ⲙⲡⲉⲅⲣⲁⲙⲙⲁⲧⲉⲩⲥ...[/k]<br>And it came to pass when Judin had read three or four <b>leaves</b>, he cut them off with a penknife... (Jeremiah 43:23)<br><br>[k]ⲡⲉϣⲃⲣⲣϩⲱⲃ ⲛⲛⲉⲛⲧⲁⲩϣⲱⲱⲧ ϩⲙⲡⲧⲟⲕ ⲙⲡⲉⲅⲣⲁⲙⲙⲁⲧⲉⲩⲥ ⲛⲛ<b>ⲥⲉⲗⲓⲥ</b> ⲙⲡ[r]item.book.name|ϫⲱⲱⲙⲉ|true[/r] ⲛⲛϣⲁϫⲉ...[/k]<br>The accomplice in the work of those who destroyed with the scribe's knife the <b>pages</b> of the book of the words... (Shenoute, <i>Not Because a Fox Barks</i> 3:3)",
+		"notes": "Several places in the UI mention pages: the page number of a written book, world creation options, spectator mode options, etc.<br><br>At first I was considering [k]<b>ϭⲱⲱⲃⲉ</b>[/k], usually a literal leaf but also \"page (of a book); leaf (of paper)\" [c]cdo|C7560[/c] [c]cd|804b[/c]. Crum compares this sense of the word to [r]item.paper.name|[k]ⲭⲁⲣⲧⲏⲥ[/k][/r] \"sheet of paper\" and ورق \"leaves, paper\".<br><br>I think [k]<b>ⲥⲉⲗⲓⲥ</b>[/k] is more precisely closer to the intended meaning of \"page\", and it is attested as such:<br><br>[k]ⲁⲩⲱ ⲁⲥϣⲱⲡⲉ ⲉϥⲱϣ ⲛϭⲓ ⲓⲟⲩⲇⲉⲓⲛ ⲛⲧⲙⲉϩⲛϣⲟⲙⲧⲉ ⲙⲛⲧⲙⲉϩϥⲧⲟ ⲛ<b>ⲥⲉⲗⲓⲥ</b> ⲛⲉϥϣⲱⲱⲧ ⲙⲙⲟⲟⲩ ⲉⲃⲟⲗ ϩⲙⲡⲧⲟⲕ ⲙⲡⲉⲅⲣⲁⲙⲙⲁⲧⲉⲩⲥ...[/k]<br>And it came to pass when Judin had read three or four <b>leaves</b>, he cut them off with a penknife... (Jeremiah 43:23)<br><br>[k]ⲡⲉϣⲃⲣⲣϩⲱⲃ ⲛⲛⲉⲛⲧⲁⲩϣⲱⲱⲧ ϩⲙⲡⲧⲟⲕ ⲙⲡⲉⲅⲣⲁⲙⲙⲁⲧⲉⲩⲥ ⲛⲛ<b>ⲥⲉⲗⲓⲥ</b> ⲙⲡ[r]item.book.name|ϫⲱⲱⲙⲉ|true[/r] ⲛⲛϣⲁϫⲉ...[/k]<br>The accomplice in the work of those who destroyed with the scribe's knife the <b>pages</b> of the [r]item.book.name|book|true[/r] of the words... (Shenoute, <i>Not Because a Fox Barks</i> 3:3)",
+		"notes": "Several places in the UI mention pages: the page number of a written book, world creation options, spectator mode options, etc.<br><br>At first I was considering [k]<b>ϭⲱⲱⲃⲉ</b>[/k], usually a literal leaf but also \"page (of a book); leaf (of paper)\" [c]cdo|C7560[/c] [c]cd|804b[/c]. Crum compares this sense of the word to [r]item.paper.name|[k]ⲭⲁⲣⲧⲏⲥ[/k][/r] \"sheet of paper\" and ورق \"leaves, paper\".<br><br>I think [k]<b>ⲥⲉⲗⲓⲥ</b>[/k] is more precisely closer to the intended meaning of \"page\", and it is attested as such:<br><br>[k]ⲁⲩⲱ ⲁⲥϣⲱⲡⲉ ⲉϥⲱϣ ⲛϭⲓ ⲓⲟⲩⲇⲉⲓⲛ ⲛⲧⲙⲉϩⲛϣⲟⲙⲧⲉ ⲙⲛⲧⲙⲉϩϥⲧⲟ ⲛ<b>ⲥⲉⲗⲓⲥ</b> ⲛⲉϥϣⲱⲱⲧ ⲙⲙⲟⲟⲩ ⲉⲃⲟⲗ ϩⲙⲡⲧⲟⲕ ⲙⲡⲉⲅⲣⲁⲙⲙⲁⲧⲉⲩⲥ...[/k]<br>And it came to pass when Judin had read three or four <b>leaves</b>, he cut them off with a penknife... (Jeremiah 43:23)<br><br>[k]ⲡⲉϣⲃⲣⲣϩⲱⲃ ⲛⲛⲉⲛⲧⲁⲩϣⲱⲱⲧ ϩⲙⲡⲧⲟⲕ ⲙⲡⲉⲅⲣⲁⲙⲙⲁⲧⲉⲩⲥ ⲛⲛ<b>ⲥⲉⲗⲓⲥ</b> ⲙⲡ[r]item.book.name|ϫⲱⲱⲙⲉ|true[/r] ⲛⲛϣⲁϫⲉ...[/k]<br>The accomplice in the work of those who destroyed with the scribe's knife the <b>pages</b> of the [r]item.book.name|book|true[/r] of the words... (Shenoute, <i>Not Because a Fox Barks</i> 3:3)",
 		"tags": [ "etym-grk", "ui", "vanilla" ]
 	},
 	"generic.Sword.name":{
@@ -346,8 +347,26 @@ ENTRIES = {
 		"coptic": "ⲥⲟⲣⲧ",
 		"english": "Wool",
 		"etym": [ "< Demotic[d]𓋴𓉻:𓂝*𓏛𓃭𓍘𓇋2𓁸[/d]<i>sꜥrṱ</i> \"wool\", < Egyptian[h]𓐠‌𓏤𓉻𓏛𓂋‌𓏤𓍘𓇋𓆰𓏥[/h]<i>sꜥrt</i> \"wool\", from a Semitic language [c]ce|162[/c]"],
+		"img": "tile.cloth.white.name",
 		"notes": "",
+		"derivedterms": [ "tile.cloth.green.name", "tile.cloth.white.name" ],
 		"tags": [ "etym-sem", "generic-type", "vanilla" ]
+	},
+	"tile.cloth.green.name":{
+		"coptic": "ⲥⲟⲣⲧ ⲉⲥⲟⲩⲉⲧⲟⲩⲱⲧ",
+		"date": new Date( "9 April 2024" ),
+		"english": "Green Wool",
+		"etym": [ "See [r]tile.cloth.name[/r]", "See [r]color.green[/r]" ],
+		"notes": "",
+		"tags": [ "block", "etym-sem", "etym-egy", "vanilla" ]
+	},
+	"tile.cloth.white.name":{
+		"coptic": "ⲥⲟⲣⲧ ⲛ̄ⲟⲩⲱⲃϣ̄",
+		"date": new Date( "9 April 2024" ),
+		"english": "White Wool",
+		"etym": [ "See [r]tile.cloth.name[/r]", "See [r]color.white[/r]" ],
+		"notes": "White wool appears in several texts:<br><br>[k]ⲉⲣⲉⲧⲉϥⲁⲡⲉ ⲟⲩⲟⲃϣ ⲙⲛⲡⲉϥϥⲱ ⲛⲧϩⲉ ⲛⲟⲩ<b>ⲥⲟⲣⲧ ⲛⲟⲩⲟⲃϣ</b> ⲁⲩⲱ ⲛⲧϩⲉ ⲛⲟⲩ[r]tile.snow.name|ⲭⲓⲱⲛ|true[/r][/k]<br>His head and his hair were white as <b>white wool</b>, like [r]tile.snow.name|snow|true[/r]. (Revelation 1:14)<br><br>[k]ⲁⲩⲱ ⲁϥⲥⲫⲣⲁⲅⲓⲍⲉ ⲙⲙⲟⲥ ϩⲓⲃⲟⲗ ⲉⲥⲟ ⲙⲙⲁⲉⲓⲛ ϩⲛϩⲏⲧϥ ⲙⲡⲕⲟⲩⲓ ⲛⲕⲧⲏⲣ ⲙⲡⲉⲥⲙⲟⲧ ⲛⲟⲩ<b>ⲥⲟⲣⲧ ⲛⲟⲩⲱⲃϣ</b> · ⲁⲩⲱ ⲛⲧϩⲉ ⲛⲟⲩ[r]tile.snow.name|ⲭⲓⲱⲛ|true[/r][/k]<br>Now the holy man made the Sign of the Cross on the outside of the ewe, and it appeared on the body of the lamb in the form of a piece of <b>white wool</b>, which was like unto [r]tile.snow.name|snow|true[/r]. (Life of Pisentius)",
+		"tags": [ "block", "etym-sem", "etym-egy", "vanilla" ]
 	},
 	"item.egg.name":{
 		"coptic": "ⲥⲟⲟⲩϩⲉ",
@@ -406,12 +425,16 @@ ENTRIES = {
         "english": "Green",
 		"etym": ["< Demotic[d]𓅱𓏏𓅱𓏏𓆰𓏪[/d]<i>wtwt</i> \"become, be green\", < Egyptian[h]𓇆𓇆𓆰𓏥[/h]<i>wꜣḏwꜣḏ</i> \"become, be green\" [c]ce|217[/c] [c]tla|d1570[/c] [c]tla|43940[/c]"],
 		"notes": "Q of [k]ⲟⲩⲟⲧⲟⲩⲉⲧ[/k] \"be/become green, pallid\" [c]cd|493b[/c] [c]cdo|C5188[/c].",
+		"derivedterms": [ "tile.cloth.green.name" ],
 		"tags": [ "color", "etym-egy", "vanilla" ]
 	},
 	"color.white": {
-		"coptic": "ⲟⲩⲱⲃϣ",
+		"coptic": "ⲟⲩⲱⲃϣ̄",
 		"date": new Date( "9 April 2024" ),
         "english": "White",
+		"etym": ["Old participle of [k]ⲟⲩⲃⲁϣ[/k] \"become white, be white\" [c]cdo|C4929[/c], < Demotic[d]𓅱𓅡◳𓏤:𓐍𓇋𓏲𓆰𓏪[/d]<i>wbḫ(e)</i> \"be bright, illuminate\" [c]edg|85[/c] [c]tla|d1317[/c], < Egyptian[h]𓅱𓃀𓐍𓏴𓏛[/h]<i>wbḫ</i> \"be bright, brighten\" [c]ce|210[/c] [c]tla|45270[/c] [c]vy|230b[/c]"],
+		"notes": "\"white\" [c]cd|476b[/c] [c]cdo|C4931[/c] [c]lambdin|294[/c]. Also often spelled [k]<b>ⲟⲩⲟⲃϣ̄</b>[/k], which Crum says is wrong.",
+		"derivedterms": [ "tile.cloth.white.name" ],
 		"tags": [ "color", "etym-egy", "vanilla" ]
 	},
 	"itemGroup.brewing":{
@@ -512,6 +535,14 @@ ENTRIES = {
 		"etym": [ "< Demotic[d]𓎛𓏏:𓂋𓇋𓆵𓄛[/d]<i>ḥtr</i> \"horse, team of horses\", < Egyptian[h]𓎛𓏏𓂋𓃗[/h]<i>ḥtr</i> \"team of horses; steeds; chariotry\" [c]ce|277[/c][c]dpdp|d4348[/c][c]tla|111810[/c]" ],
 		"notes": "",
 		"tags": [ "animal", "etym-egy", "mob", "vanilla" ]
+	},
+	"color.blue": {
+		"coptic": "ϩⲩⲁⲕⲓⲛⲑⲓⲛⲟⲛ",
+		"date": new Date( "10 April 2024" ),
+        "english": "Blue",
+		"etym": ["< Greek ὑάκινθος \"wild hyacinth, bluebell (<i>Scilla bifolia</i>), blue larkspur (<i>Delphinum ajacis</i>); a precious stone (hyacinth)\""],
+		"notes": "This is a deeper, darker blue color compared to light blue and cyan. There are a few candidates for a blue like this.<br><br>The first are [k]<b>ϩⲩⲁⲕⲓⲛⲑⲟⲥ</b>[/k] \"jacinth (precious blue gem)\" [c]cdo|C11197[/c] and its derivative [k]<b>ϩⲩⲁⲕⲓⲛⲑⲓⲛⲟⲛ</b>[/k] \"royal blue\" [c]cdo|C11196[/c], \"blue أرجوان [i]purple[/i]\" [c]ma|899[/c]. Both of these words are used to refer to a color a few times throughout the Bible.<br><br>[k]ⲉⲕⲉⲧⲁⲙⲓⲟ ⲇⲉ ⲟⲛ ⲛⲟⲩⲕⲁⲧⲁⲡⲉⲧⲁⲥⲙⲁ ⲉⲃⲟⲗ ϩⲛⲟⲩ<b>ϩⲩⲁⲕⲓⲛⲑⲟⲥ</b> ⲙⲛⲟⲩϫⲏϭⲉ ⲙⲛⲟⲩⲕⲟⲕⲕⲟⲥ...[/k]<br>And thou shalt make a veil of <b>blue</b> and purple and scarlet... (Exodus 26:31)<br><br>[k]...<b>ϩⲩⲁⲕⲓⲛⲑⲟⲥ</b> ⲙⲛⲟⲩϫⲏϭⲉ ⲙⲛⲟⲩⲕⲟⲕⲕⲟⲥ ⲉϥⲥⲏⲧ ⲙⲛⲟⲩϣⲛⲥ ⲉϥⲥⲏⲧ...[/k]<br>...<b>blue</b>, and the purple, and the scarlet, and the fine linen... (Exodus 28:5)<br><br>[k]ⲙⲛⲛⲉⲩϣⲛⲥ ⲙⲛⲛⲉⲩ<b>ϩⲓⲁⲕⲓⲛⲑⲓⲛⲟⲛ</b> ⲙⲛⲛⲉⲩⲕⲟⲕⲕⲓⲛⲟⲛ ⲙⲛⲡϣⲛⲥ ⲉⲧⲧⲁⲗⲏⲩ ϩⲓⲛⲟⲩⲃ ϩⲓ<b>ϩⲩⲁⲕⲓⲛⲑⲓⲛⲟⲛ[/k]</b>...<br>And those made of fine linen, and the <b>purple</b> ones, and the scarlet ones, and the fine linen interwoven with gold and <b>purple</b>... (Isaiah 3:21B)<br><br>[k]ⲟⲩ[r]generic.World.name|ⲕⲟⲥⲙⲟⲥ|true[/r] ⲛ[r]generic.Gold.name|ⲛⲟⲩⲃ|true[/r] ⲡⲉⲧϩⲓϫⲱⲥ ⲁⲩⲱ ϩⲛϩⲱⲥ ⲛ<b>ϩⲩⲁⲕⲓⲛⲑⲓⲛⲟⲛ</b> ⲛⲉ ⲛⲉⲥⲙⲣⲣⲉ[/k]<br>For there is a [r]generic.Gold.name|golden|true[/r] [r]generic.World.name| ornament|true[/r] upon her, and her bands are <b>purple</b> lace. (Sirach 6:30)<br><br>[k]ϩⲛⲟⲩⲥⲧⲟⲗⲏ ⲉⲥⲟⲩⲁⲁⲃ ⲛ[r]generic.Gold.name|ⲛⲟⲩⲃ|true[/r] ϩⲓ<b>ϩⲩⲁⲕⲓⲛⲑⲓⲛⲟⲛ</b> ⲙⲛⲟⲩϫⲏϭⲉ ⲛϩⲱⲃ ⲙⲡⲟⲓⲕⲓⲗⲧⲏⲥ[/k]<br>With the sacred vestment, of [r]generic.Gold.name|gold|true[/r] and <b>violet</b> and purple, the work of an embroiderer; (Sirach 45:10)<br><br>[k]ⲁⲩⲱ ⲧⲁⲓ ⲧⲉ ⲧϩⲉ ⲛⲧⲁⲓⲛⲁⲩ ⲉⲡⲉⲓⲛⲉ ⲛⲛⲉ[r]entity.Horse.name|ϩⲧⲱⲱⲣ|true[/r] ⲙⲛⲛⲉⲧⲁⲗⲉ ⲉⲣⲟⲟⲩ ⲉⲩⲛϩⲉⲛϩⲱⲕ ϩⲓⲱⲟⲩ ⲛⲁⲩⲁⲛ ⲛⲕⲱϩⲧ ϩⲓ<b>ϩⲩⲁⲕⲓⲛⲑⲓⲛⲟⲛ</b> ϩⲓ[r]item.thermalfoundation.material.dustSulfur.name|ⲧϩⲏⲛ|true[/r][/k]<br>Thus I saw the [r]entity.Horse.name|horses|true[/r] in the vision, and those who sat on them, having breastplates of fiery red, <b>hyacinth blue</b>, and [r]item.thermalfoundation.material.dustSulfur.name|sulfur yellow|true[/r] (Revelation 9:17)<br><br>So it is variously translated as blue, violet or purple, but it is not the same purple as [k]ϫⲏϭⲉ[/k] \"purple\", as they appear in the same sentences as two different colors. The Bohairic translations also agree with this and never use [k]ϩⲩⲁⲕⲓⲛⲑⲓⲛⲟⲛ[/k] and [k]ϭⲏϫⲓ[/k] interchangeably. The word in question appears consistently in all the same places in the Bohairic versions, except that Bohairic always has [k]ϩⲩⲁⲕⲓⲛⲑⲓⲛⲟⲛ[/k] instead of [k]ϩⲩⲁⲕⲓⲛⲑⲟⲥ[/k]. This form is used not just as as color modifying other nouns, but also as a noun on its own: the jacinth precious stone also called [k]ϩⲩⲁⲕⲓⲛⲑⲓⲛⲟⲛ[/k] (Revelation 21:20) in Bohairic and Sahidic.<br><br>The question of whether [k]ϩⲩⲁⲕⲓⲛⲑⲓⲛⲟⲛ[/k] is more blueish or purplish remains uncertain. The <a href=\"https://en.wikipedia.org/wiki/Hyacinthus_orientalis\">hyacinth flower</a> which the word refers to can be either color, although it seems to tend more often toward violet. The imprecision in meaning of this word is exacerbated by the fact that I am reading translations of translations from Hebrew to Greek to Coptic and English. Maybe the original Hebrew word will be more clear cut... <br><br>In Hebrew this color is תכלת <i>tekhelet</i>. It is not more clear cut. For example, in <a href=\"https://biblehub.com/hebrew/8504.htm\">Strong's Concordance 8504</a>: \"violet, violet thread... Probably for shcheleth; the cerulean mussel, i.e. The color (violet) obtained therefrom or stuff dyed therewith -- blue.\"<br>Most of the English translations have \"blue\" but there is still no consensus. While browsing Sefaria I saw also \"purple\" (Sefaria community translation of Sirach), \"blue-violet\" (Exodus in The Schocken Bible), and even \"greenish blue\" (Metsudah Publications). <br><br>I think this color [k]ϩⲩⲁⲕⲓⲛⲑⲓⲛⲟⲛ[/k]&nbsp;/&nbsp;תכלת is inherently ambiguous. It can refer to blue and it can refer to violet or purple, but that doesn't mean it always does. The points of reference, both the dye process and the hyacinth flower, vary in color. Just about the only thing certain is that [k]ϩⲩⲁⲕⲓⲛⲑⲓⲛⲟⲛ[/k]&nbsp;/&nbsp;תכלת is not [k]ϫⲏϭⲉ[/k]&nbsp;/&nbsp;ארגמן. <br><br>~~~<br><br>Another word is [k]<b>ⲥⲁⲡⲡⲉⲓⲣⲓⲛⲟⲛ</b>[/k] \"sapphire-blue\" [c]cdo|C10406[/c], which is much less ambiguous in hue, but also a much rarer word. It is derived from [r]item.dyePowder.blue.name[/r], which is the material used to dye objects this same blue color in Minecraft, so this would be a fitting name for it.",
+		"tags": [ "color", "etym-grk", "uncertain", "vanilla" ]
 	},
 	"container.crafting": {
 		"coptic": "ϩⲱⲃ ⲛ̄ϭⲓϫ",
