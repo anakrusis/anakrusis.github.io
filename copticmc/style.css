@@ -37,7 +37,7 @@ a {
 }
 
 img{
-	height:100%;
+	
 }
 
 .outerdiv {
@@ -142,5 +142,11 @@ img{
 }
 .encdemo{
 	color: green;
+}
+
+.right {
+    float: right;
+    margin-left: 1em;
+	padding: 14px;
 }
 

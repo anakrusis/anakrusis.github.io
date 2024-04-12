@@ -99,9 +99,9 @@ function addDictEntry(key, ce){
 		
 		// gifs dont need to have a file extension added at the end. png is the default.
 		if (imgsrc.indexOf("gif") != -1){
-			imgdiv.innerHTML = "<img src='img/" + imgsrc + "'>"
+			imgdiv.innerHTML = "<img style=\"height:100%\" src='img/" + imgsrc + "'>"
 		}else{
-			imgdiv.innerHTML = "<img src='img/" + imgsrc + ".png'>"
+			imgdiv.innerHTML = "<img style=\"height:100%\" src='img/" + imgsrc + ".png'>"
 		}
 		headerdiv.appendChild( imgdiv );
 	}
