@@ -22,14 +22,26 @@ function setup() {
 		STARPOINTS.pop();
 	}
 	document.getElementById("btn_save").onclick = function(){
-		var filename = year();
-		filename += month().toString().padStart(2,0);
-		filename += day().toString().padStart(2,0);
-		filename += "_" + hour().toString().padStart(2,0);
-		filename += minute().toString().padStart(2,0);
-		filename += second().toString().padStart(2,0);
+		
+		var year_4char 	= year();
+		var month_2char = month().toString().padStart(2,0);
+		var day_2char	= day().toString().padStart(2,0);
+		var hour_2char	= hour().toString().padStart(2,0);
+		var min_2char	= minute().toString().padStart(2,0);
+		var sec_2char	= second().toString().padStart(2,0);
+		
+		var filename = year_4char + month_2char + day_2char + "_" + hour_2char + min_2char + sec_2char;
+		var datestamp = year_4char + "-" + month_2char + "-" + day_2char;
+		var timestamp = hour_2char + ":" + min_2char + ":" + sec_2char
+		
+		var objout = {
+			"format": 1,
+			"objpoints": STARPOINTS,
+			"date": datestamp + " " + timestamp
+		}
+		
 		saveCanvas( filename );
-		saveJSON(STARPOINTS, filename + '.json');
+		saveJSON(objout, filename + '.json');
 	}
 	document.getElementById("btn_clear").onclick = function(){
 		STARPOINTS = [];
@@ -48,16 +60,13 @@ function setup() {
 	
 	// VIEWPORT CANVAS
 	vcanvas	= createCanvas( windowWidth, windowHeight * 0.8 );
+	frameRate(10);
 	//vcanvas		= createCanvas(1024, Math.floor(1024 * ratio) );
-	vcanvas.touchEnded(VCanvasTouched);
-	vcanvas.mouseReleased(VCanvasTouched);
+	//vcanvas.mouseReleased(VCanvasTouched);
+	//vcanvas.touchEnded( vcanvas.mouseReleased );
 }
 
-function touchStarted() {
-	
-}
-
-function VCanvasTouched() {
+function mouseReleased() {
 	if (winMouseY > height){ return }
 	
 	// current circle x/y
