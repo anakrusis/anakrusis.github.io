@@ -66,6 +66,10 @@ function setup() {
 	//vcanvas.touchEnded( vcanvas.mouseReleased );
 }
 
+function touchEnded() {
+	mouseReleased(); return false;
+}
+
 function mouseReleased() {
 	if (winMouseY > height){ return }
 	
