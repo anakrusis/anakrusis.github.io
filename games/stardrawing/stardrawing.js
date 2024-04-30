@@ -7,6 +7,8 @@ var STARPOINTS = [ ];
 POINTSIZE = 1; DIFFUSE = false;
 SIZE_DIVISORS = [ 128, 64, 32, 20 ]
 
+touched_on_frame = false;
+
 function setup() {
 	document.getElementById("textarea").value = "";
 	
@@ -60,18 +62,20 @@ function setup() {
 	
 	// VIEWPORT CANVAS
 	vcanvas	= createCanvas( windowWidth, windowHeight * 0.8 );
+	//vcanvas.mouseReleased( VCanvasTouched );
+	vcanvas.touchEnded( VCanvasTouched );
+	
 	frameRate(10);
-	//vcanvas		= createCanvas(1024, Math.floor(1024 * ratio) );
-	//vcanvas.mouseReleased(VCanvasTouched);
-	//vcanvas.touchEnded( vcanvas.mouseReleased );
 }
 
-function touchEnded() {
-	mouseReleased(); return false;
-}
-
-function mouseReleased() {
-	if (winMouseY > height){ return }
+function VCanvasTouched() {
+	if (winMouseY > height){ return false }
+	// if the touched event has already happened on this frame (within the last 1/10th of a second)
+	//if (touched_on_frame){ return false }
+/* 	
+	if (event.type == 'touchend'){
+	console.log("touched");
+	} */
 	
 	// current circle x/y
 	var ccx = width/2; var ccy = height/2;
@@ -84,9 +88,13 @@ function mouseReleased() {
 	
 	var currpoint = new StarPoint( objname, currradius, currangle, POINTSIZE, DIFFUSE )
 	STARPOINTS.push( currpoint );
+	
+	return false
 }
 
 function draw() {
+	touched_on_frame = false;
+	
 	background(0);
 	
 	// current circle x/y
