@@ -37,7 +37,7 @@ function setup() {
 		var timestamp = hour_2char + ":" + min_2char + ":" + sec_2char
 		
 		var objout = {
-			"format": 1,
+			"format": 2,
 			"objpoints": STARPOINTS,
 			"date": datestamp + " " + timestamp
 		}
@@ -120,8 +120,8 @@ function draw() {
 	
 	strokeWeight(3)
 	fill(0,0,0,0); 
-	CIRCLERADIUS = Math.min(width, height);
-	circle( ccx, ccy, CIRCLERADIUS )
+	CIRCLERADIUS = Math.min(width / 2, height / 2);
+	circle( ccx, ccy, CIRCLERADIUS * 2 )
 	
 	// full red for star points and text
 	strokeWeight( 1 )
@@ -139,15 +139,10 @@ function draw() {
 	var timestring 		= hourstring + ":" + minutestring + ":" + secondstring;
 	
 	fill(255,0,0); stroke(0);
-	textSize(CIRCLERADIUS / 20)
+	textSize((CIRCLERADIUS*2) / 20)
 	textAlign(LEFT)
 	text(datestring + " " + timestring, 0, 64)
 	//text(width + "x" + height, 0, 128)
-}
-
-function windowResized() {
-/* 	var ratio = (windowHeight * 0.8) / windowWidth
-	resizeCanvas(1024, Math.floor(1024 * ratio)); */
 }
 
 // coordinates are polar
@@ -169,12 +164,12 @@ class StarPoint {
 		var curry = (crad * Math.sin( this.angle )) + ccy;
 		
 		fill(255,0,0);
-		var size = CIRCLERADIUS / SIZE_DIVISORS[ this.size - 1 ]
+		var size = (CIRCLERADIUS*2) / SIZE_DIVISORS[ this.size - 1 ]
 		circle( currx, curry, size );
 		
 		fill(255,0,0); stroke(0);
 		textAlign(CENTER)
-		textSize(CIRCLERADIUS / 32)
-		text( this.name, currx, curry - (CIRCLERADIUS / 32) )
+		textSize((CIRCLERADIUS*2) / 32)
+		text( this.name, currx, curry - ((CIRCLERADIUS*2) / 32) )
 	}
 }
