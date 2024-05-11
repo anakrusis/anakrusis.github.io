@@ -133,9 +133,13 @@ img{
 .left {
     float: left;
     margin-right: 1em;
+	margin-bottom: 1em;
 }
 
 .ns {
 	color: #ffcccc;
+}
+.seen {
+	color: #ccffcc;
 }
 
