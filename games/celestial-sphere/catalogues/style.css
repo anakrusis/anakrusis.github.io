@@ -12,13 +12,12 @@ div {
 table {
 	margin: auto;
 	width: 100%;
-	font-size: 20px;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
 th, td {
 	border: 1px solid #c0c0c0;
-	padding: 14px;
+	padding: 8px;
 }
 
 .maindiv {
