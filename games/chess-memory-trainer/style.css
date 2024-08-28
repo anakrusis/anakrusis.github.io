@@ -1,0 +1,130 @@
+ * {
+      touch-action: manipulation;
+  }
+
+body {
+	font-size: 48px;
+	background-color: black;
+	color: white;
+	font-family: sans-serif;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	touch-action: manipulation;
+}
+
+div {
+	border: 0px dotted black;
+	background-color: black;
+	font-size: 20px;
+	color: white;
+	font-family: sans-serif;
+}
+input:hover {
+	background-color: #000011;
+}
+
+input, button, textarea, select {
+	background-color: black;
+	border: 3px solid #968EFF;
+	font-size: 300%;
+	color: #968EFF;
+}
+
+canvas {
+	width: 100%;
+}
+
+.objnameinput{
+	width:50%;
+}
+
+.topbutton{
+	width: 48%;
+	font-size: 250%;
+}
+.btmbutton{
+	width: 32%;
+	font-size: 250%;
+}
+
+.button1, .moves{
+	width: 100%;
+}
+button:hover {
+	background-color: #111122;
+}
+.moves{
+}
+
+.leftmoves, .rightmoves{
+	width:45%; 
+	flex:1; 
+	flex-wrap:wrap; 
+	padding:10px; 
+	margin: 5px;
+}
+
+.innerrightdiv {
+	height: 30%; overflow-x: hidden; overflow-y: auto;
+	padding: 0px;
+}
+
+.maindiv {
+	margin: auto;
+	width: 100%;
+	background-color: #202233;
+	padding: 0px;
+}
+
+.padding1 {
+	text-align: center;
+}
+
+h1 {
+}
+
+h3{
+}
+
+.bodydiv {
+	padding: 10px;
+	position: relative;
+}
+
+.mainpagediv {
+	padding: 10px;
+	display: flex;
+	position: relative;
+}
+
+th, td {
+  width: 20%;
+  text-align:center;
+  border: 2px dotted black;
+
+}
+
+table {
+	margin: auto;
+	width: 100%;
+	height: 36px;
+	padding: 0px;
+}
+
+.linkdiv { 
+	width: 100%;
+	height: 35px;
+	float: left;
+	text-align: center;
+	background-color: #ffffdd;
+}
+
+.headerimg {
+	width: 100%;
+	height: auto;
+}
+a:link, a:visited {
+	color: LightBlue;
+}
+
