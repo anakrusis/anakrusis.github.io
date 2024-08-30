@@ -1,15 +1,6 @@
-MONTH_NAMES = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
-
-CIRCLERADIUS = 0;
-
-var STARPOINTS = [ ];
-
-POINTSIZE = 1; DIFFUSE = false;
-SIZE_DIVISORS = [ 128, 64, 32, 20 ]
-
-touched_on_frame = false;
-
 function preload(){
+	// uppercase = white pieces
+	// lowercase = black pieces
 	PIECE_TEXTURES = {
 		"K": loadImage("img/wK.svg"),
 		"Q": loadImage("img/wQ.svg"),
@@ -25,8 +16,6 @@ function preload(){
 		"n": loadImage("img/bN.svg"),
 		"p": loadImage("img/bP.svg"),
 	}
-	// TODO bake transparency into a GHOST_TEXTURES table?
-	// (dreadfully slow in real time it seems)
 }
 
 function setup() {
@@ -90,7 +79,11 @@ function setup() {
 	// VIEWPORT CANVAS
 	vcanvas	= createCanvas( windowWidth, windowHeight * 0.8 );
 	
-	EXAMPLEPOS = positionArrayFromFEN("6k1/6p1/2N1pn1p/4P3/r4r2/7P/P5P1/R3R1K1 b - - 0 27");
+	//EXAMPLEPOS = positionArrayFromFEN("6k1/6p1/2N1pn1p/4P3/r4r2/7P/P5P1/R3R1K1 b - - 0 27");
+	//EXAMPLEPOS = positionArrayFromPGN("");
+	
+	EXAMPLEPOS = new Position();
+	EXAMPLEPOS.importPGN("");
 }
 
 function drawChessboard( drawx, drawy, drawsize, flipped, positionarray ){
@@ -159,10 +152,85 @@ function positionArrayFromFEN( fen ){
 	return arrayout;
 }
 
+function positionArrayFromPGN( pgn ){
+	// the output array begins with the chess starting position
+	var arrayout = positionArrayFromFEN("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
+	
+	var legalmoves = getAllLegalMoves( arrayout, true );
+	
+	return arrayout;
+}
+
+// white to move = true, black to move = false
+
+// the reason this is necessary is unfortunately due to the PGN notation...
+// if there is no mention of rank or file, such as Nd2, then only one piece has the legal move to go there, so we must find it
+// sometimes this is just because no other piece sees the square, but other times it is because another piece is pinned
+function getAllLegalMoves( position, whitetomove ){
+	
+	// first make a list of all the pieces of this color
+	// each item of the array is an object e.g. {x = 0, y = 0}
+	var piececoords = [];
+	
+	for (var x = 0; x < 8; x++){
+		for (var y = 0; y < 8; y++){
+			var currsquare = position[x][y];
+			if (!currsquare){ continue; }
+			// uppercase are white pieces; lowercase are black pieces
+			if ((currsquare.toUpperCase() === currsquare) == whitetomove){
+				// current piece coord
+				var cpc = {}; cpc.x = x; cpc.y = y; piececoords.push(cpc);
+			}
+		}
+	}
+	
+	for (var i = 0; i < piececoords.length; i++){
+		var cpc = piececoords[i]; // current piece coord
+		//console.log(cpc.x + ", " + cpc.y);
+		
+		var cpc_legalmoves = getPieceLegalMoves( position, whitetomove, cpc );
+	}
+}
+
+// white to move is a little redundant since I could just get the color of the piece being moved from the piece coordinates
+// but I don't feel like reevaluating it again redundantly so why not just pass it in?
+function getPieceLegalMoves( position, whitetomove, coord ){
+	console.log(coord.x + ", " + coord.y);
+	
+	// each legal move out will be an object with a start coordinate and destination coordinate.
+	// The start coordinate might seem useless since this function deals with a single piece, but this will be
+	// called from the getAllLegalMoves function, so the start coordinate is needed
+	var legalmovesout = [];
+	var piece = position[coord.x][coord.y];
+	console.log(piece);
+	
+	// PAWN:
+	if (piece.toLowerCase() == "p"){
+		// the two diagonal squares that a pawn can capture
+		var cpx = 1; var cpy = whitetomove ? 1 : -1;
+		for (var i = 0; i < 2; i++){
+			var tx = coord.x + cpx; var ty = coord.y + cpy;
+			var targetsquare = position[tx][ty];
+			// cant capture if nothing is on the square
+			if ( !targetsquare ){ continue; }
+			// can only capture if the target piece color is not the same as our piece color
+			if ((currsquare.toUpperCase() === currsquare) != whitetomove){
+				var pawncapturemove = {};
+				pawncapturemove.start = { "x": coord.x, }
+			}
+			
+			cpx *= -1;
+		}
+	}
+	
+	// todo handle pinned piece. if moving this piece off of its current square allows the oppponent
+	// to capture the king on their turn, then return an empty list of moves. there are no legal moves for this piece
+}
+
 function draw() {
 	background(0);
 	
-	drawChessboard( 100, 100, 500, false, EXAMPLEPOS );
+	drawChessboard( 100, 100, 500, false, EXAMPLEPOS.posarray );
 		
 /* 	touched_on_frame = false;
 	
@@ -215,32 +283,3 @@ function draw() {
 	text(datestring + " " + timestring, 0, 64)
 	//text(width + "x" + height, 0, 128) */
 }
-
-/* // coordinates are polar
-class StarPoint {
-	constructor(name, rad, angle, size, diffuse){
-		this.name 		= name;
-		// 1: the edge of the circle. 0: the center
-		this.radius		= rad;
-		// in radians
-		this.angle		= angle;
-		this.size		= size;
-		this.diffuse	= diffuse;
-	}
-	
-	drawPoint(){
-		// current circle x/y/rad
-		var ccx = width/2; var ccy = height/2; var crad = this.radius * CIRCLERADIUS
-		var currx = (crad * Math.cos( this.angle )) + ccx;
-		var curry = (crad * Math.sin( this.angle )) + ccy;
-		
-		fill(255,0,0);
-		var size = (CIRCLERADIUS*2) / SIZE_DIVISORS[ this.size - 1 ]
-		circle( currx, curry, size );
-		
-		fill(255,0,0); stroke(0);
-		textAlign(CENTER)
-		textSize((CIRCLERADIUS*2) / 32)
-		text( this.name, currx, curry - ((CIRCLERADIUS*2) / 32) )
-	}
-} */
