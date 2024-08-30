@@ -44,9 +44,15 @@ class Position {
 		this.posarray = arrayout;
 	}
 	
+	// The pgn is an array containing a string for each line of the file
+	
 	importPGN( pgn ){
 		// position array is initialized with the chess starting position
 		this.importFEN("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
+		
+		for (var i = 0; i < pgn.length; i++){
+			
+		}
 		
 		var legalmoves = this.getAllLegalMoves();
 	}
@@ -61,6 +67,7 @@ class Position {
 	// Thankfully the notations O-O and O-O-O are never ambiguous, so the castling moves can be ignored here.
 	
 	getAllLegalMoves(){
+		var legalmovesout = [];
 	
 		// first make a list of all the pieces of this color
 		// each item of the array is an object e.g. {x = 0, y = 0}
@@ -80,13 +87,81 @@ class Position {
 		
 		for (var i = 0; i < piececoords.length; i++){
 			var cpc = piececoords[i]; // current piece coord
-			console.log(cpc.x + ", " + cpc.y);
-			
 			var cpc_legalmoves = this.getPieceLegalMoves( cpc );
-		}		
+			
+			// add legal moves to the larger list
+			for (var q = 0; q < cpc_legalmoves.length; q++){
+				legalmovesout.push( cpc_legalmoves[q] );
+			}
+		}
+
+		return legalmovesout;
 	}
 	
 	getPieceLegalMoves( coord ){
+		console.log(coord.x + ", " + coord.y);
+	
+		// each legal move out will be an object with a start coordinate and destination coordinate.
+		// The start coordinate might seem useless since this function deals with a single piece, but this will be
+		// called from the getAllLegalMoves function, so the start coordinate is needed
+		var legalmovesout = [];
+		var piece = this.getSquare(coord.x, coord.y);
+		console.log(piece);
 		
+		// -- PAWN -- all kinds of pawn moves are special cases that don't apply to any other pieces
+		if (piece.toLowerCase() == "p"){
+			// the two diagonal squares that a pawn can capture an enemy piece
+			var cpx = 1; var cpy = this.whitetomove ? 1 : -1;
+			for (var i = 0; i < 2; i++){
+				var tx = coord.x + cpx; var ty = coord.y + cpy;
+				var targetsquare = this.getSquare(tx,ty);
+				// can't capture if nothing is on the square
+				if ( !targetsquare ){ continue; }
+				// can only capture if the target piece color is not the same as our piece color
+				if ((currsquare.toUpperCase() === currsquare) != this.whitetomove){
+					var pawncapturemove = {};
+					pawncapturemove.start = { "x": coord.x, "y": coord.y }
+					pawncapturemove.dest  = { "x": tx, 		"y": ty }
+					
+					legalmovesout.push(pawncapturemove);
+				}
+				
+				cpx *= -1;
+			}
+			
+			// todo add en passant capture
+			
+			// one square pawn push: only legal if the square is unoccupied
+			var osy = this.whitetomove ? 1 : -1;
+			var onesquarelegal = false;
+			var targetsquare = this.getSquare( coord.x, coord.y + osy );
+			if (!targetsquare){
+				var pawnonesquaremove = {};
+				pawnonesquaremove.start = { "x": coord.x, "y": coord.y }
+				pawnonesquaremove.dest  = { "x": coord.x, "y": coord.y + osy }
+				
+				legalmovesout.push(pawnonesquaremove);
+				onesquarelegal = true;
+			}
+			
+			// two square pawn push, only on starting rank and if the one square push is legal
+			var tsy = this.whitetomove ? 2 : -2;
+			var startrank = this.whitetomove ? 1 : 6;
+			if (onesquarelegal && coord.y == startrank){
+				var targetsquare = this.getSquare( coord.x, coord.y + tsy );
+				if (!targetsquare){
+					var pawntwosquaremove = {};
+					pawntwosquaremove.start = { "x": coord.x, "y": coord.y }
+					pawntwosquaremove.dest  = { "x": coord.x, "y": coord.y + tsy }
+					
+					legalmovesout.push(pawntwosquaremove);
+				}
+			}
+		}
+		
+		// todo handle pinned piece. if moving this piece off of its current square allows the oppponent
+		// to capture the king on their turn, then return an empty list of moves. there are no legal moves for this piece
+		
+		return legalmovesout;
 	}
 }

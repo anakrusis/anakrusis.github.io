@@ -16,6 +16,8 @@ function preload(){
 		"n": loadImage("img/bN.svg"),
 		"p": loadImage("img/bP.svg"),
 	}
+	
+	EXAMPLEPGN = loadStrings('pgn/lichess_pgn_2024.08.23_goofysillychess_vs_jd290599.YDv8S5Sb.pgn');
 }
 
 function setup() {
@@ -83,7 +85,7 @@ function setup() {
 	//EXAMPLEPOS = positionArrayFromPGN("");
 	
 	EXAMPLEPOS = new Position();
-	EXAMPLEPOS.importPGN("");
+	EXAMPLEPOS.importPGN( EXAMPLEPGN );
 }
 
 function drawChessboard( drawx, drawy, drawsize, flipped, positionarray ){
