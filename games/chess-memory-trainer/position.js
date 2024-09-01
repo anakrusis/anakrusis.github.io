@@ -47,12 +47,80 @@ class Position {
 	// The pgn is an array containing a string for each line of the file
 	
 	importPGN( pgn ){
-		// position array is initialized with the chess starting position
+		// position array is initialized with the chess starting position, white to move
 		this.importFEN("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
+		this.whitetomove = true;
 		
+		// find first item in array that begins with "1. " (the first move)
+		var movesstring = "";
 		for (var i = 0; i < pgn.length; i++){
-			
+			if ( pgn[i].indexOf("1. ") == 0 ) {
+				movesstring = pgn[i]; break;
+			}
 		}
+		
+		// iterates through all spaces in the string, and separates the text between them into their own tokens
+		var tokenarray = [];
+		var stringremaining = movesstring;
+		while (stringremaining.indexOf(" ") != -1){
+			var spaceindex = stringremaining.indexOf(" ");
+			var stringbeforespace = stringremaining.substring(0, spaceindex);
+			tokenarray.push(stringbeforespace);
+			stringremaining = stringremaining.substring(spaceindex + 1);
+		}
+		// Note that the last bit remaining is not added to a token; there is no space character after it.
+		// This is fine because the final word of the pgn is who won e.g. "1-0", "0-1", "1/2-1/2" and this isn't needed here.
+		
+		for (var i = 0; i < tokenarray.length; i++){
+			var token = tokenarray[i];
+			console.log(token);
+			
+			// every third token starting with the first should be the move number. 
+			// if this is not in order, then something is not right, there may be variations in this PGN or it is wrongly formatted
+			if (i % 3 == 0){
+				var expectedmovenumber = (Math.floor(i / 3) + 1);
+				var expectedtoken = expectedmovenumber + ".";
+				if (token != expectedtoken){
+					console.log("Error: Could not import PGN. Move numbers were not placed in the right order"); return;
+				}
+				
+			// the other two tokens out of three are white and black's moves
+			}else{
+				// ignore indication of checks, checkmate
+				token = token.replace("+", "");
+				token = token.replace("#", "");
+				
+				// the last number between 1 and 8 inclusive to occur in the token is the destination rank
+				var destrankindex = 0;
+				for (var q = 1; q <= 8; q++){
+					if (token.lastIndexOf(q) > destrankindex){ destrankindex = token.lastIndexOf(q) }
+				}
+				var destrank = token.charAt(destrankindex);
+				console.log("dest rank: " + destrank);
+				
+				// the last lowercase letter between a and h inclusive is the destination file
+/* 				var destfileindex = 0;
+				for (var q = 0; q < 7; q++){
+					var ltr = String.fromCharCode(97 + q);
+					if (token.lastIndexOf(ltr) > destfileindex){ destfileindex = token.lastIndexOf(ltr) }
+				} */
+				var destfileindex = this.lastIndexOfItems(token, ["a","b","c","d","e","f","g","h"]);
+				var destfile = token.charAt(destfileindex);
+				console.log("dest file: " + destfile);
+				
+				var piecetypeindex = this.firstIndexOfItems(token, ["B","K","N","Q","R"]);
+				var piecetype;
+				// pawns do not have a piece type specified by letter
+				if (piecetypeindex == -1){ 
+					piecetype = "p";
+				}else{
+					piecetype = token.charAt(piecetypeindex);
+				}
+				
+				console.log("piece type: " + piecetype);
+			}
+		}
+		
 		
 		var legalmoves = this.getAllLegalMoves();
 	}
@@ -63,7 +131,7 @@ class Position {
 	// so the legal moves of the pieces, including whether they are pinned or not, must be calculated.
 	
 	// Note that technically not all legal moves need to be found. The legality of castling is complicated
-	// as i would need to check if the kings and rooks have ever moved, and if they are castling through check.
+	// as i would need to check if the kings and rooks have ever moved, and if they are castling into, out of, or through check.
 	// Thankfully the notations O-O and O-O-O are never ambiguous, so the castling moves can be ignored here.
 	
 	getAllLegalMoves(){
@@ -99,14 +167,14 @@ class Position {
 	}
 	
 	getPieceLegalMoves( coord ){
-		console.log(coord.x + ", " + coord.y);
+		//console.log(coord.x + ", " + coord.y);
 	
 		// each legal move out will be an object with a start coordinate and destination coordinate.
 		// The start coordinate might seem useless since this function deals with a single piece, but this will be
 		// called from the getAllLegalMoves function, so the start coordinate is needed
 		var legalmovesout = [];
 		var piece = this.getSquare(coord.x, coord.y);
-		console.log(piece);
+		//console.log(piece);
 		
 		// -- PAWN -- all kinds of pawn moves are special cases that don't apply to any other pieces
 		if (piece.toLowerCase() == "p"){
@@ -163,5 +231,23 @@ class Position {
 		// to capture the king on their turn, then return an empty list of moves. there are no legal moves for this piece
 		
 		return legalmovesout;
+	}
+
+// return first index of any of the strings in the array
+	firstIndexOfItems(str, items){
+		var firstindex = 100000000;
+		for (var i = 0; i < items.length; i++){
+			if (str.indexOf(items[i]) < firstindex){ firstindex = str.indexOf(items[i]) }
+		}
+		return firstindex;
+	}
+	
+	// return last index of any of the strings in the array
+	lastIndexOfItems(str, items){
+		var lastindex = 0;
+		for (var i = 0; i < items.length; i++){
+			if (str.lastIndexOf(items[i]) > lastindex){ lastindex = str.lastIndexOf(items[i]) }
+		}
+		return lastindex;
 	}
 }
