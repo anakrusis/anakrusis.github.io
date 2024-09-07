@@ -90,6 +90,9 @@ class Position {
 				token = token.replace("+", "");
 				token = token.replace("#", "");
 				
+				// todo special case: castles O-O and O-O-O. handle up here and then continue, skipping all the 
+				// code below with rank and file and piece type parsing
+				
 				// the last number between 1 and 8 inclusive to occur in the token is the destination rank
 				var destrankindex = 0;
 				for (var q = 1; q <= 8; q++){
@@ -104,11 +107,12 @@ class Position {
 					var ltr = String.fromCharCode(97 + q);
 					if (token.lastIndexOf(ltr) > destfileindex){ destfileindex = token.lastIndexOf(ltr) }
 				} */
-				var destfileindex = this.lastIndexOfItems(token, ["a","b","c","d","e","f","g","h"]);
+				var destfileindex = lastIndexOfItems(token, ["a","b","c","d","e","f","g","h"]);
 				var destfile = token.charAt(destfileindex);
 				console.log("dest file: " + destfile);
 				
-				var piecetypeindex = this.firstIndexOfItems(token, ["B","K","N","Q","R"]);
+				// the reason that the first instance is chosen instead of the last is because of pawn promotion moves like a8=Q
+				var piecetypeindex = firstIndexOfItems(token, ["B","K","N","Q","R"]);
 				var piecetype;
 				// pawns do not have a piece type specified by letter
 				if (piecetypeindex == -1){ 
@@ -118,11 +122,41 @@ class Position {
 				}
 				
 				console.log("piece type: " + piecetype);
+				
+				// get all the matching pieces of this type and color
+				var piecelist = this.getSameColorPiecesOfType(piecetype, this.whitetomove)
+				
+				// iterate through these pieces and see which ones have the legal move to go to the destination square
+				for (var q = 0; q < piecelist.length; q++){
+					var cpc = piecelist[q]; // current piece coord
+					var cpc_legalmoves = this.getPieceLegalMoves( cpc );
+					
+					console.log(cpc_legalmoves);
+				}
+			}
+		}
+	}
+	
+	// returns coordinates of all pieces of this type matching the color specified
+	getSameColorPiecesOfType(piecetype, color){
+		// piece type is not case sensitivc, so you can put either K or k, N or n...
+		piecetype = piecetype.toLowerCase();
+		
+		var piececoords = [];
+		
+		for (var x = 0; x < 8; x++){
+			for (var y = 0; y < 8; y++){
+				var currsquare = this.getSquare(x,y);
+				if (!currsquare){ continue; }
+				// uppercase are white pieces; lowercase are black pieces
+				if (((currsquare.toUpperCase() === currsquare) == this.whitetomove) && (piecetype == currsquare.toLowerCase())){
+					// current piece coord
+					var cpc = {}; cpc.x = x; cpc.y = y; piececoords.push(cpc);
+				}
 			}
 		}
 		
-		
-		var legalmoves = this.getAllLegalMoves();
+		return piececoords;
 	}
 	
 	// The reason this is necessary is unfortunately due to the PGN notation...
@@ -231,23 +265,5 @@ class Position {
 		// to capture the king on their turn, then return an empty list of moves. there are no legal moves for this piece
 		
 		return legalmovesout;
-	}
-
-// return first index of any of the strings in the array
-	firstIndexOfItems(str, items){
-		var firstindex = 100000000;
-		for (var i = 0; i < items.length; i++){
-			if (str.indexOf(items[i]) < firstindex){ firstindex = str.indexOf(items[i]) }
-		}
-		return firstindex;
-	}
-	
-	// return last index of any of the strings in the array
-	lastIndexOfItems(str, items){
-		var lastindex = 0;
-		for (var i = 0; i < items.length; i++){
-			if (str.lastIndexOf(items[i]) > lastindex){ lastindex = str.lastIndexOf(items[i]) }
-		}
-		return lastindex;
 	}
 }

@@ -285,3 +285,25 @@ function draw() {
 	text(datestring + " " + timestring, 0, 64)
 	//text(width + "x" + height, 0, 128) */
 }
+
+// return first index of any of the strings in the array
+function firstIndexOfItems(str, items){
+	var firstindex = 100000000;
+	var nonefound = true;
+	for (var i = 0; i < items.length; i++){
+		var cfi = str.indexOf(items[i]); // current first index
+		// any index which is not -1 but smaller than the previous one found will be used
+		if (cfi < firstindex && cfi != -1){ firstindex = cfi; nonefound = false; }
+	}
+	if (nonefound){ return -1; }
+	return firstindex;
+}
+
+// return last index of any of the strings in the array
+function lastIndexOfItems(str, items){
+	var lastindex = 0;
+	for (var i = 0; i < items.length; i++){
+		if (str.lastIndexOf(items[i]) > lastindex){ lastindex = str.lastIndexOf(items[i]) }
+	}
+	return lastindex;
+}
