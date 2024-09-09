@@ -17,6 +17,11 @@ class Position {
 		return this.posarray[x][y];
 	}
 	
+	setSquare(x,y,piecetype){
+		if (!this.posarray[x]){ return; }
+		this.posarray[x][y] = piecetype;
+	}
+	
 	importFEN( fen ){
 		// the output is a 8x8 array
 		var arrayout = [];
@@ -90,6 +95,11 @@ class Position {
 				token = token.replace("+", "");
 				token = token.replace("#", "");
 				
+				// properties relating to the move
+				var startrank; 	var startfile;	var startx;	var starty;
+				var destrank;	var destfile;	var destx;	var desty;
+				var piecetype; 	var iscapture = false; 
+				
 				// todo special case: castles O-O and O-O-O. handle up here and then continue, skipping all the 
 				// code below with rank and file and piece type parsing
 				
@@ -98,23 +108,21 @@ class Position {
 				for (var q = 1; q <= 8; q++){
 					if (token.lastIndexOf(q) > destrankindex){ destrankindex = token.lastIndexOf(q) }
 				}
-				var destrank = token.charAt(destrankindex);
+				destrank = token.charAt(destrankindex);
 				console.log("dest rank: " + destrank);
+				desty = destrank - 1;
 				
 				// the last lowercase letter between a and h inclusive is the destination file
-/* 				var destfileindex = 0;
-				for (var q = 0; q < 7; q++){
-					var ltr = String.fromCharCode(97 + q);
-					if (token.lastIndexOf(ltr) > destfileindex){ destfileindex = token.lastIndexOf(ltr) }
-				} */
 				var destfileindex = lastIndexOfItems(token, ["a","b","c","d","e","f","g","h"]);
-				var destfile = token.charAt(destfileindex);
+				destfile = token.charAt(destfileindex);
 				console.log("dest file: " + destfile);
+				destx = token.charCodeAt(destfileindex) - 97;
+				console.log("dest x: " + destx);
 				
+				// the first instance of these letters BKNQR is the piece type
 				// the reason that the first instance is chosen instead of the last is because of pawn promotion moves like a8=Q
 				var piecetypeindex = firstIndexOfItems(token, ["B","K","N","Q","R"]);
-				var piecetype;
-				// pawns do not have a piece type specified by letter
+				// pawns are specified by the absence of a letter
 				if (piecetypeindex == -1){ 
 					piecetype = "p";
 				}else{
@@ -123,16 +131,64 @@ class Position {
 				
 				console.log("piece type: " + piecetype);
 				
-				// get all the matching pieces of this type and color
+				var stringbefore = token.substring(0, destfileindex)
+				console.log(stringbefore);
+				
+				// x: captures or "takes"
+				if (stringbefore.indexOf("x") != -1){
+					iscapture = true;
+				}
+				
+				// any other instance of 1-8 numbers would be for disambiguating the rank of two pieces on the same rank
+				var startrankindex = firstIndexOfItems(stringbefore, ["1","2","3","4","5","6","7","8"]);
+				startrank = stringbefore.charAt(startrankindex);
+				console.log("start rank: " + startrank);
+				starty = startrank - 1;
+				
+				// any other instance of the a-h letters would be for disambiguation, giving the start file
+				var startfileindex = firstIndexOfItems(stringbefore, ["a","b","c","d","e","f","g","h"]);
+				startfile = stringbefore.charAt(startfileindex);
+				console.log("start file: " + startfile);
+				startx = token.charCodeAt(startfileindex) - 97;
+				console.log("start x: " + startx);
+				
+				// note: if starting rank or file is not specified, the charAt function gives an empty string ""
+				// this is fine because it evaluates to false, but be careful
+				
+				// get the coords of all the matching pieces of this type and color
 				var piecelist = this.getSameColorPiecesOfType(piecetype, this.whitetomove)
+				// and a list which will have all the moves to the destination square
+				var movestodestination = [];
 				
 				// iterate through these pieces and see which ones have the legal move to go to the destination square
 				for (var q = 0; q < piecelist.length; q++){
-					var cpc = piecelist[q]; // current piece coord
+					var cpc = piecelist[q]; // current piece
 					var cpc_legalmoves = this.getPieceLegalMoves( cpc );
 					
 					console.log(cpc_legalmoves);
+					
+					for (var moveindex = 0; moveindex < cpc_legalmoves.length; moveindex++){
+						var clm = cpc_legalmoves[moveindex]; // current legal move
+						
+						if (clm.dest.x == destx && clm.dest.y == desty){
+							movestodestination.push( clm );
+						}
+					}
 				}
+				
+				console.log(movestodestination);
+				
+				// if only one legal move possible then just do it 
+				if (movestodestination.length == 1){
+					this.doMove(movestodestination[0]);
+				}
+				
+				// otherwise iterate through the legal moves which have the correct destination and see which ones
+				// match up with the start x and y (if they are specified)
+				
+				
+				// alternate between white and black
+				this.whitetomove = !this.whitetomove
 			}
 		}
 	}
@@ -156,7 +212,7 @@ class Position {
 			}
 		}
 		
-		return piececoords;
+		return piececoords; 
 	}
 	
 	// The reason this is necessary is unfortunately due to the PGN notation...
@@ -224,6 +280,7 @@ class Position {
 					var pawncapturemove = {};
 					pawncapturemove.start = { "x": coord.x, "y": coord.y }
 					pawncapturemove.dest  = { "x": tx, 		"y": ty }
+					pawncapturemove.iscapture = true;
 					
 					legalmovesout.push(pawncapturemove);
 				}
@@ -265,5 +322,11 @@ class Position {
 		// to capture the king on their turn, then return an empty list of moves. there are no legal moves for this piece
 		
 		return legalmovesout;
+	}
+	
+	doMove( move ){
+		var piecetype = this.getSquare(move.start.x, move.start.y);
+		this.setSquare(move.dest.x, move.dest.y, piecetype);
+		this.setSquare(move.start.x, move.start.y, undefined);
 	}
 }

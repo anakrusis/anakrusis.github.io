@@ -17,7 +17,8 @@ function preload(){
 		"p": loadImage("img/bP.svg"),
 	}
 	
-	EXAMPLEPGN = loadStrings('pgn/lichess_pgn_2024.08.23_goofysillychess_vs_jd290599.YDv8S5Sb.pgn');
+	//EXAMPLEPGN = loadStrings('pgn/lichess_pgn_2024.08.23_goofysillychess_vs_jd290599.YDv8S5Sb.pgn');
+	EXAMPLEPGN = loadStrings('pgn/testpgn.pgn');
 }
 
 function setup() {
