@@ -8,6 +8,14 @@ class Position {
 		this.posarray = [];
 		// white to move = true, black to move = false
 		this.whitetomove = true;
+		
+		// the moves are stored in that same format as they usually are:
+		// {
+		//		"start": { "x": 0, "y": 0 },
+		//		"dest":	 { "x": 1, "y"; 1 },
+		//		"iscapture": true
+		// }
+		this.movehistory = [];
 	}
 	
 	getSquare(x,y){
@@ -264,10 +272,11 @@ class Position {
 		// called from the getAllLegalMoves function, so the start coordinate is needed
 		var legalmovesout = [];
 		var piece = this.getSquare(coord.x, coord.y);
+		var piecetype = piece.toLowerCase();
 		//console.log(piece);
 		
 		// -- PAWN -- all kinds of pawn moves are special cases that don't apply to any other pieces
-		if (piece.toLowerCase() == "p"){
+		if (piecetype == "p"){
 			// the two diagonal squares that a pawn can capture an enemy piece
 			var cpx = 1; var cpy = this.whitetomove ? 1 : -1;
 			for (var i = 0; i < 2; i++){
@@ -317,9 +326,51 @@ class Position {
 				}
 			}
 		}
+		// == KNIGHT -- the signature L-shaped move that no other piece can do
+		if (piecetype == "n"){
+			// there are two knight moves which are four way rotationally symmetric:
+			// up one + out two, and up two + out one
+			var KNIGHTMOVES = [ { "x": 1, "y": 2 }, { "x": 2, "y": 1 } ]
+			for ( var angle = 0; angle < Math.PI * 2; angle += Math.PI/2 ){
+				
+				for (var i = 0; i < KNIGHTMOVES.length; i++){
+					var knightmovex = Math.round((KNIGHTMOVES[i].x) * Math.cos(angle) - (KNIGHTMOVES[i].y) * Math.sin(angle));
+					var knightmovey = Math.round((KNIGHTMOVES[i].x) * Math.sin(angle) + (KNIGHTMOVES[i].y) * Math.cos(angle));
+					
+					var cx = coord.x + knightmovex; var cy = coord.y + knightmovey;
+					var knightmove = {
+						"start": { "x": coord.x,	"y": coord.y },
+						"dest":	 { "x": cx,			"y": cy }
+					}
+					
+					if (this.getSquare(cx, cy)){
+						// if the color does not match then it can be captured, otherwise do not add
+						if ((this.getSquare(cx, cy).toUpperCase() === this.getSquare(cx, cy)) != this.whitetomove){
+							legalmovesout.push(knightmove);
+						}
+						
+					}else{
+						legalmovesout.push(knightmove);
+					}
+				}
+			}
+		}
+		
+		// -- DIAGONAL MOVEMENT -- queen and bishop
+		if (piecetype == "q" || piecetype == "b"){
+			
+		}
+		
+		// -- ORTHOGONAL MOVEMENT -- queen and rook
+		if (piecetype == "q" || piecetype == "r"){
+			
+		}
 		
 		// todo handle pinned piece. if moving this piece off of its current square allows the oppponent
 		// to capture the king on their turn, then return an empty list of moves. there are no legal moves for this piece
+		
+		// edit: do not just return an empty list of moves. sliding pieces can move in the same axis that they are pinned.
+		// so check each move and only remove the moves that unpin the piece from the king
 		
 		return legalmovesout;
 	}
@@ -328,5 +379,12 @@ class Position {
 		var piecetype = this.getSquare(move.start.x, move.start.y);
 		this.setSquare(move.dest.x, move.dest.y, piecetype);
 		this.setSquare(move.start.x, move.start.y, undefined);
+		
+		// todo add the pieces of the start and destination squares to the move history
+		// (will make it easier to undo)
+		
+		this.movehistory.push(move);
 	}
+	
+	
 }
