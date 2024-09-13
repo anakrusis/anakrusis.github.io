@@ -85,155 +85,32 @@ function setup() {
 	//EXAMPLEPOS = positionArrayFromFEN("6k1/6p1/2N1pn1p/4P3/r4r2/7P/P5P1/R3R1K1 b - - 0 27");
 	//EXAMPLEPOS = positionArrayFromPGN("");
 	
-	EXAMPLEPOS = new Position();
-	EXAMPLEPOS.importPGN( EXAMPLEPGN );
+	client = new Client();
+	client.leftposition.importPGN( EXAMPLEPGN );
 }
 
-function drawChessboard( drawx, drawy, drawsize, flipped, positionarray ){
-	// the checkered background
-	noStroke();
-	for (var i = 0; i < 8; i++){
-		var sx = drawx + (i * (drawsize/8));
-		
-		for (var j = 0; j < 8; j++){
-			var sy = drawy + (j * (drawsize/8));
-			
-			if (( i + j ) % 2 == 1){
-				fill("#968EFF");
-			}else{
-				fill("#DBD8FF");
-			}
-			rect(sx, sy, drawsize/8, drawsize/8);
-			
-		}
-	}
+function mousePressed(e){
+	var sx = client.screenToCoordX(mouseX); var sy = client.screenToCoordY(mouseY);
 	
-	// the pieces are placed 
-	var sx, sy;
-	for (var x = 0; x < 8; x++){
-		
-		if (flipped){ 	sx = drawx + ((7 - x) * (drawsize/8)); }
-		else { 			sx = drawx + (x * drawsize/8); }
-		
-		for (var y = 0; y < 8; y++){
-			
-			if (flipped){ 	sy = drawy + (y * (drawsize/8)); }
-			else { 			sy = drawy + ((7 - y) * drawsize/8); }
-			
-			if (positionarray[x][y]){
-				image(PIECE_TEXTURES[ positionarray[x][y] ], sx, sy, drawsize/8, drawsize/8 );
-			}
-		}
+	if (sx < 0 || sx > 7 || sy < 0 || sy > 7){ return; }
+	console.log(sx + " " + sy)
+	
+	if (client.leftposition.getSquare(sx,sy)){
+		client.pieceselectedx = sx; client.pieceselectedy = sy;
+		client.leftposition.whitetomove = client.leftposition.getSquareColor(sx,sy);
+		client.pieceselectedlegalmoves = client.leftposition.getPieceLegalMoves( {"x": sx, "y": sy} )
 	}
 }
 
-function positionArrayFromFEN( fen ){
-	// the output is a 8x8 array
-	var arrayout = [];
-	for (var x = 0; x < 8; x++){
-		arrayout[x] = [];
-	}
+function mouseReleased(e){
 	
-	var rank = 7; var file = 0;
-	for (var i = 0; i < fen.length; i++){
-		var cc = fen.charAt(i);
-		if (cc == "/"){
-			rank--;
-			file = 0;
-			
-		} else if (cc >= '0' && cc <= '9'){
-			file += parseInt(cc);
-			
-		} else {
-			arrayout[file][rank] = cc;
-			file++;
-		}
-		
-		if (file > 7 && rank == 0){ break; }
-	}
-	
-	return arrayout;
-}
-
-function positionArrayFromPGN( pgn ){
-	// the output array begins with the chess starting position
-	var arrayout = positionArrayFromFEN("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
-	
-	var legalmoves = getAllLegalMoves( arrayout, true );
-	
-	return arrayout;
-}
-
-// white to move = true, black to move = false
-
-// the reason this is necessary is unfortunately due to the PGN notation...
-// if there is no mention of rank or file, such as Nd2, then only one piece has the legal move to go there, so we must find it
-// sometimes this is just because no other piece sees the square, but other times it is because another piece is pinned
-function getAllLegalMoves( position, whitetomove ){
-	
-	// first make a list of all the pieces of this color
-	// each item of the array is an object e.g. {x = 0, y = 0}
-	var piececoords = [];
-	
-	for (var x = 0; x < 8; x++){
-		for (var y = 0; y < 8; y++){
-			var currsquare = position[x][y];
-			if (!currsquare){ continue; }
-			// uppercase are white pieces; lowercase are black pieces
-			if ((currsquare.toUpperCase() === currsquare) == whitetomove){
-				// current piece coord
-				var cpc = {}; cpc.x = x; cpc.y = y; piececoords.push(cpc);
-			}
-		}
-	}
-	
-	for (var i = 0; i < piececoords.length; i++){
-		var cpc = piececoords[i]; // current piece coord
-		//console.log(cpc.x + ", " + cpc.y);
-		
-		var cpc_legalmoves = getPieceLegalMoves( position, whitetomove, cpc );
-	}
-}
-
-// white to move is a little redundant since I could just get the color of the piece being moved from the piece coordinates
-// but I don't feel like reevaluating it again redundantly so why not just pass it in?
-function getPieceLegalMoves( position, whitetomove, coord ){
-	console.log(coord.x + ", " + coord.y);
-	
-	// each legal move out will be an object with a start coordinate and destination coordinate.
-	// The start coordinate might seem useless since this function deals with a single piece, but this will be
-	// called from the getAllLegalMoves function, so the start coordinate is needed
-	var legalmovesout = [];
-	var piece = position[coord.x][coord.y];
-	console.log(piece);
-	
-	// PAWN:
-	if (piece.toLowerCase() == "p"){
-		// the two diagonal squares that a pawn can capture
-		var cpx = 1; var cpy = whitetomove ? 1 : -1;
-		for (var i = 0; i < 2; i++){
-			var tx = coord.x + cpx; var ty = coord.y + cpy;
-			var targetsquare = position[tx][ty];
-			// cant capture if nothing is on the square
-			if ( !targetsquare ){ continue; }
-			// can only capture if the target piece color is not the same as our piece color
-			if ((currsquare.toUpperCase() === currsquare) != whitetomove){
-				var pawncapturemove = {};
-				pawncapturemove.start = { "x": coord.x, }
-			}
-			
-			cpx *= -1;
-		}
-	}
-	
-	// todo handle pinned piece. if moving this piece off of its current square allows the oppponent
-	// to capture the king on their turn, then return an empty list of moves. there are no legal moves for this piece
 }
 
 function draw() {
 	background(0);
 	
-	drawChessboard( 100, 100, 500, false, EXAMPLEPOS.posarray );
+	drawChessboard( client.leftboardx,   client.leftboardy, client.leftboardsize, 
+					client.boardflipped, client.leftposition.posarray );
 		
 /* 	touched_on_frame = false;
 	
@@ -285,6 +162,62 @@ function draw() {
 	textAlign(LEFT)
 	text(datestring + " " + timestring, 0, 64)
 	//text(width + "x" + height, 0, 128) */
+}
+
+function drawChessboard( drawx, drawy, drawsize, flipped, positionarray ){
+	// the checkered background
+	noStroke();
+	for (var i = 0; i < 8; i++){
+		var sx = drawx + (i * (drawsize/8));
+		
+		for (var j = 0; j < 8; j++){
+			var sy = drawy + (j * (drawsize/8));
+			
+			if (( i + j ) % 2 == 1){
+				fill("#968EFF");
+			}else{
+				fill("#DBD8FF");
+			}
+			rect(sx, sy, drawsize/8, drawsize/8);
+			
+		}
+	}
+	
+	// the pieces are placed 
+	var sx, sy;
+	for (var x = 0; x < 8; x++){
+		
+		if (flipped){ 	sx = drawx + ((7 - x) * (drawsize/8)); }
+		else { 			sx = drawx + (x * drawsize/8); }
+		
+		for (var y = 0; y < 8; y++){
+			
+			if (flipped){ 	sy = drawy + (y * (drawsize/8)); }
+			else { 			sy = drawy + ((7 - y) * drawsize/8); }
+			
+			if (positionarray[x][y]){
+				image(PIECE_TEXTURES[ positionarray[x][y] ], sx, sy, drawsize/8, drawsize/8 );
+			}
+		}
+	}
+	
+	// the little green circles indicating legal moves (this is just for debugging)
+	for (var i = 0; i < client.pieceselectedlegalmoves.length; i++){
+		var dest = client.pieceselectedlegalmoves[i].dest;
+		
+		var sx, sy;
+		if (flipped){ 	
+			sx = drawx + ((7 - dest.x) * (drawsize/8)); 
+			sy = drawy + (dest.y * (drawsize/8));
+		} else { 			
+			sx = drawx + (dest.x * drawsize/8); 
+			sy = drawy + ((7 - dest.y) * drawsize/8);
+		}
+		
+		// divided by 16 is half a square, so that they appear centered
+		fill(0,128,0)
+		circle(sx + drawsize/16, sy + drawsize / 16, drawsize/24)
+	}
 }
 
 // return first index of any of the strings in the array

@@ -25,6 +25,13 @@ class Position {
 		return this.posarray[x][y];
 	}
 	
+	// returns boolean of the same format as above, white = true, black = false
+	getSquareColor(x,y){
+		var cs = this.getSquare(x,y);
+		if (!cs){ return undefined; }
+		return cs.toUpperCase() === this.getSquare(x, y)
+	}
+	
 	setSquare(x,y,piecetype){
 		if (!this.posarray[x]){ return; }
 		this.posarray[x][y] = piecetype;
@@ -285,7 +292,7 @@ class Position {
 				// can't capture if nothing is on the square
 				if ( !targetsquare ){ continue; }
 				// can only capture if the target piece color is not the same as our piece color
-				if ((currsquare.toUpperCase() === currsquare) != this.whitetomove){
+				if ((targetsquare.toUpperCase() === targetsquare) != this.whitetomove){
 					var pawncapturemove = {};
 					pawncapturemove.start = { "x": coord.x, "y": coord.y }
 					pawncapturemove.dest  = { "x": tx, 		"y": ty }
@@ -358,7 +365,39 @@ class Position {
 		
 		// -- DIAGONAL MOVEMENT -- queen and bishop
 		if (piecetype == "q" || piecetype == "b"){
-			
+			// diagonal moves are also four-way rotationally symmetric
+			for ( var angle = 0; angle < Math.PI * 2; angle += Math.PI/2 ){
+				// these moves are between 1 and 7 squares away from the start square
+				// the relative x and y are the same: (1,1), (2,2), (3,3)... 
+				for (var i = 1; i <= 7; i++){
+					var diagmovex = Math.round((i) * Math.cos(angle) - (i) * Math.sin(angle));
+					var diagmovey = Math.round((i) * Math.sin(angle) + (i) * Math.cos(angle));
+					
+					var cx = coord.x + diagmovex; var cy = coord.y + diagmovey;
+					var diagmove = {
+						"start": { "x": coord.x,	"y": coord.y },
+						"dest":	 { "x": cx,			"y": cy }
+					}
+					
+					// if a piece is on the square then this ends the view along the diagonal
+					if (this.getSquare(cx,cy)){
+						// if the color does not match then allow the capture of the piece
+						if (this.getSquareColor(cx,cy) != this.whitetomove){
+							diagmove.iscapture = true;
+							legalmovesout.push(diagmove);
+						// if same color, then you cannot capture your own piece 
+						}else{
+							
+						}
+						// and stop iterating along this diagonal
+						break;
+					
+					// otherwise, along an unbroken chain of empty squares, the moves are fine to add
+					}else{
+						legalmovesout.push(diagmove);
+					}
+				}
+			}
 		}
 		
 		// -- ORTHOGONAL MOVEMENT -- queen and rook
@@ -386,5 +425,7 @@ class Position {
 		this.movehistory.push(move);
 	}
 	
-	
+	undoLastMove(){
+		
+	}
 }
