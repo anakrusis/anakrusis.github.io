@@ -99,6 +99,9 @@ function mousePressed(e){
 		client.pieceselectedx = sx; client.pieceselectedy = sy;
 		client.leftposition.whitetomove = client.leftposition.getSquareColor(sx,sy);
 		client.pieceselectedlegalmoves = client.leftposition.getPieceLegalMoves( {"x": sx, "y": sy} )
+	}else{
+		client.pieceselectedx = null; client.pieceselectedy = null;
+		client.pieceselectedlegalmoves = [];
 	}
 }
 

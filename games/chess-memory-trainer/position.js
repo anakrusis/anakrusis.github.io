@@ -115,8 +115,30 @@ class Position {
 				var destrank;	var destfile;	var destx;	var desty;
 				var piecetype; 	var iscapture = false; 
 				
-				// todo special case: castles O-O and O-O-O. handle up here and then continue, skipping all the 
+				// special case: castles O-O and O-O-O. handles up here and then continues, skipping all the 
 				// code below with rank and file and piece type parsing
+				var kingy = this.whitetomove ? 0 : 7
+				if (token == "O-O"){
+					// the castling moves can just be baked in like this. it's treated as a two square king move
+					var shortcastlemove = {
+						"start": { "x": 4, "y": kingy },
+						"dest":  { "x": 6, "y": kingy }
+					}
+					this.doMove(shortcastlemove);
+					this.whitetomove = !this.whitetomove;
+					continue;
+					
+					
+				}else if (token == "O-O-O"){
+					// ditto
+					var longcastlemove = {
+						"start": { "x": 4, "y": kingy },
+						"dest":  { "x": 2, "y": kingy }
+					}
+					this.doMove(longcastlemove);
+					this.whitetomove = !this.whitetomove;
+					continue;					
+				}
 				
 				// the last number between 1 and 8 inclusive to occur in the token is the destination rank
 				var destrankindex = 0;
@@ -333,19 +355,32 @@ class Position {
 				}
 			}
 		}
-		// == KNIGHT -- the signature L-shaped move that no other piece can do
-		if (piecetype == "n"){
-			// there are two knight moves which are four way rotationally symmetric:
-			// up one + out two, and up two + out one
-			var KNIGHTMOVES = [ { "x": 1, "y": 2 }, { "x": 2, "y": 1 } ]
+		// I grouped the king and knight together here because unlike the sliding pieces, 
+		// they don't need to check if anything is obstructing their path to the target square
+		
+		if (piecetype == "n" || piecetype == "k"){
+			var CURRPIECEMOVES;
+			// -- KNIGHT -- the signature L-shaped move that no other piece can do
+			if (piecetype == "n"){
+				// there are two knight moves which are four way rotationally symmetric:
+				// up one + out two, and up two + out one
+				CURRPIECEMOVES = [ { "x": 1, "y": 2 }, { "x": 2, "y": 1 } ]
+				
+			// -- KING -- one square in any direction (dont worry about putting self in check, it wouldnt ever be allowed
+			// in a pgn generated from lichess anyways, and king moves are never ambiguous, theres always only ever one king)
+			}else if (piecetype == "k"){
+				CURRPIECEMOVES = [ { "x": 1, "y": 0 }, { "x": 1, "y": 1 } ]
+			}
+			
 			for ( var angle = 0; angle < Math.PI * 2; angle += Math.PI/2 ){
 				
-				for (var i = 0; i < KNIGHTMOVES.length; i++){
-					var knightmovex = Math.round((KNIGHTMOVES[i].x) * Math.cos(angle) - (KNIGHTMOVES[i].y) * Math.sin(angle));
-					var knightmovey = Math.round((KNIGHTMOVES[i].x) * Math.sin(angle) + (KNIGHTMOVES[i].y) * Math.cos(angle));
+				for (var i = 0; i < CURRPIECEMOVES.length; i++){
+					// current piece relative x and y 
+					var cpc_relx = Math.round((CURRPIECEMOVES[i].x) * Math.cos(angle) - (CURRPIECEMOVES[i].y) * Math.sin(angle));
+					var cpc_rely = Math.round((CURRPIECEMOVES[i].x) * Math.sin(angle) + (CURRPIECEMOVES[i].y) * Math.cos(angle));
 					
-					var cx = coord.x + knightmovex; var cy = coord.y + knightmovey;
-					var knightmove = {
+					var cx = coord.x + cpc_relx; var cy = coord.y + cpc_rely;
+					var cpcmove = {
 						"start": { "x": coord.x,	"y": coord.y },
 						"dest":	 { "x": cx,			"y": cy }
 					}
@@ -353,11 +388,11 @@ class Position {
 					if (this.getSquare(cx, cy)){
 						// if the color does not match then it can be captured, otherwise do not add
 						if ((this.getSquare(cx, cy).toUpperCase() === this.getSquare(cx, cy)) != this.whitetomove){
-							legalmovesout.push(knightmove);
+							legalmovesout.push(cpcmove);
 						}
 						
 					}else{
-						legalmovesout.push(knightmove);
+						legalmovesout.push(cpcmove);
 					}
 				}
 			}
@@ -402,7 +437,46 @@ class Position {
 		
 		// -- ORTHOGONAL MOVEMENT -- queen and rook
 		if (piecetype == "q" || piecetype == "r"){
-			
+			// orthogonal moves are also four-way rotationally symmetric
+			for ( var angle = 0; angle < Math.PI * 2; angle += Math.PI/2 ){
+				// I did (i, 0) horizontally going to the right and then rotate it three more times to get the other directions
+				for (var i = 1; i <= 7; i++){
+					var orthomovex = Math.round((i) * Math.cos(angle) - (0) * Math.sin(angle));
+					var orthomovey = Math.round((i) * Math.sin(angle) + (0) * Math.cos(angle));
+					
+					var cx = coord.x + orthomovex; var cy = coord.y + orthomovey;
+					var orthomove = {
+						"start": { "x": coord.x,	"y": coord.y },
+						"dest":	 { "x": cx,			"y": cy }
+					}
+					
+					// if a piece is on the square then this ends the view along the straight line
+					if (this.getSquare(cx,cy)){
+						// if the color does not match then allow the capture of the piece
+						if (this.getSquareColor(cx,cy) != this.whitetomove){
+							orthomove.iscapture = true;
+							legalmovesout.push(orthomove);
+						// if same color, then you cannot capture your own piece 
+						}else{
+							
+						}
+						// and stop iterating along this line
+						break;
+					
+					// otherwise, along an unbroken chain of empty squares, the moves are fine to add
+					}else{
+						legalmovesout.push(orthomove);
+					}
+				}
+			}
+		}
+		
+		// prunes moves with out of bounds destination squares
+		for (var i = legalmovesout.length - 1; i >= 0; i--){
+			var clm = legalmovesout[i];
+			if (clm.dest.x < 0 || clm.dest.x >= 8 || clm.dest.y < 0 || clm.dest.y >= 8){
+				legalmovesout.splice(i, 1);
+			}
 		}
 		
 		// todo handle pinned piece. if moving this piece off of its current square allows the oppponent
@@ -415,8 +489,26 @@ class Position {
 	}
 	
 	doMove( move ){
-		var piecetype = this.getSquare(move.start.x, move.start.y);
-		this.setSquare(move.dest.x, move.dest.y, piecetype);
+		var piece = this.getSquare(move.start.x, move.start.y);
+		var piececolor = this.getSquareColor(move.start.x, move.start.y);
+		
+		if (piece.toLowerCase() == "k"){
+			var xdiff = move.dest.x - move.start.x; var xsign = Math.sign(xdiff);
+			
+			// the king can only move 2 squares horizontally if castling, so this is a special case
+			if (Math.abs(xdiff) == 2){
+				var rook = piececolor ? "R" : "r"
+				// the rook is placed one square in the direction opposite of which way the king moved
+				var rookx = move.dest.x - xsign;
+				this.setSquare(rookx, move.dest.y, rook);
+				
+				// remove the old rook which is located in the nearest corner to the castled king
+				var nearestcorner = (Math.abs(7 - move.dest.x) < Math.abs(0 - move.dest.x)) ? 7 : 0;
+				this.setSquare(nearestcorner, move.dest.y, undefined);
+			}
+		}
+		
+		this.setSquare(move.dest.x, move.dest.y, piece);
 		this.setSquare(move.start.x, move.start.y, undefined);
 		
 		// todo add the pieces of the start and destination squares to the move history
