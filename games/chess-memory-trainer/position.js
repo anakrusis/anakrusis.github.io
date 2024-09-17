@@ -202,7 +202,7 @@ class Position {
 					var cpc = piecelist[q]; // current piece
 					var cpc_legalmoves = this.getPieceLegalMoves( cpc );
 					
-					console.log(cpc_legalmoves);
+					//console.log(cpc_legalmoves);
 					
 					for (var moveindex = 0; moveindex < cpc_legalmoves.length; moveindex++){
 						var clm = cpc_legalmoves[moveindex]; // current legal move
@@ -212,17 +212,75 @@ class Position {
 						}
 					}
 				}
-				
-				console.log(movestodestination);
+				// if no legal moves can go to this square then something is wrong, return an error
+				if (movestodestination.length == 0){
+					console.log("Error: No legal moves could be found"); return;
 				
 				// if only one legal move possible then just do it 
-				if (movestodestination.length == 1){
+				} else if (movestodestination.length == 1){
 					this.doMove(movestodestination[0]);
-				}
-				
+					
 				// otherwise iterate through the legal moves which have the correct destination and see which ones
 				// match up with the start x and y (if they are specified)
-				
+				} else {
+					
+					// if both rank and file are specified, then it's easier to make a new move with the correct start and end squares
+					//
+					// 		(although I realise the captures boolean is removed, but it probably won't matter much.
+					// 		I only plan on using it for en passant handling, and two pawns never need both rank and file disambiguation)
+					
+					if (startrank && startfile){
+						var move = {
+							"start": { "x": startx, "y": starty },
+							"dest":  { "x": destx, "y": desty }
+						}
+						this.doMove(move);
+						
+					// if only rank is specified, then find the move that matches start y
+					}else if (startrank){
+						var move; var movecount = 0;
+						for (var m = 0; m < movestodestination.length; m++){
+							var cm = movestodestination[m]; // current move
+							if (cm.start.y == starty){
+								move = cm; movecount++;
+							}
+						}
+						// it can only be considered successfully disambiguated if at this point only one move is possible
+						if (movecount == 0){
+							console.log("Error: No moves were found matching the rank specified."); return;
+							
+						}else if (movecount > 1){
+							console.log("Error: Two or more moves were found matching the rank specified; cannot disambiguate."); return;
+						}
+						// do the only possible move
+						this.doMove(move)
+						
+						
+					// if only file is specified, then find the move that matches start x
+					}else if (startfile){
+						var move; var movecount = 0;
+						for (var m = 0; m < movestodestination.length; m++){
+							var cm = movestodestination[m]; // current move
+							if (cm.start.x == startx){
+								move = cm; movecount++;
+							}
+						}
+						// it can only be considered successfully disambiguated if at this point only one move is possible
+						if (movecount == 0){
+							console.log("Error: No moves were found matching the file specified."); return;
+							
+						}else if (movecount > 1){
+							console.log("Error: Two or more moves were found matching the file specified; cannot disambiguate."); return;
+						}
+						// do the only possible move
+						this.doMove(move)
+						
+					// if neither the rank nor file are specified, and two pieces of the same type can go to the square, 
+					// then there is no way to disambiguate
+					}else{
+						console.log("Error: More than one legal move possible, but rank and file were not specified to disambiguate."); return;
+					}
+				}
 				
 				// alternate between white and black
 				this.whitetomove = !this.whitetomove
@@ -311,10 +369,13 @@ class Position {
 			for (var i = 0; i < 2; i++){
 				var tx = coord.x + cpx; var ty = coord.y + cpy;
 				var targetsquare = this.getSquare(tx,ty);
+				
+				console.log("start: (" + coord.x + ", " + coord.y + ")	dest: (" + tx + ", " + ty + ")");  
+				
 				// can't capture if nothing is on the square
-				if ( !targetsquare ){ continue; }
+				if ( !targetsquare ){ cpx *= -1; continue; }
 				// can only capture if the target piece color is not the same as our piece color
-				if ((targetsquare.toUpperCase() === targetsquare) != this.whitetomove){
+				if (this.getSquareColor(tx,ty) != this.whitetomove){
 					var pawncapturemove = {};
 					pawncapturemove.start = { "x": coord.x, "y": coord.y }
 					pawncapturemove.dest  = { "x": tx, 		"y": ty }
