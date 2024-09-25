@@ -13,7 +13,8 @@ class Client {
 		this.mousestartx = null; this.mousestarty = null;
 		
 		// -- GRAPHICS STATE --
-		this.leftboardx = 100; this.leftboardy = 100; this.leftboardsize = 500;
+		this.leftboardx = 100; 	this.leftboardy = 100; 	this.leftboardsize = 500;
+		this.rightboardx = 100; this.rightboardy = 100; this.rightboardize = 500;
 		this.boardflipped = false; // will apply to both boards at once
 	}
 	
@@ -36,5 +37,21 @@ class Client {
 			cy = Math.floor( 8 - ( rely / ( this.leftboardsize / 8 )) );
 		}
 		return cy;
+	}
+	
+	positionBoardsAndButtons(){
+		// landscape mode
+		if (width > height){
+			
+		// portrait mode
+		}else{
+			// boards are half as tall as the screen height (the greater dimension)
+			var boardsize = Math.floor(height / 2)
+			
+			// board x is centered
+			var boardx = Math.floor((width/2) - (boardsize / 2))
+			this.leftboardx = boardx; this.leftboardy = 0; this.leftboardsize = boardsize;
+			this.rightboardx = boardx; this.rightboardy = boardsize; this.rightboardize = boardsize;
+		}
 	}
 }

@@ -79,14 +79,19 @@ function setup() {
 	
 	frameRate(10); */
 	
+	document.getElementById("btn_newpos").onclick = function(){
+		client.leftposition.importPGN( EXAMPLEPGN, true );
+	}
+	
 	// VIEWPORT CANVAS
 	vcanvas	= createCanvas( windowWidth, windowHeight * 0.8 );
 	
 	//EXAMPLEPOS = positionArrayFromFEN("6k1/6p1/2N1pn1p/4P3/r4r2/7P/P5P1/R3R1K1 b - - 0 27");
 	//EXAMPLEPOS = positionArrayFromPGN("");
 	
-	client = new Client();
-	client.leftposition.importPGN( EXAMPLEPGN );
+	client = new Client
+	client.positionBoardsAndButtons();
+	client.leftposition.importPGN( EXAMPLEPGN, true );
 }
 
 function mousePressed(e){
@@ -110,10 +115,13 @@ function mouseReleased(e){
 }
 
 function draw() {
-	background(0);
+	background(20);
 	
 	drawChessboard( client.leftboardx,   client.leftboardy, client.leftboardsize, 
-					client.boardflipped, client.leftposition.posarray );
+					client.boardflipped, client.leftposition );
+						
+	drawChessboard( client.rightboardx,  client.rightboardy, client.rightboardsize, 
+					client.boardflipped, client.rightposition );
 		
 /* 	touched_on_frame = false;
 	
@@ -167,7 +175,7 @@ function draw() {
 	//text(width + "x" + height, 0, 128) */
 }
 
-function drawChessboard( drawx, drawy, drawsize, flipped, positionarray ){
+function drawChessboard( drawx, drawy, drawsize, flipped, position ){
 	// the checkered background
 	noStroke();
 	for (var i = 0; i < 8; i++){
@@ -198,8 +206,8 @@ function drawChessboard( drawx, drawy, drawsize, flipped, positionarray ){
 			if (flipped){ 	sy = drawy + (y * (drawsize/8)); }
 			else { 			sy = drawy + ((7 - y) * drawsize/8); }
 			
-			if (positionarray[x][y]){
-				image(PIECE_TEXTURES[ positionarray[x][y] ], sx, sy, drawsize/8, drawsize/8 );
+			if (position.getSquare(x,y)){
+				image(PIECE_TEXTURES[ position.getSquare(x,y) ], sx, sy, drawsize/8, drawsize/8 );
 			}
 		}
 	}

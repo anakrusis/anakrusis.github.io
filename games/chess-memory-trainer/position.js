@@ -64,9 +64,13 @@ class Position {
 		this.posarray = arrayout;
 	}
 	
-	// The pgn is an array containing a string for each line of the file
+	// The pgn is an array containing a string for each line of the file 
+	//
+	// getrandommove is a boolean. if false, all moves will be played and the position will be in the game's final state
+	// (this is useful as a sort of "checksum" to make sure the import was successful
+	// if true, it will import up to a random move
 	
-	importPGN( pgn ){
+	importPGN( pgn, getrandommove ){
 		// position array is initialized with the chess starting position, white to move
 		this.importFEN("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
 		this.whitetomove = true;
@@ -91,7 +95,24 @@ class Position {
 		// Note that the last bit remaining is not added to a token; there is no space character after it.
 		// This is fine because the final word of the pgn is who won e.g. "1-0", "0-1", "1/2-1/2" and this isn't needed here.
 		
+		// every two of three tokens are white and black's moves
+		var plycount = Math.floor(tokenarray.length * (2/3));
+		var movecount = plycount / 2;
+		console.log("plies: " + plycount);
+		
+		var randomplynumber = Math.floor(Math.random() * plycount) + 1
+		console.log("random ply: " + randomplynumber);
+		
+		var currentply = 1;
+		
 		for (var i = 0; i < tokenarray.length; i++){
+			// I put this at the beginning because there are multiple ends to this loop
+			// the ply counter is incremented at each of those ends, so if the ply is equal to the randomly selected ply plus one,
+			// then return because the desired position is reached-- a random position from the pgn given
+			if (getrandommove && currentply == randomplynumber + 1){
+				return;
+			}
+			
 			var token = tokenarray[i];
 			console.log(token);
 			
@@ -114,6 +135,7 @@ class Position {
 				var startrank; 	var startfile;	var startx;	var starty;
 				var destrank;	var destfile;	var destx;	var desty;
 				var piecetype; 	var iscapture = false; 
+				var ispromotion = false;		var promotiontype;
 				
 				// special case: castles O-O and O-O-O. handles up here and then continues, skipping all the 
 				// code below with rank and file and piece type parsing
@@ -126,6 +148,7 @@ class Position {
 					}
 					this.doMove(shortcastlemove);
 					this.whitetomove = !this.whitetomove;
+					currentply++;
 					continue;
 					
 					
@@ -137,6 +160,7 @@ class Position {
 					}
 					this.doMove(longcastlemove);
 					this.whitetomove = !this.whitetomove;
+					currentply++;
 					continue;					
 				}
 				
@@ -156,24 +180,30 @@ class Position {
 				destx = token.charCodeAt(destfileindex) - 97;
 				console.log("dest x: " + destx);
 				
+				var stringbefore = token.substring(0, destfileindex)
+				console.log(stringbefore);
+				
 				// the first instance of these letters BKNQR is the piece type
-				// the reason that the first instance is chosen instead of the last is because of pawn promotion moves like a8=Q
-				var piecetypeindex = firstIndexOfItems(token, ["B","K","N","Q","R"]);
+				var piecetypeindex = firstIndexOfItems(stringbefore, ["B","K","N","Q","R"]);
 				// pawns are specified by the absence of a letter
 				if (piecetypeindex == -1){ 
 					piecetype = "p";
 				}else{
-					piecetype = token.charAt(piecetypeindex);
+					piecetype = stringbefore.charAt(piecetypeindex);
 				}
 				
 				console.log("piece type: " + piecetype);
 				
-				var stringbefore = token.substring(0, destfileindex)
-				console.log(stringbefore);
-				
 				// x: captures or "takes"
 				if (stringbefore.indexOf("x") != -1){
 					iscapture = true;
+				}
+				
+				// =: promotes
+				if (token.indexOf("=") != -1){
+					ispromotion = true;
+					// the character immediately after the equals sign is the piece type to promote to
+					promotiontype = token.charAt( token.indexOf("=") + 1 ).toLowerCase();
 				}
 				
 				// any other instance of 1-8 numbers would be for disambiguating the rank of two pieces on the same rank
@@ -218,7 +248,12 @@ class Position {
 				
 				// if only one legal move possible then just do it 
 				} else if (movestodestination.length == 1){
-					this.doMove(movestodestination[0]);
+					var onlymove = movestodestination[0];
+					if (ispromotion){
+						onlymove.ispromotion = true;
+						onlymove.promotiontype = promotiontype;
+					}
+					this.doMove(onlymove);
 					
 				// otherwise iterate through the legal moves which have the correct destination and see which ones
 				// match up with the start x and y (if they are specified)
@@ -272,6 +307,14 @@ class Position {
 						}else if (movecount > 1){
 							console.log("Error: Two or more moves were found matching the file specified; cannot disambiguate."); return;
 						}
+						
+						// twp pawns on different files could promote to the same square if it's a capture
+						// e.g. cxd8=Q, exd8=Q
+						if (ispromotion){
+							move.ispromotion = true;
+							move.promotiontype = promotiontype;
+						}
+						
 						// do the only possible move
 						this.doMove(move)
 						
@@ -284,6 +327,7 @@ class Position {
 				
 				// alternate between white and black
 				this.whitetomove = !this.whitetomove
+				currentply++;
 			}
 		}
 	}
@@ -569,7 +613,14 @@ class Position {
 			}
 		}
 		
-		this.setSquare(move.dest.x, move.dest.y, piece);
+		if (move.ispromotion){
+			var promotedpiece = piececolor ? move.promotiontype.toUpperCase() : move.promotiontype;
+			console.log(promotedpiece);
+			this.setSquare(move.dest.x, move.dest.y, promotedpiece);
+			
+		}else{
+			this.setSquare(move.dest.x, move.dest.y, piece);
+		}
 		this.setSquare(move.start.x, move.start.y, undefined);
 		
 		// todo add the pieces of the start and destination squares to the move history
