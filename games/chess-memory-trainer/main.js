@@ -79,12 +79,18 @@ function setup() {
 	
 	frameRate(10); */
 	
-	document.getElementById("btn_newpos").onclick = function(){
+	document.getElementById("btn_next").onclick = function(){
 		client.leftposition.importPGN( EXAMPLEPGN, true );
+		client.rightposition = new Position();
 	}
 	
 	// VIEWPORT CANVAS
 	vcanvas	= createCanvas( windowWidth, windowHeight * 0.8 );
+	frameRate(10);
+	// reduced resolution on my phone screen so it runs better and doesnt waste my battery lol
+	if (height > 1600){
+		pixelDensity(0.5);
+	}
 	
 	//EXAMPLEPOS = positionArrayFromFEN("6k1/6p1/2N1pn1p/4P3/r4r2/7P/P5P1/R3R1K1 b - - 0 27");
 	//EXAMPLEPOS = positionArrayFromPGN("");
@@ -95,33 +101,77 @@ function setup() {
 }
 
 function mousePressed(e){
+	// first check for if any of the ui buttons have been pressed
+	for (var i = 0; i < client.buttons.length; i++){
+		var cb = client.buttons[i];
+		if (mouseX > cb.x && mouseX < cb.x+cb.width && mouseY > cb.y && mouseY < cb.y+cb.height){		
+			client.draggedpiece = cb.piecevalue;
+			return;
+		}
+	}
+	
 	var sx = client.screenToCoordX(mouseX); var sy = client.screenToCoordY(mouseY);
 	
 	if (sx < 0 || sx > 7 || sy < 0 || sy > 7){ return; }
-	console.log(sx + " " + sy)
+	//console.log(sx + " " + sy)
 	
-	if (client.leftposition.getSquare(sx,sy)){
+/* 	if (client.leftposition.getSquare(sx,sy)){
 		client.pieceselectedx = sx; client.pieceselectedy = sy;
 		client.leftposition.whitetomove = client.leftposition.getSquareColor(sx,sy);
 		client.pieceselectedlegalmoves = client.leftposition.getPieceLegalMoves( {"x": sx, "y": sy} )
 	}else{
 		client.pieceselectedx = null; client.pieceselectedy = null;
 		client.pieceselectedlegalmoves = [];
+	} */
+	
+	if (client.draggedpiece){		
+		if (client.rightposition.getSquare(sx,sy) == client.draggedpiece){
+			client.rightposition.setSquare(sx,sy,null);
+		}else{
+			client.rightposition.setSquare(sx,sy,client.draggedpiece);
+		}
 	}
+}
+
+function mouseMoved(e){
+	//client.showghostpiece = true;
 }
 
 function mouseReleased(e){
 	
 }
 
+function touchEnded(e){
+	client.showghostpiece = false;
+}
+
 function draw() {
 	background(20);
 	
+	//noFill();
+	//stroke(128)
+	//rect(client.buttoncontainerx, client.buttoncontainery, client.buttoncontainerwidth, client.buttoncontainerheight);
+	
+	stroke(0);
+	for (var i = 0; i < client.buttons.length; i++){
+		var cb = client.buttons[i];
+		
+		fill( client.draggedpiece == cb.piecevalue ? "#DBD8FF" : "#968EFF" );
+		
+		rect(cb.x, cb.y, cb.width, cb.height);
+		image(PIECE_TEXTURES[ cb.piecevalue ], cb.x, cb.y, cb.width, cb.height );
+	}
+	
 	drawChessboard( client.leftboardx,   client.leftboardy, client.leftboardsize, 
-					client.boardflipped, client.leftposition );
+				client.boardflipped, client.leftposition );
 						
 	drawChessboard( client.rightboardx,  client.rightboardy, client.rightboardsize, 
 					client.boardflipped, client.rightposition );
+		
+	//ghost piece
+	if (client.draggedpiece && client.showghostpiece){
+		image(PIECE_TEXTURES[client.draggedpiece], mouseX - client.rightboardsize/16, mouseY - client.rightboardsize/16, client.rightboardsize/8, client.rightboardsize/8);
+	}
 		
 /* 	touched_on_frame = false;
 	

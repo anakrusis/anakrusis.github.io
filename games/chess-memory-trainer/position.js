@@ -6,6 +6,10 @@ class Position {
 		// each item is a one character string like "Q" (white queen), "b" (black knight), etc. or undefined if empty
 		// I think an empty string is fine too because iirc it evaluates to false which is all we care about
 		this.posarray = [];
+		for (var i = 0; i < 8; i++){
+			this.posarray[i] = [];
+		}
+		
 		// white to move = true, black to move = false
 		this.whitetomove = true;
 		
