@@ -39,30 +39,23 @@ canvas {
 	width:50%;
 }
 
-.topbutton{
+.btn_info{
 	width: 48%;
 	font-size: 250%;
 }
-.btmbutton{
-	width: 32%;
+
+.btn_counter {
+	width: 25%;
 	font-size: 250%;
 }
 
-.button1, .moves{
-	width: 100%;
-}
-button:hover {
-	background-color: #111122;
-}
-.moves{
+.btn_next {
+	width: 25%;
+	font-size: 250%;
 }
 
-.leftmoves, .rightmoves{
-	width:45%; 
-	flex:1; 
-	flex-wrap:wrap; 
-	padding:10px; 
-	margin: 5px;
+.btn_next:hover {
+	background-color: #111122;
 }
 
 .innerrightdiv {
@@ -75,16 +68,6 @@ button:hover {
 	width: 100%;
 	background-color: #202233;
 	padding: 0px;
-}
-
-.padding1 {
-	text-align: center;
-}
-
-h1 {
-}
-
-h3{
 }
 
 .bodydiv {

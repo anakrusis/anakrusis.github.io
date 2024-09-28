@@ -18,11 +18,42 @@ class Client {
 		this.rightboardx = 100; this.rightboardy = 100; this.rightboardize = 500;
 		this.boardflipped = false; // will apply to both boards at once
 		this.showghostpiece = true;
-		this.showleftboard = true; this.showrightboard = true;
+		this.showleftboard = false; this.showrightboard = false;
 		
 		this.buttons = [];
 		this.buttoncontainerx = 100; this.buttoncontainery = 100; 
 		this.buttonncontainerwidth = 20; this.buttoncontainerheight = 20; 
+		
+		// META STATE
+		// start:		before the game has begun
+		// countdown:	the left board is shown for about 10 seconds, the right board and done button are hidden
+		// input:		the player inputs the board as they remember it
+		// result:		the result of whether the players board matches the given board, and info on what game it came from
+		this.state = "start";
+		// in milliseconds, because it counts down using deltaTime
+		this.timer = 0;
+		this.score = 0;
+		this.total = 0;
+	}
+	
+	// returns boolean on whether the leftposition and rightposition are the same
+	arePositionsMatching(){
+		for (var x = 0; x < 8; x++){
+			for (var y = 0; y < 8; y++){
+				var ls = this.leftposition.getSquare(x,y); var rs = this.rightposition.getSquare(x,y); // left square and right square
+				
+				// if both squares at this position evaluate to false, then its okay, they're both empty squares.
+				// I can't remember if i set them to null or undefined so lets be careful trying to compare them
+				if (!ls && !rs){
+					continue;
+				}
+				// otherwise if any two squares don't match then the whole position is not matching
+				if (ls != rs){
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 	
 	screenToCoordX(sx){

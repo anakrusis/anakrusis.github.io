@@ -64,33 +64,44 @@ function setup() {
 	document.getElementById("btn_cleartext").onclick = function(){
 		document.getElementById("textarea").value = "";
 	}
+	*/
 	
+	document.getElementById("btn_next").onclick = function(){
+		if (client.state == "start"){
+			client.leftposition.importPGN( EXAMPLEPGN, true );
+			client.rightposition = new Position
+			
+			client.showleftboard = true;
+			client.state = "countdown"; 
+			client.timer = 10000;
+			this.style.visibility = 'hidden';
+			
+		}else if (client.state == "input"){
+			client.state = "result";
+			client.showleftboard = true;
+			this.innerHTML = "Next";
+			
+		}else if (client.state == "result"){
+			client.leftposition.importPGN( EXAMPLEPGN, true );
+			client.rightposition = new Position
+			
+			client.showleftboard = true;
+			client.state = "countdown"; 
+			client.timer = 10000;
+			this.style.visibility = 'hidden';
+		}
+	}
+	
+	// reduced resolution on my phone screen so it runs better and doesnt waste my battery lol
 	greaterDim = Math.max( windowWidth, windowHeight );
 	if (greaterDim > 1500){
 		pixelDensity(0.5);
 	}
-	// get the screen ratio and make a canvas proportional to it
-	//var ratio = (windowHeight * 0.8) / windowWidth
 	
 	// VIEWPORT CANVAS
-	vcanvas	= createCanvas( windowWidth, windowHeight * 0.8 );
-	//vcanvas.mouseReleased( VCanvasTouched );
-	//vcanvas.touchEnded( VCanvasTouched );
-	
-	frameRate(10); */
-	
-	document.getElementById("btn_next").onclick = function(){
-		client.leftposition.importPGN( EXAMPLEPGN, true );
-		client.rightposition = new Position();
-	}
-	
-	// VIEWPORT CANVAS
-	vcanvas	= createCanvas( windowWidth, windowHeight * 0.8 );
+	vcanvas	= createCanvas( windowWidth, windowHeight * 0.92 );
 	frameRate(10);
-	// reduced resolution on my phone screen so it runs better and doesnt waste my battery lol
-	if (height > 1600){
-		pixelDensity(0.5);
-	}
+	textSize(windowHeight / 32);
 	
 	//EXAMPLEPOS = positionArrayFromFEN("6k1/6p1/2N1pn1p/4P3/r4r2/7P/P5P1/R3R1K1 b - - 0 27");
 	//EXAMPLEPOS = positionArrayFromPGN("");
@@ -101,11 +112,19 @@ function setup() {
 }
 
 function mousePressed(e){
+	// the buttons and board interactions only work in the input mode
+	if (client.state != "input"){ return; }
+	
 	// first check for if any of the ui buttons have been pressed
 	for (var i = 0; i < client.buttons.length; i++){
 		var cb = client.buttons[i];
-		if (mouseX > cb.x && mouseX < cb.x+cb.width && mouseY > cb.y && mouseY < cb.y+cb.height){		
-			client.draggedpiece = cb.piecevalue;
+		if (mouseX > cb.x && mouseX < cb.x+cb.width && mouseY > cb.y && mouseY < cb.y+cb.height){	
+			// the buttons toggle, so e.g. if you have rook selected and click the rook button again it unselects
+			if (client.draggedpiece == cb.piecevalue){
+				client.draggedpiece = null;
+			}else{
+				client.draggedpiece = cb.piecevalue;
+			}
 			return;
 		}
 	}
@@ -125,6 +144,7 @@ function mousePressed(e){
 	} */
 	
 	if (client.draggedpiece){		
+		// and placing pieces also toggle, if you place pawn on a square with a pawn it goes empty
 		if (client.rightposition.getSquare(sx,sy) == client.draggedpiece){
 			client.rightposition.setSquare(sx,sy,null);
 		}else{
@@ -134,7 +154,6 @@ function mousePressed(e){
 }
 
 function mouseMoved(e){
-	//client.showghostpiece = true;
 }
 
 function mouseReleased(e){
@@ -146,32 +165,67 @@ function touchEnded(e){
 }
 
 function draw() {
+	if (client.state == "countdown"){
+		var secondsbefore = Math.floor(client.timer / 1000);
+		client.timer -= deltaTime;
+		var secondsafter = Math.floor(client.timer / 1000);
+		
+		// the dom is only modified when the seconds digit has changed, not every draw() call, which im afraid would be super inefficient
+		if (secondsbefore != secondsafter){
+			var digit1 =  secondsafter % 10;
+			var digit10 = Math.floor(secondsafter / 10) % 10;
+			var secondsstring = "0:" + digit10 + digit1;
+			
+			document.getElementById("btn_info").innerHTML = secondsstring
+		}
+		
+		// when the time is run out, go to the input mode, where the user can recreate the map
+		if (secondsafter <= 0){
+			document.getElementById("btn_info").innerHTML = "-";
+			document.getElementById("btn_next").style.visibility = "visible";
+			document.getElementById("btn_next").innerHTML = "Done";
+			client.state = "input";
+			
+			client.showleftboard = false;
+			client.showrightboard = true;
+		}
+	}
+	
 	background(20);
 	
 	//noFill();
 	//stroke(128)
 	//rect(client.buttoncontainerx, client.buttoncontainery, client.buttoncontainerwidth, client.buttoncontainerheight);
 	
-	stroke(0);
-	for (var i = 0; i < client.buttons.length; i++){
-		var cb = client.buttons[i];
-		
-		fill( client.draggedpiece == cb.piecevalue ? "#DBD8FF" : "#968EFF" );
-		
-		rect(cb.x, cb.y, cb.width, cb.height);
-		image(PIECE_TEXTURES[ cb.piecevalue ], cb.x, cb.y, cb.width, cb.height );
+	if (client.state == "input"){
+		stroke(0);
+		for (var i = 0; i < client.buttons.length; i++){
+			var cb = client.buttons[i];
+			
+			fill( client.draggedpiece == cb.piecevalue ? "#DBD8FF" : "#968EFF" );
+			
+			rect(cb.x, cb.y, cb.width, cb.height);
+			image(PIECE_TEXTURES[ cb.piecevalue ], cb.x, cb.y, cb.width, cb.height );
+		}
 	}
 	
-	drawChessboard( client.leftboardx,   client.leftboardy, client.leftboardsize, 
-				client.boardflipped, client.leftposition );
-						
-	drawChessboard( client.rightboardx,  client.rightboardy, client.rightboardsize, 
-					client.boardflipped, client.rightposition );
+	if (client.showleftboard){
+		drawChessboard( client.leftboardx,   client.leftboardy, client.leftboardsize, 
+					client.boardflipped, client.leftposition );
+	}
+	if (client.showrightboard){		
+		drawChessboard( client.rightboardx,  client.rightboardy, client.rightboardsize, 
+						client.boardflipped, client.rightposition );
+	}
 		
 	//ghost piece
 	if (client.draggedpiece && client.showghostpiece){
 		image(PIECE_TEXTURES[client.draggedpiece], mouseX - client.rightboardsize/16, mouseY - client.rightboardsize/16, client.rightboardsize/8, client.rightboardsize/8);
 	}
+	
+	fill(256)
+	var loggerstring = windowWidth + " x " + windowHeight + "\n" + client.timer;
+	text(loggerstring, 20, 20)
 		
 /* 	touched_on_frame = false;
 	
