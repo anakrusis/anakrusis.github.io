@@ -73,21 +73,36 @@ function setup() {
 			
 			client.showleftboard = true;
 			client.state = "countdown"; 
-			client.timer = 10000;
+			client.timer = client.countdownlength;
 			this.style.visibility = 'hidden';
 			
 		}else if (client.state == "input"){
 			client.state = "result";
 			client.showleftboard = true;
+			client.draggedpiece = null;
 			this.innerHTML = "Next";
+			this.style.visibility = 'hidden';
+			client.resultnextbtncooldown = client.resultnextbtncooldownamount;
+			
+			var matching = client.arePositionsMatching();
+			if (matching){
+				document.getElementById("btn_info").innerHTML = "Correct!";
+				client.score++;
+				
+			}else{
+				document.getElementById("btn_info").innerHTML = "Incorrect!";
+			}
+			client.total++;
+			document.getElementById("btn_counter").innerHTML = client.score + " / " + client.total;
+			
 			
 		}else if (client.state == "result"){
 			client.leftposition.importPGN( EXAMPLEPGN, true );
 			client.rightposition = new Position
 			
-			client.showleftboard = true;
+			client.showleftboard = true; client.showrightboard = false;
 			client.state = "countdown"; 
-			client.timer = 10000;
+			client.timer = client.countdownlength;
 			this.style.visibility = 'hidden';
 		}
 	}
@@ -112,6 +127,12 @@ function setup() {
 }
 
 function mousePressed(e){
+	// this cooldown is to prevent the double tap glitch ive been getting
+	if (client.clickcooldowntimer > 0){
+		return;
+	}
+	client.clickcooldowntimer = client.clickcooldownamount;
+	
 	// the buttons and board interactions only work in the input mode
 	if (client.state != "input"){ return; }
 	
@@ -165,6 +186,9 @@ function touchEnded(e){
 }
 
 function draw() {
+	client.clickcooldowntimer -= deltaTime;
+	if (client.clickcooldowntimer < 0){ client.clickcooldowntimer = 0; }
+	
 	if (client.state == "countdown"){
 		var secondsbefore = Math.floor(client.timer / 1000);
 		client.timer -= deltaTime;
@@ -188,6 +212,15 @@ function draw() {
 			
 			client.showleftboard = false;
 			client.showrightboard = true;
+		}
+		
+	}else if (client.state == "result"){
+		if (client.resultnextbtncooldown > 0){ 
+			client.resultnextbtncooldown -= deltaTime;
+			// if it becomes less than zero after decrementing it on this tick, then make the button visible
+			if (client.resultnextbtncooldown <= 0){
+				document.getElementById("btn_next").style.visibility = "visible";
+			}
 		}
 	}
 	
@@ -224,7 +257,7 @@ function draw() {
 	}
 	
 	fill(256)
-	var loggerstring = windowWidth + " x " + windowHeight + "\n" + client.timer;
+	var loggerstring = windowWidth + " x " + windowHeight + "\n" + client.resultnextbtncooldown;
 	text(loggerstring, 20, 20)
 		
 /* 	touched_on_frame = false;

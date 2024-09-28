@@ -12,6 +12,10 @@ class Client {
 		this.piecedraggedx = null; this.piecedraggedy = null;
 		this.draggedpiece;
 		this.mousestartx = null; this.mousestarty = null;
+		// At most you can only click or tap every 1/4 second, 
+		// because I am having a problem with it registering as a double tap when I tap once on my phone
+		this.clickcooldowntimer = 0;
+		this.clickcooldownamount = 250;
 		
 		// -- GRAPHICS STATE --
 		this.leftboardx = 100; 	this.leftboardy = 100; 	this.leftboardsize = 500;
@@ -24,6 +28,9 @@ class Client {
 		this.buttoncontainerx = 100; this.buttoncontainery = 100; 
 		this.buttonncontainerwidth = 20; this.buttoncontainerheight = 20; 
 		
+		this.resultnextbtncooldown = 0;
+		this.resultnextbtncooldownamount = 250;
+		
 		// META STATE
 		// start:		before the game has begun
 		// countdown:	the left board is shown for about 10 seconds, the right board and done button are hidden
@@ -31,7 +38,7 @@ class Client {
 		// result:		the result of whether the players board matches the given board, and info on what game it came from
 		this.state = "start";
 		// in milliseconds, because it counts down using deltaTime
-		this.timer = 0;
+		this.timer = 0; this.countdownlength = 20000;
 		this.score = 0;
 		this.total = 0;
 	}
