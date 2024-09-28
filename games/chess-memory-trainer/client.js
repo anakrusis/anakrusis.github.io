@@ -41,6 +41,9 @@ class Client {
 		this.timer = 0; this.countdownlength = 20000;
 		this.score = 0;
 		this.total = 0;
+		// link to the lichess game where the current position came from
+		this.sitelink = "";
+		this.ply = 0; // and the current ply so it can be linked to in the game
 	}
 	
 	// returns boolean on whether the leftposition and rightposition are the same
@@ -89,11 +92,41 @@ class Client {
 		
 		// landscape mode
 		if (width > height){
+			var xpadding = Math.floor( width / 32 );
+			// boards are half as wide as the screen width (the greater dimension) minus some room for padding and the button container
+			var boardsize = Math.floor(width / 2) - (xpadding * 4);
+			// boards are y centered
+			var boardy = Math.floor((height/2) - (boardsize / 2))
+			
+			this.leftboardx = xpadding; this.leftboardy = boardy; this.leftboardsize = boardsize;
+			
+			this.buttoncontainerx = this.leftboardx + boardsize + xpadding;
+			this.buttoncontainerheight = (boardsize / 8) * 6;
+			this.buttoncontainery = (height/2) - (this.buttoncontainerheight / 2);
+			this.buttoncontainerwidth = (boardsize / 8) * 2;
+			
+			this.rightboardy = boardy; this.rightboardx = this.buttoncontainerx + this.buttoncontainerwidth + xpadding; 
+			this.rightboardsize = boardsize;
+			
+			// each button is the size of a square on the board
+			var buttonsize = boardsize / 8;
+			this.buttons = [];
+			for (var i = 0; i < 12; i++){
+				var curry = (( i % 6 ) * buttonsize) + this.buttoncontainery;
+				var currx = (Math.floor(i / 6) * buttonsize ) + this.buttoncontainerx;
+				var button = {
+					"x": 		currx,
+					"y": 		curry,
+					"width": 	buttonsize,
+					"height":	buttonsize,
+					"piecevalue":	buttonvalues[i]
+				}
+				this.buttons.push(button);
+			}
 			
 		// portrait mode
 		}else{
 			var ypadding = Math.floor( height / 32 );
-			
 			// boards are half as tall as the screen height (the greater dimension) minus some room for padding and the button container
 			var boardsize = Math.floor(height / 2) - (ypadding * 4);
 			// boards are x centered
@@ -111,7 +144,6 @@ class Client {
 			
 			// each button is the size of a square on the board
 			var buttonsize = boardsize / 8;
-			
 			this.buttons = [];
 			for (var i = 0; i < 12; i++){
 				var currx = (( i % 6 ) * buttonsize) + this.buttoncontainerx;
@@ -122,9 +154,7 @@ class Client {
 					"width": 	buttonsize,
 					"height":	buttonsize,
 					"piecevalue":	buttonvalues[i]
-				}
-				console.log(button);
-				
+				}		
 				this.buttons.push(button);
 			}
 		}

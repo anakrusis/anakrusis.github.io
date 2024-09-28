@@ -81,10 +81,22 @@ class Position {
 		
 		// find first item in array that begins with "1. " (the first move)
 		var movesstring = "";
+		var sitestring = "";
 		for (var i = 0; i < pgn.length; i++){
 			if ( pgn[i].indexOf("1. ") == 0 ) {
 				movesstring = pgn[i]; break;
 			}
+			// also find the item that contains "[Site ""
+			if ( pgn[i].indexOf("[Site \"") != -1){
+				// that sequence "[Site "" is 7 chars long, so we will only look at whats after it
+				sitestring = pgn[i].substring(7);;
+			}
+		}
+		
+		if (sitestring){
+			// trim off everything after and including the second quotation mark
+			sitestring = sitestring.substring( 0, sitestring.indexOf("\"") );
+			client.sitelink = sitestring;
 		}
 		
 		// iterates through all spaces in the string, and separates the text between them into their own tokens
@@ -110,6 +122,8 @@ class Position {
 		var currentply = 1;
 		
 		for (var i = 0; i < tokenarray.length; i++){
+			client.ply = currentply;
+			
 			// I put this at the beginning because there are multiple ends to this loop
 			// the ply counter is incremented at each of those ends, so if the ply is equal to the randomly selected ply plus one,
 			// then return because the desired position is reached-- a random position from the pgn given

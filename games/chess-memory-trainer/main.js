@@ -66,6 +66,10 @@ function setup() {
 	}
 	*/
 	
+	document.getElementById("btn_info").onclick = function(){
+		client.timer = 1;
+	}
+	
 	document.getElementById("btn_next").onclick = function(){
 		if (client.state == "start"){
 			client.leftposition.importPGN( EXAMPLEPGN, true );
@@ -83,14 +87,23 @@ function setup() {
 			this.innerHTML = "Next";
 			this.style.visibility = 'hidden';
 			client.resultnextbtncooldown = client.resultnextbtncooldownamount;
+	
+			var linkstartstring; var linkendstring;
+			if (client.sitelink){
+				// opens link in new tab
+				linkstartstring = "<a href=\"" + client.sitelink + "#" + (client.ply-1) + "\" target=\"_blank\" rel=\"noopener noreferrer\">"
+				linkendstring	= "</a>"
+			}else{
+				linkstartstring = ""; linkendstring = "";
+			}
 			
 			var matching = client.arePositionsMatching();
 			if (matching){
-				document.getElementById("btn_info").innerHTML = "Correct!";
+				document.getElementById("btn_info").innerHTML = linkstartstring + "Correct!" + linkendstring;
 				client.score++;
 				
 			}else{
-				document.getElementById("btn_info").innerHTML = "Incorrect!";
+				document.getElementById("btn_info").innerHTML = linkstartstring + "Incorrect!" + linkendstring;
 			}
 			client.total++;
 			document.getElementById("btn_counter").innerHTML = client.score + " / " + client.total;
@@ -116,7 +129,7 @@ function setup() {
 	// VIEWPORT CANVAS
 	vcanvas	= createCanvas( windowWidth, windowHeight * 0.92 );
 	frameRate(10);
-	textSize(windowHeight / 32);
+	textSize(windowHeight / 32); 
 	
 	//EXAMPLEPOS = positionArrayFromFEN("6k1/6p1/2N1pn1p/4P3/r4r2/7P/P5P1/R3R1K1 b - - 0 27");
 	//EXAMPLEPOS = positionArrayFromPGN("");
@@ -256,9 +269,9 @@ function draw() {
 		image(PIECE_TEXTURES[client.draggedpiece], mouseX - client.rightboardsize/16, mouseY - client.rightboardsize/16, client.rightboardsize/8, client.rightboardsize/8);
 	}
 	
-	fill(256)
-	var loggerstring = windowWidth + " x " + windowHeight + "\n" + client.resultnextbtncooldown;
-	text(loggerstring, 20, 20)
+	//fill(256)
+	//var loggerstring = windowWidth + " x " + windowHeight + "\n" + client.resultnextbtncooldown;
+	//text(loggerstring, 20, 20)
 		
 /* 	touched_on_frame = false;
 	
