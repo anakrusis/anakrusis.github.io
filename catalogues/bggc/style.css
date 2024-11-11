@@ -1,0 +1,145 @@
+body {
+	font-size: 110%;
+	background-color: #181a1b;
+	font-family: sans-serif;
+	color: white;
+}
+
+div {
+	border: 1px solid #c0c0c0;
+}
+
+table {
+	margin: auto;
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+th, td {
+	border: 1px solid #c0c0c0;
+	font-size: 110%;
+	padding: 8px;
+}
+
+.maindiv {
+	margin: auto;
+	width: 80%;
+	padding: 10px;
+}
+
+a {
+	text-decoration: none;
+	color: cyan;
+}
+
+img{
+}
+
+.outerdiv {
+	margin-top: 36px;
+}
+
+.imgdiv {
+	display: block;
+	width: 128px;
+	height: 100px;
+	text-align: center;
+	float: left;
+	overflow: hidden;
+	padding: 14px 0;
+}
+
+.titlediv {
+	display: block;
+	text-align: center;
+	overflow: hidden;
+}
+
+.etymdiv {
+	padding: 14px;
+}
+
+.notesdiv {
+	padding: 14px;
+}
+
+.tagsdiv {
+	padding: 14px;
+}
+
+@font-face {
+  font-family: 'dpdp';
+  src:	url("font/dpdp.woff")	format("woff"),
+		url("font/dpdp.ttf") 	format("truetype"),
+}
+@font-face {
+	font-family: "dpdpHiero";
+	src: url("font/dpdp.woff") format("woff");
+	unicode-range: U+13000-1342F, U+143B7, U+14362, U+A723, U+02BE, U+1EC9, U+1EC8, U+A725, U+1018C; //ꜣ ʾ ỉ Ỉ  ꜥ s-etous
+	}
+
+@font-face {
+	font-family: "EgyptianHiero";
+	src: 	url("font/egyptianhiero3.03.woff2") 	format('woff2'),
+			url("font/egyptianhiero3.03.woff") 		format('woff'),
+			unicode-range:U+13000-1342F
+}
+
+@font-face {
+	font-family: "NotoSans";
+	src:	url("font/NotoSansCoptic-Regular.ttf")		format('truetype'),
+			url("font/NotoSans-Regular.ttf")			format('truetype')
+}
+
+.demotic {
+  font-size: 1.25em;
+  line-height: 1.75em;
+  font-family: 'dpdp', sans-serif;
+  text-align: justify;
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  font-feature-settings: 'ss13' 1;
+}
+.hieroglyphs,
+.hieroglyphs span,
+.hieroglyphs text{
+	display: inline-block;
+	font-family: dpdp, sans-serif;
+	font-feature-settings: 'ss02' 1;
+	direction: rtl;
+	unicode-bidi: bidi-override;
+	letter-spacing: 0;
+}
+
+.hiero {
+  font-family:'EgyptianHiero';
+  font-size:2em;
+  font-variant-ligatures:normal;
+}
+
+.comment{
+    font-weight:normal;
+	font-style: italic;
+	color: #9f9fff;
+}​
+.emphasis{
+	font-weight:bold;
+	color: #7f0000;
+}
+.coptic{
+	font-family: "NotoSans";
+}
+
+.left {
+    float: left;
+    margin-right: 1em;
+	margin-bottom: 1em;
+}
+
+.ns {
+	color: #ffcccc;
+}
+.seen {
+	color: #ccffcc;
+}
+

@@ -19,7 +19,7 @@ class Client {
 		
 		// -- GRAPHICS STATE --
 		this.leftboardx = 100; 	this.leftboardy = 100; 	this.leftboardsize = 500;
-		this.rightboardx = 100; this.rightboardy = 100; this.rightboardize = 500;
+		this.rightboardx = 100; this.rightboardy = 100; this.rightboardize = 500; 
 		this.boardflipped = false; // will apply to both boards at once
 		this.showghostpiece = true;
 		this.showleftboard = false; this.showrightboard = false;
@@ -137,7 +137,7 @@ class Client {
 			this.buttoncontainery = this.leftboardy + boardsize + ypadding;
 			this.buttoncontainerwidth = (boardsize / 8) * 6;
 			this.buttoncontainerx = (width/2) - (this.buttoncontainerwidth / 2);
-			this.buttoncontainerheight = (boardsize / 8) * 2;
+			this.buttoncontainerheight = (boardsize / 8) * 2; 
 			
 			this.rightboardx = boardx; this.rightboardy = this.buttoncontainery + this.buttoncontainerheight + ypadding; 
 			this.rightboardsize = boardsize;
