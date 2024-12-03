@@ -5,7 +5,7 @@ CIRCLERADIUS = 0;
 var STARPOINTS = [ ];
 
 POINTSIZE = 1; DIFFUSE = false;
-SIZE_DIVISORS = [ 128, 64, 32, 20 ]
+SIZE_DIVISORS = [ 128, 96, 64, 48, 32, 27, 20, 14 ]
 
 touched_on_frame = false;
 
@@ -13,9 +13,9 @@ function setup() {
 	document.getElementById("textarea").value = "";
 	
 	document.getElementById("btn_size").onclick = function(){
-		POINTSIZE += 1; 
-		if (POINTSIZE >= 5){
-			POINTSIZE = 1;
+		POINTSIZE += 0.5; 
+		if (POINTSIZE > 4){
+			POINTSIZE = 0.5;
 		}
 		this.innerHTML = "Size: " + POINTSIZE
 	}
@@ -164,7 +164,7 @@ class StarPoint {
 		var curry = (crad * Math.sin( this.angle )) + ccy;
 		
 		fill(255,0,0);
-		var size = (CIRCLERADIUS*2) / SIZE_DIVISORS[ this.size - 1 ]
+		var size = (CIRCLERADIUS*2) / SIZE_DIVISORS[ (2 * this.size) - 1 ]
 		circle( currx, curry, size );
 		
 		fill(255,0,0); stroke(0);

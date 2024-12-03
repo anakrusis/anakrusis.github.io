@@ -48,7 +48,7 @@ function addDictEntry(ce){
 		var tablediv = document.createElement("div");
 		var infotable = document.createElement("table");
 		var headerrow = infotable.insertRow();
-		headerrow.innerHTML = "<th>DSS2 photo</th><th>Hubble photo</th><th>RA</th><th>Dec</th><th>Apparent size</th><th>Distance (pc)</th>"
+		headerrow.innerHTML = "<th>DSS2 photo</th><th>Hubble photo</th><th>RA</th><th>Dec</th><th>Apparent size</th><th>Distance (Mpc)</th>"
 		
 		var inforow = infotable.insertRow();
 		var dsscell = inforow.insertCell();
