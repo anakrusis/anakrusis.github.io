@@ -5,7 +5,7 @@ CIRCLERADIUS = 0;
 var STARPOINTS = [ ];
 
 POINTSIZE = 1; DIFFUSE = false;
-SIZE_DIVISORS = [ 128, 96, 64, 48, 32, 27, 20, 14 ]
+SIZE_DIVISORS = [ 128, 96, 64, 48, 32, 27, 20, 10 ]
 
 touched_on_frame = false;
 
