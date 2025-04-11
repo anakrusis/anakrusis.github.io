@@ -10,6 +10,9 @@ var selectedtile = 0x00;
 var selectedcolor = 0x03;
 var floodfillmode = false;
 
+var blob_url;
+var exported = false;
+
 function setup(){
 	document.getElementById("btn_colorselect").onclick = function(){
 		selectedcolor += 1; selectedcolor %= 4;
@@ -35,8 +38,31 @@ function setup(){
 		tile_clear(selectedtile)
 	}
 	document.getElementById("btn_export").onclick = function(){
-		var dataout = tile_export(0);
-		save(dataout, "out.txt");
+		//if (exported){
+		//	window.location.href = blob_url;
+		//	exported = false;
+		//	return
+		//}
+
+		var dataout = [];
+		for (var i = 0; i < 0x40 * banksize; i++){
+			dataout = dataout.concat(tile_export(i))
+		}
+
+		
+		var bytesout = new Uint8Array(dataout);
+		var blob = new Blob( [bytesout], {type: 'application/octet-stream'} );
+		blob_url = URL.createObjectURL(blob);
+
+		var a = document.createElement('a');
+		a.href = blob_url;
+		a.download = "out.chr"
+ 		document.body.appendChild(a);
+ 		a.click();
+ 		document.body.removeChild(a);
+
+		//exported = true;
+		//save(dataout, "out.txt");
 	}
 
 	for (var i = 0; i < 0x40 * banksize; i++){
@@ -200,12 +226,16 @@ function tile_export(t){
 		place /= 2;
 		if (place < 1){ place = 0x80 }
 	}
-	var out = "";
-	for (var i = 0; i < 0x10; i++){
-		var cbyte = String.fromCharCode( bitplane1[i] )
-		cbyte = cbyte.charCodeAt(0); 
+	return bitplane1;
+
+	//var bytesout = new Uint8Array( bitplane1 );
+	
+	//var out = "";
+	//for (var i = 0; i < 0x10; i++){
+	//	var cbyte = String.fromCharCode( bitplane1[i] )
+	//	cbyte = cbyte.charCodeAt(0); 
 		// we are only working with bytes
-		out += cbyte;
-	}
-	return out;
+	//	out += cbyte;
+	//}
+	//return bytesout;
 }
